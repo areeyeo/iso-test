@@ -1,0 +1,730 @@
+ERROR - 2023-10-09 02:07:12 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'iso_optimize' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'iso_optimize', 3306, '', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#7 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'iso_optimize' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+#6 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+#7 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-10-09 02:07:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'iso_optimize'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user_table`
+WHERE `email_user` = :email_user:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(27): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:40:13 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:40:32 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:40:49 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:45:18 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:46:08 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:45 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:48 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:49 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:50 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:51 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:52 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:53 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:54 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:55 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:56 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:57 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:58 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:50:59 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:51:00 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:54:57 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:54:59 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:01 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:02 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:16 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:17 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:18 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:19 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:20 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 02:55:21 --> Undefined variable $data_requirement
+in APPPATH\Views\Modal\Requirement_Modal.php on line 7.
+ 1 APPPATH\Views\Modal\Requirement_Modal.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Modal\\Requirement_Modal.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Requirement_Modal', null, true)
+ 5 APPPATH\Views\Leadership\IS_Policy.php(146): CodeIgniter\View\View->include('Modal/Requirement_Modal')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Views\\Leadership\\IS_Policy.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Leadership/IS_Policy', [], true)
+ 9 APPPATH\Controllers\Leadership_PolicyController.php(11): view('Leadership/IS_Policy')
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:01:59 --> Invalid file: "Context/IS_Policy.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Context/IS_Policy.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/IS_Policy', [], true)
+ 3 APPPATH\Controllers\ISPolicyController.php(28): view('Context/IS_Policy', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->is_policy_index('155', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:16:59 --> Invalid file: "Context/IS_Policy.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Context/IS_Policy.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/IS_Policy', [], true)
+ 3 APPPATH\Controllers\ISPolicyController.php(28): view('Context/IS_Policy', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->is_policy_index('155', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:19:15 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_isms_process_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:20:33 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_isms_process_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:20:51 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_isms_process_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:22:26 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_isms_process_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:22:31 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_isms_process_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:11 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:16 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:16 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:20 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:38 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:25:57 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:26:40 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:27:29 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:27:40 --> Undefined variable $ISPolicyModels
+in APPPATH\Controllers\ISPolicyController.php on line 285.
+ 1 APPPATH\Controllers\ISPolicyController.php(285): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ISPolicyModels', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 285)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-09 03:35:42 --> mysqli_sql_exception: Unknown column 'id_policy_table.id_file' in 'on clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_p...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_p...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_p...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_p...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-10-09 03:35:42 --> Unknown column 'id_policy_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = :id_version.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-09 03:47:33 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\ISPolicyController.php on line 293.
+ 1 APPPATH\Controllers\ISPolicyController.php(293): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\ISPolicyController.php', 293)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-09 03:48:23 --> mysqli_sql_exception: Unknown column 'id_policy_table.id_file' in 'on clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_p...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_p...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_p...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_p...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-10-09 03:48:23 --> Unknown column 'id_policy_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = :id_version.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-09 03:48:35 --> mysqli_sql_exception: Unknown column 'id_policy_table.id_file' in 'on clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_p...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_p...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_p...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_p...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-10-09 03:48:35 --> Unknown column 'id_policy_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = \'155\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_policy` AS `id_`
+FROM `leadership_policy_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `id_policy_table`.`id_file`
+WHERE `id_version` = :id_version.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\ISPolicyController.php(312): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISPolicyController->get_is_policy_table('155')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISPolicyController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

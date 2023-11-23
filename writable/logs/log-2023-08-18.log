@@ -1,0 +1,22 @@
+CRITICAL - 2023-08-18 03:02:53 --> Undefined variable $user_data
+in APPPATH\Views\Permission\per_context.php on line 98.
+ 1 APPPATH\Views\Permission\per_context.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_data', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Permission\\per_context.php', 98)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Permission\\per_context.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Permission/per_context', [], true)
+ 5 APPPATH\Controllers\Per_ContextController.php(10): view('Permission/per_context')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Per_ContextController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Per_ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-18 03:04:18 --> Undefined variable $user_data
+in APPPATH\Views\Permission\per_context.php on line 98.
+ 1 APPPATH\Views\Permission\per_context.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_data', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Permission\\per_context.php', 98)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Permission\\per_context.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Permission/per_context', [], true)
+ 5 APPPATH\Controllers\Per_ContextController.php(10): view('Permission/per_context')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Per_ContextController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Per_ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,279 @@
+CRITICAL - 2023-07-21 02:26:29 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 206.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:26:34 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 206.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:28:02 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 203.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:28:07 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 203.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:29:55 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 205.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:29:56 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 205.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:29:57 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 205.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 02:30:00 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Context_DesController.php on line 205.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:47:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP...', Array, false)
+#4 C:\xampp\htdocs\isms-project\app\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\app\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-21 03:47:20 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = :internal_issuses_description_table.id_interl_issuses:
+AND `internal_issuses_description_table`.`standard_number` = :internal_issuses_description_table.standard_number:', [...], false)
+ 5 APPPATH\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:47:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP...', Array, false)
+#4 C:\xampp\htdocs\isms-project\app\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\app\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-21 03:47:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = :internal_issuses_description_table.id_interl_issuses:
+AND `internal_issuses_description_table`.`standard_number` = :internal_issuses_description_table.standard_number:', [...], false)
+ 5 APPPATH\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-21 03:47:43 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP...', Array, false)
+#4 C:\xampp\htdocs\isms-project\app\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\app\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-21 03:47:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = \'1\'
+AND `internal_issuses_description_table`.`standard_number` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, GROUP_CONCAT(internal_issues_table.activated) AS activated_issu, GROUP_CONCAT(internal_issuses_description_table.activated) AS activated_des, GROUP_CONCAT(internal_issuses_description_table.details) AS details_des, GROUP_CONCAT(internal_issuses_description_table.id_interl_issuses_description ) AS id, `check =` 1
+FROM `internal_issues_table`
+JOIN `internal_issuses_description_table` ON `internal_issues_table`.`id_internal_issues` = `internal_issuses_description_table`.`id_interl_issuses`
+JOIN `standard_table` ON `internal_issuses_description_table`.`standard_number` = `standard_table`.`id_standard`
+WHERE `internal_issuses_description_table`.`id_interl_issuses` = :internal_issuses_description_table.id_interl_issuses:
+AND `internal_issuses_description_table`.`standard_number` = :internal_issuses_description_table.standard_number:', [...], false)
+ 5 APPPATH\Models\Internal_issuesModels.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Context_DesController.php(195): App\Models\Internal_issuesModels->getData_table('1', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:39:50 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:42:54 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:44:35 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:44:39 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:47:10 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:47:13 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:47:24 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:52:18 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:52:23 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:52:28 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:52:45 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-21 04:52:48 --> Undefined array key "id_interl_issuses_description"
+in APPPATH\Controllers\Context_DesController.php on line 213.
+ 1 APPPATH\Controllers\Context_DesController.php(213): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_interl_issuses_description"', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\Context_DesController.php', 213)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Context_DesController->getdata_table('1', '1', '2')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Context_DesController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

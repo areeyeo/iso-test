@@ -1,0 +1,23 @@
+CRITICAL - 2023-08-02 08:33:10 --> Invalid file: "layout_main.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout_main.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout_main', [], true)
+ 3 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 4 APPPATH\Controllers\ContextController.php(69): view('Context/context-ana/context_ana', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-02 08:56:51 --> Invalid file: "layout_footer.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout_footer.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('layout_footer', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(626): CodeIgniter\View\View->include('layout_footer')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

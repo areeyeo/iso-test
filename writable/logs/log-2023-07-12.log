@@ -1,0 +1,160 @@
+CRITICAL - 2023-07-12 02:55:25 --> rmdir(./uploads/0/): No such file or directory
+in APPPATH\Controllers\ContextController.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(./uploads/0/): No such file or directory', 'E:\\work\\ISMS\\isms-project\\app\\Controllers\\ContextController.php', 186)
+ 2 APPPATH\Controllers\ContextController.php(186): rmdir('./uploads/0/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->delete('13')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:27:14 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 433.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(433): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 433)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:27:24 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 433.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(433): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 433)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:29:47 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 434.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 434)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:30:08 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 434.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 434)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:30:52 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 434.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 434)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:32:38 --> compact(): Undefined variable $response
+in APPPATH\Controllers\ContextController.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'compact(): Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Controllers\\ContextController.php', 56)
+ 2 APPPATH\Controllers\ContextController.php(56): compact('response')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 03:37:05 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 434.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(434): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 434)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(62): view('Context/context-ana/context_ana', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 04:18:22 --> Undefined variable $response
+in APPPATH\Views\Context\context-ana\context_ana.php on line 433.
+ 1 APPPATH\Views\Context\context-ana\context_ana.php(433): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php', 433)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\work\\ISMS\\isms-project\\app\\Views\\Context\\context-ana\\context_ana.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_ana', [], true)
+ 5 APPPATH\Controllers\ContextController.php(56): view('Context/context-ana/context_ana', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 04:22:28 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, null given, called in E:\work\ISMS\isms-project\app\Controllers\ContextController.php on line 28
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\ContextController.php(28): CodeIgniter\BaseModel->findAll(null, null)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->getAllcontexts()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 04:26:23 --> CodeIgniter\BaseModel::findAll(): Argument #1 ($limit) must be of type int, null given, called in E:\work\ISMS\isms-project\app\Controllers\ContextController.php on line 28
+in SYSTEMPATH\BaseModel.php on line 601.
+ 1 APPPATH\Controllers\ContextController.php(28): CodeIgniter\BaseModel->findAll(null, null)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->getAllcontexts()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:27:21 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('8', '16', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:29:09 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('9', '16', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:30:14 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('10', '16', '3')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:36:58 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('12', '16', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:41:08 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('13', '16', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')
+CRITICAL - 2023-07-12 08:42:25 --> Unsupported operand types: string + string
+in APPPATH\Controllers\InterController.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->delete('14', '16', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\work\\ISMS\\isms-project\\public\\index.php')

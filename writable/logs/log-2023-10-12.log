@@ -1,0 +1,181 @@
+CRITICAL - 2023-10-12 03:05:06 --> Call to undefined function App\Controllers\delete_files()
+in APPPATH\Controllers\Leadership_PolicyController.php on line 99.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:06:04 --> Call to undefined function App\Controllers\delete_files()
+in APPPATH\Controllers\Leadership_PolicyController.php on line 99.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:12:03 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:12:33 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:13:12 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:14:22 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:18:05 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:18:37 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:22:14 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:22:20 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:25:25 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-12 03:25:40 --> Undefined variable $response
+in APPPATH\Controllers\Leadership_PolicyController.php on line 140.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\e-iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit('157', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-12 07:43:39 --> mysqli_sql_exception: Unknown column 'Leadership_org_Table.id_org' in 'where clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leaders...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leaders...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leaders...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leaders...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('4', Array)
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('4')
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+#10 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-10-12 07:43:40 --> Unknown column 'Leadership_org_Table.id_org' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหfdsfs\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'4\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหfdsfs\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'4\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหfdsfs\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'4\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leadership_org_Table` SET `text` = :text:
+WHERE `Leadership_org_Table`.`id_org` IN :Leadership_org_Table.id_org:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('4', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('4')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-12 07:44:13 --> mysqli_sql_exception: Unknown column 'Leadership_org_Table.id_org' in 'where clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leaders...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leaders...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leaders...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leaders...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('155', Array)
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('155')
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+#10 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-10-12 07:44:13 --> Unknown column 'Leadership_org_Table.id_org' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหewrewr\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหewrewr\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leadership_org_Table` SET `text` = \'กดไดกหewrewr\'
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leadership_org_Table` SET `text` = :text:
+WHERE `Leadership_org_Table`.`id_org` IN :Leadership_org_Table.id_org:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('155', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('155')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-12 07:44:24 --> mysqli_sql_exception: Unknown column 'Leadership_org_Table.id_org' in 'where clause' in C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leaders...', 0)
+#1 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leaders...')
+#2 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leaders...')
+#3 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leaders...', Array, false)
+#4 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp8\htdocs\e-iso-optimize\app\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('155', Array)
+#8 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('155')
+#9 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+#10 C:\xampp8\htdocs\e-iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp8\htdocs\e-iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-10-12 07:44:24 --> Unknown column 'Leadership_org_Table.id_org' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `Leadership_org_Table` SET `text` = NULL
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `Leadership_org_Table` SET `text` = NULL
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `Leadership_org_Table` SET `text` = NULL
+WHERE `Leadership_org_Table`.`id_org` IN (\'155\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `Leadership_org_Table` SET `text` = :text:
+WHERE `Leadership_org_Table`.`id_org` IN :Leadership_org_Table.id_org:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Leadership_CommitmentController.php(39): CodeIgniter\Model->update('155', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_CommitmentController->edit_organizational('155')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_CommitmentController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

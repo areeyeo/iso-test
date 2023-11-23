@@ -1,0 +1,318 @@
+CRITICAL - 2023-09-27 04:09:58 --> Undefined variable $type
+in APPPATH\Views\timeline.php on line 328.
+ 1 APPPATH\Views\timeline.php(328): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $type', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 328)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(57): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 04:17:47 --> Undefined variable $check
+in APPPATH\Controllers\NoteController.php on line 68.
+ 1 APPPATH\Controllers\NoteController.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $check', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 68)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->comment_note('40')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 04:18:09 --> CodeIgniter\HTTP\Response::redirect(): Argument #1 ($uri) must be of type string, null given, called in C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php on line 70
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 504.
+ 1 APPPATH\Controllers\NoteController.php(70): CodeIgniter\HTTP\Response->redirect(null)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->comment_note('40')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 06:37:32 --> Undefined variable $data
+in APPPATH\Views\Modal\CRUD_Note.php on line 48.
+ 1 APPPATH\Views\Modal\CRUD_Note.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php', 48)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Note', null, true)
+ 5 APPPATH\Views\timeline.php(358): CodeIgniter\View\View->include('Modal/CRUD_Note')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 9 APPPATH\Controllers\TimelineController.php(60): view('timeline', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 06:37:36 --> Undefined variable $data
+in APPPATH\Views\Modal\CRUD_Note.php on line 48.
+ 1 APPPATH\Views\Modal\CRUD_Note.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php', 48)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Note', null, true)
+ 5 APPPATH\Views\timeline.php(358): CodeIgniter\View\View->include('Modal/CRUD_Note')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 9 APPPATH\Controllers\TimelineController.php(60): view('timeline', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 06:39:25 --> Undefined variable $data
+in APPPATH\Views\Modal\CRUD_Note.php on line 48.
+ 1 APPPATH\Views\Modal\CRUD_Note.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php', 48)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Modal\\CRUD_Note.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Note', null, true)
+ 5 APPPATH\Views\timeline.php(358): CodeIgniter\View\View->include('Modal/CRUD_Note')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 9 APPPATH\Controllers\TimelineController.php(60): view('timeline', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 07:44:32 --> Undefined variable $row_scope
+in APPPATH\Views\timeline.php on line 282.
+ 1 APPPATH\Views\timeline.php(282): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row_scope', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 282)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(65): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-27 08:27:53 --> mysqli_sql_exception: Column 'status_id' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ti...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-27 08:27:53 --> Column 'status_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (:text_timeline:, :type_timeline:, :status_id:, :id_note:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-27 08:28:15 --> mysqli_sql_exception: Column 'status_id' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ti...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-27 08:28:15 --> Column 'status_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (:text_timeline:, :type_timeline:, :status_id:, :id_note:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-27 08:30:15 --> mysqli_sql_exception: Column 'status_id' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ti...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-27 08:30:15 --> Column 'status_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (:text_timeline:, :type_timeline:, :status_id:, :id_note:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-27 08:35:11 --> mysqli_sql_exception: Column 'status_id' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ti...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ti...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ti...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ti...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-27 08:35:11 --> Column 'status_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (\'t- net Note on modified date 2023-09-22\', 3, NULL, 0, \'5\', \'77\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `timeline_log` (`text_timeline`, `type_timeline`, `status_id`, `id_note`, `id_user`, `id_version`) VALUES (:text_timeline:, :type_timeline:, :status_id:, :id_note:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(131): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->update_note('77')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:05:22 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp8\\htdocs\\iso-optimize\\vendor\\codeigniter4\\framework\\system\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...], false)
+ 7 SYSTEMPATH\Model.php(456): CodeIgniter\Database\BaseBuilder->delete()
+ 8 SYSTEMPATH\BaseModel.php(1065): CodeIgniter\Model->doDelete([...], false)
+ 9 APPPATH\Controllers\NoteController.php(152): CodeIgniter\BaseModel->delete([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('40')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:05:38 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp8\\htdocs\\iso-optimize\\vendor\\codeigniter4\\framework\\system\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...], false)
+ 7 SYSTEMPATH\Model.php(456): CodeIgniter\Database\BaseBuilder->delete()
+ 8 SYSTEMPATH\BaseModel.php(1065): CodeIgniter\Model->doDelete([...], false)
+ 9 APPPATH\Controllers\NoteController.php(152): CodeIgniter\BaseModel->delete([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('40')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:06:44 --> Undefined variable $status_version
+in APPPATH\Controllers\NoteController.php on line 159.
+ 1 APPPATH\Controllers\NoteController.php(159): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 159)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('40')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:08:36 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp8\\htdocs\\iso-optimize\\vendor\\codeigniter4\\framework\\system\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `note_comment_table`
+WHERE `id_note` = :id_note :
+AND `id_note_comment` IN :id_note_comment :', [...], false)
+ 7 SYSTEMPATH\Model.php(456): CodeIgniter\Database\BaseBuilder->delete()
+ 8 SYSTEMPATH\BaseModel.php(1065): CodeIgniter\Model->doDelete([...], false)
+ 9 APPPATH\Controllers\NoteController.php(152): CodeIgniter\BaseModel->delete([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('41')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:11:22 --> Undefined array key "id_note_comment"
+in APPPATH\Controllers\NoteController.php on line 152.
+ 1 APPPATH\Controllers\NoteController.php(152): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_note_comment"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 152)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('41')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:13:32 --> Undefined variable $status_version
+in APPPATH\Controllers\NoteController.php on line 166.
+ 1 APPPATH\Controllers\NoteController.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('41')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:15:17 --> Undefined variable $status_version
+in APPPATH\Controllers\NoteController.php on line 166.
+ 1 APPPATH\Controllers\NoteController.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('42')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:16:32 --> Undefined variable $status_version
+in APPPATH\Controllers\NoteController.php on line 166.
+ 1 APPPATH\Controllers\NoteController.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('44')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:20:16 --> Undefined variable $No
+in APPPATH\Controllers\NoteController.php on line 164.
+ 1 APPPATH\Controllers\NoteController.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $No', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 164)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('43')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:23:24 --> Undefined variable $No
+in APPPATH\Controllers\NoteController.php on line 164.
+ 1 APPPATH\Controllers\NoteController.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $No', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 164)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('39')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-27 09:23:35 --> Undefined variable $No
+in APPPATH\Controllers\NoteController.php on line 164.
+ 1 APPPATH\Controllers\NoteController.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $No', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 164)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->delete_note('39')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

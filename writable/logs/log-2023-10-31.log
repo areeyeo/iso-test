@@ -1,0 +1,25 @@
+CRITICAL - 2023-10-31 04:25:19 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ScopeController.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->store('130', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-31 04:25:40 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ScopeController.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->store('130', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-31 07:18:11 --> Invalid file: "Modal/CRUD_ISMS_ScopeAD_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_ISMS_ScopeAD_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_ISMS_ScopeAD_modal', null, true)
+ 3 APPPATH\Views\Context\isms_scope.php(387): CodeIgniter\View\View->include('Modal/CRUD_ISMS_ScopeAD_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 7 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('130', '2')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

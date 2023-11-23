@@ -1,0 +1,604 @@
+ERROR - 2023-08-07 01:55:26 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'isms', 3306, '', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-07 01:55:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `requirement_table`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 03:34:14 --> Undefined variable $context_analysis
+in APPPATH\Views\Modal\Context_Ver.php on line 12.
+ 1 APPPATH\Views\Modal\Context_Ver.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $context_analysis', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\Context_Ver.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\Context_Ver.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/Context_Ver', null, true)
+ 5 APPPATH\Views\Context\context-ana\context_version.php(212): CodeIgniter\View\View->include('Modal/Context_Ver')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 9 APPPATH\Controllers\ContextController.php(89): view('Context/context-ana/context_version', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 04:00:32 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-08-07 04:00:32 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%ก%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%ก%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%ก%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%ก%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE :id_internal: ESCAPE \'!\'
+OR  `effect` LIKE :effect: ESCAPE \'!\'
+OR  `risk` LIKE :risk: ESCAPE \'!\'
+OR  `oppor` LIKE :oppor: ESCAPE \'!\'
+OR  `medthod` LIKE :medthod: ESCAPE \'!\'
+OR  `reponsible` LIKE :reponsible: ESCAPE \'!\'
+AND `id_context` = :id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 04:00:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-08-07 04:00:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE :id_internal: ESCAPE \'!\'
+OR  `effect` LIKE :effect: ESCAPE \'!\'
+OR  `risk` LIKE :risk: ESCAPE \'!\'
+OR  `oppor` LIKE :oppor: ESCAPE \'!\'
+OR  `medthod` LIKE :medthod: ESCAPE \'!\'
+OR  `reponsible` LIKE :reponsible: ESCAPE \'!\'
+AND `id_context` = :id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 04:00:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-08-07 04:00:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%กา%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%กา%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE :id_internal: ESCAPE \'!\'
+OR  `effect` LIKE :effect: ESCAPE \'!\'
+OR  `risk` LIKE :risk: ESCAPE \'!\'
+OR  `oppor` LIKE :oppor: ESCAPE \'!\'
+OR  `medthod` LIKE :medthod: ESCAPE \'!\'
+OR  `reponsible` LIKE :reponsible: ESCAPE \'!\'
+AND `id_context` = :id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 04:03:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11 in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-08-07 04:03:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%การ%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%การ%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `effect` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `risk` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `oppor` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `medthod` LIKE \'%การ%\' ESCAPE \'!\'
+OR  `reponsible` LIKE \'%การ%\' ESCAPE \'!\'
+AND `id_context` = \'13\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE   (
+`id_internal` LIKE :id_internal: ESCAPE \'!\'
+OR  `effect` LIKE :effect: ESCAPE \'!\'
+OR  `risk` LIKE :risk: ESCAPE \'!\'
+OR  `oppor` LIKE :oppor: ESCAPE \'!\'
+OR  `medthod` LIKE :medthod: ESCAPE \'!\'
+OR  `reponsible` LIKE :reponsible: ESCAPE \'!\'
+AND `id_context` = :id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(237): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 06:43:12 --> "guestFilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('guestFilter')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('guestFilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 06:43:55 --> "guestFilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('guestFilter')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('guestFilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 06:46:08 --> "guestFilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('guestFilter')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('guestFilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 07:54:32 --> Undefined variable $data_model
+in APPPATH\Views\Database\role_management.php on line 93.
+ 1 APPPATH\Views\Database\role_management.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_model', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php', 93)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/role_management', [], true)
+ 5 APPPATH\Controllers\Role_Controller.php(14): view('Database/role_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Role_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Role_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 07:59:53 --> Undefined variable $data_inter_iss
+in APPPATH\Views\Database\role_management.php on line 117.
+ 1 APPPATH\Views\Database\role_management.php(117): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_inter_iss', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php', 117)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/role_management', [], true)
+ 5 APPPATH\Controllers\Role_Controller.php(14): view('Database/role_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Role_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Role_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 08:00:24 --> Undefined variable $data_inter_iss
+in APPPATH\Views\Database\role_management.php on line 251.
+ 1 APPPATH\Views\Database\role_management.php(251): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_inter_iss', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php', 251)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/role_management', [], true)
+ 5 APPPATH\Controllers\Role_Controller.php(14): view('Database/role_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Role_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Role_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 08:00:40 --> Undefined variable $data_inter_iss
+in APPPATH\Views\Database\role_management.php on line 251.
+ 1 APPPATH\Views\Database\role_management.php(251): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_inter_iss', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php', 251)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\role_management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/role_management', [], true)
+ 5 APPPATH\Controllers\Role_Controller.php(14): view('Database/role_management', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Role_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Role_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 08:15:11 --> Undefined variable $data_model
+in APPPATH\Views\Database\user_list.php on line 93.
+ 1 APPPATH\Views\Database\user_list.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_model', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 93)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(14): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 08:39:44 --> Undefined array key "id_context"
+in APPPATH\Views\Modal\User_Management.php on line 50.
+ 1 APPPATH\Views\Modal\User_Management.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_context"', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php', 50)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/User_Management', null, true)
+ 5 APPPATH\Views\Database\user_list.php(155): CodeIgniter\View\View->include('Modal/User_Management')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 9 APPPATH\Controllers\User_Controller.php(14): view('Database/user_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 08:51:52 --> Undefined variable $data_user
+in APPPATH\Views\Database\user_list.php on line 93.
+ 1 APPPATH\Views\Database\user_list.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_user', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 93)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(17): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 09:14:10 --> Undefined variable $role
+in APPPATH\Views\Modal\User_Management.php on line 38.
+ 1 APPPATH\Views\Modal\User_Management.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/User_Management', null, true)
+ 5 APPPATH\Views\Database\user_list.php(155): CodeIgniter\View\View->include('Modal/User_Management')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 9 APPPATH\Controllers\User_Controller.php(20): view('Database/user_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 09:14:51 --> Undefined variable $role
+in APPPATH\Views\Modal\User_Management.php on line 38.
+ 1 APPPATH\Views\Modal\User_Management.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Modal\\User_Management.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/User_Management', null, true)
+ 5 APPPATH\Views\Database\user_list.php(155): CodeIgniter\View\View->include('Modal/User_Management')
+ 6 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 9 APPPATH\Controllers\User_Controller.php(20): view('Database/user_list', [...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 09:57:43 --> mysqli_sql_exception: Table 'isms.users' doesn't exist in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@...', Array, Array)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\isms-project\app\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+#11 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-08-07 09:57:43 --> Table 'isms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@gmail.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@gmail.com', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 09:58:41 --> mysqli_sql_exception: Table 'isms.users' doesn't exist in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@...', Array, Array)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\isms-project\app\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+#11 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-08-07 09:58:41 --> Table 'isms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@gmail.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@gmail.com', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-07 10:00:00 --> mysqli_sql_exception: Table 'isms.users' doesn't exist in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@...', Array, Array)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\isms-project\app\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+#11 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-08-07 10:00:00 --> Table 'isms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'jailyootbandit@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(278): CodeIgniter\Validation\StrictRules\Rules->is_unique('jailyootbandit@gmail.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(182): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jailyootbandit@gmail.com', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\User_Controller.php(33): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->create_User()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 10:02:09 --> Undefined array key "id_external_issues"
+in APPPATH\Views\Database\user_list.php on line 105.
+ 1 APPPATH\Views\Database\user_list.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_external_issues"', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 105)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(21): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-07 10:02:09 --> Undefined array key "id_external_issues"
+in APPPATH\Views\Database\user_list.php on line 105.
+ 1 APPPATH\Views\Database\user_list.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_external_issues"', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 105)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(21): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

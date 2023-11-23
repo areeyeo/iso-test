@@ -1,0 +1,150 @@
+ERROR - 2023-08-03 03:45:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'isms', 3306, '', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-03 03:45:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `requirement_table`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ContextController.php(67): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 04:27:50 --> Invalid file: "footer.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('footer.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('footer', null, true)
+ 3 APPPATH\Views\layout\header.php(520): CodeIgniter\View\View->include('footer')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\layout\\header.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('layout/header', [], true)
+ 7 APPPATH\Controllers\ContextController.php(97): view('layout/header')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:26:34 --> Invalid file: "table/internal_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('table/internal_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('table/internal_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(176): CodeIgniter\View\View->include('table/internal_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:26:44 --> Invalid file: "/table/internal_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/table/internal_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('/table/internal_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(176): CodeIgniter\View\View->include('/table/internal_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:26:54 --> Invalid file: "context-ana/table/internal_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('context-ana/table/internal_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('context-ana/table/internal_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(176): CodeIgniter\View\View->include('context-ana/table/internal_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:27:11 --> Invalid file: "internal_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('internal_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('internal_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(176): CodeIgniter\View\View->include('internal_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:27:26 --> Invalid file: "table/internal_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('table/internal_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('table/internal_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(176): CodeIgniter\View\View->include('table/internal_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 07:42:59 --> Invalid file: "Context/table/external_issues.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Context/table/external_issues.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Context/table/external_issues', null, true)
+ 3 APPPATH\Views\Context\context-ana\context_version.php(181): CodeIgniter\View\View->include('Context/table/external_issues')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 7 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 09:39:30 --> Undefined variable $item
+in APPPATH\Views\Context\context-ana\context_version.php on line 266.
+ 1 APPPATH\Views\Context\context-ana\context_version.php(266): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php', 266)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 5 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-03 09:53:35 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\InterController.php on line 214.
+ 1 APPPATH\Controllers\InterController.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\InterController.php', 214)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('13')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

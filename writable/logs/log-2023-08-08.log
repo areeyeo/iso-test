@@ -1,0 +1,557 @@
+CRITICAL - 2023-08-08 03:01:45 --> Undefined array key "id_group "
+in APPPATH\Views\Database\user_list.php on line 102.
+ 1 APPPATH\Views\Database\user_list.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_group "', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 102)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(21): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 03:02:17 --> Undefined array key "id_role"
+in APPPATH\Views\Database\user_list.php on line 107.
+ 1 APPPATH\Views\Database\user_list.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_role"', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php', 107)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Database\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Database/user_list', [], true)
+ 5 APPPATH\Controllers\User_Controller.php(21): view('Database/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\User_Controller->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User_Controller))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 06:58:00 --> "authGuard" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('authGuard')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('authGuard', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 06:58:16 --> "authGuard" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('authGuard')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('authGuard', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 06:58:52 --> "authGuard" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('authGuard')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('authGuard', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:32 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:32 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:33 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:33 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:33 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:33 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:13:48 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:21:25 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:21:25 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:21:25 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:22:00 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:31:38 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:31:58 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:00 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:00 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:01 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:02 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:03 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:04 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:05 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:05 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:05 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:05 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:05 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:32:09 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:36:38 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:36:38 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:36:38 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:36:38 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 07:36:45 --> Undefined array key "id_user "
+in APPPATH\Controllers\LoginController.php on line 29.
+ 1 APPPATH\Controllers\LoginController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\LoginController.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\LoginController->loginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-08 09:15:29 --> "authGuard_login" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 340.
+ 1 SYSTEMPATH\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('authGuard_login')
+ 2 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\Filters\Filters->enableFilter('authGuard_login', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

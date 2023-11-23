@@ -1,0 +1,21 @@
+CRITICAL - 2023-11-01 08:47:07 --> Undefined array key 0
+in APPPATH\Controllers\Leadership_PolicyController.php on line 91.
+ 1 APPPATH\Controllers\Leadership_PolicyController.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 91)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 08:47:11 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Leadership_PolicyController.php on line 88.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 09:12:49 --> rename(C:\xampp\htdocs\iso-optimize\public/uploads/124/IS policies and guidelines V16.1.docx,C:\xampp\htdocs\iso-optimize\public/uploads/124/ฟหกฟหกฟหกฟห.docx): The system cannot find the path specified (code: 3)
+in APPPATH\Controllers\AllversionController.php on line 244.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:\\xampp\\htdocs\\iso-optimize\\public/uploads/124/IS policies and guidelines V16.1.docx,C:\\xampp\\htdocs\\iso-optimize\\public/uploads/124/ฟหกฟหกฟหกฟห.docx): The system cannot find the path specified (code: 3)', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 244)
+ 2 APPPATH\Controllers\AllversionController.php(244): rename('C:\\xampp\\htdocs\\iso-optimize\\public/uploads/124/IS policies and guidelines V16.1.docx', 'C:\\xampp\\htdocs\\iso-optimize\\public/uploads/124/ฟหกฟหกฟหกฟห.docx')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->renamefile('124')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

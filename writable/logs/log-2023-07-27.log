@@ -1,0 +1,544 @@
+CRITICAL - 2023-07-27 01:52:56 --> Undefined variable $data_requirement
+in APPPATH\Views\Context\context-ana\context_version.php on line 1011.
+ 1 APPPATH\Views\Context\context-ana\context_version.php(1011): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_requirement', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php', 1011)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 5 APPPATH\Controllers\ContextController.php(87): view('Context/context-ana/context_version', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:24:06 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'isms', 3306, '', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(56): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(56): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-27 02:24:06 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `requirement_table`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ContextController.php(56): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:42:19 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(428): CodeIgniter\Model->update(7, Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->copyData('3')
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:42:19 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (7)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (7)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (7)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `status` = :status:, `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(428): CodeIgniter\Model->update(7, [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->copyData('3')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:42:24 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(428): CodeIgniter\Model->update(8, Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->copyData('3')
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:42:24 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (8)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (8)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `status` = 0, `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `comment_reject` = NULL
+WHERE `context_table`.`id_context` IN (8)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `status` = :status:, `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(428): CodeIgniter\Model->update(8, [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->copyData('3')
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:43:13 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:43:13 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `status` = :status:, `details` = :details:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 02:43:17 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(715): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:43:21 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2023-07-27 02:43:21 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:43:21 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `status` = :status:, `details` = :details:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 02:43:21 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'3\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'10\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `status` = :status:, `details` = :details:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(715): CodeIgniter\Model->update('10', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:43:43 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(715): CodeIgniter\Model->update('9', Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:43:43 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'2\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'2\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'2\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `status` = :status:, `details` = :details:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(715): CodeIgniter\Model->update('9', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 02:45:24 --> mysqli_sql_exception: Unknown column 'comment_reject' in 'field list' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(717): CodeIgniter\Model->update('9', Array)
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#10 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-27 02:45:24 --> Unknown column 'comment_reject' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'1\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'1\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `context_table` SET `modifiend_data` = NULL, `review_data` = NULL, `approved_data` = NULL, `status` = \'1\', `details` = \'-\', `comment_reject` = \'-\'
+WHERE `context_table`.`id_context` IN (\'9\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `context_table` SET `modifiend_data` = :modifiend_data:, `review_data` = :review_data:, `approved_data` = :approved_data:, `status` = :status:, `details` = :details:, `comment_reject` = :comment_reject:
+WHERE `context_table`.`id_context` IN :context_table.id_context:', [...], false)
+ 5 SYSTEMPATH\Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ContextController.php(717): CodeIgniter\Model->update('9', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 02:45:27 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(717): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:36:16 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(694): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:36:19 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:37:09 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:37:09 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:37:11 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(719): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:16 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:50 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:50 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:54 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:54 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:54 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(724): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:41:56 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(719): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:45:23 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(694): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:45:23 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(694): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:45:23 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(694): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:45:23 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 924.
+ 1 SYSTEMPATH\BaseModel.php(924): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\ContextController.php(694): CodeIgniter\Model->update('5', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-27 03:45:26 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\ContextController.php(732): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 07:36:36 --> mysqli_sql_exception: Unknown column 'column1' in 'where clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(45): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->getAllContexts()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-27 07:36:36 --> Unknown column 'column1' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%1%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%1%\' ESCAPE \'!\'
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%1%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%1%\' ESCAPE \'!\'
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%1%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%1%\' ESCAPE \'!\'
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE :column1: ESCAPE \'!\'
+OR  `column2` LIKE :column2: ESCAPE \'!\'
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\ContextController.php(45): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->getAllContexts()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-27 07:36:38 --> mysqli_sql_exception: Unknown column 'column1' in 'where clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\isms-project\app\Controllers\ContextController.php(45): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\ContextController->getAllContexts()
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-27 07:36:38 --> Unknown column 'column1' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%13%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%13%\' ESCAPE \'!\'
+ )', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%13%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%13%\' ESCAPE \'!\'
+ )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE \'%13%\' ESCAPE \'!\'
+OR  `column2` LIKE \'%13%\' ESCAPE \'!\'
+ )')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `context_table`
+WHERE   (
+`column1` LIKE :column1: ESCAPE \'!\'
+OR  `column2` LIKE :column2: ESCAPE \'!\'
+ )', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\ContextController.php(45): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->getAllContexts()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

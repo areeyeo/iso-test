@@ -1,0 +1,117 @@
+CRITICAL - 2023-09-22 02:43:59 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AllversionController.php on line 383.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 02:44:13 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AllversionController.php on line 383.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 02:44:31 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AllversionController.php on line 383.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 02:44:51 --> syntax error, unexpected token ";"
+in APPPATH\Controllers\AllversionController.php on line 383.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 02:47:07 --> Undefined array key 0
+in APPPATH\Controllers\ISMS_ProcessController.php on line 205.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(205): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ISMS_ProcessController.php', 205)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->copyData('2', '2', '78', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:14:05 --> Class "App\Models\ScopeADModels" not found
+in APPPATH\Controllers\ISMS_ScopeADController.php on line 290.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeADController->get_scope_ad_table('77')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeADController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:14:20 --> Class "App\Models\ScopeADModels" not found
+in APPPATH\Controllers\ISMS_ScopeADController.php on line 290.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeADController->get_scope_ad_table('77')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeADController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:15:11 --> Class "App\Models\ScopeADModels" not found
+in APPPATH\Controllers\ISMS_ScopeADController.php on line 289.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeADController->get_scope_ad_table('77')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeADController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:25:54 --> Undefined variable $data_interested_iss
+in APPPATH\Views\Context\isms_scope.php on line 440.
+ 1 APPPATH\Views\Context\isms_scope.php(440): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_interested_iss', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php', 440)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 5 APPPATH\Controllers\ISMS_ScopeController.php(26): view('Context/isms_scope', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('77', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:42:45 --> Undefined array key 0
+in APPPATH\Controllers\ISMS_ScopeADController.php on line 187.
+ 1 APPPATH\Controllers\ISMS_ScopeADController.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ISMS_ScopeADController.php', 187)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeADController->copyData('9', '1', '77', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeADController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 03:43:02 --> Undefined variable $interestedmodel
+in APPPATH\Controllers\ISMS_ScopeADController.php on line 236.
+ 1 APPPATH\Controllers\ISMS_ScopeADController.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $interestedmodel', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ISMS_ScopeADController.php', 236)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeADController->copyData('9', '1', '77', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeADController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 04:38:36 --> syntax error, unexpected token "else", expecting end of file
+in APPPATH\Views\Context\isms_scope.php on line 277.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 3 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('77', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 04:39:15 --> syntax error, unexpected token "else", expecting end of file
+in APPPATH\Views\Context\isms_scope.php on line 277.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 3 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('77', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-22 08:38:30 --> Invalid file: "Modal/CRUD_ISMS_Scope_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_ISMS_Scope_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_ISMS_Scope_modal', null, true)
+ 3 APPPATH\Views\Context\isms_scope.php(361): CodeIgniter\View\View->include('Modal/CRUD_ISMS_Scope_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 7 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('77', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

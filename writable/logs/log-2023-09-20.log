@@ -1,0 +1,33 @@
+CRITICAL - 2023-09-20 04:11:33 --> Call to a member function countAllResults() on array
+in APPPATH\Controllers\AllversionController.php on line 517.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->copyData('45')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 04:13:51 --> array_merge(): Argument #1 must be of type array, null given
+in APPPATH\Controllers\AllversionController.php on line 134.
+ 1 APPPATH\Controllers\AllversionController.php(134): array_merge(null, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('0', '11')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 06:36:54 --> Undefined array key "id_timeline "
+in APPPATH\Controllers\AllversionController.php on line 493.
+ 1 APPPATH\Controllers\AllversionController.php(493): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_timeline "', 'C:\\xampp\\htdocs\\isms-project\\app\\Controllers\\AllversionController.php', 493)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->delete('45')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-20 09:39:46 --> Invalid file: "Modal/CRUD_Context_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_Context_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Context_modal', null, true)
+ 3 APPPATH\Views\Context\interested.php(267): CodeIgniter\View\View->include('Modal/CRUD_Context_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\interested.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/interested', [], true)
+ 7 APPPATH\Controllers\InterestedController.php(31): view('Context/interested', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterestedController->interested_index('70', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterestedController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

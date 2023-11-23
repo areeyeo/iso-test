@@ -1,0 +1,22 @@
+CRITICAL - 2023-07-31 02:59:35 --> Undefined variable $details
+in APPPATH\Views\Context\context-ana\context_version.php on line 236.
+ 1 APPPATH\Views\Context\context-ana\context_version.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $details', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php', 236)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 5 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-31 02:59:42 --> Undefined variable $details
+in APPPATH\Views\Context\context-ana\context_version.php on line 236.
+ 1 APPPATH\Views\Context\context-ana\context_version.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $details', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php', 236)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\Context\\context-ana\\context_version.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context-ana/context_version', [], true)
+ 5 APPPATH\Controllers\ContextController.php(98): view('Context/context-ana/context_version', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ContextController->context_analysis_version('13')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContextController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

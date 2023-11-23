@@ -1,0 +1,748 @@
+ERROR - 2023-09-26 03:14:32 --> mysqli_sql_exception: Column 'text' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:14:32 --> Column 'text' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:15:18 --> mysqli_sql_exception: Column 'text' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:15:18 --> Column 'text' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:16:15 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:16:15 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'dsfsdfs\', \'5\', \'75\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'dsfsdfs\', \'5\', \'75\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'dsfsdfs\', \'5\', \'75\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:16:22 --> mysqli_sql_exception: Column 'text' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:16:22 --> Column 'text' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (NULL, \'5\', \'75\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:18:52 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:19:09 --> mysqli_sql_exception: Column 'text' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:19:09 --> Column 'text' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (:text:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:22:07 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:22:14 --> mysqli_sql_exception: Column 'text' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:22:14 --> Column 'text' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (NULL, \'5\', \'75\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`) VALUES (:text:, :id_user:, :id_version:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:24:02 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:24:22 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:24:45 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:24:51 --> Undefined variable $modifiend_data
+in APPPATH\Controllers\NoteController.php on line 33.
+ 1 APPPATH\Controllers\NoteController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $modifiend_data', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:36:00 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:36:00 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'Note\', \'5\', \'75\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'Note\', \'5\', \'75\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'Note\', \'5\', \'75\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(24): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:39:54 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Controllers\NoteController.php on line 22.
+ 1 APPPATH\Controllers\NoteController.php(22): date('26/09/2023', 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:41:23 --> Invalid numeric literal
+in APPPATH\Controllers\NoteController.php on line 22.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\NoteController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\NoteController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\NoteController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:26 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, string given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format('26/09/2023', 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:31 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:48 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:48 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:49 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:49 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:49 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:49 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:50 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:50 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:50 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 03:45:50 --> date_format(): Argument #1 ($object) must be of type DateTimeInterface, null given
+in APPPATH\Controllers\NoteController.php on line 17.
+ 1 APPPATH\Controllers\NoteController.php(17): date_format(null, 'Y/m/d')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 03:49:04 --> mysqli_sql_exception: Operand should contain 1 column(s) in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\NoteController.php(25): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-09-26 03:49:04 --> Operand should contain 1 column(s)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'sdsdsf\', \'5\', \'75\', (0,0,0,1,4,1,1970,0,\'Thursday\',\'January\',0))', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'sdsdsf\', \'5\', \'75\', (0,0,0,1,4,1,1970,0,\'Thursday\',\'January\',0))')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (\'sdsdsf\', \'5\', \'75\', (0,0,0,1,4,1,1970,0,\'Thursday\',\'January\',0))')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\NoteController.php(25): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->save_note('75', '0')
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:34:12 --> syntax error, unexpected token "<"
+in APPPATH\Views\timeline.php on line 231.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:43:48 --> Undefined array key 1
+in APPPATH\Views\timeline.php on line 281.
+ 1 APPPATH\Views\timeline.php(281): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 281)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:48:56 --> Undefined variable $Note_Models
+in APPPATH\Controllers\TimelineController.php on line 23.
+ 1 APPPATH\Controllers\TimelineController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Note_Models', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\TimelineController.php', 23)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:50:22 --> Undefined array key "date_timeline"
+in APPPATH\Views\timeline.php on line 234.
+ 1 APPPATH\Views\timeline.php(234): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "date_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 234)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:50:41 --> Undefined array key "type_timeline"
+in APPPATH\Views\timeline.php on line 235.
+ 1 APPPATH\Views\timeline.php(235): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 235)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:51:06 --> Undefined array key "type_timeline"
+in APPPATH\Views\timeline.php on line 267.
+ 1 APPPATH\Views\timeline.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 267)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:52:07 --> Undefined array key "type_timeline"
+in APPPATH\Views\timeline.php on line 267.
+ 1 APPPATH\Views\timeline.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 267)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:52:12 --> Undefined array key "type_timeline"
+in APPPATH\Views\timeline.php on line 264.
+ 1 APPPATH\Views\timeline.php(264): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 264)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:52:43 --> Undefined array key "time_timeline"
+in APPPATH\Views\timeline.php on line 271.
+ 1 APPPATH\Views\timeline.php(271): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "time_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 271)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:53:20 --> Undefined array key 1
+in APPPATH\Views\timeline.php on line 281.
+ 1 APPPATH\Views\timeline.php(281): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 281)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:54:18 --> Undefined array key "type_timeline"
+in APPPATH\Views\timeline.php on line 318.
+ 1 APPPATH\Views\timeline.php(318): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_timeline"', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 318)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 06:59:11 --> Undefined variable $date_type
+in APPPATH\Views\timeline.php on line 171.
+ 1 APPPATH\Views\timeline.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $date_type', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 171)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 07:24:29 --> syntax error, unexpected token "endforeach"
+in APPPATH\Views\timeline.php on line 323.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 07:37:27 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\timeline.php on line 234.
+ 1 APPPATH\Views\timeline.php(234): date('2023-09-22', 'd/m/Y')
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 07:39:29 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\timeline.php on line 236.
+ 1 APPPATH\Views\timeline.php(236): date('2023-09-22', 'd/m/Y')
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 07:39:41 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\timeline.php on line 236.
+ 1 APPPATH\Views\timeline.php(236): date('d/m/Y', '2023-09-22')
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 07:40:41 --> date(): Argument #2 ($timestamp) must be of type ?int, string given
+in APPPATH\Views\timeline.php on line 236.
+ 1 APPPATH\Views\timeline.php(236): date('d-m-Y', '2023-09-22')
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:03:48 --> syntax error, unexpected string content "", expecting "-" or identifier or variable or number
+in APPPATH\Views\timeline.php on line 259.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:04:11 --> syntax error, unexpected variable "$note"
+in APPPATH\Views\timeline.php on line 259.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:04:27 --> syntax error, unexpected variable "$note"
+in APPPATH\Views\timeline.php on line 259.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(48): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('77', '3', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:24:36 --> syntax error, unexpected token "->", expecting identifier or variable or "{" or "$"
+in APPPATH\Views\timeline.php on line 234.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:24:48 --> Call to a member function where() on array
+in APPPATH\Views\timeline.php on line 234.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 4 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:28:03 --> Class "UserModels" not found
+in APPPATH\Views\timeline.php on line 234.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 4 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:28:25 --> syntax error, unexpected token "use"
+in APPPATH\Views\timeline.php on line 234.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:52:01 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:52:03 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:52:24 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:52:44 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:53:08 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:53:41 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:53:43 --> syntax error, unexpected identifier "id_note", expecting ")"
+in APPPATH\Views\timeline.php on line 298.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(52): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:54:02 --> syntax error, unexpected identifier "Models", expecting "{"
+in APPPATH\Models\NoteComment_Models.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Models\\NoteComment_Models.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\NoteComment_Models')
+ 3 APPPATH\Controllers\NoteController.php(59): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\NoteComment_Models')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->comment_note('39')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-26 08:54:40 --> Undefined variable $Note_Models
+in APPPATH\Controllers\NoteController.php on line 67.
+ 1 APPPATH\Controllers\NoteController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Note_Models', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\NoteController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\NoteController->comment_note('39')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoteController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-26 09:08:53 --> mysqli_sql_exception: Unknown column 'date_activites' in 'order clause' in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp8\htdocs\iso-optimize\app\Controllers\TimelineController.php(24): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+#8 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-26 09:08:53 --> Unknown column 'date_activites' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `user_table`
+ORDER BY `date_activites` DESC, `time_activites` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `user_table`
+ORDER BY `date_activites` DESC, `time_activites` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `user_table`
+ORDER BY `date_activites` DESC, `time_activites` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user_table`
+ORDER BY `date_activites` DESC, `time_activites` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\TimelineController.php(24): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('74', '1', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

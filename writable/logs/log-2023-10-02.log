@@ -1,0 +1,106 @@
+CRITICAL - 2023-10-02 03:55:06 --> Undefined array key 0
+in APPPATH\Controllers\AllversionController.php on line 247.
+ 1 APPPATH\Controllers\AllversionController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('81', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 03:58:52 --> Undefined array key 0
+in APPPATH\Controllers\AllversionController.php on line 247.
+ 1 APPPATH\Controllers\AllversionController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('81', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 04:01:32 --> Undefined array key 0
+in APPPATH\Controllers\AllversionController.php on line 247.
+ 1 APPPATH\Controllers\AllversionController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('81', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 06:50:17 --> Invalid file: "Context/context_analysis1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Context/context_analysis1.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context_analysis1', [], true)
+ 3 APPPATH\Controllers\AllversionController.php(155): view('Context/context_analysis1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('97', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 06:58:24 --> syntax error, unexpected token "public"
+in APPPATH\Controllers\AllversionController.php on line 199.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 06:58:30 --> syntax error, unexpected token "public"
+in APPPATH\Controllers\AllversionController.php on line 199.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 06:58:31 --> syntax error, unexpected token "public"
+in APPPATH\Controllers\AllversionController.php on line 199.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AllversionController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AllversionController')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\AllversionController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:06:13 --> array_merge(): Argument #1 must be of type array, null given
+in APPPATH\Controllers\AllversionController.php on line 150.
+ 1 APPPATH\Controllers\AllversionController.php(150): array_merge(null, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('3106', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:43:19 --> Undefined array key 0
+in APPPATH\Controllers\AllversionController.php on line 248.
+ 1 APPPATH\Controllers\AllversionController.php(248): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 248)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:43:35 --> Undefined variable $response
+in APPPATH\Controllers\AllversionController.php on line 512.
+ 1 APPPATH\Controllers\AllversionController.php(512): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 512)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:51:17 --> Undefined array key 0
+in APPPATH\Controllers\AllversionController.php on line 248.
+ 1 APPPATH\Controllers\AllversionController.php(248): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 248)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:51:27 --> Undefined variable $response
+in APPPATH\Controllers\AllversionController.php on line 512.
+ 1 APPPATH\Controllers\AllversionController.php(512): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 512)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:53:21 --> Undefined variable $check_file
+in APPPATH\Controllers\AllversionController.php on line 246.
+ 1 APPPATH\Controllers\AllversionController.php(246): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $check_file', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 246)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-02 07:54:16 --> Undefined variable $check_file
+in APPPATH\Controllers\AllversionController.php on line 246.
+ 1 APPPATH\Controllers\AllversionController.php(246): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $check_file', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 246)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->edit_all('111', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

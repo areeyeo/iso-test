@@ -1,0 +1,276 @@
+CRITICAL - 2023-09-15 03:37:36 --> Undefined variable $date
+in APPPATH\Views\timeline.php on line 86.
+ 1 APPPATH\Views\timeline.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $date', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\timeline.php', 86)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(32): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('1', '1', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 03:37:52 --> Undefined variable $date
+in APPPATH\Views\timeline.php on line 86.
+ 1 APPPATH\Views\timeline.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $date', 'C:\\xampp\\htdocs\\isms-project\\app\\Views\\timeline.php', 86)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\isms-project\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(32): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('1', '1', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:15:17 --> mysqli_sql_exception: Unknown column 'interested_table.id_context' in 'where clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:15:17 --> Unknown column 'interested_table.id_context' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = :interested_table.id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:16:19 --> mysqli_sql_exception: Unknown column 'interested_table.id_file' in 'on clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:16:19 --> Unknown column 'interested_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = :id_context.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:17:21 --> mysqli_sql_exception: Unknown column 'interested_table.id_context' in 'where clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:17:21 --> Unknown column 'interested_table.id_context' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `interested_table`.`id_context` = :interested_table.id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:17:30 --> mysqli_sql_exception: Unknown column 'interested_table.id_context' in 'where clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(319): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:17:30 --> Unknown column 'interested_table.id_context' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE `interested_table`.`id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+WHERE `interested_table`.`id_context` = :interested_table.id_context:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(319): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:21:23 --> mysqli_sql_exception: Unknown column 'interested_table.id_file' in 'on clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:21:23 --> Unknown column 'interested_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = :id_context.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 08:21:31 --> mysqli_sql_exception: Unknown column 'interested_table.id_file' in 'on clause' in C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_i...', 0)
+#1 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_i...')
+#2 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_i...')
+#3 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_i...', Array, false)
+#4 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+#6 C:\xampp\htdocs\isms-project\app\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+#7 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+#8 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+#9 C:\xampp\htdocs\isms-project\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\isms-project\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-15 08:21:31 --> Unknown column 'interested_table.id_file' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = \'1\'
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *, `id_internal_issues` AS `id_selected`, `id_internal` AS `id_`
+FROM `internal_table`
+LEFT JOIN `files_table` ON `files_table`.`id_files` = `interested_table`.`id_file`
+WHERE `id_context` = :id_context.1:
+ LIMIT 10', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(10, 0)
+ 7 APPPATH\Controllers\InterController.php(320): CodeIgniter\BaseModel->findAll(10, 0)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\InterController->get_inter_table('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InterController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

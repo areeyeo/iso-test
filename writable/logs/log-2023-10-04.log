@@ -1,0 +1,408 @@
+CRITICAL - 2023-10-04 02:19:27 --> array_merge(): Argument #1 must be of type array, null given
+in APPPATH\Controllers\AllversionController.php on line 150.
+ 1 APPPATH\Controllers\AllversionController.php(150): array_merge(null, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('116', '1')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 02:41:24 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1035): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 02:41:24 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1035): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 02:41:26 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1035): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 02:41:26 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'Reject Review 1\', \'5\', \'5\', \'121\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1035): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 02:41:56 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 391.
+ 1 SYSTEMPATH\BaseModel.php(943): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(756): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\AllversionController.php(1043): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 03:55:24 --> Class "App\Controllers\TimelineModels" not found
+in APPPATH\Controllers\ExterController.php on line 42.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 03:58:27 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 99.
+ 1 APPPATH\Controllers\ExterController.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->delete('10', '0', '1', '126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:02:40 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 46.
+ 1 APPPATH\Controllers\ExterController.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:03:08 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 99.
+ 1 APPPATH\Controllers\ExterController.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->delete('11', '0', '1', '126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:03:20 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 46.
+ 1 APPPATH\Controllers\ExterController.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:04:10 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 85.
+ 1 APPPATH\Controllers\ExterController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->delete('12', '0', '1', '126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:04:20 --> Undefined variable $response
+in APPPATH\Controllers\ExterController.php on line 44.
+ 1 APPPATH\Controllers\ExterController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:06:44 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 46.
+ 1 APPPATH\Controllers\ExterController.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:06:53 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ExterController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:09:22 --> Undefined variable $response
+in APPPATH\Controllers\ExterController.php on line 45.
+ 1 APPPATH\Controllers\ExterController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:10:09 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 47.
+ 1 APPPATH\Controllers\ExterController.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 04:12:34 --> Undefined variable $status_version
+in APPPATH\Controllers\ExterController.php on line 47.
+ 1 APPPATH\Controllers\ExterController.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $status_version', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\ExterController.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ExterController->store('126', '0')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ExterController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 07:09:35 --> Undefined variable $scopead_update
+in APPPATH\Controllers\AllversionController.php on line 912.
+ 1 APPPATH\Controllers\AllversionController.php(912): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $scopead_update', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 912)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->copyData('129')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 07:09:49 --> Undefined variable $scopead_update
+in APPPATH\Controllers\AllversionController.php on line 912.
+ 1 APPPATH\Controllers\AllversionController.php(912): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $scopead_update', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 912)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->copyData('129')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:42:10 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:42:10 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:42:11 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:42:11 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:42:12 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:42:12 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:42:12 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:42:12 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdg\', \'5\', \'5\', \'136\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:44:48 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:44:48 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdfdg\', \'5\', \'6\', \'137\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdfdg\', \'5\', \'6\', \'137\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'gfdfdg\', \'5\', \'6\', \'137\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-10-04 07:49:03 --> mysqli_sql_exception: Column 'date_modifiend' cannot be null in C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `no...', 0)
+#1 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `no...')
+#2 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `no...')
+#3 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `no...', Array, false)
+#4 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp8\htdocs\iso-optimize\app\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+#10 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+#11 C:\xampp8\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp8\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-10-04 07:49:03 --> Column 'date_modifiend' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'fdsf\', \'5\', \'5\', \'138\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'fdsf\', \'5\', \'5\', \'138\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (\'fdsf\', \'5\', \'5\', \'138\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `note_table` (`text`, `id_user`, `status_id`, `id_version`, `date_modifiend`) VALUES (:text:, :id_user:, :status_id:, :id_version:, :date_modifiend:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\AllversionController.php(1191): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->update_context()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 07:59:34 --> Invalid file: "Modal/CRUD_Context_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_Context_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Context_modal', null, true)
+ 3 APPPATH\Views\Context\context_analysis.php(300): CodeIgniter\View\View->include('Modal/CRUD_Context_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\context_analysis.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context_analysis', [], true)
+ 7 APPPATH\Controllers\AllversionController.php(156): view('Context/context_analysis', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('128', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 08:35:02 --> Invalid file: "Modal/CRUD_Context_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_Context_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Context_modal', null, true)
+ 3 APPPATH\Views\Context\context_analysis.php(300): CodeIgniter\View\View->include('Modal/CRUD_Context_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\context_analysis.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context_analysis', [], true)
+ 7 APPPATH\Controllers\AllversionController.php(156): view('Context/context_analysis', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('141', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 08:45:36 --> syntax error, unexpected token ";"
+in APPPATH\Views\Context\context_analysis.php on line 306.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context_analysis', [], true)
+ 3 APPPATH\Controllers\AllversionController.php(156): view('Context/context_analysis', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('141', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 08:50:33 --> Invalid file: "Modal/CRUD_Context_modal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Modal/CRUD_Context_modal.php')
+ 2 SYSTEMPATH\View\View.php(452): CodeIgniter\View\View->render('Modal/CRUD_Context_modal', null, true)
+ 3 APPPATH\Views\Context\context_analysis.php(300): CodeIgniter\View\View->include('Modal/CRUD_Context_modal')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\Context\\context_analysis.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/context_analysis', [], true)
+ 7 APPPATH\Controllers\AllversionController.php(156): view('Context/context_analysis', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->context_analysis_version('141', '1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

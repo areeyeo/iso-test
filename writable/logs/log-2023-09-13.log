@@ -1,0 +1,9 @@
+CRITICAL - 2023-09-13 09:51:36 --> syntax error, unexpected token "endforeach", expecting "elseif" or "else" or "endif"
+in APPPATH\Views\timeline.php on line 164.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 3 APPPATH\Controllers\TimelineController.php(31): view('timeline', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('1', '1', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

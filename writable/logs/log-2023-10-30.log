@@ -1,0 +1,80 @@
+CRITICAL - 2023-10-30 03:15:57 --> Undefined array key 0
+in APPPATH\Controllers\ISMS_ProcessController.php on line 317.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 317)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit('103', '103')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:30:30 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ProcessController.php on line 261.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:30:34 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ProcessController.php on line 261.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:40:11 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ProcessController.php on line 261.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:40:42 --> Call to a member function isValid() on null
+in APPPATH\Controllers\ISMS_ProcessController.php on line 261.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:55:05 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 297.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 03:55:10 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 297.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 297)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 06:38:13 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 304.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 304)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 06:38:40 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 304.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 304)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 07:14:52 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 304.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 304)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 07:15:28 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 304.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 304)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-30 07:32:18 --> Undefined variable $response
+in APPPATH\Controllers\ISMS_ProcessController.php on line 304.
+ 1 APPPATH\Controllers\ISMS_ProcessController.php(304): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'C:\\xampp\\htdocs\\iso-optimize-test\\app\\Controllers\\ISMS_ProcessController.php', 304)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ProcessController->edit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ProcessController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

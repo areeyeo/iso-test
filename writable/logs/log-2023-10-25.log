@@ -1,0 +1,49 @@
+ERROR - 2023-10-25 02:57:43 --> mysqli_sql_exception: Table 'iso_optimize.leadership_policy_table' doesn't exist in C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\iso-optimize\app\Controllers\Leadership_PolicyController.php(352): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->get_is_policy_table('129')
+#7 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+#8 C:\xampp\htdocs\iso-optimize\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\iso-optimize\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-10-25 02:57:43 --> Table 'iso_optimize.leadership_policy_table' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `leadership_policy_table`
+WHERE `id_version` = \'129\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `leadership_policy_table`
+WHERE `id_version` = \'129\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `leadership_policy_table`
+WHERE `id_version` = \'129\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `leadership_policy_table`
+WHERE `id_version` = :id_version:', [...], false)
+ 5 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Leadership_PolicyController.php(352): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->get_is_policy_table('129')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-25 07:12:11 --> rename(C:\xampp\htdocs\iso-optimize\public/uploads/95/SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf,C:\xampp\htdocs\iso-optimize\public/uploads/95/t- net.pdf): The system cannot find the path specified (code: 3)
+in APPPATH\Controllers\AllversionController.php on line 244.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf,C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/t- net.pdf): The system cannot find the path specified (code: 3)', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 244)
+ 2 APPPATH\Controllers\AllversionController.php(244): rename('C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf', 'C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/t- net.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->renamefile('95')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-25 07:12:22 --> rename(C:\xampp\htdocs\iso-optimize\public/uploads/95/,C:\xampp\htdocs\iso-optimize\public/uploads/95/.): The system cannot find the file specified (code: 2)
+in APPPATH\Controllers\AllversionController.php on line 244.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rename(C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/,C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/.): The system cannot find the file specified (code: 2)', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 244)
+ 2 APPPATH\Controllers\AllversionController.php(244): rename('C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/', 'C:\\xampp\\htdocs\\iso-optimize\\public/uploads/95/.')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->renamefile('95')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

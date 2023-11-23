@@ -1,0 +1,76 @@
+CRITICAL - 2023-11-02 02:27:01 --> rmdir(public/uploads/95/): No such file or directory
+in APPPATH\Controllers\Leadership_PolicyController.php on line 142.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(public/uploads/95/): No such file or directory', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 142)
+ 2 APPPATH\Controllers\Leadership_PolicyController.php(142): rmdir('public/uploads/95/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->delete('6', '95', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 02:27:04 --> rmdir(public/uploads/97/): No such file or directory
+in APPPATH\Controllers\Leadership_PolicyController.php on line 142.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(public/uploads/97/): No such file or directory', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 142)
+ 2 APPPATH\Controllers\Leadership_PolicyController.php(142): rmdir('public/uploads/97/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->delete('7', '97', '2')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 02:27:07 --> rmdir(public/uploads/123/): No such file or directory
+in APPPATH\Controllers\Leadership_PolicyController.php on line 142.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(public/uploads/123/): No such file or directory', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 142)
+ 2 APPPATH\Controllers\Leadership_PolicyController.php(142): rmdir('public/uploads/123/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->delete('8', '123', '3')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 02:27:11 --> rmdir(public/uploads/95/): No such file or directory
+in APPPATH\Controllers\Leadership_PolicyController.php on line 142.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(public/uploads/95/): No such file or directory', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_PolicyController.php', 142)
+ 2 APPPATH\Controllers\Leadership_PolicyController.php(142): rmdir('public/uploads/95/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_PolicyController->delete('6', '95', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_PolicyController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 02:28:59 --> rmdir(public/uploads/Leadership/10/): No such file or directory
+in APPPATH\Controllers\Leadership_FilesController.php on line 86.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'rmdir(public/uploads/Leadership/10/): No such file or directory', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\Leadership_FilesController.php', 86)
+ 2 APPPATH\Controllers\Leadership_FilesController.php(86): rmdir('public/uploads/Leadership/10/')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Leadership_FilesController->file_ls_delete('10')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Leadership_FilesController))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 04:27:08 --> Undefined array key 0
+in APPPATH\Views\Context\isms_scope.php on line 580.
+ 1 APPPATH\Views\Context\isms_scope.php(580): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php', 580)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 5 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 04:27:17 --> Undefined array key 0
+in APPPATH\Views\Context\isms_scope.php on line 580.
+ 1 APPPATH\Views\Context\isms_scope.php(580): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php', 580)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\iso-optimize\\app\\Views\\Context\\isms_scope.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('Context/isms_scope', [], true)
+ 5 APPPATH\Controllers\ISMS_ScopeController.php(32): view('Context/isms_scope', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ISMS_ScopeController->isms_scope_index('3', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ISMS_ScopeController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 09:01:42 --> Undefined array key "id_is_objective "
+in APPPATH\Controllers\AllversionController.php on line 1063.
+ 1 APPPATH\Controllers\AllversionController.php(1063): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_is_objective "', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 1063)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->copyData('13')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-02 09:01:46 --> Undefined array key "id_is_objective "
+in APPPATH\Controllers\AllversionController.php on line 1063.
+ 1 APPPATH\Controllers\AllversionController.php(1063): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_is_objective "', 'C:\\xampp\\htdocs\\iso-optimize\\app\\Controllers\\AllversionController.php', 1063)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\AllversionController->copyData('13')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AllversionController))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

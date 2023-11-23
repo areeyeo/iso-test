@@ -1,0 +1,22 @@
+CRITICAL - 2023-10-03 04:28:23 --> Undefined variable $count
+in APPPATH\Views\timeline.php on line 278.
+ 1 APPPATH\Views\timeline.php(278): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 278)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(65): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('111', '3', '4')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-03 04:31:26 --> Undefined variable $count
+in APPPATH\Views\timeline.php on line 278.
+ 1 APPPATH\Views\timeline.php(278): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php', 278)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp8\\htdocs\\iso-optimize\\app\\Views\\timeline.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('timeline', [], true)
+ 5 APPPATH\Controllers\TimelineController.php(65): view('timeline', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TimelineController->index('111', '3', '4')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TimelineController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
