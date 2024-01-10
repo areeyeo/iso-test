@@ -344,14 +344,12 @@ if (isset($_GET['status_id'])) {
                                                                         <?php if ($timeline['id_note']): ?>
                                                                             <?php if ($timeline['type_timeline'] == '3'): ?>
                                                                                 <div class="timeline-footer" style="padding: 10px;">
-                                                                                    <a class="btn btn-warning btn-sm"
-                                                                                        onclick="NoteDetail(<?= $timeline['id_note'] ?>)">View
+                                                                                    <a class="btn btn-warning btn-sm" onclick="NoteDetail(<?=$timeline['id_note']?>)">View
                                                                                         Note</a>
                                                                                 </div>
                                                                             <?php else: ?>
                                                                                 <div class="timeline-footer" style="padding: 10px;">
-                                                                                    <a class="btn btn-danger btn-sm"
-                                                                                        onclick="NoteDetail(<?= $timeline['id_note'] ?>)">View
+                                                                                    <a class="btn btn-danger btn-sm" onclick="NoteDetail(<?=$timeline['id_note']?>)">View
                                                                                         Note</a>
                                                                                 </div>
                                                                             <?php endif; ?>
@@ -381,167 +379,159 @@ if (isset($_GET['status_id'])) {
                     <div class="col-md-12">
                         <!-- TheNote -->
                         <?php if (!$NoteModels): ?>
-                            <h1 style="text-align: center;">No data available</h1>
+                        <h1 style="text-align: center;">No data available</h1>
                         <?php else: ?>
-                            <div class="timeline">
-                                <?php foreach ($NoteModels as $note): ?>
-                                    <div class="card card-widget">
-                                        <div class="card-header">
-                                            <div class="user-block">
-                                                <?php if (session()->get('profile_image') == null): ?>
-                                                    <img class="img-circle" src="<?= base_url('dist/img/avatar6.png'); ?>"
-                                                        alt="User Image">
-                                                <?php else: ?>
-                                                    <img class="img-circle"
-                                                        src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
-                                                        alt="User Image">
-                                                <?php endif; ?>
-                                                <?php foreach ($UserModels as $user):
-                                                    if ($user['id_user'] == $note['id_user']) {
-                                                        $u_f = $user['name_user'];
-                                                        $u_l = $user['lastname_user'];
-                                                    }
-                                                endforeach; ?>
-                                                <span class="username"><a href="#">
-                                                        <?= $u_f ?>
-                                                        <?= $u_l ?>
-                                                    </a></span>
-                                                <?php
-                                                $date_vermodifiend = $note['date_modifiend'];
-                                                //$date_vermodifiend = strtotime($date_vermodifiend);
-                                                //$date_vermodifiend = date('d/m/Y',$date_vermodifiend);
-                                                ?>
-                                                <span class="description">Version Modified date :
-                                                    <?= $date_vermodifiend ?>
-                                                    <?php
-                                                    if ($note['status_id'] == 0) {
-                                                        echo "<span class='badge bg-secondary'>Draft</span>";
-                                                    } else if ($note['status_id'] == 1) {
-                                                        echo "<span class='badge bg-info'>Pending Review</span>";
-                                                    } else if ($note['status_id'] == 2) {
-                                                        echo "<span class='badge bg-warning'>Review</span>";
-                                                    } else if ($note['status_id'] == 3) {
-                                                        echo "<span class='badge bg-info'>Pending Approved</span>";
-                                                    } else if ($note['status_id'] == 4) {
-                                                        echo "<span class='badge bg-success'>Approved</span>";
-                                                    } else if ($note['status_id'] == 5) {
-                                                        echo "<span class='badge bg-danger'>Reject_Review</span>";
-                                                    } else if ($note['status_id'] == 6) {
-                                                        echo "<span class='badge bg-danger'>Reject_Approved</span>";
-                                                    }
-                                                    ?>
-                                                </span>
-                                                <?php
-                                                $date_notecreate = $note['date_create'] . " " . $note['time_create'];
-                                                $date_notecreate = strtotime($date_notecreate);
-                                                $date_notecreate = date('d/m/Y h:i', $date_notecreate);
-                                                ?>
-                                                <span class="description"><small>
-                                                        <?= $date_notecreate ?>
-                                                    </small></span>
-                                            </div>
+                        <div class="timeline">
+                            <?php foreach ($NoteModels as $note): ?>
+                            <div class="card card-widget">
+                                <div class="card-header">
+                                    <div class="user-block">
+                                        <?php if(session()->get('profile_image') == null):?>
+                                            <img class="img-circle" src="<?= base_url('dist/img/avatar6.png'); ?>"
+                                            alt="User Image">
+                                        <?php else:?>
+                                            <img class="img-circle"
+                                            src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
+                                            alt="User Image">
+                                        <?php endif;?>
+                                        <?php foreach ($UserModels as $user):
+                                                                                        if ($user['id_user'] == $note['id_user']) {
+                                                                                            $u_f = $user['name_user'];
+                                                                                            $u_l = $user['lastname_user'];
+                                                                                        }
+                                                                                    endforeach; ?>
+                                        <span class="username"><a href="#"><?= $u_f?> <?=$u_l?></a></span>
+                                        <?php 
+                                                                                        $date_vermodifiend = $note['date_modifiend'];
+                                                                                        //$date_vermodifiend = strtotime($date_vermodifiend);
+                                                                                        //$date_vermodifiend = date('d/m/Y',$date_vermodifiend);
+                                                                                    ?>
+                                        <span class="description">Version Modified date : <?=$date_vermodifiend?>
+                                            <?php
+                                                                                        if ($note['status_id'] == 0) {
+                                                                                            echo "<span class='badge bg-secondary'>Draft</span>";
+                                                                                        } else if ($note['status_id'] == 1) {
+                                                                                            echo "<span class='badge bg-info'>Pending Review</span>";
+                                                                                        } else if ($note['status_id'] == 2) {
+                                                                                            echo "<span class='badge bg-warning'>Review</span>";
+                                                                                        } else if ($note['status_id'] == 3) {
+                                                                                            echo "<span class='badge bg-info'>Pending Approved</span>";
+                                                                                        } else if ($note['status_id'] == 4) {
+                                                                                            echo "<span class='badge bg-success'>Approved</span>";
+                                                                                        } else if ($note['status_id'] == 5) {
+                                                                                            echo "<span class='badge bg-danger'>Reject_Review</span>";
+                                                                                        } else if ($note['status_id'] == 6) {
+                                                                                            echo "<span class='badge bg-danger'>Reject_Approved</span>";
+                                                                                        }
+                                                                                    ?>
+                                        </span>
+                                        <?php 
+                                                                                        $date_notecreate = $note['date_create']. " " . $note['time_create'];
+                                                                                        $date_notecreate = strtotime($date_notecreate);
+                                                                                        $date_notecreate = date('d/m/Y h:i',$date_notecreate);
+                                                                                    ?>
+                                        <span class="description"><small><?=$date_notecreate?></small></span>
+                                    </div>
 
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-                                                <button class="fas fa-ellipsis-h fa-rotate-90 button-table"
-                                                    style="color: #adb5bd; border:none; background:none;" type="button"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                                    undefined=""></button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item"
-                                                        onclick="load_modal(10, 11, <?= $note['id_note'] ?>)"
-                                                        data-toggle="modal" data-target="#modal-default">Edit</a>
-                                                    <a class="dropdown-item" href="#"
-                                                        onclick="confirmAlert(10, 12, 'ต้องการลบข้อมูลที่ 1 หรือไม่', 'question', <?= $note['id_note'] ?>)">Delete</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" onclick="load_modal(10, 10)" data-toggle="modal"
-                                                        data-target="#modal-default">Create</a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div id="note-<?= $note['id_note'] ?>" class="card-body">
-                                            <p>
-                                                <?= $note['text'] ?>
-                                            </p>
-                                        </div>
-                                        <div class="card-footer card-comments">
-                                            <?php if ($NoteComment): ?>
-                                                <?php foreach ($NoteComment as $notecomment): ?>
-                                                    <?php if ($notecomment['id_note'] == $note['id_note']): ?>
-                                                        <div class="card-comment">
-                                                            <?php if (session()->get('profile_image') == null): ?>
-                                                                <img class="img-circle" src="<?= base_url('dist/img/avatar6.png'); ?>"
-                                                                    alt="User Image">
-                                                            <?php else: ?>
-                                                                <img class="img-circle"
-                                                                    src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
-                                                                    alt="User Image">
-                                                            <?php endif; ?>
-                                                            <div class="comment-text">
-                                                                <span class="username">
-                                                                    <?php
-                                                                    foreach ($UserModels as $user):
-                                                                        if ($user['id_user'] == $notecomment['id_user']) {
-                                                                            $uc_f = $user['name_user'];
-                                                                            $uc_l = $user['lastname_user'];
-                                                                        }
-                                                                    endforeach;
-                                                                    echo $uc_f . " " . $uc_l;
-
-                                                                    $date_cnotecreate = $notecomment['date_activites'] . " " . $notecomment['time_activites'];
-                                                                    $date_cnotecreate = strtotime($date_cnotecreate);
-                                                                    $date_cnotecreate = date('d/m/Y h:i', $date_cnotecreate);
-                                                                    ?>
-                                                                    <span class="text-muted float-right">
-                                                                        <?= $date_cnotecreate ?>
-                                                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table"
-                                                                            style="color: #adb5bd; border:none; background:none;"
-                                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false" undefined=""></button>
-                                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                            <a class="dropdown-item" href="#"
-                                                                                onclick="confirmAlert(10, 13, 'ต้องการลบข้อมูลที่ 1 หรือไม่', 'question', <?= $notecomment['id_note_comment'] ?>)">Delete</a>
-                                                                        </div>
-                                                                    </span>
-                                                                </span>
-                                                                <?= $notecomment['text'] ?>
-                                                            </div>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
-
-
-                                        <div class="card-footer">
-                                            <form
-                                                action="<?= base_url('/context/comment_note/' . $note['id_note'] . '/' . $note['id_version'] . '/' . $type . '/' . $num_ver . '') ?>"
-                                                method="post">
-                                                <?php if (session()->get('profile_image') == null): ?>
-                                                    <img class="img-fluid img-circle img-sm"
-                                                        src="<?= base_url('dist/img/avatar6.png'); ?>" alt="Alt Text">
-                                                <?php else: ?>
-                                                    <img class="img-fluid img-circle img-sm"
-                                                        src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
-                                                        alt="Alt Text">
-                                                <?php endif; ?>
-                                                <div class="img-push">
-                                                    <input type="text" id="text_c" name="text_c"
-                                                        class="form-control form-control-sm"
-                                                        placeholder="Press enter to post comment">
-                                                </div>
-                                            </form>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table"
+                                            style="color: #adb5bd; border:none; background:none;" type="button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            undefined=""></button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                onclick="load_modal(10, 11, <?= $note['id_note'] ?>)"
+                                                data-toggle="modal" data-target="#modal-default">Edit</a>
+                                            <a class="dropdown-item" href="#"
+                                                onclick="confirmAlert(10, 12, 'ต้องการลบข้อมูลที่ 1 หรือไม่', 'question', <?= $note['id_note'] ?>)">Delete</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" onclick="load_modal(10, 10)" data-toggle="modal"
+                                                data-target="#modal-default">Create</a>
                                         </div>
                                     </div>
-                                    <!-- END timeline item -->
-                                <?php endforeach; ?>
+
+                                </div>
+
+                                <div id="note-<?=$note['id_note']?>" class="card-body">
+                                    <p><?=$note['text']?></p>
+                                </div>
+                                <div class="card-footer card-comments">
+                                    <?php if ($NoteComment): ?>
+                                    <?php foreach ($NoteComment as $notecomment): ?>
+                                    <?php if($notecomment['id_note'] == $note['id_note']): ?>
+                                    <div class="card-comment">
+                                        <?php if(session()->get('profile_image') == null):?>
+                                        <img class="img-circle" src="<?= base_url('dist/img/avatar6.png'); ?>"
+                                            alt="User Image">
+                                        <?php else:?>
+                                        <img class="img-circle"
+                                            src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
+                                            alt="User Image">
+                                        <?php endif;?>
+                                        <div class="comment-text">
+                                            <span class="username">
+                                                <?php
+                                                                                                            foreach ($UserModels as $user):
+                                                                                                                if ($user['id_user'] == $notecomment['id_user']) {
+                                                                                                                    $uc_f = $user['name_user'];
+                                                                                                                    $uc_l = $user['lastname_user'];
+                                                                                                                }
+                                                                                                            endforeach; 
+                                                                                                            echo $uc_f." ".$uc_l;
+
+                                                                                                            $date_cnotecreate = $notecomment['date_activites']. " " . $notecomment['time_activites'];
+                                                                                                            $date_cnotecreate = strtotime($date_cnotecreate);
+                                                                                                            $date_cnotecreate = date('d/m/Y h:i',$date_cnotecreate);
+                                                                                                        ?>
+                                                <span class="text-muted float-right">
+                                                    <?=$date_cnotecreate?>
+                                                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table"
+                                                        style="color: #adb5bd; border:none; background:none;"
+                                                        type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false" undefined=""></button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#"
+                                                            onclick="confirmAlert(10, 13, 'ต้องการลบข้อมูลที่ 1 หรือไม่', 'question', <?= $notecomment['id_note_comment'] ?>)">Delete</a>
+                                                    </div>
+                                                </span>
+                                            </span>
+                                            <?=$notecomment['text']?>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                    <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+
+
+                                <div class="card-footer">
+                                    <form
+                                        action="<?=base_url('/context/comment_note/'.$note['id_note'].'/'.$note['id_version'].'/'.$type.'/'.$num_ver.'')?>"
+                                        method="post">
+                                        <?php if(session()->get('profile_image') == null):?>
+                                            <img class="img-fluid img-circle img-sm" src="<?= base_url('dist/img/avatar6.png'); ?>"
+                                            alt="Alt Text">
+                                        <?php else:?>
+                                            <img class="img-fluid img-circle img-sm"
+                                            src="data:image/png;base64, <?php echo session()->get('profile_image'); ?>"
+                                            alt="Alt Text">
+                                        <?php endif;?>
+                                        <div class="img-push">
+                                            <input type="text" id="text_c" name="text_c"
+                                                class="form-control form-control-sm"
+                                                placeholder="Press enter to post comment">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
+                            <!-- END timeline item -->
+                            <?php endforeach; ?>
                         </div>
-                    </div> <!-- ปิดแท็บสุดท้าย -->
+                    </div>
+                </div> <!-- ปิดแท็บสุดท้าย -->
                 <?php endif; ?>
             </div>
     </div>
@@ -568,104 +558,104 @@ if (isset($_GET['status_id'])) {
     <!-- ChartJS -->
     <script src="<?= base_url('plugins/chart.js/Chart.min.js'); ?>"></script>
     <script>
-        function NoteDetail(idnote = null) {
-            $('#pills-note-tab').tab('show');
-            $('html, content').animate({
-                scrollTop: $("#note-" + idnote).offset().top
-            }, 1000);
+    function NoteDetail(idnote = null) {
+        $('#pills-note-tab').tab('show');
+        $('html, content').animate({
+            scrollTop: $("#note-"+idnote).offset().top
+        }, 1000);
+    }
+
+    function load_modal(params, check, data) {
+
+        modal1 = document.getElementById("modal1");
+        modal_note = document.getElementById("modal_note");
+
+        $(".modal-header #title_modal").text("Note");
+
+        if (params == '1') {
+            //--show modal requirment--//
+            modal1.style.display = "block";
+            modal_note.style.display = "none";
         }
+        if (params == '10') {
+            //--show modal note--//
+            modal1.style.display = "none";
+            modal_note.style.display = "block";
 
-        function load_modal(params, check, data) {
+            var element = <?php echo json_encode($data); ?>;
 
-            modal1 = document.getElementById("modal1");
-            modal_note = document.getElementById("modal_note");
+            $(".modal-body #modified").val(element.modified_date);
+            $(".modal-body #check").val(check);
+            $(".modal-body #params").val(params);
 
-            $(".modal-header #title_modal").text("Note");
-
-            if (params == '1') {
-                //--show modal requirment--//
-                modal1.style.display = "block";
-                modal_note.style.display = "none";
-            }
-            if (params == '10') {
-                //--show modal note--//
-                modal1.style.display = "none";
-                modal_note.style.display = "block";
-
-                var element = <?php echo json_encode($data); ?>;
-
-                $(".modal-body #modified").val(element.modified_date);
-                $(".modal-body #check").val(check);
-                $(".modal-body #params").val(params);
-
-                if (check == '11') {
-                    $.ajax({
-                        url: "<?php echo site_url('/context/note_edit/'); ?>" + data,
-                        method: 'POST',
-                        dataType: 'json',
-                        success: function (data) {
-                            $(".modal-body #text").val(data.text);
-                            $(".modal-body #id_").val(data.id_note);
-                        }
-                    });
-                }
-
-            }
-        }
-
-        function confirmAlert(activite, check, title_, icon_alert, id_) {
-            var status_id = <?php echo json_encode($data['status']); ?>;
-
-            //console.log(id_version);
-            // console.log(id_file);
-            if (activite == '10') {
-                //--delete--//
-                if (check == '12') {
-                    var url_link = 'note_delete/' + id_;
-                } else if (check == '13') {
-                    var url_link = 'notecomment_delete/' + id_;
-                } else {
-
-                }
+            if (check == '11') {
+                $.ajax({
+                    url: "<?php echo site_url('/context/note_edit/'); ?>" + data,
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(".modal-body #text").val(data.text);
+                        $(".modal-body #id_").val(data.id_note);
+                    }
+                });
             }
 
-            Swal.fire({
-                title: title_,
-                icon: icon_alert,
-                showCancelButton: true,
-                confirmButtonColor: "#28a745",
-                confirmButtonText: "submit",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: '<?= base_url("context/") ?>' + url_link,
-                    }).done(function (response) {
-                        console.log(response);
-                        if (response.success) {
-                            Swal.fire({
-                                title: response.message,
-                                icon: 'success',
-                                showConfirmButton: false
-                            });
-                            setTimeout(() => {
-                                if (response.reload) {
-                                    window.location.reload();
-                                }
-                            }, 2000);
-                        } else {
-                            Swal.fire({
-                                title: response.message,
-                                icon: 'error',
-                                showConfirmButton: true
-                            });
-                        }
-                    });
-                }
-            });
         }
+    }
+
+    function confirmAlert(activite, check, title_, icon_alert, id_) {
+        var status_id = <?php echo json_encode($data['status']); ?>;
+
+        //console.log(id_version);
+        // console.log(id_file);
+        if (activite == '10') {
+            //--delete--//
+            if (check == '12') {
+                var url_link = 'note_delete/' + id_;
+            } else if (check == '13') {
+                var url_link = 'notecomment_delete/' + id_;
+            } else {
+
+            }
+        }
+
+        Swal.fire({
+            title: title_,
+            icon: icon_alert,
+            showCancelButton: true,
+            confirmButtonColor: "#28a745",
+            confirmButtonText: "submit",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '<?= base_url("context/") ?>' + url_link,
+                }).done(function(response) {
+                    console.log(response);
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            showConfirmButton: false
+                        });
+                        setTimeout(() => {
+                            if (response.reload) {
+                                window.location.reload();
+                            }
+                        }, 2000);
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                });
+            }
+        });
+    }
     </script>
 
-    <script>
+<script>
         function sortItems(order) {
             window.location.href = `?sort=${order}`;
         }

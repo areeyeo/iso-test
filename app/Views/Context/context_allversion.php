@@ -265,7 +265,7 @@
           if (daData.length === 0) {
             $('#datatable tbody').html(`
             <tr>
-                <td colspan="6">
+                <td colspan="1">
                     <div class="dropdown">
                         <i class="fas fa-ellipsis-h fa-rotate-90" style="color: #007bff;" type="button"
                             class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -275,6 +275,8 @@
                         </div>
                     </div>
                 </td>
+                <td colspan="5">
+                  </td>
             </tr>
             `);
           }

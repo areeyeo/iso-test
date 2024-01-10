@@ -14,8 +14,8 @@
 
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css'); ?>">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css'); ?>">
 </head>
@@ -303,7 +303,7 @@
                                         <p>Requirement</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" hidden>
                                     <a href="<?= site_url('database/log_list/index'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Log Activites</p>
@@ -364,7 +364,6 @@
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.html5.min.js'); ?>"></script>
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.print.min.js'); ?>"></script>
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
-
     <body>
 
 </html>
