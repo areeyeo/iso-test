@@ -19,7 +19,7 @@
           <textarea class="form-control gray-text" rows="3" placeholder="Text..." name="text" id="text"></textarea>
         </div>
         <input type="text" id="status" name="status" hidden>
-        <div class="input-group date" id="reservationdat_modified" data-target-input="nearest"hidden >
+        <div class="input-group date" id="reservationdat_modified" data-target-input="nearest" hidden>
           <input type="text" class="form-control datetimepicker-input gray-text" data-target="#reservationdat_modified"
             name="modified_date" id="modified_date" />
         </div>
@@ -53,7 +53,15 @@
   function store_alert_note_reject(id_version) {
 
     var formData = new FormData($("#form_reject")[0]);
-    console.log(formData);
+    var loadingIndicator = Swal.fire({
+      title: 'Loading...',
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      onOpen: () => {
+        Swal.showLoading();
+      }
+    });
     $.ajax({
       url: '<?= base_url("context/status_update_reject/") ?>' + id_version,
       type: 'POST',
@@ -61,55 +69,40 @@
       cache: false,
       contentType: false,
       processData: false,
-      xhr: function () {
-        var xhr = new window.XMLHttpRequest();
-        xhr.upload.addEventListener("progress", function (evt) {
-          if (evt.lengthComputable) {
-            var percentComplete = (evt.loaded / evt.total) * 100;
-            $(".overlay").show();
-            setTimeout(() => {
-
-            }, 2000);
-          }
-        }, false);
-        return xhr;
+      beforeSend: function () {
+        // Show loading indicator here
+        loadingIndicator;
       },
-
-    })
-      .done(function (response) {
-        console.log(response.message);
-        if (response.success) {
-          Swal.fire({
-            title: response.message,
-            icon: 'success',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            showConfirmButton: false
-          });
-          setTimeout(() => {
-            $(".overlay").hide();
-
-            if (response.reload) {
-              window.location.reload();
-            }
-          }, 2000);
-        } else {
-          Swal.fire({
-            title: response.message,
-            icon: 'error',
-            showConfirmButton: true
-          });
-        }
-      }).fail(function (jqXHR, textStatus, errorThrown) {
-        // กรณีเกิด Error ใน Ajax Request
-        console.log("Error:", textStatus, errorThrown);
+    }).done(function (response) {
+      if (response.success) {
         Swal.fire({
-          title: "เกิดข้อผิดพลาดในการส่งข้อมูล",
-          text: "โปรดลองอีกครั้งในภายหลัง",
+          title: response.message,
+          icon: 'success',
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          showConfirmButton: false
+        });
+        setTimeout(() => {
+          if (response.reload) {
+            window.location.reload();
+          }
+        }, 2000);
+      } else {
+        Swal.fire({
+          title: response.message,
           icon: 'error',
           showConfirmButton: true
         });
+      }
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+      // กรณีเกิด Error ใน Ajax Request
+      Swal.fire({
+        title: "เกิดข้อผิดพลาดในการส่งข้อมูล",
+        text: "โปรดลองอีกครั้งในภายหลัง",
+        icon: 'error',
+        showConfirmButton: true
       });
+    });
   }
 </script>
 

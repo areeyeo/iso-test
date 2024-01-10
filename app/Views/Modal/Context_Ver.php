@@ -61,7 +61,7 @@
           <h6>Status</h6>
           <div class="form-group">
             <select class="form-control" name="status" id="status">
-              <option value="0" id="0" >Draft</option>
+              <option value="0" id="0">Draft</option>
               <option value="1" id="1">Pending_Review</option>
               <option value="2" id="2" style="color: #ffc107;">Reviewed</option>
               <option value="3" id="3">Pending_Approve</option>
@@ -94,44 +94,7 @@
       event.preventDefault();
       update_context(); // Call the function to handle the submission
     });
-    function update_context() {
-      var formData = new FormData($("#update_context")[0]);
-      $.ajax({
-        url: '<?= base_url("context/update_context") ?>',
-        type: "POST",
-        cache: false,
-        data: formData,
-        processData: false,
-        contentType: false,
-        dataType: "JSON",
-      }).done(function (response) {
-        // console.log(response.data);
-        if (response.success) {
-          Swal.fire({
-            title: response.message,
-            icon: 'success',
-            showConfirmButton: false
-          });
-          if (response.reload) {
-            setTimeout(() => {
-              if (response.reload) {
-                window.location.reload();
-              } else {
-                window.location.href = '<?= site_url("context/context_analysis/") ?>' + response.id_version;
-              }
-            }, 2000);
-          }
-        } else {
-          Swal.fire({
-            title: response.message,
-            icon: 'error',
-            showConfirmButton: true
-          });
-        }
-      });
-    }
   });
-
 </script>
 
 <script>
@@ -140,13 +103,16 @@
   var title_comment = document.getElementById("title_comment");
   var approved = document.getElementById("approved");
   var reviewed = document.getElementById("reviewed");
+  var modified = document.getElementById("modified");
 
   statusSelect.addEventListener("change", function () {
+    modified.required = false;
     if (statusSelect.value === "5" || statusSelect.value === "6") { // ค่า "Reject" มี value เท่ากับ "5"
       commentTextArea.style.display = "block"; // แสดง textarea
       title_comment.style.display = "block"; // แสดง comment
       approved.required = false;
       reviewed.required = false;
+      modified.required = true;
     } else if (statusSelect.value === "2") {
       commentTextArea.style.display = "none"; // ซ่อน textarea
       title_comment.style.display = "none"; // ซ่อน comment
@@ -236,4 +202,60 @@
 
     }
   }
+</script>
+
+<script>
+  function update_context() {
+    var formData = new FormData($("#update_context")[0]);
+
+    // Show loading indicator here
+    var loadingIndicator = Swal.fire({
+      title: 'Loading...',
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      onOpen: () => {
+        Swal.showLoading();
+      }
+    });
+
+    $.ajax({
+      url: '<?= base_url("context/update_context") ?>',
+      type: "POST",
+      cache: false,
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: "JSON",
+      beforeSend: function () {
+        // Show loading indicator here
+        loadingIndicator;
+      },
+    }).done(function (response) {
+      if (response.success) {
+        Swal.fire({
+          title: response.message,
+          icon: 'success',
+          showConfirmButton: false
+        });
+
+        if (response.reload) {
+          setTimeout(() => {
+            if (response.reload) {
+              window.location.reload();
+            } else {
+              window.location.href = '<?= site_url("context/context_analysis/") ?>' + response.id_version;
+            }
+          }, 2000);
+        }
+      } else {
+        Swal.fire({
+          title: response.message,
+          icon: 'error',
+          showConfirmButton: true
+        });
+      }
+    });
+  }
+
 </script>

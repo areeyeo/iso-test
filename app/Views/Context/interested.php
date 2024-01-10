@@ -245,6 +245,12 @@
             </div>
             <div class="card" id="interested_table">
               <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12 text-right">
+                    <button type="button" class="btn btn-outline-primary" onclick="load_modal(3,1)" data-toggle="modal"
+                      data-target="#modal-default"><i class="fas fa-edit"></i> Create Interested Party</button>
+                  </div>
+                </div>
                 <div class="form-group">
                   <table id="example1" class="table table-hover">
                     <thead>
@@ -480,15 +486,33 @@
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: "#28a745",
-        confirmButtonText: "submit",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          $.ajax({
+        confirmButtonText: "Submit",
+        preConfirm: () => {
+          // Show loading indicator here
+          var loadingIndicator = Swal.fire({
+            title: 'Loading...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            onOpen: () => {
+              Swal.showLoading();
+            }
+          });
+
+          return $.ajax({
             url: '<?= base_url() ?>' + url,
             headers: {
               'X-Requested-With': 'XMLHttpRequest'
+            },
+            beforeSend: function () {
+              // Show loading indicator here
+              loadingIndicator;
+            },
+            complete: function () {
+              // Hide loading indicator here
+              Swal.close();
             }
-          }).done(function (response) {
+          }).then(function (response) {
             if (response.success) {
               Swal.fire({
                 title: response.message,
@@ -499,7 +523,7 @@
                 if (response.reload) {
                   if (response.newCopy) {
                     window.location.href = '<?= site_url("context/interested_party/") ?>' + response.id_version + '/' + response.num_ver;
-                  }else{
+                  } else {
                     window.location.reload();
                   }
                 }
@@ -515,10 +539,22 @@
         }
       });
     }
+
   </script>
   <script>
     function action_(url, form) {
       var formData = new FormData(document.getElementById(form));
+
+      var loadingIndicator = Swal.fire({
+        title: 'Loading...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        onOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
       $.ajax({
         url: '<?= base_url() ?>' + url,
         type: "POST",
@@ -527,6 +563,10 @@
         processData: false,
         contentType: false,
         dataType: "JSON",
+        beforeSend: function () {
+          // Show loading indicator here
+          loadingIndicator;
+        },
         success: function (response) {
           if (response.success) {
             Swal.fire({
@@ -556,7 +596,6 @@
           });
         }
       });
-
     }
   </script>
   <script>
@@ -618,7 +657,7 @@
             if (daData.length == 0) {
               $('#example1 tbody').html(`
               <tr>
-                  <td colspan="1">
+                  <td colspan="5">
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -628,8 +667,6 @@
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
-                  </td>
-                  <td colspan="4">
                   </td>
               </tr>`);
             }

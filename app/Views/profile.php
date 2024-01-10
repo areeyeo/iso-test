@@ -1,3 +1,5 @@
+<title>Profile</title>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -342,9 +344,18 @@
         // Ajax form submission with image
         function store_alert() {
             var id_ = document.getElementById("id_").value;
+            var url_link = 'passownuserlist/edit/' + id_;
 
-            var url_link;
-            url_link = 'passownuserlist/edit/' + id_;
+            // Show loading indicator here
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
 
             var formData = new FormData($("#user-changepass")[0]);
             $.ajax({
@@ -355,6 +366,10 @@
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
             })
                 .done(function (response) {
                     if (response.success) {
@@ -378,6 +393,7 @@
                     }
                 })
                 .fail(function (xhr, status, error) {
+                    // Hide loading indicator here in case of failure
                     Swal.fire({
                         title: error,
                         icon: 'error',
@@ -386,12 +402,22 @@
                 });
         }
 
+
         // Ajax form submission with image
         function store_alert1() {
             var id_ = document.getElementById("id_").value;
+            var url_link = 'ownuserlist/edit/' + id_;
 
-            var url_link;
-            url_link = 'ownuserlist/edit/' + id_;
+            // Show loading indicator here
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
 
             var formData = new FormData($("#user-update")[0]);
             $.ajax({
@@ -402,6 +428,10 @@
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
             })
                 .done(function (response) {
                     if (response.success) {
@@ -434,6 +464,7 @@
                     }
                 })
                 .fail(function (xhr, status, error) {
+                    // Hide loading indicator here in case of failure
                     Swal.fire({
                         title: error,
                         icon: 'error',
@@ -441,6 +472,7 @@
                     });
                 });
         }
+
     });
 </script>
 <script>

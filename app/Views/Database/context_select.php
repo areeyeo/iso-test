@@ -13,7 +13,8 @@
     <!-- daterange picker -->
     <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+    <link rel="stylesheet"
+        href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 
@@ -85,7 +86,8 @@
                                     <h3 class="card-title">Topic Management</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool">
-                                            <i class="fas fa-plus-square" data-toggle="modal" data-target="#modal-default-create"></i>
+                                            <i class="fas fa-plus-square" data-toggle="modal"
+                                                data-target="#modal-default-create"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -93,17 +95,24 @@
                                 <div class="card-body">
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Internal Issues</a>
+                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill"
+                                                href="#pills-home" role="tab" aria-controls="pills-home"
+                                                aria-selected="true">Internal Issues</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">External Issues</a>
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill"
+                                                href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                                aria-selected="false">External Issues</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Interested Party</a>
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill"
+                                                href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                                aria-selected="false">Interested Party</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content" id="pills-tabContent">
-                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                            aria-labelledby="pills-home-tab">
                                             <table id="example1" class="table table-bordered table-hover">
                                                 <thead>
                                                     <tr>
@@ -114,8 +123,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php if ($data_inter_iss) : ?>
-                                                        <?php foreach ($data_inter_iss as $item) : ?>
+                                                    <?php if ($data_inter_iss): ?>
+                                                        <?php foreach ($data_inter_iss as $item): ?>
                                                             <tr>
                                                                 <td class="text-center">
                                                                     <?php echo $item['id_internal_issues'] ?>
@@ -124,29 +133,34 @@
                                                                     <?php echo $item['topic'] ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <?php if ($item['activated'] == 0) : ?>
-                                                                        <span class='badge' style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
-                                                                    <?php else : ?>
-                                                                        <span class='badge' style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
+                                                                    <?php if ($item['activated'] == 0): ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
+                                                                    <?php else: ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
                                                                     <?php endif; ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-default-edit" onclick="ShowEdit(<?php echo $item['id_internal_issues']; ?> , 1)">
+                                                                    <button type="button" class="btn" data-toggle="modal"
+                                                                        data-target="#modal-default-edit"
+                                                                        onclick="ShowEdit(<?php echo $item['id_internal_issues']; ?> , 1)">
                                                                         <i class="fas fa-edit"></i>
                                                                     </button>
                                                                 </td>
                                                             <?php endforeach; ?>
-                                                        <?php else : ?>
+                                                        <?php else: ?>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
-                                                            </tr>
-                                                        <?php endif; ?>
+                                                        </tr>
+                                                    <?php endif; ?>
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                            aria-labelledby="pills-profile-tab">
                                             <table id="example2" class="table table-bordered table-hover">
                                                 <thead>
                                                     <tr>
@@ -157,8 +171,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php if ($data_exter_iss) : ?>
-                                                        <?php foreach ($data_exter_iss as $item) : ?>
+                                                    <?php if ($data_exter_iss): ?>
+                                                        <?php foreach ($data_exter_iss as $item): ?>
                                                             <tr>
                                                                 <td class="text-center">
                                                                     <?php echo $item['id_external_issues'] ?>
@@ -167,29 +181,34 @@
                                                                     <?php echo $item['topic'] ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <?php if ($item['activated'] == 0) : ?>
-                                                                        <span class='badge' style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
-                                                                    <?php else : ?>
-                                                                        <span class='badge' style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
+                                                                    <?php if ($item['activated'] == 0): ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
+                                                                    <?php else: ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
                                                                     <?php endif; ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-default-edit" onclick="ShowEdit(<?php echo $item['id_external_issues']; ?> , 2)">
+                                                                    <button type="button" class="btn" data-toggle="modal"
+                                                                        data-target="#modal-default-edit"
+                                                                        onclick="ShowEdit(<?php echo $item['id_external_issues']; ?> , 2)">
                                                                         <i class="fas fa-edit"></i>
                                                                     </button>
                                                                 </td>
                                                             <?php endforeach; ?>
-                                                        <?php else : ?>
+                                                        <?php else: ?>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
-                                                            </tr>
-                                                        <?php endif; ?>
+                                                        </tr>
+                                                    <?php endif; ?>
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
                                             <table id="example3" class="table table-bordered table-hover">
                                                 <thead>
                                                     <tr>
@@ -200,8 +219,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php if ($data_interested_iss) : ?>
-                                                        <?php foreach ($data_interested_iss as $item) : ?>
+                                                    <?php if ($data_interested_iss): ?>
+                                                        <?php foreach ($data_interested_iss as $item): ?>
                                                             <tr>
                                                                 <td class="text-center">
                                                                     <?php echo $item['id_interested_issues'] ?>
@@ -210,25 +229,29 @@
                                                                     <?php echo $item['topic'] ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <?php if ($item['activated'] == 0) : ?>
-                                                                        <span class='badge' style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
-                                                                    <?php else : ?>
-                                                                        <span class='badge' style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
+                                                                    <?php if ($item['activated'] == 0): ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #dc3545; color: #f8f9fa;'>ปิดใช้งาน</span>
+                                                                    <?php else: ?>
+                                                                        <span class='badge'
+                                                                            style='background-color: #28a745; color: #f8f9fa;'>เปิดใช้งาน</span>
                                                                     <?php endif; ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-default-edit" onclick="ShowEdit(<?php echo $item['id_interested_issues']; ?> , 3)">
+                                                                    <button type="button" class="btn" data-toggle="modal"
+                                                                        data-target="#modal-default-edit"
+                                                                        onclick="ShowEdit(<?php echo $item['id_interested_issues']; ?> , 3)">
                                                                         <i class="fas fa-edit"></i>
                                                                     </button>
                                                                 </td>
                                                             <?php endforeach; ?>
-                                                        <?php else : ?>
+                                                        <?php else: ?>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
                                                             <td class="text-center"> - </td>
-                                                            </tr>
-                                                        <?php endif; ?>
+                                                        </tr>
+                                                    <?php endif; ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -247,10 +270,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal-default-edit" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-default-edit" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <form class="mb-3" id="context_select" action="javascript:void(0)" method="post" enctype="multipart/form-data">
+                <form class="mb-3" id="context_select" action="javascript:void(0)" method="post"
+                    enctype="multipart/form-data">
                     <div class="overlay preloader">
                         <i class="fas fa-2x fa-sync fa-spin"></i>
                     </div>
@@ -263,32 +288,38 @@
                     <div class="modal-body">
                         <div>
                             <h5>Activated</h5>
-                            <input type="checkbox" name="activated" id="activated" data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                            <input type="checkbox" name="activated" id="activated" data-bootstrap-switch
+                                data-off-color="danger" data-on-color="success">
                         </div>
                         <div class="mt-3">
                             <h5>Topic</h5>
-                            <textarea class="form-control" type="text" placeholder="" name="topic" id="topic" disabled></textarea>
+                            <textarea class="form-control" type="text" placeholder="" name="topic" id="topic"
+                                disabled></textarea>
                         </div>
                         <div class="mt-3">
                             <h5>Description</h5>
-                            <textarea class="form-control" type="text" placeholder="" name="description" id="description" disabled></textarea>
+                            <textarea class="form-control" type="text" placeholder="" name="description"
+                                id="description" disabled></textarea>
                         </div>
                         <input type="text" id="check" name="check" hidden>
                         <input type="text" id="id_" name="id_" hidden>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="submit" value="Submit" onclick="store_alert('context_select' , 'update')">Save</button>
+                        <button type="submit" class="btn btn-success" name="submit" value="Submit"
+                            onclick="store_alert('context_select' , 'update')">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-default-create" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-default-create" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form class="mb-3" id="context_select_create" action="javascript:void(0)" method="post" enctype="multipart/form-data">
+                <form class="mb-3" id="context_select_create" action="javascript:void(0)" method="post"
+                    enctype="multipart/form-data">
                     <div class="overlay preloader">
                         <i class="fas fa-2x fa-sync fa-spin"></i>
                     </div>
@@ -301,7 +332,8 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <h5>Select Topic</h5>
-                            <select class="form-control select2" style="width: 100%;" id="select_topic" name="select_topic">
+                            <select class="form-control select2" style="width: 100%;" id="select_topic"
+                                name="select_topic">
                                 <option selected="selected" value="1">Internal Issues</option>
                                 <option value="2">External Issues</option>
                                 <option value="3">Interested Party</option>
@@ -309,16 +341,19 @@
                         </div>
                         <div class="mt-3">
                             <h5>Topic</h5>
-                            <textarea class="form-control" type="text" placeholder="" name="topic_create" id="topic_create" required></textarea>
+                            <textarea class="form-control" type="text" placeholder="" name="topic_create"
+                                id="topic_create" required></textarea>
                         </div>
                         <div class="mt-3">
                             <h5>Description</h5>
-                            <textarea class="form-control" type="text" placeholder="" name="description_create" id="description_create" required></textarea>
+                            <textarea class="form-control" type="text" placeholder="" name="description_create"
+                                id="description_create" required></textarea>
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="submit" value="Submit" onclick="store_alert('context_select_create' , 'create')">Save</button>
+                        <button type="submit" class="btn btn-success" name="submit" value="Submit"
+                            onclick="store_alert('context_select_create' , 'create')">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -351,7 +386,7 @@
     <script src="<?= base_url('plugins/bootstrap-switch/js/bootstrap-switch.min.js'); ?>"></script>
 
     <script>
-        $(function() {
+        $(function () {
             $('#example1').DataTable({
                 "paging": true,
                 "lengthChange": false,
@@ -398,11 +433,11 @@
                         $(".modal-body #id_").val(id);
                         $(".modal-body #check").val(check);
                         if (element.activated == 1) {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', true);
                             });
                         } else {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', false);
                             });
                         }
@@ -418,11 +453,11 @@
                         $(".modal-body #id_").val(id);
                         $(".modal-body #check").val(check);
                         if (element.activated == 1) {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', true);
                             });
                         } else {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', false);
                             });
                         }
@@ -438,11 +473,11 @@
                         $(".modal-body #id_").val(id);
                         $(".modal-body #check").val(check);
                         if (element.activated == 1) {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', true);
                             });
                         } else {
-                            $("input[data-bootstrap-switch]").each(function() {
+                            $("input[data-bootstrap-switch]").each(function () {
                                 $(this).bootstrapSwitch('state', false);
                             });
                         }
@@ -454,13 +489,22 @@
     </script>
     <script>
         function store_alert(id_modal, url_link) {
-            $("#" + id_modal).off('submit').on('submit', function(e) {
+            $("#" + id_modal).off('submit').on('submit', function (e) {
                 e.preventDefault();
-                // แสดง loading modal ก่อนทำ AJAX POST
-                $('#loadingModal').modal('show');
-
                 // อ่านข้อมูลจากฟอร์ม
                 var formData = new FormData(this);
+
+                // Show loading indicator here
+                var loadingIndicator = Swal.fire({
+                    title: 'Loading...',
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    onOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
                 // ส่งคำขอ AJAX
                 $.ajax({
                     url: '<?= base_url("database/context_select/") ?>' + url_link,
@@ -470,11 +514,12 @@
                     processData: false,
                     contentType: false,
                     dataType: "JSON",
-                    success: function(response) {
-                        console.log(response);
+                    beforeSend: function () {
+                        // Show loading indicator here
+                        loadingIndicator;
+                    },
+                    success: function (response) {
                         // ซ่อน loading modal เมื่อ AJAX POST เสร็จสิ้น
-                        $('#loadingModal').modal('hide');
-
                         if (response.success) {
                             Swal.fire({
                                 title: response.message,
@@ -494,11 +539,8 @@
                             });
                         }
                     },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                        // ซ่อน loading modal เมื่อเกิดข้อผิดพลาดในการ AJAX POST
-                        $('#loadingModal').modal('hide');
-
+                    error: function (xhr, status, error) {
+                        // Hide loading modal when there is an AJAX POST error
                         Swal.fire({
                             title: "เกิดข้อผิดพลาด",
                             icon: 'error',
@@ -508,6 +550,7 @@
                 });
             });
         }
+
     </script>
 </body>
 

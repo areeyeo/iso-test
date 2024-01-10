@@ -184,7 +184,6 @@
 
     <script>
         function load_modal(params, id_) {
-            console.log(params);
             // console.log(check);
             // console.log(data)
             modal1 = document.getElementById("modal1");

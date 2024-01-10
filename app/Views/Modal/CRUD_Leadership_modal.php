@@ -22,10 +22,11 @@
                 <div class="form-group" id="form-group-file">
                     <h6>Attach File</h6>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf"
-                            data-max-size="20971520" name="file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile"
+                            accept=".docx, .pdf, .xlsx , .doc" data-max-size="20971520" name="file">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
+                    <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
                 </div>
                 <div class="form-group" id="form-group-text">
                     <h6>Note</h6>
@@ -51,7 +52,7 @@
     $("#form_crud").on('submit', function (e) {
         e.preventDefault();
         const urlRouteInput = document.getElementById("url_route");
-        action_(urlRouteInput.value , 'form_crud'); 
+        action_(urlRouteInput.value, 'form_crud');
     });
 </script>
 <script>

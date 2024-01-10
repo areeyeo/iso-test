@@ -245,22 +245,38 @@
             </div>
             <div class="card" id="context-ana">
               <div class="card-body">
-                <div class="form-group">
-                  <ul class="nav nav-pills" id="tabs-tab" role="tablist">
-                    <li class="nav-item-tab" style="padding-right: 10px;">
-                      <a class="nav-link active" id="internal-tab" data-toggle="pill" href="#internal" role="tab"
-                        aria-controls="internal" aria-selected="true">Internal
-                        Issues</a>
-                    </li>
-                    <li class="nav-item-tab">
-                      <a class="nav-link" id="external-tab" data-toggle="pill" href="#external" role="tab"
-                        aria-controls="external" aria-selected="false" onclick="getTableData2();">External Issues</a>
-                    </li>
-                  </ul>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="form-group">
+                      <ul class="nav nav-pills" id="tabs-tab" role="tablist">
+                        <li class="nav-item-tab" style="padding-right: 10px;">
+                          <a class="nav-link active" id="internal-tab" data-toggle="pill" href="#internal" role="tab"
+                            aria-controls="internal" aria-selected="true">Internal
+                            Issues</a>
+                        </li>
+                        <li class="nav-item-tab">
+                          <a class="nav-link" id="external-tab" data-toggle="pill" href="#external" role="tab"
+                            aria-controls="external" aria-selected="false" onclick="getTableData2();">External
+                            Issues</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-2 text-right" id="btn-internal" name="btn-internal">
+                    <button type="button" class="btn btn-outline-primary" onclick="load_modal(3,1)" data-toggle="modal"
+                      data-target="#modal-default"><i class="fas fa-edit"></i> Create Internal
+                      Issue</button>
+                  </div>
+                  <div class="col-sm-2 text-right" id="btn-external" name="btn-internal">
+                    <button type="button" class="btn btn-outline-primary" onclick="load_modal(3,2)" data-toggle="modal"
+                      data-target="#modal-default"><i class="fas fa-edit"></i> Create External
+                      Issue</button>
+                  </div>
                 </div>
                 <hr>
                 <div class="tab-content">
-                  <div class="tab-pane fade show active" id="internal" role="tabpanel" aria-labelledby="org-strategy-tab">
+                  <div class="tab-pane fade show active" id="internal" role="tabpanel"
+                    aria-labelledby="org-strategy-tab">
                     <table id="example1" class="table table-hover">
                       <thead>
                         <tr>
@@ -355,6 +371,7 @@
   <script>
     $(document).ready(function () {
       getTableData1();
+      $('#btn-external').hide();
     });
   </script>
   <script>
@@ -522,15 +539,33 @@
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: "#28a745",
-        confirmButtonText: "submit",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          $.ajax({
+        confirmButtonText: "Submit",
+        preConfirm: () => {
+          // Show loading indicator here
+          var loadingIndicator = Swal.fire({
+            title: 'Loading...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            onOpen: () => {
+              Swal.showLoading();
+            }
+          });
+
+          return $.ajax({
             url: '<?= base_url() ?>' + url,
             headers: {
               'X-Requested-With': 'XMLHttpRequest'
+            },
+            beforeSend: function () {
+              // Show loading indicator here
+              loadingIndicator;
+            },
+            complete: function () {
+              // Hide loading indicator here
+              Swal.close();
             }
-          }).done(function (response) {
+          }).then(function (response) {
             if (response.success) {
               Swal.fire({
                 title: response.message,
@@ -541,7 +576,7 @@
                 if (response.reload) {
                   if (response.newCopy) {
                     window.location.href = '<?= site_url("context/context_analysis/") ?>' + response.id_version + '/' + response.num_ver;
-                  }else{
+                  } else {
                     window.location.reload();
                   }
                 }
@@ -561,6 +596,17 @@
   <script>
     function action_(url, form) {
       var formData = new FormData(document.getElementById(form));
+
+      var loadingIndicator = Swal.fire({
+        title: 'Loading...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        onOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
       $.ajax({
         url: '<?= base_url() ?>' + url,
         type: "POST",
@@ -569,6 +615,10 @@
         processData: false,
         contentType: false,
         dataType: "JSON",
+        beforeSend: function () {
+          // Show loading indicator here
+          loadingIndicator;
+        },
         success: function (response) {
           if (response.success) {
             Swal.fire({
@@ -598,7 +648,6 @@
           });
         }
       });
-
     }
   </script>
   <script>
@@ -663,7 +712,7 @@
             if (daData.length == 0) {
               $('#example1 tbody').html(`
               <tr>
-                <td colspan="1">
+                <td colspan="5">
                     <div class="dropdown">
                         <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff;" type="button"
                             class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -673,8 +722,6 @@
                                 data-target="#modal-default">Create</a>
                         </div>
                     </div>
-                </td>
-                <td colspan="4">
                 </td>
             </tr>`);
             }
@@ -811,7 +858,7 @@
             if (daData.length == 0) {
               $('#example2 tbody').html(`
               <tr>
-                <td colspan="1">
+                <td colspan="5">
                     <div class="dropdown">
                         <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff;" type="button"
                             class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -821,8 +868,6 @@
                                 data-target="#modal-default">Create</a>
                         </div>
                     </div>
-                </td>
-                <td colspan="4">
                 </td>
             </tr>`);
             }
@@ -925,4 +970,16 @@
         $('[data-toggle="tooltip"]').tooltip();
       }
     }
+  </script>
+  <script>
+    $('#internal-tab').on('click', function () {
+      console.log('internal-tab');
+      $('#btn-internal').show();
+      $('#btn-external').hide();
+    });
+    $('#external-tab').on('click', function () {
+      console.log('external-tab');
+      $('#btn-internal').hide();
+      $('#btn-external').show();
+    })
   </script>

@@ -35,10 +35,10 @@
         <div class="form-group">
           <h6>Attach File</h6>
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf"
-              data-max-size="20971520" name="file">
+            <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf, .xlsx , .doc" data-max-size="20971520" name="file">
             <label class="custom-file-label" for="customFile">Choose file</label>
           </div>
+          <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
         </div>
         <input type="text" id="url_route" name="url_route" hidden>
         <input type="text" id="check_type" name="check_type" hidden>

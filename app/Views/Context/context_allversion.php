@@ -149,7 +149,6 @@
 
   <script>
     $(document).ready(function () {
-
       var type = <?php echo json_encode($type); ?>;
       var daData = null;
       $('#datatable').DataTable({
@@ -302,12 +301,28 @@
   </script>
   <script>
     function Action_Alert(url_link) {
-      var url1 = ""
+      var url1 = "";
+
+      // Show loading indicator here
+      var loadingIndicator = Swal.fire({
+        title: 'Loading...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        onOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
       $.ajax({
         url: '<?= base_url("context/") ?>' + url_link,
         headers: {
           'X-Requested-With': 'XMLHttpRequest'
-        }
+        },
+        beforeSend: function () {
+          // Show loading indicator here
+          loadingIndicator;
+        },
       }).done(function (response) {
         if (response.success) {
           Swal.fire({
@@ -315,26 +330,25 @@
             icon: 'success',
             showConfirmButton: false
           });
+
           setTimeout(() => {
             if (response.reload) {
               window.location.reload();
             } else {
+              var root = '';
               if (response.type == '1') {
-                var root = 'context_analysis/';
+                root = 'context_analysis/';
               } else if (response.type == '2') {
-                var root = 'interested_party/';
+                root = 'interested_party/';
               } else if (response.type == '3') {
-                var root = 'isms_scope/';
+                root = 'isms_scope/';
               } else if (response.type == '4') {
-                var root = 'isms_process/';
-              } else {
-
+                root = 'isms_process/';
               }
+
               window.location.href = '<?= site_url("context/") ?>' + root + response.id_version + '/' + response.number_ver;
             }
           }, 2000);
-
-
         } else {
           Swal.fire({
             title: response.message,
@@ -344,48 +358,7 @@
         }
       });
     }
-  </script>
-  <script>
-    // Ajax form submission with image]
-    function update_context() {
-      $('#update_context').on('submit', function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
 
-        $.ajax({
-          url: '<?= base_url("context/update_context") ?>',
-          type: "POST",
-          cache: false,
-          data: formData,
-          processData: false,
-          contentType: false,
-          dataType: "JSON",
-        }).done(function (response) {
-          if (response.success) {
-            Swal.fire({
-              title: response.message,
-              icon: 'success',
-              showConfirmButton: false
-            });
-            setTimeout(() => {
-              if (response.reload) {
-                window.location.reload();
-              } else {
-                window.location.href = '<?= site_url("context/context_analysis/") ?>' + response.id_version;
-              }
-            }, 2000);
-
-
-          } else {
-            Swal.fire({
-              title: response.message,
-              icon: 'error',
-              showConfirmButton: true
-            });
-          }
-        });
-      });
-    }
   </script>
   <script>
     function load_modal(params, data) {

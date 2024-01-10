@@ -295,16 +295,33 @@
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: "#28a745",
-                confirmButtonText: "submit",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
+                confirmButtonText: "Submit",
+                preConfirm: () => {
+                    // Show loading indicator here
+                    var loadingIndicator = Swal.fire({
+                        title: 'Loading...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        onOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    return $.ajax({
                         url: '<?= base_url() ?>' + url,
                         headers: {
                             'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        beforeSend: function () {
+                            // Show loading indicator here
+                            loadingIndicator;
+                        },
+                        complete: function () {
+                            // Hide loading indicator here
+                            Swal.close();
                         }
-                    }).done(function (response) {
-                        // console.log(response);
+                    }).then(function (response) {
                         if (response.success) {
                             Swal.fire({
                                 title: response.message,
@@ -331,6 +348,17 @@
     <script>
         function action_(url, form) {
             var formData = new FormData(document.getElementById(form));
+
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
             $.ajax({
                 url: '<?= base_url() ?>' + url,
                 type: "POST",
@@ -339,6 +367,10 @@
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
                 success: function (response) {
                     console.log(response);
                     if (response.success) {
@@ -604,7 +636,8 @@
                                 <a class="dropdown-item" data-toggle="modal" data-target="#modal-default"
                                     onclick="load_modal(4 , '${data.id_version}')">Create</a>
                             </div>
-                        </div>`;}
+                        </div>`;
+                    }
                 },
                 {
                     'data': null,

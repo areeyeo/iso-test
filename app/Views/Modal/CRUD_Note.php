@@ -49,23 +49,34 @@
       update_note(data.id_version, data.status); // Call the function to handle the submission
     });
 
-  }); function update_note(id_version, status_version) {
+  });
+  function update_note(id_version, status_version) {
     var params = document.getElementById("params").value;
     var check = document.getElementById("check").value;
-    //--params 2 = create--//
-    //--params 3 = edit--//
+
     if (params == '10') {
       if (check == '10') {
         var url_link = 'note_create/' + id_version + '/' + status_version;
       } else if (check == '11') {
         var url_link = 'note_update/' + id_version + '/' + status_version;
       } else {
-        
+        // Handle other cases if needed
       }
-    } 
-
+    }
 
     var formData = new FormData($("#form_crud_note")[0]);
+
+    // Show loading indicator here
+    var loadingIndicator = Swal.fire({
+      title: 'Loading...',
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      onOpen: () => {
+        Swal.showLoading();
+      }
+    });
+
     $.ajax({
       url: '<?= base_url("context/") ?>' + url_link,
       type: 'POST',
@@ -78,20 +89,17 @@
         xhr.upload.addEventListener("progress", function (evt) {
           if (evt.lengthComputable) {
             var percentComplete = (evt.loaded / evt.total) * 100;
-            $(".overlay").show();
-            setTimeout(() => {
-
-            }, 2000);
+            // You can update the loading status as needed
           }
         }, false);
         return xhr;
       },
-
+      beforeSend: function () {
+        // Show loading indicator here
+        loadingIndicator;
+      },
     })
       .done(function (response) {
-
-        setTimeout(() => {
-        }, 2000);
         if (response.success) {
           Swal.fire({
             title: response.message,
@@ -101,8 +109,6 @@
             showConfirmButton: false
           });
           setTimeout(() => {
-            $(".overlay").hide();
-
             if (response.reload) {
               window.location.reload();
             } else {
@@ -116,9 +122,9 @@
             showConfirmButton: true
           });
         }
-      }).fail(function (jqXHR, textStatus, errorThrown) {
-        // กรณีเกิด Error ใน Ajax Request
-        console.log("Error:", textStatus, errorThrown);
+      })
+      .fail(function (jqXHR, textStatus, errorThrown) {
+        // Handle the failure case
         Swal.fire({
           title: "เกิดข้อผิดพลาดในการส่งข้อมูล",
           text: "โปรดลองอีกครั้งในภายหลัง",
@@ -127,4 +133,5 @@
         });
       });
   }
+
 </script>

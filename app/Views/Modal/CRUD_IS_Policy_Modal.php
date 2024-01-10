@@ -22,14 +22,15 @@
         <div class="form-group">
           <h6>Attach File</h6>
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf"
+            <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf, .xlsx , .doc"
               data-max-size="20971520" name="file">
             <label class="custom-file-label" for="customFile">Choose file</label>
           </div>
+          <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
         </div>
-        <input type="text" id="check" name="check" >
-        <input type="text" id="id_" name="id_" >
-        <input type="text" id="params" name="params" >
+        <input type="text" id="check" name="check">
+        <input type="text" id="id_" name="id_">
+        <input type="text" id="params" name="params">
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="submit" value="Submit">Save</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>

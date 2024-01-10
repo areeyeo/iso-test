@@ -93,7 +93,9 @@
                                                     name="topic">
                                                     <?php if ($topic_table): ?>
                                                         <?php foreach ($topic_table as $item): ?>
-                                                            <option value="<?= $item['id_topic'] ?>"><?= $item['topic_standard'] ?></option>
+                                                            <option value="<?= $item['id_topic'] ?>">
+                                                                <?= $item['topic_standard'] ?>
+                                                            </option>
                                                         <?php endforeach; ?>
                                                     <?php endif; ?>
                                                 </select>
@@ -122,7 +124,9 @@
                                                         style="width: 100%;" id="Create_Select">
                                                         <?php if ($user_data): ?>
                                                             <?php foreach ($user_data as $item): ?>
-                                                                <option value="<?= $item['id_user'] ?>"><?= $item['name_user'] . ' ' . $item['lastname_user'] ?></option>
+                                                                <option value="<?= $item['id_user'] ?>">
+                                                                    <?= $item['name_user'] . ' ' . $item['lastname_user'] ?>
+                                                                </option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                     </select>
@@ -145,7 +149,9 @@
                                                         id="Review_Select">
                                                         <?php if ($user_data): ?>
                                                             <?php foreach ($user_data as $item): ?>
-                                                                <option value="<?= $item['id_user'] ?>"><?= $item['name_user'] . ' ' . $item['lastname_user'] ?></option>
+                                                                <option value="<?= $item['id_user'] ?>">
+                                                                    <?= $item['name_user'] . ' ' . $item['lastname_user'] ?>
+                                                                </option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                     </select>
@@ -168,7 +174,9 @@
                                                         id="Approved_Select">
                                                         <?php if ($user_data): ?>
                                                             <?php foreach ($user_data as $item): ?>
-                                                                <option value="<?= $item['id_user'] ?>"><?= $item['name_user'] . ' ' . $item['lastname_user'] ?></option>
+                                                                <option value="<?= $item['id_user'] ?>">
+                                                                    <?= $item['name_user'] . ' ' . $item['lastname_user'] ?>
+                                                                </option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                     </select>
@@ -269,8 +277,15 @@
             formData.append('Review_Select', $('#Review_Select').val());
             formData.append('Approved_Select', $('#Approved_Select').val());
             formData.append('Toic', $('#topic').val());
-            console.log(formData);
-            // ส่งคำขอ AJAX
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });            // ส่งคำขอ AJAX
             $.ajax({
                 url: '<?= base_url("permission/context/create") ?>',
                 type: "POST",
@@ -279,6 +294,10 @@
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
                 success: function (response) {
                     console.log(response);
 

@@ -34,12 +34,14 @@
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg">Sign in to start your session</p>
-                    <form class="mb-3" id="form_login" action="javascript:void(0)" method="post" enctype="multipart/form-data">
+                    <form class="mb-3" id="form_login" action="javascript:void(0)" method="post"
+                        enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" placeholder="Email" name="email" id="email" />
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
+                            <input type="password" class="form-control" placeholder="Password" name="password"
+                                id="password" />
                         </div>
                         <div class="row">
                             <div class="col-8">
@@ -50,7 +52,8 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-block" name="submit" value="Submit">Sign In</button>
+                                <button type="submit" class="btn btn-primary btn-block" name="submit"
+                                    value="Submit">Sign In</button>
                             </div>
                             <!-- /.col -->
                         </div>
@@ -84,9 +87,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Attach the event handler only once when the document is ready
-            $("#form_login").on('submit', function(event) {
+            $("#form_login").on('submit', function (event) {
                 event.preventDefault();
                 store_alert(); // Call the function to handle the submission
             });
@@ -94,16 +97,32 @@
             // Ajax form submission with image
             function store_alert() {
                 var formData = new FormData($("#form_login")[0]);
+
+                // Show loading indicator here
+                var loadingIndicator = Swal.fire({
+                    title: 'Loading...',
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    onOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
                 $.ajax({
-                        url: '<?= base_url("/login/loginAuth") ?>',
-                        type: "POST",
-                        cache: false,
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        dataType: "JSON",
-                    })
-                    .done(function(response) {
+                    url: '<?= base_url("/login/loginAuth") ?>',
+                    type: "POST",
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "JSON",
+                    beforeSend: function () {
+                        // Show loading indicator here
+                        loadingIndicator;
+                    },
+                })
+                    .done(function (response) {
                         if (response.success) {
                             Swal.fire({
                                 title: response.message,
@@ -115,7 +134,6 @@
                                     window.location.reload();
                                 } else {
                                     window.location.href = '<?= site_url("/") ?>';
-
                                 }
                             }, 2000);
                         } else {
@@ -127,7 +145,8 @@
                             });
                         }
                     })
-                    .fail(function(xhr, status, error) {
+                    .fail(function (xhr, status, error) {
+                        // Hide loading indicator here in case of failure
                         Swal.fire({
                             title: error,
                             icon: 'error',
@@ -135,6 +154,7 @@
                         });
                     });
             }
+
         });
     </script>
 </body>

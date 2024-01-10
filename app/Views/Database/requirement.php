@@ -271,10 +271,12 @@
     <script>
         var topic_select = document.getElementById("topic");
         var data_requirement = <?php echo json_encode($data_requirement); ?>;
-        topic_select.addEventListener("change", function () {
-            changeData(topic_select.value - 1);
-        });
+        // topic_select.addEventListener("change", function () {
+        //     changeData(topic_select.value - 1);
+        // });
         function changeData(id) {
+            var topic_select = document.getElementById("topic");
+            id = topic_select.value - 1;
             $("#topic_").summernote('code', data_requirement[id]['topic_standart']);
             $("#details_").summernote('code', data_requirement[id]['details']);
             $("#id_").val(data_requirement[id]['id_standard']);
@@ -316,12 +318,17 @@
         function store_alert(id_modal, url_link) {
             $("#" + id_modal).off('submit').on('submit', function (e) {
                 e.preventDefault();
-                // แสดง loading modal ก่อนทำ AJAX POST
-                $('#loadingModal').modal('show');
-
                 // อ่านข้อมูลจากฟอร์ม
                 var formData = new FormData(this);
-                // ส่งคำขอ AJAX
+                var loadingIndicator = Swal.fire({
+                    title: 'Loading...',
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    onOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
                 $.ajax({
                     url: '<?= base_url("database/context_requirement/") ?>' + url_link,
                     type: "POST",
@@ -330,10 +337,12 @@
                     processData: false,
                     contentType: false,
                     dataType: "JSON",
+                    beforeSend: function () {
+                        // Show loading indicator here
+                        loadingIndicator;
+                    },
                     success: function (response) {
                         // ซ่อน loading modal เมื่อ AJAX POST เสร็จสิ้น
-                        $('#loadingModal').modal('hide');
-
                         if (response.success) {
                             Swal.fire({
                                 title: response.message,
@@ -354,9 +363,7 @@
                         }
                     },
                     error: function (xhr, status, error) {
-                        console.error(error);
                         // ซ่อน loading modal เมื่อเกิดข้อผิดพลาดในการ AJAX POST
-                        $('#loadingModal').modal('hide');
 
                         Swal.fire({
                             title: "เกิดข้อผิดพลาด",
