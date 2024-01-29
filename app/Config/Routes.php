@@ -241,6 +241,29 @@ $routes->group("permission", ['filter' => 'authGuard'], function ($routes) {
 
 });
 
+$routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
+    //-- Planning IS Objectives --//
+    $routes->match(['get', 'post'], 'isobjective/index/(:num)/(:num)', 'ISObjectivesController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'isobjective/getdata/(:num)', 'ISObjectivesController::get_data_objective/$1'); //index
+    $routes->match(['get', 'post'], 'isobjective/create/(:num)/(:num)', 'ISObjectivesController::create_objective/$1/$2'); //create
+    $routes->match(['get', 'post'], 'isobjective/edit/(:num)/(:num)/(:num)', 'ISObjectivesController::edit_objective/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'isobjective/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_objective/$1/$2/$3/$4'); //copy
+    $routes->match(['get', 'post'], 'isobjective/delete/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_objective/$1/$2/$3/$4'); //delete
+
+    $routes->match(['get', 'post'], 'planning/getdata/(:num)', 'ISObjectivesController::get_data_planning/$1'); //index
+    $routes->match(['get', 'post'], 'planning/create/(:num)/(:num)', 'ISObjectivesController::create_planning/$1/$2'); //create
+    $routes->match(['get', 'post'], 'planning/edit/(:num)/(:num)/(:num)', 'ISObjectivesController::edit_planning/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'planning/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_planning/$1/$2/$3/$4'); //copy
+    $routes->match(['get', 'post'], 'planning/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_planning/$1/$2/$3/$4/$5'); //delete
+
+    $routes->match(['get', 'post'], 'isobjective/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
+
+    //-- Planning of Change --//
+    $routes->match(['get', 'post'], 'index/(:num)', 'AllversionController::context_index/$1');
+    $routes->match(['get', 'post'], 'planningofchange/(:num)', 'PlanningofChangeController::index/$1');
+});
+
+
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'dowloadfile/(:num)', 'AllversionController::dowloadfile/$1', ['filter' => 'authGuard']);

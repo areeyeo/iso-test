@@ -671,7 +671,8 @@
               </tr>`);
             }
           },
-          'columns': [{
+          'columns': [
+            {
             'data': null,
             'class': 'text-center',
             'render': function (data, type, row, meta) {

@@ -262,15 +262,16 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="col-sm-2 text-right" id="btn-internal" name="btn-internal">
+                  <div class="col-sm-2 text-right " id="btn-internal" name="btn-internal">
                     <button type="button" class="btn btn-outline-primary" onclick="load_modal(3,1)" data-toggle="modal"
-                      data-target="#modal-default"><i class="fas fa-edit"></i> Create Internal
-                      Issue</button>
+                      data-target="#modal-default">
+                      <span class="text-nowrap"><i class="fas fa-edit"></i>Create Internal Issue</span>
+                    </button>
                   </div>
                   <div class="col-sm-2 text-right" id="btn-external" name="btn-internal">
                     <button type="button" class="btn btn-outline-primary" onclick="load_modal(3,2)" data-toggle="modal"
-                      data-target="#modal-default"><i class="fas fa-edit"></i> Create External
-                      Issue</button>
+                      data-target="#modal-default">
+                      <span class="text-nowrap"><i class="fas fa-edit"></i>Create External Issue</span>
                   </div>
                 </div>
                 <hr>

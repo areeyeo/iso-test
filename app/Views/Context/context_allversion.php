@@ -187,23 +187,12 @@
               </div>`;
             } else {
               // ซ่อนปุ่ม "Create" ในข้อมูลอื่นๆ
-              if (row.type_version == '1') {
-                var root = 'context_analysis';
-              } else if (row.type_version == '2') {
-                var root = 'interested_party';
-              } else if (row.type_version == '3') {
-                var root = 'isms_scope';
-              } else if (row.type_version == '4') {
-                var root = 'isms_process';
-              } else {
-
-              }
               return `
               <div class="btn-group">
                   <i class="fas fa-ellipsis-h fa-rotate-90" style="color: #007bff;" type="button"
                       class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                   <div class="dropdown-menu">
-                      <a class="dropdown-item" href="<?= site_url('context/') ?>${root}/${row.id_version}/${number_index}">Open</a>
+                  <a class="dropdown-item" href="<?= site_url($url) ?>${row.id_version}/${number_index}">Open</a>
                       <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
                           onclick="load_modal(2, '${encodedRowData}')">Version Control</a>
                       <a class="dropdown-item" href="#" onclick="Action_Alert('copydata/${row.id_version}')">Copy</a>
@@ -335,18 +324,7 @@
             if (response.reload) {
               window.location.reload();
             } else {
-              var root = '';
-              if (response.type == '1') {
-                root = 'context_analysis/';
-              } else if (response.type == '2') {
-                root = 'interested_party/';
-              } else if (response.type == '3') {
-                root = 'isms_scope/';
-              } else if (response.type == '4') {
-                root = 'isms_process/';
-              }
-
-              window.location.href = '<?= site_url("context/") ?>' + root + response.id_version + '/' + response.number_ver;
+              window.location.href = '<?= site_url($url) ?>' + response.id_version + '/' + response.number_ver;
             }
           }, 2000);
         } else {

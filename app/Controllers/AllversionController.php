@@ -81,6 +81,10 @@ class AllversionController extends BaseController
             $data['header'] = "IS Objective";
             $data['url'] = "leadership/commitment/is_objective/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 5)->first();
+        } else if ($type == '10') {
+            $data['header'] = "Planning IS Objectives";
+            $data['url'] = "planning/isobjective/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 9)->first();
         } else {
 
         }
@@ -148,6 +152,8 @@ class AllversionController extends BaseController
             return redirect()->to('leadership/policy/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '9') {
             return redirect()->to('leadership/isms/index/' . (int) $data['data']['id_version']);
+        } else if ($type == '10') {
+            return redirect()->to('planning/isobjective/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else {
 
         }
@@ -244,7 +250,7 @@ class AllversionController extends BaseController
         $new = ROOTPATH . 'public/uploads/' . $id_file . '/' . $newname . '.' . $lastPart;
         rename($old, $new);
         $file_update = [
-            'name_file' => $newname.'.' . $lastPart,
+            'name_file' => $newname . '.' . $lastPart,
         ];
         $check = $filemodel->update($id_file, $file_update);
         if ($check == false) {

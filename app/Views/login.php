@@ -29,33 +29,30 @@
         <div class="login-box">
             <!-- /.login-logo -->
             <div class="card card-outline card-primary">
-                <div class="card-header text-center">
-                    <b>ISO Optimize Tools</b>
+                <div class="d-flex justify-content-end mt-3 mr-3">
+                    <img src="<?= base_url('dist/img/logotnet.png'); ?>" style="width: 80px;">
                 </div>
+                <h3 class="text-center font-weight-bold mt-2">Login</h3>
                 <div class="card-body">
-                    <p class="login-box-msg">Sign in to start your session</p>
-                    <form class="mb-3" id="form_login" action="javascript:void(0)" method="post"
-                        enctype="multipart/form-data">
+
+                    <form class="mb-3" id="form_login" action="javascript:void(0)" method="post" enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" placeholder="Email" name="email" id="email" />
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Password" name="password"
-                                id="password" />
+                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
                         </div>
                         <div class="row">
                             <div class="col-8">
-                                <div class="icheck-primary">
-                                    <input type="checkbox" id="remember" />
-                                    <label for="remember"> Remember Me </label>
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" value="" id="remember">
+                                    <!-- <input type="checkbox" id="remember" /> -->
+                                    <label for="remember"> Remember Me</label>
                                 </div>
                             </div>
-                            <!-- /.col -->
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-block" name="submit"
-                                    value="Submit">Sign In</button>
-                            </div>
-                            <!-- /.col -->
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-block mt-2" name="submit" value="Submit">Login</button>
                         </div>
                     </form>
                     <!-- <p class="mb-1">
@@ -87,9 +84,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Attach the event handler only once when the document is ready
-            $("#form_login").on('submit', function (event) {
+            $("#form_login").on('submit', function(event) {
                 event.preventDefault();
                 store_alert(); // Call the function to handle the submission
             });
@@ -110,19 +107,19 @@
                 });
 
                 $.ajax({
-                    url: '<?= base_url("/login/loginAuth") ?>',
-                    type: "POST",
-                    cache: false,
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    dataType: "JSON",
-                    beforeSend: function () {
-                        // Show loading indicator here
-                        loadingIndicator;
-                    },
-                })
-                    .done(function (response) {
+                        url: '<?= base_url("/login/loginAuth") ?>',
+                        type: "POST",
+                        cache: false,
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        dataType: "JSON",
+                        beforeSend: function() {
+                            // Show loading indicator here
+                            loadingIndicator;
+                        },
+                    })
+                    .done(function(response) {
                         if (response.success) {
                             Swal.fire({
                                 title: response.message,
@@ -145,7 +142,7 @@
                             });
                         }
                     })
-                    .fail(function (xhr, status, error) {
+                    .fail(function(xhr, status, error) {
                         // Hide loading indicator here in case of failure
                         Swal.fire({
                             title: error,

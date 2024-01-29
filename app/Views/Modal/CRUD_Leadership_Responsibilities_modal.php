@@ -7,8 +7,7 @@
             <h4 class="modal-title" id="title_modal" name="title_modal">ISMS Roles & Responsibilities</h4>
         </div>
         <div class="modal-body">
-            <form class="mb-3" id="form_crud_responsibilities" action="javascript:void(0)" method="post"
-                enctype="multipart/form-data">
+            <form class="mb-3" id="form_crud_responsibilities" action="javascript:void(0)" method="post" enctype="multipart/form-data">
                 <div>
                     <h6>Description</h6>
                 </div>
@@ -40,19 +39,16 @@
                 </div>
                 <div class="form-group">
                     <h6>Responsibilities</h6>
-                    <input type="text" id="responsibilities" name="responsibilities" class="form-control"
-                        placeholder="Enter Responsibilities ...">
+                    <textarea class="form-control scrollbar-new" id="responsibilities" name="responsibilities" class="form-control" placeholder="Enter Responsibilities ..." rows="3"></textarea>
                 </div>
                 <div class="form-group">
                     <h6>Name - Last Name</h6>
-                    <input type="text" id="name_lastname" name="name_lastname" class="form-control"
-                        placeholder="Enter Name - Last Name ...">
+                    <input type="text" id="name_lastname" name="name_lastname" class="form-control" placeholder="Enter Name - Last Name ...">
                 </div>
                 <div class="form-group">
                     <h6>Attach File</h6>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf, .xlsx , .doc"
-                            data-max-size="20971520" name="file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile" accept=".docx, .pdf, .xlsx , .doc" data-max-size="20971520" name="file">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                     <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
@@ -69,19 +65,19 @@
 
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $(".overlay").hide();
         updateDescription();
     });
 
-    $("#form_crud_responsibilities").on('submit', function (e) {
+    $("#form_crud_responsibilities").on('submit', function(e) {
         e.preventDefault();
         const urlRouteInput = document.getElementById("url_route");
         action_(urlRouteInput.value, 'form_crud_responsibilities');
     });
 </script>
 <script>
-    $(function () {
+    $(function() {
         bsCustomFileInput.init();
     });
 </script>
@@ -103,7 +99,24 @@
             $(".modal-content #roles_detail").text('description 6');
         }
     }
-    roles_select.addEventListener("change", function () {
+    roles_select.addEventListener("change", function() {
         updateDescription();
     });
 </script>
+<style>
+    /* CSS เพิ่มเติมสำหรับ scrollbar แบบไอโฟน */
+    .scrollbar-new {
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #ADB5BD transparent;
+    }
+
+    /* CSS เพิ่มเติมสำหรับ Webkit (Chrome, Safari, Edge) */
+    .scrollbar-new::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-new::-webkit-scrollbar-thumb {
+        background-color: #ADB5BD;
+    }
+</style>

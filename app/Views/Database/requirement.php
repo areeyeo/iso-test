@@ -113,6 +113,9 @@
                                                     <option value="5" id="5">5.1 Leadership</option>
                                                     <option value="6" id="6">5.2 Policy</option>
                                                     <option value="7" id="7">5.3 Org Roles</option>
+                                                    <option value="8" id="8">6.1 Org Roles</option>
+                                                    <option value="9" id="9">6.2 Information security objectives and planning to achieve them</option>
+                                                    <option value="10" id="10">6.3 Planning of changes</option>
                                                 </select>
                                             </div>
                                             <!-- /.form-group -->
@@ -271,12 +274,14 @@
     <script>
         var topic_select = document.getElementById("topic");
         var data_requirement = <?php echo json_encode($data_requirement); ?>;
+        console.log(data_requirement);
         // topic_select.addEventListener("change", function () {
         //     changeData(topic_select.value - 1);
         // });
         function changeData(id) {
             var topic_select = document.getElementById("topic");
             id = topic_select.value - 1;
+            console.log(data_requirement[id]);
             $("#topic_").summernote('code', data_requirement[id]['topic_standart']);
             $("#details_").summernote('code', data_requirement[id]['details']);
             $("#id_").val(data_requirement[id]['id_standard']);
@@ -375,8 +380,5 @@
             });
         }
     </script>
-
-
 </body>
-
 </html>

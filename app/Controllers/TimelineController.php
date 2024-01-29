@@ -11,7 +11,7 @@ use App\Models\RequirementModels;
 
 class TimelineController extends BaseController
 {
-    public function index($id_context = null, $type = null ,$num_ver = null)
+    public function index($id_context = null, $type = null, $num_ver = null)
     {
         $AllversionModels = new AllversionModels();
 
@@ -26,19 +26,19 @@ class TimelineController extends BaseController
         $data['UserModels'] = $UserModels->findAll();
 
         $data['TimelineModels'] = $TimelineModels->orderBy('date_timeline', 'DESC')
-        ->orderBy('time_timeline', 'DESC') // เปลี่ยน 'your_column_name' เป็นชื่อคอลัมน์ที่คุณต้องการใช้ในการเรียงลำดับ
-        ->where('id_version', $id_context)
-        ->findAll();
+            ->orderBy('time_timeline', 'DESC') // เปลี่ยน 'your_column_name' เป็นชื่อคอลัมน์ที่คุณต้องการใช้ในการเรียงลำดับ
+            ->where('id_version', $id_context)
+            ->findAll();
         $data['NoteModels'] = $NoteModels->orderBy('date_create', 'DESC')
-        ->orderBy('time_create', 'DESC') // เปลี่ยน 'your_column_name' เป็นชื่อคอลัมน์ที่คุณต้องการใช้ในการเรียงลำดับ
-        ->where('id_version', $id_context)
-        ->findAll();
+            ->orderBy('time_create', 'DESC') // เปลี่ยน 'your_column_name' เป็นชื่อคอลัมน์ที่คุณต้องการใช้ในการเรียงลำดับ
+            ->where('id_version', $id_context)
+            ->findAll();
         $data['NoteComment'] = $NoteComment_Models->orderBy('date_activites', 'DESC')
-        ->orderBy('time_activites', 'DESC')->findAll();
+            ->orderBy('time_activites', 'DESC')->findAll();
 
         $data['type'] = $type;
         $data['num_ver'] = $num_ver;
-        
+
         if ($type == '1') {
             $data['url_version'] = "/context/context_analysis/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/1";
@@ -59,10 +59,15 @@ class TimelineController extends BaseController
             $data['url_allversion'] = "/context/isms_process/index/4";
             $data['text_path'] = "ISMS Process";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 4)->first();
-        }  else if ($type == '7') {
+        } else if ($type == '7') {
             $data['url_version'] = "/leadership/commitment/is_objective/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/7";
             $data['text_path'] = "IS Object";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 5)->first();
+        } else if ($type == '10') {
+            $data['url_version'] = "/planning/isobjective/index/" . $id_context . '/' . $num_ver;
+            $data['url_allversion'] = "/context/context_analysis/index/10";
+            $data['text_path'] = "Planning IS Objectives";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 5)->first();
         } else {
 
