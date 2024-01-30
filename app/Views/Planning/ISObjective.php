@@ -664,6 +664,7 @@
   <script>
     $(document).ready(function () {
       getTableData1();
+      getTableData3();
     })
   </script>
   <script>
@@ -801,7 +802,7 @@
             if (daData.length == 0) {
               $('#example2 tbody').html(`
               <tr>
-                  <td colspan="5">
+                  <td colspan="9">
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -909,6 +910,92 @@
               }
             },
           ],
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+      }
+    }
+  </script>
+  <script>
+    var countTable3 = 0;
+    function getTableData3() {
+
+      if (countTable3 === 0) {
+        countTable3++;
+        var data_version = <?php echo json_encode($data); ?>;
+        if (data_version.status === '4' || data_version.status === '5') {
+          var disabledAttribute = 'disabled';
+        }
+        if ($.fn.DataTable.isDataTable('#example3')) {
+          $('#example3').DataTable().destroy();
+        }
+        $('#example3').DataTable({
+          "processing": $("#interested_table .overlay").show(),
+          "pageLength": 10,
+          "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+          'serverSide': true,
+          'ajax': {
+            'url': "<?php echo site_url('planning/summary/getdata/'); ?>" + data_version.id_version,
+            'type': 'GET',
+            'dataSrc': 'data',
+          },
+          "responsive": true,
+          "lengthChange": false,
+          "autoWidth": false,
+          "searching": true,
+          "ordering": false,
+          "drawCallback": function (settings) {
+            $("#interested_table .overlay").hide();
+            var daData = settings.json.data;
+            var count_ = 0;
+            if (daData.length == 0) {
+              $('#example3 tbody').html(`
+              <tr>
+                  <td colspan="8">
+                    <p class="text-center">No data available in table</p>
+                  </td>
+              </tr>`);
+            } else {
+              // Use append() to add new rows to the existing content
+              $('#example3 tbody').empty(); // Clear existing content before appending new rows
+              daData.forEach(element => {
+                count_++;
+                var table = `
+                <tr>
+                  <td style="color: #007bff">${count_}</td>
+                  <td style="color: #007bff">${element.objective}</td>
+                  <td style="color: #007bff">${element.evaluation}</td>`;
+                var check_round = 0;
+                element.data_planning.forEach(element_planning => {
+                  // Concatenate the HTML string for each planning data
+                  if (check_round > 0) {
+                    table += `
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="color: #007bff">${element_planning.planning}</td>
+                    `;
+                  } else {
+                    check_round++;
+                    table += `<td style="color: #007bff">${element_planning.planning}</td>`;
+                  }
+                  table += `<td style="color: #007bff">${element_planning.start_date}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.end_date}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.owner}</td>`;
+                  if (element_planning.file_data == null){
+                    table += `<td style="color: #007bff">No File</td>`;
+                  }else{
+                    table += `<td style="color: #007bff"><a href="<?php echo base_url('openfile/'); ?>${element_planning.file_data.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">${element_planning.file_data.name_file}</a></td>`;
+                  }
+                  table += `</tr>`;
+                });
+                // Append the row to the table
+                $('#example3 tbody').append(table);
+              });
+            }
+          },
+          "columns": [{
+            "data": null
+          }]
         });
         $('[data-toggle="tooltip"]').tooltip();
       }

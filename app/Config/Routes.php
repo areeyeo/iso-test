@@ -250,11 +250,13 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'isobjective/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_objective/$1/$2/$3/$4'); //copy
     $routes->match(['get', 'post'], 'isobjective/delete/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_objective/$1/$2/$3/$4'); //delete
 
-    $routes->match(['get', 'post'], 'planning/getdata/(:num)', 'ISObjectivesController::get_data_planning/$1'); //index
+    $routes->match(['get', 'post'], 'planning/getdata/(:num)', 'ISObjectivesController::get_data_planning/$1'); //getdata
     $routes->match(['get', 'post'], 'planning/create/(:num)/(:num)', 'ISObjectivesController::create_planning/$1/$2'); //create
     $routes->match(['get', 'post'], 'planning/edit/(:num)/(:num)/(:num)', 'ISObjectivesController::edit_planning/$1/$2/$3'); //edit
     $routes->match(['get', 'post'], 'planning/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_planning/$1/$2/$3/$4'); //copy
     $routes->match(['get', 'post'], 'planning/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_planning/$1/$2/$3/$4/$5'); //delete
+
+    $routes->match(['get', 'post'], 'summary/getdata/(:num)', 'ISObjectivesController::get_data_summary/$1'); //getdata
 
     $routes->match(['get', 'post'], 'isobjective/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 

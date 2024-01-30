@@ -483,4 +483,55 @@ class ISObjectivesController extends BaseController
 
         return $this->response->setJSON($response);
     }
+
+    //-- summary --//
+    public function get_data_summary($id_version = null)
+    {
+        $Planning_is_planningModels = new Planning_is_planningModels();
+        $Planning_is_objectivesModels = new Planning_is_objectivesModels();
+        $filemodel = new FileModels();
+
+        $limit = $this->request->getVar('length');
+        $start = $this->request->getVar('start');
+        $draw = $this->request->getVar('draw');
+        $searchValue = $this->request->getVar('search')['value'];
+
+        if (!empty($searchValue)) {
+            $Planning_is_objectivesModels->groupStart()
+                ->like('id_objective', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
+                ->orLike('objective', $searchValue)
+                ->orLike('evaluation', $searchValue)
+                ->groupEnd();
+        }
+        $totalRecords = $Planning_is_objectivesModels->where('id_version', $id_version)->countAllResults();
+        $recordsFiltered = $totalRecords;
+
+        if (!empty($searchValue)) {
+            $Planning_is_objectivesModels->groupStart()
+                ->like('id_objective', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
+                ->orLike('objective', $searchValue)
+                ->orLike('evaluation', $searchValue)
+                ->groupEnd();
+        }
+        $data = $Planning_is_objectivesModels->where('id_version', $id_version)->findAll($limit, $start);
+
+        foreach ($data as $key => $value) {
+            $data_Planning = $Planning_is_planningModels->where('id_objective', $value['id_objective'])->findAll();
+            foreach ($data_Planning as $key1 => $value1) {
+                $data_Planning[$key1]['file_data'] = $filemodel->where('id_files', $value1['file'])->first();
+            }
+
+            $data[$key]['data_planning'] = $data_Planning;
+        }
+
+        $response = [
+            'draw' => intval($draw),
+            'recordsTotal' => $totalRecords,
+            'recordsFiltered' => $recordsFiltered,
+            'data' => $data,
+            'searchValue' => $searchValue
+        ];
+
+        return $this->response->setJSON($response);
+    }
 }
