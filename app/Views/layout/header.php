@@ -254,13 +254,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?= site_url('/support/competenec'); ?>" class="nav-link">
+                                    <a href="<?= site_url('context/loaddatatype/12'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Competence</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('/support/awareness'); ?>" class="nav-link">
+                                    <a href="<?= site_url('context/loaddatatype/13'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Awareness</p>
                                     </a>

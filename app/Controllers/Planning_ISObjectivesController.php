@@ -337,7 +337,7 @@ class Planning_ISObjectivesController extends BaseController
             if ($newData == true) {
                 $TimelineModels = new TimelineModels();
                 $data_log = [
-                    'text_timeline' => session()->get('name') . ' ' . session()->get('lastname') . ' Copy Interested Party',
+                    'text_timeline' => session()->get('name') . ' ' . session()->get('lastname') . ' Copy Planning',
                     'type_timeline' => 1,
                     'status_id' => $status_version,
                     'id_note' => null,
@@ -347,13 +347,13 @@ class Planning_ISObjectivesController extends BaseController
                 $TimelineModels->save($data_log);
                 $response = [
                     'success' => true,
-                    'message' => 'Successfully copied Interested Party No. ' . $No . '',
+                    'message' => 'Successfully copied Planning No. ' . $No . '',
                     'reload' => true,
                 ];
             } else {
                 $response = [
                     'success' => false,
-                    'message' => 'Unable to copy Interested Party No. ' . $No . '!',
+                    'message' => 'Unable to copy Planning No. ' . $No . '!',
                 ];
             }
             return $this->response->setJSON($response);

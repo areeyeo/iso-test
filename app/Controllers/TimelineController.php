@@ -68,7 +68,17 @@ class TimelineController extends BaseController
             $data['url_version'] = "/planning/isobjective/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/10";
             $data['text_path'] = "Planning IS Objectives";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 5)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 9)->first();
+        } else if ($type == '12') {
+            $data['url_version'] = "/support/competence/index/" . $id_context . '/' . $num_ver;
+            $data['url_allversion'] = "/context/context_analysis/index/12";
+            $data['text_path'] = "Support Competence";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 12)->first();
+        } else if ($type == '13') {
+            $data['url_version'] = "/support/awareness/index/" . $id_context . '/' . $num_ver;
+            $data['url_allversion'] = "/context/context_analysis/index/13";
+            $data['text_path'] = "Support Awareness";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 13)->first();
         } else {
 
         }

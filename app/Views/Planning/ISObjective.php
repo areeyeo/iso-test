@@ -681,7 +681,7 @@
           $('#example1').DataTable().destroy();
         }
         $('#example1').DataTable({
-          "processing": $("#interested_table .overlay").show(),
+          "processing": $("#example1 .overlay").show(),
           "pageLength": 10,
           "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
           'serverSide': true,
@@ -696,7 +696,7 @@
           "searching": true,
           "ordering": false,
           "drawCallback": function (settings) {
-            $("#interested_table .overlay").hide();
+            $("#example1 .overlay").hide();
             var daData = settings.json.data;
             if (daData.length == 0) {
               $('#example1 tbody').html(`
@@ -771,7 +771,6 @@
   <script>
     var countTable2 = 0;
     function getTableData2() {
-
       if (countTable2 === 0) {
         countTable2++;
         var data_version = <?php echo json_encode($data); ?>;

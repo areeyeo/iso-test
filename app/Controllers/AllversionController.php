@@ -85,7 +85,15 @@ class AllversionController extends BaseController
             $data['header'] = "Planning IS Objectives";
             $data['url'] = "planning/isobjective/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 9)->first();
-        } else {
+        } else if ($type == '12') {
+            $data['header'] = "Competence";
+            $data['url'] = "support/competence/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 12)->first();
+        } else if ($type == '13') {
+            $data['header'] = "Awareness";
+            $data['url'] = "support/awareness/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 13)->first();
+        }else {
 
         }
         echo view('layout/header');
@@ -156,7 +164,11 @@ class AllversionController extends BaseController
             return redirect()->to('planning/isobjective/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '11') {
             return redirect()->to('planning/planningofchange/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
-        } else {
+        } else if ($type == '12') {
+            return redirect()->to('support/competence/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        }else if ($type == '13') {
+            return redirect()->to('support/awareness/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        }else {
 
         }
     }

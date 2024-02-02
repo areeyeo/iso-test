@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css'); ?>">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/css/bootstrap-icons.min.css" rel="stylesheet">
 <style>
     tr:nth-child(even) {
         background-color: #F5F5F5;
@@ -110,32 +109,36 @@
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 <i class="fas fa-minus"></i>
                             </button>
-                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/') ?>" style="color: #ADB5BD;">Version</a></button>
-                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;">
-                                <a href="<?= site_url('context/ISObjective/timeline_log/') ?>" style="color: #ADB5BD;">History</a>
-                            </button>
+                            <?php if ($data['status'] == 4 || $data['status'] == 5) {
+                                $disabled = '';
+                            } else {
+                                $disabled = '';
+                            } ?>
+                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>" style="color: #ADB5BD;">Version</a></button>
+                            <button class="badge badge-edit <?= $disabled ?>" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('support/awareness/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>" style="color: #ADB5BD;">History</a></button>
                             <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-submenu">
                                     <a class="dropdown-item dropdown-toggle" href="#">Status</a>
                                     <div class="dropdown-menu">
                                         <!-- Second-level dropdown items -->
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/id_version ?>/1')">Pending Review</a>
+                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
+                                            Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/id_version ?>/2')">Review</a>
+                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Reject Review</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,5)">Reject Review</a>
 
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/id_version ?>/3')">Pending
+                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
                                             Approve</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/id_version ?>/4')">Approved</a>
+                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(4)">Reject Approved</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,6)">Reject Approved</a>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
@@ -148,21 +151,19 @@
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Create Note</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#" onclick="load_modal(4)">Create Note</a>
                             </div>
-
-                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(1)"></i>
+                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2)"></i>
+                            <!-- show version Control -->
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="row justify-content-center mb-2">
                                 <div class="col-sm-3 ">
-                                    <h6>Version:
-                                        <span class="blue-text">
-                                            <?php echo $data['num_ver']; ?>
-                                        </span>
-                                    </h6>
+                                    <h6>Version: <span class="blue-text">
+                                            <?= $data['num_ver'] ?>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
                                     <h6>Status:
@@ -186,39 +187,32 @@
                                     </h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Approved Date:
-                                        <span class="gray-text">
+                                    <h6>Approved Date: <span class="gray-text">
                                             <?php echo $data['approved_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-sm-3 ">
-                                    <h6>Modified Date:
-                                        <span class="gray-text">
+                                    <h6>Modified Date: <span class="gray-text">
                                             <?php echo $data['modified_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Last Reviewed:
-                                        <span class="gray-text">
+                                    <h6>Last Reviewed: <span class="gray-text">
                                             <?php echo $data['review_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Announce Date:
-                                        <span class="gray-text">
+                                    <h6>Announce Date: <span class="gray-text">
                                             <?php echo $data['announce_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <section class="content">
             <div class="container-fluid">
@@ -231,7 +225,7 @@
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <h4>Awareness</h4>
                                             <div id="btn-Awareness" name="btn-Awareness">
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default" onclick="load_modal(2)">
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default" onclick="load_modal(5,1)">
                                                     <span class="text-nowrap"><i class="fas fa-edit"></i>Create Awareness</span>
                                                 </button>
                                             </div>
@@ -265,8 +259,17 @@
     </div>
 
     <div class="modal fade" id="modal-default">
+        <div id="modal_requirement">
+            <?= $this->include("Modal/Requirement_Modal"); ?>
+        </div>
         <div id="modal_contextver">
             <?= $this->include("Modal/Context_Ver"); ?>
+        </div>
+        <div id="modal_reject">
+            <?= $this->include("Modal/Reject_Modal"); ?>
+        </div>
+        <div id="modal_crud_note">
+            <?= $this->include("Modal/CRUD_Note"); ?>
         </div>
         <div id="modal_crud_support_awareness">
             <?= $this->include("Modal/CRUD_Support_Awareness"); ?>
@@ -304,17 +307,28 @@
     <script src="<?= base_url('plugins/codemirror/mode/htmlmixed/htmlmixed.js'); ?>"></script>
 
     <script>
-        function load_modal(check, data_encode) {
-            console.log('Function is called with check:', check, 'and check_type:', check_type);
-
+        function load_modal(check, check_type, data_encode) {
+            modal_requirement = document.getElementById("modal_requirement");
             modal_contextver = document.getElementById("modal_contextver");
+            modal_reject = document.getElementById("modal_reject");
+            modal_crud_note = document.getElementById("modal_crud_note");
             modal_crud_support_awareness = document.getElementById("modal_crud_support_awareness");
-            $(".modal-body #iss").empty();
+
+            var element = <?php echo json_encode($data); ?>; //data version control
 
             if (check == '1') {
                 //--show modal requirment--//
-                console.log('Showing modal 1');
+                modal_requirement.style.display = "block";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
+                modal_crud_support_awareness.style.display = "none";
+            } else if (check == '2') {
+                //--show modal Version Control--//
+                modal_requirement.style.display = "none";
                 modal_contextver.style.display = "block";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
                 modal_crud_support_awareness.style.display = "none";
                 $(".modal-body #description").text(element.details);
                 $(".modal-body #status").val(element.status);
@@ -329,63 +343,40 @@
                 $(".modal-body #approved").val(element.approved_date);
                 $(".modal-body #announce").val(element.announce_date);
                 check_status(element.status);
-            } else if (check == '2') {
-                //--show modal requirment--//
-                console.log('Showing modal 2');
+            } else if (check == '3') {
+                //--show modal Reject --//
+                modal_requirement.style.display = "none";
                 modal_contextver.style.display = "none";
+                modal_reject.style.display = "block";
+                modal_crud_note.style.display = "none";
+                modal_crud_support_awareness.style.display = "none";
+                $(".modal-body #status").val(check_type);
+                $(".modal-body #modified_date").val(element.modified_date);
+            } else if (check == '4') {
+                //--show modal Crate Note --//
+                modal_requirement.style.display = "none";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "block";
+                modal_crud_support_awareness.style.display = "none";
+                $(".modal-body #modified").val(element.modified_date);
+                $(".modal-body #check").val(10);
+                $(".modal-body #params").val(10);
+            } else if (check == '5') {
+                //--show modal Support Awareness --//
+                modal_requirement.style.display = "none";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
                 modal_crud_support_awareness.style.display = "block";
-            }
-        }
-    </script>
-    <script>
-        var Data = [{
-                "COURSE": "Information Security Policy",
-                "DETAIL": "-",
-                "DATE": "01/01/2024",
-                "FILE": ["file1.pdf", "file2.pdf", "file3.pdf"],
-            },
-            {
-                "COURSE": "Security Awareness",
-                "DETAIL": "-",
-                "DATE": "01/01/2024",
-                "FILE": ["file1.pdf", "file2.pdf"],
-            },
-        ];
 
-        var example1TableBody = document.getElementById("example1").getElementsByTagName("tbody")[0];
-
-        Data.forEach(function(row, index) {
-            var newRow = example1TableBody.insertRow();
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            var cell6 = newRow.insertCell(5);
-
-
-            cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-      <li data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)"><a class="dropdown-item" href="#">Edit</a></li>
-      <li><a class="dropdown-item" href="#">Copy</a></li>
-      <li><a class="dropdown-item" href="#">Delete</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)"><a class="dropdown-item" href="#">Create</a></li>
-    </ul>
-  </div>`;
-            cell2.textContent = index + 1;
-            cell3.textContent = row.COURSE;
-            cell4.textContent = row.DETAIL;
-            cell5.textContent = row.DATE;
-            displayArrayInCell(cell6, row.FILE);
-        });
-
-        function displayArrayInCell(cell, dataArray) {
-            if (Array.isArray(dataArray) && dataArray.length > 1) {
-                cell.innerHTML = dataArray.join('<br>');
-            } else {
-                cell.textContent = Array.isArray(dataArray) ? dataArray[0] : dataArray;
+                if (check_type == '1') {
+                    $(".modal-body #url_route").val("support/awareness/create/" + element.id_version + "/" + element.status);
+                }else{
+                    const rowData = JSON.parse(decodeURIComponent(data_encode));
+                    // $(".modal-body #role").val(rowData.role);
+                    $(".modal-body #url_route").val("support/awareness/edit/" + rowData.id_awareness + "/" + element.id_version + "/" + element.status);
+                }
             }
         }
     </script>

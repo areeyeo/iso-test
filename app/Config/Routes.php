@@ -272,11 +272,20 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
 
 $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     //-- Support Competence --//
-    $routes->match(['get', 'post'], 'competenec', 'Support_CompetenecController::index');
+    $routes->match(['get', 'post'], 'competence/index/(:num)/(:num)', 'Support_CompetenceController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'competence/create/(:num)/(:num)', 'Support_CompetenceController::create_competence/$1/$2'); //index
+    $routes->match(['get', 'post'], 'competence/edit/(:num)/(:num)/(:num)', 'Support_CompetenceController::edit_competence/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'competence/copydata/(:num)/(:num)/(:num)/(:num)', 'Support_CompetenceController::copy_competence/$1/$2/$3/$4'); //copy
+    $routes->match(['get', 'post'], 'competence/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'Support_CompetenceController::delete_competence/$1/$2/$3/$4/$5'); //delete
+    $routes->match(['get', 'post'], 'competence/getdata/(:num)', 'Support_CompetenceController::get_data_competence/$1'); //getdata
+
+    $routes->match(['get', 'post'], 'competence/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
     //-- Support Awareness --//
-    $routes->match(['get', 'post'],'awareness', 'Support_AwarenessController::index');
+    $routes->match(['get', 'post'],'awareness/index/(:num)/(:num)', 'Support_AwarenessController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'awareness/create/(:num)/(:num)', 'Support_AwarenessController::create_awareness/$1/$2'); //create
 
+    $routes->match(['get', 'post'], 'awareness/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
     //-- Support Communication --//
     $routes->match(['get', 'post'],'communication', 'Support_CommunicationController::index');
 });
