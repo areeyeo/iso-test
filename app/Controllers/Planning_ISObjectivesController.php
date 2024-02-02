@@ -9,7 +9,7 @@ use App\Models\Planning_is_objectivesModels;
 use App\Models\Planning_is_planningModels;
 use App\Models\TimelineModels;
 
-class ISObjectivesController extends BaseController
+class Planning_ISObjectivesController extends BaseController
 {
     public function index($id_version = null, $num_ver = null)
     {

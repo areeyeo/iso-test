@@ -8,7 +8,7 @@ use App\Models\Planning_of_changesModels;
 use App\Models\FileModels;
 use App\Models\RequirementModels;
 
-class PlanningofChangeController extends BaseController
+class Planning_PlanningofChangeController extends BaseController
 {
 
     public function planningofchange_index($id_version = null, $num_ver = null)

@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 02, 2024 at 03:45 AM
+-- Host: 127.0.0.1
+-- Generation Time: Feb 02, 2024 at 04:54 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -159,7 +159,8 @@ INSERT INTO `activities_log` (`id_activities`, `text_activities`, `type_activiti
 (116, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-01-30', '11:17:21'),
 (117, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-01-30', '14:53:42'),
 (118, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-01-31', '09:35:42'),
-(119, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-02-01', '15:36:47');
+(119, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-02-01', '15:36:47'),
+(120, 'jirayut bandit ได้เข้าสู่ระบบ ', 4, 1, '2024-02-02', '09:54:33');
 
 -- --------------------------------------------------------
 
@@ -209,7 +210,9 @@ INSERT INTO `all_version_table` (`id_version`, `modified_date`, `review_date`, `
 (25, NULL, NULL, NULL, NULL, 0, 5, 1),
 (26, NULL, NULL, NULL, NULL, 0, 5, 7),
 (27, NULL, NULL, NULL, NULL, 0, 5, 11),
-(28, NULL, NULL, NULL, NULL, 0, 5, 10);
+(28, NULL, NULL, NULL, NULL, 0, 5, 10),
+(29, NULL, NULL, NULL, NULL, 0, 1, 1),
+(30, NULL, NULL, NULL, NULL, 0, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -287,7 +290,8 @@ INSERT INTO `files_table` (`id_files`, `name_file`) VALUES
 (7, 'SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf'),
 (8, 'SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf'),
 (13, '4.raaychuueswnraachkaar-aenbprakaas_pii_2566.pdf'),
-(15, 'SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf');
+(15, 'SDPS-006_Software Design Specification (SDS) v.2.0.0.pdf'),
+(18, 'arjun.pdf');
 
 -- --------------------------------------------------------
 
@@ -576,6 +580,13 @@ CREATE TABLE `planning_changes_table` (
   `id_version` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `planning_changes_table`
+--
+
+INSERT INTO `planning_changes_table` (`id_planning_changes`, `id_file`, `date_upload`, `id_version`) VALUES
+(1, 18, '02/02/2024', 30);
+
 -- --------------------------------------------------------
 
 --
@@ -708,6 +719,52 @@ CREATE TABLE `scope_table` (
 INSERT INTO `scope_table` (`id_scope`, `location`, `organization`, `system_service`, `scope_statement`, `id_version`) VALUES
 (1, 'HQ', 'T-NET', 'ERP', 'The ISMS applied to...', 12),
 (2, 'test', 'test', 'test', 'test', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `support_awareness_table`
+--
+
+CREATE TABLE `support_awareness_table` (
+  `id_awareness` int(10) NOT NULL,
+  `course` varchar(200) NOT NULL,
+  `detail` varchar(200) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `id_file` int(10) NOT NULL,
+  `id_version` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `support_communication_table`
+--
+
+CREATE TABLE `support_communication_table` (
+  `id_communication` int(10) NOT NULL,
+  `what_to_communicate` varchar(200) NOT NULL,
+  `detail` varchar(200) NOT NULL,
+  `communicator` varchar(200) NOT NULL,
+  `communicate_with_whom` varchar(200) NOT NULL,
+  `when_to_communicate` varchar(200) NOT NULL,
+  `how_to_communicate` varchar(200) NOT NULL,
+  `id_file` int(10) NOT NULL,
+  `id_version` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `support_competence_table`
+--
+
+CREATE TABLE `support_competence_table` (
+  `id_competence` int(10) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `id_file` int(10) NOT NULL,
+  `id_version` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -989,6 +1046,24 @@ ALTER TABLE `scope_table`
   ADD PRIMARY KEY (`id_scope`);
 
 --
+-- Indexes for table `support_awareness_table`
+--
+ALTER TABLE `support_awareness_table`
+  ADD PRIMARY KEY (`id_awareness`);
+
+--
+-- Indexes for table `support_communication_table`
+--
+ALTER TABLE `support_communication_table`
+  ADD PRIMARY KEY (`id_communication`);
+
+--
+-- Indexes for table `support_competence_table`
+--
+ALTER TABLE `support_competence_table`
+  ADD PRIMARY KEY (`id_competence`);
+
+--
 -- Indexes for table `timeline_log`
 --
 ALTER TABLE `timeline_log`
@@ -1014,13 +1089,13 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `activities_log`
 --
 ALTER TABLE `activities_log`
-  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `all_version_table`
 --
 ALTER TABLE `all_version_table`
-  MODIFY `id_version` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_version` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `external_issues_table`
@@ -1038,7 +1113,7 @@ ALTER TABLE `external_table`
 -- AUTO_INCREMENT for table `files_table`
 --
 ALTER TABLE `files_table`
-  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `group`
@@ -1122,7 +1197,7 @@ ALTER TABLE `note_table`
 -- AUTO_INCREMENT for table `planning_changes_table`
 --
 ALTER TABLE `planning_changes_table`
-  MODIFY `id_planning_changes` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_planning_changes` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `planning_is_objectives_objectives_table`
@@ -1159,6 +1234,24 @@ ALTER TABLE `scope_activites_table`
 --
 ALTER TABLE `scope_table`
   MODIFY `id_scope` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `support_awareness_table`
+--
+ALTER TABLE `support_awareness_table`
+  MODIFY `id_awareness` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `support_communication_table`
+--
+ALTER TABLE `support_communication_table`
+  MODIFY `id_communication` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `support_competence_table`
+--
+ALTER TABLE `support_competence_table`
+  MODIFY `id_competence` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `timeline_log`

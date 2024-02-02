@@ -243,33 +243,43 @@ $routes->group("permission", ['filter' => 'authGuard'], function ($routes) {
 
 $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     //-- Planning IS Objectives --//
-    $routes->match(['get', 'post'], 'isobjective/index/(:num)/(:num)', 'ISObjectivesController::index/$1/$2'); //index
-    $routes->match(['get', 'post'], 'isobjective/getdata/(:num)', 'ISObjectivesController::get_data_objective/$1'); //index
-    $routes->match(['get', 'post'], 'isobjective/create/(:num)/(:num)', 'ISObjectivesController::create_objective/$1/$2'); //create
-    $routes->match(['get', 'post'], 'isobjective/edit/(:num)/(:num)/(:num)', 'ISObjectivesController::edit_objective/$1/$2/$3'); //edit
-    $routes->match(['get', 'post'], 'isobjective/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_objective/$1/$2/$3/$4'); //copy
-    $routes->match(['get', 'post'], 'isobjective/delete/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_objective/$1/$2/$3/$4'); //delete
+    $routes->match(['get', 'post'], 'isobjective/index/(:num)/(:num)', 'Planning_ISObjectivesController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'isobjective/getdata/(:num)', 'Planning_ISObjectivesController::get_data_objective/$1'); //index
+    $routes->match(['get', 'post'], 'isobjective/create/(:num)/(:num)', 'Planning_ISObjectivesController::create_objective/$1/$2'); //create
+    $routes->match(['get', 'post'], 'isobjective/edit/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::edit_objective/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'isobjective/copydata/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::copy_objective/$1/$2/$3/$4'); //copy
+    $routes->match(['get', 'post'], 'isobjective/delete/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::delete_objective/$1/$2/$3/$4'); //delete
 
-    $routes->match(['get', 'post'], 'planning/getdata/(:num)', 'ISObjectivesController::get_data_planning/$1'); //getdata
-    $routes->match(['get', 'post'], 'planning/create/(:num)/(:num)', 'ISObjectivesController::create_planning/$1/$2'); //create
-    $routes->match(['get', 'post'], 'planning/edit/(:num)/(:num)/(:num)', 'ISObjectivesController::edit_planning/$1/$2/$3'); //edit
-    $routes->match(['get', 'post'], 'planning/copydata/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::copy_planning/$1/$2/$3/$4'); //copy
-    $routes->match(['get', 'post'], 'planning/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'ISObjectivesController::delete_planning/$1/$2/$3/$4/$5'); //delete
+    $routes->match(['get', 'post'], 'planning/getdata/(:num)', 'Planning_ISObjectivesController::get_data_planning/$1'); //getdata
+    $routes->match(['get', 'post'], 'planning/create/(:num)/(:num)', 'Planning_ISObjectivesController::create_planning/$1/$2'); //create
+    $routes->match(['get', 'post'], 'planning/edit/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::edit_planning/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'planning/copydata/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::copy_planning/$1/$2/$3/$4'); //copy
+    $routes->match(['get', 'post'], 'planning/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::delete_planning/$1/$2/$3/$4/$5'); //delete
 
-    $routes->match(['get', 'post'], 'summary/getdata/(:num)', 'ISObjectivesController::get_data_summary/$1'); //getdata
+    $routes->match(['get', 'post'], 'summary/getdata/(:num)', 'Planning_ISObjectivesController::get_data_summary/$1'); //getdata
 
     $routes->match(['get', 'post'], 'isobjective/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
     //-- Planning of Change --//
-    $routes->match(['get', 'post'], 'planningofchange/(:num)/(:num)', 'PlanningofChangeController::planningofchange_index/$1/$2');
-    $routes->match(['get', 'post'], 'planningofchange/find_data/(:num)', 'PlanningofChangeController::get_planning_of_changes_table/$1'); //--find data--//
-    $routes->match(['get', 'post'], 'planningofchange/store/(:num)', 'PlanningofChangeController::store/$1'); //-create-//
-    $routes->match(['get', 'post'], 'planningofchange/edit', 'PlanningofChangeController::edit'); //-edit-//
-    $routes->match(['get', 'post'], 'planningofchange/delete/(:num)/(:num)/(:num)', 'PlanningofChangeController::delete/$1/$2/$3'); //-delete-//
-    $routes->match(['get', 'post'], 'planningofchange/delete_file/(:num)/(:num)/(:num)', 'PlanningofChangeController::delete_file/$1/$2/$3'); //-file_delete-//
-    $routes->match(['get', 'post'], 'planningofchange/copydata/(:num)/(:num)', 'PlanningofChangeController::copyData/$1/$2');  //-copy-// 
+    $routes->match(['get', 'post'], 'planningofchange/(:num)/(:num)', 'Planning_PlanningofChangeController::planningofchange_index/$1/$2');
+    $routes->match(['get', 'post'], 'planningofchange/find_data/(:num)', 'Planning_PlanningofChangeController::get_planning_of_changes_table/$1'); //--find data--//
+    $routes->match(['get', 'post'], 'planningofchange/store/(:num)', 'Planning_PlanningofChangeController::store/$1'); //-create-//
+    $routes->match(['get', 'post'], 'planningofchange/edit', 'Planning_PlanningofChangeController::edit'); //-edit-//
+    $routes->match(['get', 'post'], 'planningofchange/delete/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete/$1/$2/$3'); //-delete-//
+    $routes->match(['get', 'post'], 'planningofchange/delete_file/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete_file/$1/$2/$3'); //-file_delete-//
+    $routes->match(['get', 'post'], 'planningofchange/copydata/(:num)/(:num)', 'Planning_PlanningofChangeController::copyData/$1/$2');  //-copy-// 
 });
 
+$routes->group("support", ['filter' => 'authGuard'], function ($routes) {
+    //-- Support Competence --//
+    $routes->match(['get', 'post'], 'competenec', 'Support_CompetenecController::index');
+
+    //-- Support Awareness --//
+    $routes->match(['get', 'post'],'awareness', 'Support_AwarenessController::index');
+
+    //-- Support Communication --//
+    $routes->match(['get', 'post'],'communication', 'Support_CommunicationController::index');
+});
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);

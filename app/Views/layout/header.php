@@ -14,8 +14,8 @@
 
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?= base_url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css'); ?>">
-        <!-- DataTables -->
-        <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css'); ?>">
 </head>
@@ -231,7 +231,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                <a href="<?= site_url('context/loaddatatype/10'); ?>" class="nav-link">
+                                    <a href="<?= site_url('context/loaddatatype/10'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>IS Objectives</p>
                                     </a>
@@ -245,13 +245,33 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= site_url('/under_construction'); ?>" class="nav-link">
+                            <a href="<?= site_url('/'); ?>" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Support
                                     <i class="right fas fa-angle-right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/support/competenec'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Competence</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/support/awareness'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Awareness</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/support/communication'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Communication</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="<?= site_url('/under_construction'); ?>" class="nav-link">
@@ -378,6 +398,7 @@
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.html5.min.js'); ?>"></script>
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.print.min.js'); ?>"></script>
     <script src="<?= base_url('plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
+
     <body>
 
 </html>
