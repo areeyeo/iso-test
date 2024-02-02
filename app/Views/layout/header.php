@@ -237,7 +237,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('/planningofchange'); ?>" class="nav-link">
+                                    <a href="<?= site_url('context/loaddatatype/11'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Planning of changes</p>
                                     </a>

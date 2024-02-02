@@ -154,6 +154,8 @@ class AllversionController extends BaseController
             return redirect()->to('leadership/isms/index/' . (int) $data['data']['id_version']);
         } else if ($type == '10') {
             return redirect()->to('planning/isobjective/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        } else if ($type == '11') {
+            return redirect()->to('planning/planningofchange/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else {
 
         }

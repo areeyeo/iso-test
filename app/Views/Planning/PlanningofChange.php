@@ -1,4 +1,4 @@
-<title>ISMS Process Version</title>
+<title>Planning of changes</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -92,7 +92,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
-              <li class="breadcrumb-item active">ISMS Process</li>
+              <li class="breadcrumb-item active">Planning of changes</li>
             </ol>
           </div>
         </div>
@@ -112,7 +112,7 @@
                       <div>File</div>
                       <div id="btn-Objectives" name="btn-Objectives">
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)">
-                          <span class="text-nowrap"><i class="fas fa-edit" onclick="load_modal(1)"></i>Create File</span>
+                          <span class="text-nowrap"><i class="fas fa-edit" onclick="load_modal(2)"></i>Create File</span>
                         </button>
                       </div>
                     </div>
@@ -142,10 +142,15 @@
     </section>
   </div>
   <div class="modal fade" id="modal-default">
-    <div id="modal_crud_planning_planning_of_change">
-      <?= $this->include("Modal/CRUD_Planning_Planning_of_change"); ?>
+    <div id="Requirement_Modal">
+      <?= $this->include("Modal/Requirement_Modal"); ?>
     </div>
-
+    <div id="CRUD_File_UploadOnly">
+      <?= $this->include("Modal/CRUD_File_UploadOnly"); ?>
+    </div>
+    <div id="File_Rename_Modal">
+      <?= $this->include("Modal/File_Rename_Modal"); ?>
+    </div>
   </div>
 
   <!-- DataTables  & Plugins -->
@@ -177,51 +182,313 @@
   <script src="<?= base_url('plugins/codemirror/mode/xml/xml.js'); ?>"></script>
   <script src="<?= base_url('plugins/codemirror/mode/htmlmixed/htmlmixed.js'); ?>"></script>
   <script>
-    function load_modal(check, check_type, data_encode) {
-      console.log('Function is called with check:', check, 'and check_type:', check_type);
+    $(document).ready(function () {
+      var data = <?php echo json_encode($data); ?>;
+      getTableData();
+    });
+  </script>
+  <script>
+    function getTableData() {
+      // console.log(check, url);
+      var data_context = <?php echo json_encode($data); ?>;
+      console.log(data_context.status);
+      if (data_context.status === '4' || data_context.status === '5') {
+        var disabledAttribute = 'disabled';
+      }
+      if ($.fn.DataTable.isDataTable('#example1')) {
+        $('#example1').DataTable().destroy();
+      }
+      $('#example1').DataTable({
+        "processing": $("#isms-policy .overlay").show(),
+        "pageLength": 10,
+        "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+        'serverSide': true,
+        'ajax': {
+          'url': "<?php echo site_url('planning/planningofchange/find_data/'); ?>" + data_context.id_version,
+          'type': 'GET',
+          'dataSrc': 'data',
+        },
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "searching": true,
+        "drawCallback": function (settings) {
+          var daData = settings.json.data;
+          $("#isms-policy .overlay").hide();
+          if (daData.length == 0) {
+            $('#example1 tbody').html(`
+            <tr>
+              <td colspan="1">
+                  <div class="dropdown">
+                      <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff;" type="button"
+                          class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false" ${disabledAttribute}></button>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" onclick="load_modal(2)" data-toggle="modal"
+                              data-target="#modal-default">Create</a>
+                      </div>
+                  </div>
+              </td>
+              <td colspan="3">
+              </td>
+          </tr>`);
+          }
+        },
+        'columns': [{
+          'data': null,
+          'class': 'text-center',
+          'render': function (data, type, row, meta) {
+            // console.log(row);
+            var number_index = +meta.settings.oAjaxData.start + 1;
+            const encodedRowData = encodeURIComponent(JSON.stringify(row));
+            let dropdownHtml = `
+            <div class="dropdown">
+              <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff;" type="button"
+                  class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  ${disabledAttribute}></button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" onclick="load_modal(3, '${encodedRowData}')" data-toggle="modal"
+                      data-target="#modal-default">Edit</a>
+                  <a class="dropdown-item" href="#"
+                      onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planningofchange/copydata/${row.id_}/${number_index}')">Copy</a>
+                  <a class="dropdown-item" href="#"
+                      onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planningofchange/delete/${row.id_}/${row.id_file}/${number_index}')">Delete</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" onclick="load_modal(2)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+            if (row.id_file > 0) {
+              dropdownHtml += `
+              <div class="dropdown-divider"></div>
+                <div class="dropdown-submenu">
+                    <a class="dropdown-item dropdown-toggle" href="#">File</a>
+                    <div class="dropdown-menu right-menu-table">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
+                            onclick="load_modal('4' , '${encodedRowData}')">Rename</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"
+                            onclick="confirm_Alert('You want to delete the data file ${number_index} ?', 'planning/planningofchange/delete_file/${row.id_}/${row.id_file}/${number_index}')">Delete
+                            File</a>
+                    </div>
+                </div>`;
+            }
+            dropdownHtml += `</div>
+              </div>`;
+            return dropdownHtml;
+          }
+        },
+        {
+          'data': null,
+          'class': 'text-center',
+          'render': function (data, type, row, meta) {
+            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+          }
+        },
+        {
+          'data': null,
+          'class': 'text-center',
+          'render': function (data, type, row, meta) {
+            // console.log(data_context);
 
-      modal_crud_planning_planning_of_change = document.getElementById("modal_crud_planning_planning_of_change");
-      $(".modal-body #iss").empty();
+            if (row.id_file > 0) {
+              var number_index = +meta.settings.oAjaxData.start;
 
+              return `<a href="<?php echo base_url('openfile/'); ?>${row.id_file}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                  ${row.name_file}
+                </a>`
+            } else {
+              return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+            }
+          }
+        },
+        {
+          'data': 'date_upload',
+          'class': 'text-center',
+          render: function (data, type, row) {
+            if (type === 'display' && data && data.length > 50) {
+              return '<span data-toggle="tooltip" data-placement="top" title="' + data + '" style="color: rgba(0, 123, 255, 1);">' +
+                data.substr(0, 50) + '...</span>';
+            }
+            return `<span data-toggle="tooltip" data-placement="top" title="${data}" style="color: rgba(0, 123, 255, 1);">
+                ${data} </span>`;
+          }
+        },
+        ],
+      });
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+  </script>
+  <script>
+    function load_modal(check, data_encode) {
+      // console.log(check);
+      // console.log(data)
+      Requirement_Modal = document.getElementById("Requirement_Modal");
+      CRUD_File_UploadOnly = document.getElementById("CRUD_File_UploadOnly");
+      File_Rename_Modal = document.getElementById("File_Rename_Modal");
+      $(".modal-header #title_modal").text("File");
+      var element = <?php echo json_encode($data); ?>;
+      console.log(check);
       if (check == '1') {
         //--show modal requirment--//
-        console.log('Showing modal 1');
-        modal_crud_planning_planning_of_change.style.display = "block";
+        Requirement_Modal.style.display = "block";
+        CRUD_File_UploadOnly.style.display = "none";
+        File_Rename_Modal.style.display = "none";
+      } else if (check == '2') {
+        //--show modal create--//
+        Requirement_Modal.style.display = "none";
+        CRUD_File_UploadOnly.style.display = "block";
+        File_Rename_Modal.style.display = "none";
+
+        $(".modal-body #url_route").val('planning/planningofchange/store/' + element.id_version);
+      } else if (check == '3') {
+        //--show modal edit--//
+        Requirement_Modal.style.display = "none";
+        CRUD_File_UploadOnly.style.display = "block";
+        File_Rename_Modal.style.display = "none";
+        const rowData = JSON.parse(decodeURIComponent(data_encode));
+        $(".modal-body #id_").val(rowData.id_planning_changes);
+        $(".modal-body #url_route").val('planning/planningofchange/edit');
+      } else if (check == '4') {
+        //--show modal Rename File--//
+        Requirement_Modal.style.display = "none";
+        CRUD_File_UploadOnly.style.display = "none";
+        File_Rename_Modal.style.display = "block";
+
+        const rowData = JSON.parse(decodeURIComponent(data_encode));
+        // แบ่งข้อความด้วยจุด (.)
+        var parts = rowData.name_file.split('.');
+
+        // นับจำนวนส่วนหลังจากการแบ่งด้วยจุด
+        var numberOfParts = parts.length;
+
+        // สร้างตัวแปรเพื่อเก็บส่วนทั้งหมดยกเว้นส่วนสุดท้าย
+        var exceptLastPart = "";
+
+        for (var i = 0; i < numberOfParts - 1; i++) {
+          exceptLastPart += parts[i];
+          if (i < numberOfParts - 2) {
+            exceptLastPart += "."; // เพิ่มจุด (.) หลังจากทุกส่วนยกเว้นส่วนสุดท้าย
+          }
+        }
+
+        // กำหนดค่าให้กับองค์ประกอบที่มี ID "namefile" ใน Modal Body
+        $(".modal-body #oldname").val(rowData.name_file);
+        $(".modal-body #oldnameFile").val(exceptLastPart);
+        $(".modal-body #namefile").val(exceptLastPart);
+        $(".modal-body #url_route").val("renamefile/" + rowData.id_file);
       }
     }
   </script>
   <script>
-    var Data = [{
-        "FILE": "fileupload1.pdf",
-        "UPLOADDATE": "01/01/2024"
-      },
-      {
-        "FILE": "fileupload2.pdf",
-        "UPLOADDATE": "01/01/2024"
-      }
-    ];
+    function action_(url, form) {
+      var formData = new FormData(document.getElementById(form));
 
-    var example1TableBody = document.getElementById("example1").getElementsByTagName("tbody")[0];
+      var loadingIndicator = Swal.fire({
+        title: 'Loading...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        onOpen: () => {
+          Swal.showLoading();
+        }
+      });
 
-    Data.forEach(function(row, index) {
-      var newRow = example1TableBody.insertRow();
-      var cell1 = newRow.insertCell(0);
-      var cell2 = newRow.insertCell(1);
-      var cell3 = newRow.insertCell(2);
-      var cell4 = newRow.insertCell(3);
+      $.ajax({
+        url: '<?= base_url() ?>' + url,
+        type: "POST",
+        cache: false,
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "JSON",
+        beforeSend: function () {
+          // Show loading indicator here
+          loadingIndicator;
+        },
+        success: function (response) {
+          if (response.success) {
+            Swal.fire({
+              title: response.message,
+              icon: 'success',
+              showConfirmButton: false,
+              allowOutsideClick: false
+            });
+            setTimeout(() => {
+              if (response.reload) {
+                window.location.reload();
+              }
+            }, 2000);
+          } else {
+            Swal.fire({
+              title: response.message,
+              icon: 'error',
+              showConfirmButton: true
+            });
+          }
+        },
+        error: function (xhr, status, error) {
+          Swal.fire({
+            title: "เกิดข้อผิดพลาด",
+            icon: 'error',
+            showConfirmButton: true
+          });
+        }
+      });
+    }
+  </script>
+  <script>
+    function confirm_Alert(text, url) {
+      Swal.fire({
+        title: text,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: "#28a745",
+        confirmButtonText: "Submit",
+        preConfirm: () => {
+          // Show loading indicator here
+          var loadingIndicator = Swal.fire({
+            title: 'Loading...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            onOpen: () => {
+              Swal.showLoading();
+            }
+          });
 
-      cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-      <li data-toggle="modal" data-target="#modal-default" onclick="load_modal(1)"><a class="dropdown-item" href="#" >Edit</a></li>
-      <li><a class="dropdown-item" href="#">Copy</a></li>
-      <li><a class="dropdown-item" href="#">Delete</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li data-toggle="modal" data-target="#modal-default" onclick="load_modal(1)"><a class="dropdown-item">Create</a></li>
-    </ul>
-  </div>`;
-      cell2.textContent = index + 1;
-      cell3.textContent = row.FILE;
-      cell4.textContent = row.UPLOADDATE;
-    });
+          return $.ajax({
+            url: '<?= base_url() ?>' + url,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest'
+            },
+            beforeSend: function () {
+              // Show loading indicator here
+              loadingIndicator;
+            },
+            complete: function () {
+              // Hide loading indicator here
+              Swal.close();
+            }
+          }).then(function (response) {
+            if (response.success) {
+              Swal.fire({
+                title: response.message,
+                icon: 'success',
+                showConfirmButton: false
+              });
+              setTimeout(() => {
+                if (response.reload) {
+                  window.location.reload();
+                }
+              }, 2000);
+            } else {
+              Swal.fire({
+                title: response.message,
+                icon: 'error',
+                showConfirmButton: true
+              });
+            }
+          });
+        }
+      });
+    }
+
   </script>

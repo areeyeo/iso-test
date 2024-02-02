@@ -261,8 +261,13 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'isobjective/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
     //-- Planning of Change --//
-    $routes->match(['get', 'post'], 'index/(:num)', 'AllversionController::context_index/$1');
-    $routes->match(['get', 'post'], 'planningofchange/(:num)', 'PlanningofChangeController::index/$1');
+    $routes->match(['get', 'post'], 'planningofchange/(:num)/(:num)', 'PlanningofChangeController::planningofchange_index/$1/$2');
+    $routes->match(['get', 'post'], 'planningofchange/find_data/(:num)', 'PlanningofChangeController::get_planning_of_changes_table/$1'); //--find data--//
+    $routes->match(['get', 'post'], 'planningofchange/store/(:num)', 'PlanningofChangeController::store/$1'); //-create-//
+    $routes->match(['get', 'post'], 'planningofchange/edit', 'PlanningofChangeController::edit'); //-edit-//
+    $routes->match(['get', 'post'], 'planningofchange/delete/(:num)/(:num)/(:num)', 'PlanningofChangeController::delete/$1/$2/$3'); //-delete-//
+    $routes->match(['get', 'post'], 'planningofchange/delete_file/(:num)/(:num)/(:num)', 'PlanningofChangeController::delete_file/$1/$2/$3'); //-file_delete-//
+    $routes->match(['get', 'post'], 'planningofchange/copydata/(:num)/(:num)', 'PlanningofChangeController::copyData/$1/$2');  //-copy-// 
 });
 
 
