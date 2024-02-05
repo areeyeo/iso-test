@@ -282,8 +282,13 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'competence/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
     //-- Support Awareness --//
-    $routes->match(['get', 'post'],'awareness/index/(:num)/(:num)', 'Support_AwarenessController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'awareness/index/(:num)/(:num)', 'Support_AwarenessController::index/$1/$2'); //index
     $routes->match(['get', 'post'], 'awareness/create/(:num)/(:num)', 'Support_AwarenessController::create_awareness/$1/$2'); //create
+    $routes->match(['get', 'post'], 'awareness/edit/(:num)/(:num)/(:num)', 'Support_AwarenessController::edit_awareness/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'awareness/delete/(:num)/(:num)/(:num)/(:num)', 'Support_AwarenessController::delete_awareness/$1/$2/$3/$4'); //delete
+    $routes->match(['get', 'post'], 'awareness/copydata/(:num)/(:num)/(:num)/(:num)', 'Support_AwarenessController::copy_awareness/$1/$2/$3/$4'); //copy
+
+    $routes->match(['get', 'post'], 'awareness/getdata/(:num)', 'Support_AwarenessController::get_data_awareness/$1'); //getdata
 
     $routes->match(['get', 'post'], 'awareness/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
     //-- Support Communication --//

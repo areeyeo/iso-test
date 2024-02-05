@@ -6,7 +6,8 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet"
+    href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
@@ -87,7 +88,9 @@
                     <div class="col-sm-6">
                         <h1>
                             Awareness
-                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Requirement</button>
+                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal"
+                                data-target="#modal-default" id="load-modal-button"
+                                onclick="load_modal(1)">Requirement</button>
                         </h1>
                     </div>
                     <div class="col-sm-6">
@@ -114,31 +117,48 @@
                             } else {
                                 $disabled = '';
                             } ?>
-                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>" style="color: #ADB5BD;">Version</a></button>
-                            <button class="badge badge-edit <?= $disabled ?>" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('support/awareness/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>" style="color: #ADB5BD;">History</a></button>
-                            <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                            <button class="badge badge-edit"
+                                style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
+                                    href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>"
+                                    style="color: #ADB5BD;">Version</a></button>
+                            <button class="badge badge-edit <?= $disabled ?>"
+                                style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
+                                    href="<?= site_url('support/awareness/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>"
+                                    style="color: #ADB5BD;">History</a></button>
+                            <button class="badge badge-edit"
+                                style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Action</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-submenu">
                                     <a class="dropdown-item dropdown-toggle" href="#">Status</a>
                                     <div class="dropdown-menu">
                                         <!-- Second-level dropdown items -->
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
                                             Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,5)">Reject Review</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal"
+                                            data-target="#modal-default" id="load-modal-button"
+                                            onclick="load_modal(3 ,5)">Reject Review</a>
 
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
                                             Approve</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,6)">Reject Approved</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal"
+                                            data-target="#modal-default" id="load-modal-button"
+                                            onclick="load_modal(3 ,6)">Reject Approved</a>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
@@ -151,9 +171,11 @@
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#" onclick="load_modal(4)">Create Note</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#"
+                                    onclick="load_modal(4)">Create Note</a>
                             </div>
-                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2)"></i>
+                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default"
+                                id="load-modal-button" onclick="load_modal(2)"></i>
                             <!-- show version Control -->
                         </div>
                     </div>
@@ -225,8 +247,11 @@
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <h4>Awareness</h4>
                                             <div id="btn-Awareness" name="btn-Awareness">
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default" onclick="load_modal(5,1)">
-                                                    <span class="text-nowrap"><i class="fas fa-edit"></i>Create Awareness</span>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    data-toggle="modal" data-target="#modal-default"
+                                                    onclick="load_modal(5,1)">
+                                                    <span class="text-nowrap"><i class="fas fa-edit"></i>Create
+                                                        Awareness</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -369,14 +394,318 @@
                 modal_reject.style.display = "none";
                 modal_crud_note.style.display = "none";
                 modal_crud_support_awareness.style.display = "block";
-
+                file_array = [];
+                file_array2 = [];
+                $(".modal-body #exampleInputFiles").empty();
+                var fileNamesContainer = document.getElementById('fileNamesContainer');
+                var fileNamesContainer2 = document.getElementById('fileNamesContainer2');
+                fileNamesContainer.innerHTML = '';
+                fileNamesContainer2.innerHTML = '';
+                $(".modal-body #course").val('');
+                $(".modal-body #detail").val('');
+                $(".modal-body #date").val('');
                 if (check_type == '1') {
                     $(".modal-body #url_route").val("support/awareness/create/" + element.id_version + "/" + element.status);
-                }else{
+                } else {
                     const rowData = JSON.parse(decodeURIComponent(data_encode));
-                    // $(".modal-body #role").val(rowData.role);
+                    $(".modal-body #course").val(rowData.course);
+                    $(".modal-body #detail").val(rowData.detail);
+                    $(".modal-body #date").val(rowData.date);
+                    if (rowData.id_file != null) {
+                        rowData.file_data.forEach((element, i) => {
+                            file_array2.push(element);
+                            console.log(i);
+                            var fileNameContainer = document.createElement('div');
+                            fileNameContainer.classList.add('file-name');
+                            fileNameContainer.id = 'fileNameContainer2_' + element.id_files;
+
+                            var fileIcon = document.createElement('span');
+                            fileIcon.innerHTML = '<i class="far fa-file-alt"></i>';
+                            fileIcon.classList.add('file-icon');
+
+                            var fileInfo = document.createElement('span');
+                            fileInfo.classList.add('file-info');
+                            fileInfo.style.fontSize = '10pt';
+
+                            var fileName = document.createElement('span');
+                            fileName.textContent = element.name_file;
+                            fileName.className = 'filename';
+
+                            var fileIcons = document.createElement('span');
+                            fileIcons.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                            fileIcons.classList.add('file-icon-bin');
+                            fileIcons.addEventListener('click', function () {
+                                deleteFile2(element.id_files, 'fileNameContainer2_' + element.id_files);
+                            });
+                            fileInfo.appendChild(fileIcon);
+                            fileInfo.appendChild(fileName);
+                            fileInfo.appendChild(fileIcons);
+                            fileNameContainer.appendChild(fileInfo);
+                            fileNamesContainer2.appendChild(fileNameContainer);
+                        });
+                    }
                     $(".modal-body #url_route").val("support/awareness/edit/" + rowData.id_awareness + "/" + element.id_version + "/" + element.status);
                 }
             }
         }
+    </script>
+    <script>
+        $(document).ready(function () {
+            getTableData1();
+        })
+    </script>
+    <script>
+        var countTable1 = 0;
+        function getTableData1() {
+            if (countTable1 === 0) {
+            countTable1++;
+            var data_version = <?php echo json_encode($data); ?>;
+            if (data_version.status === '4' || data_version.status === '5') {
+                var disabledAttribute = 'disabled';
+            }
+            if ($.fn.DataTable.isDataTable('#example1')) {
+                $('#example1').DataTable().destroy();
+            }
+            $('#example1').DataTable({
+                "processing": $("#interested_table .overlay").show(),
+                "pageLength": 10,
+                "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+                'serverSide': true,
+                    'ajax': {
+                    'url': "<?php echo site_url('support/awareness/getdata/'); ?>" + data_version.id_version,
+                    'type': 'GET',
+                    'dataSrc': 'data',
+                },
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "searching": true,
+                "ordering": false,
+                "drawCallback": function (settings) {
+                    $("#interested_table .overlay").hide();
+                    var daData = settings.json.data;
+                    if (daData.length == 0) {
+                        $('#example1 tbody').html(`
+                            <tr>
+                                <td colspan="9">
+                                    <div class="dropdown">
+                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                            class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false" ${disabledAttribute}></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" onclick="load_modal(5,1)" data-toggle="modal"
+                                                data-target="#modal-default">Create</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>`);
+                    }
+                },
+                'columns': [
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            var number_index = +meta.settings.oAjaxData.start + 1;
+                            const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                            let dropdownHtml = `
+                                <div class="dropdown">
+                                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        ${disabledAttribute}></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" onclick="load_modal(5, 2,'${encodedRowData}')" data-toggle="modal"
+                                            data-target="#modal-default">Edit</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'support/awareness/copydata/${data.id_awareness}/${number_index}/${data_version.id_version}/${data_version.status}')">Copy</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'support/awareness/delete/${data.id_awareness}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                            dropdownHtml += `</div>
+                                </div>`;
+                            return dropdownHtml;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.course) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.detail) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.date) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            var inhtmlfile = '';
+                            if (data.id_file != null) {
+                                data.file_data.forEach(element => {
+                                    if (element.name_file.length > 30) {
+                                        element.name_file = element.name_file.substring(0, 30) + '...';
+                                    }
+                                    inhtmlfile += `<a href="<?php echo base_url('openfile/'); ?>${element.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                                        ${element.name_file}
+                                        </a> <br>`
+                                });
+                                return inhtmlfile;
+                            } else {
+                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            }
+                        }
+                    },
+                ],
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        }
+    </script>
+    <script>
+        function action_(url, form) {
+            var formData = new FormData(document.getElementById(form));
+            var fileArray;
+            if (file_array && file_array.length > 0) {
+                for (var i = 0; i < file_array.length; i++) {
+                    formData.append("file[]", file_array[i]);
+                }
+            }
+            var id_file_after = '';
+            file_array2.forEach(element => {
+                id_file_after += element.id_files + ",";
+            });
+            formData.append("id_file_after", id_file_after);
+            $.ajax({
+                url: '<?= base_url() ?>' + url,
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    var loadingIndicator = Swal.fire({
+                        title: 'กําลังดําเนินการ...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                    });
+                },
+                success: function (response) {
+                    Swal.close();
+                    console.log(response);
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            allowOutsideClick: true,
+                        });
+                        if (response.reload) {
+                            setTimeout(function () {
+                                location.reload();
+                            }, 2000);
+                        }
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true,
+                            confirmButtonText: 'ตกลง',
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: "เกิดข้อผิดพลาด",
+                        icon: 'error',
+                        showConfirmButton: true,
+                        confirmButtonText: 'ตกลง',
+                    });
+                }
+            });
+        }
+    </script>
+    <script>
+        function confirm_Alert(text, url) {
+            Swal.fire({
+                title: text,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Submit",
+                preConfirm: () => {
+                    // Show loading indicator here
+                    var loadingIndicator = Swal.fire({
+                        title: 'Loading...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        onOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+                    
+                    return $.ajax({
+                        url: '<?= base_url() ?>' + url,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        beforeSend: function () {
+                            // Show loading indicator here
+                            loadingIndicator;
+                        },
+                        complete: function () {
+                            // Hide loading indicator here
+                            Swal.close();
+                        }
+                    }).then(function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                                if (response.reload) {
+                                    
+                                    if (response.newCopy) {
+                                        window.location.href = '<?= site_url("support/awareness/index/") ?>' + response.id_version + '/' + response.num_ver;
+                                    } else {
+                                        window.location.reload();
+                                    }
+                                }
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'error',
+                                showConfirmButton: true
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
     </script>
