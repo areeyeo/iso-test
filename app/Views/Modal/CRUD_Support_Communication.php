@@ -146,8 +146,6 @@
       </div>
     </div>
 
-
-
     <script>
       $(document).ready(function() {
         $(".overlay").hide();
@@ -157,86 +155,6 @@
         e.preventDefault();
         const urlRouteInput = document.getElementById("url_route");
         action_(urlRouteInput.value, 'form_crud');
-      });
-    </script>
-    <script>
-      $(document).ready(function() {
-        $(".overlay").hide();
-      });
-
-      $("#form_crud").on('submit', function(e) {
-        e.preventDefault();
-        const urlRouteInput = document.getElementById("url_route");
-        action_(urlRouteInput.value, 'form_crud');
-      });
-    </script>
-    <script>
-      document.getElementById('exampleInputFiles').addEventListener('change', function() {
-        const fileInput = this;
-        const fileNamesContainer = document.getElementById('fileNamesContainer');
-        const files = fileInput.files;
-
-        // Clear previous content
-        fileNamesContainer.innerHTML = '';
-
-        if (files.length > 0) {
-          for (let i = 0; i < files.length; i++) {
-            const fileNameContainer = document.createElement('div');
-            fileNameContainer.classList.add('file-name');
-
-            const fileIcon = document.createElement('span');
-            fileIcon.innerHTML = '<i class="far fa-file-alt"></i>';
-            fileIcon.classList.add('file-icon');
-
-            const fileInfo = document.createElement('span');
-            fileInfo.classList.add('file-info');
-            fileInfo.style.fontSize = '10pt';
-
-            const fileName = document.createElement('span');
-            fileName.textContent = files[i].name;
-            fileName.className = 'filename';
-
-            const fileSize = document.createElement('span');
-            fileSize.classList.add('file-icon');
-            fileSize.textContent = `(${formatFileSize(files[i].size)})`;
-            fileSize.style.color = '#495057'
-
-            const fileIcons = document.createElement('span');
-            fileIcons.innerHTML = '<i class="fas fa-trash-alt"></i>';
-            fileIcons.classList.add('file-icon-bin');
-            fileIcons.addEventListener('click', function() {
-              deleteFile(files[i]);
-            });
-
-            fileInfo.appendChild(fileIcon);
-            fileInfo.appendChild(fileName);
-            fileInfo.appendChild(fileSize);
-            fileInfo.appendChild(fileIcons);
-            console.log('File Name:', files[i].name, 'Size:', files[i].size);
-
-            fileNameContainer.appendChild(fileInfo);
-            fileNamesContainer.appendChild(fileNameContainer);
-          }
-        }
-      });
-
-      function formatFileSize(size) {
-        const kb = size / 1024;
-        if (kb < 1024) {
-          return kb.toFixed(2) + ' KB';
-        } else {
-          const mb = kb / 1024;
-          return mb.toFixed(2) + ' MB';
-        }
-      }
-
-      function deleteFile(file) {
-        console.log('Delete file:', file.name);
-      }
-    </script>
-    <script>
-      $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
     <script>
@@ -257,4 +175,9 @@
 
         previousLength = newLength;
       }
+    </script>
+    <script>
+      $(function () {
+        bsCustomFileInput.init();
+      });
     </script>

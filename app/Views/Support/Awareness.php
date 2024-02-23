@@ -521,7 +521,7 @@
                                         <a class="dropdown-item" href="#"
                                             onclick="confirm_Alert('You want to delete data ${number_index} ?', 'support/awareness/delete/${data.id_awareness}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                                        <a class="dropdown-item" onclick="load_modal(5,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                             dropdownHtml += `</div>
                                 </div>`;
                             return dropdownHtml;

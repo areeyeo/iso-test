@@ -30,5 +30,11 @@ class Home extends BaseController
         echo view('dashboard', $data);
     }
 
+    public function Risk_Criteria_Context_Risk_Level()
+    {
+        echo view('layout/header');
+        echo view('Risk_Criteria_Context_Risk_Level');
+    }
+
 
 }

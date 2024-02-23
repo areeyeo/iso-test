@@ -93,6 +93,10 @@ class AllversionController extends BaseController
             $data['header'] = "Awareness";
             $data['url'] = "support/awareness/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 13)->first();
+        } else if ($type == '14') {
+            $data['header'] = "Communication";
+            $data['url'] = "support/communication/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 14)->first();
         }else {
 
         }
@@ -168,6 +172,8 @@ class AllversionController extends BaseController
             return redirect()->to('support/competence/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         }else if ($type == '13') {
             return redirect()->to('support/awareness/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        }else if ($type == '14') {
+            return redirect()->to('support/communication/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         }else {
 
         }

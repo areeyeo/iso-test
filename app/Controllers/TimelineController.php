@@ -79,6 +79,11 @@ class TimelineController extends BaseController
             $data['url_allversion'] = "/context/context_analysis/index/13";
             $data['text_path'] = "Support Awareness";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 13)->first();
+        } else if ($type == '14') {
+            $data['url_version'] = "/support/communication/index/" . $id_context . '/' . $num_ver;
+            $data['url_allversion'] = "/context/context_analysis/index/14";
+            $data['text_path'] = "Support Communication";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 14)->first();
         } else {
 
         }

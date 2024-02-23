@@ -1,4 +1,4 @@
-<title>Awareness Version</title>
+<title>Communication Version</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -6,7 +6,8 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet"
+    href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
@@ -24,7 +25,7 @@
     }
 
     tbody {
-        /* border-bottom: 10px solid #ccc; */
+        border-bottom: 10px solid #ccc;
         text-align: center;
     }
 
@@ -76,34 +77,6 @@
         border-color: transparent;
         background-color: transparent;
     }
-
-    .table-wrapper {
-        max-height: 400px;
-        overflow-y: auto;
-    }
-
-    .table-wrapper::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    .table-wrapper::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb {
-        background-color: #ADB5BD;
-        border-radius: 10px;
-        border: 3px solid #f1f1f1;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
-        background-color: #6C757D;
-    }
-
-    .table th,
-    .table td {
-        white-space: nowrap;
-    }
 </style>
 
 <body class="hold-transition sidebar-mini">
@@ -114,8 +87,10 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>
-                            Communication
-                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Requirement</button>
+                        Communication
+                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal"
+                                data-target="#modal-default" id="load-modal-button"
+                                onclick="load_modal(1)">Requirement</button>
                         </h1>
                     </div>
                     <div class="col-sm-6">
@@ -137,32 +112,53 @@
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 <i class="fas fa-minus"></i>
                             </button>
-                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/') ?>" style="color: #ADB5BD;">Version</a></button>
-                            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;">
-                                <a href="<?= site_url('context/ISObjective/timeline_log/') ?>" style="color: #ADB5BD;">History</a>
-                            </button>
-                            <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                            <?php if ($data['status'] == 4 || $data['status'] == 5) {
+                                $disabled = '';
+                            } else {
+                                $disabled = '';
+                            } ?>
+                            <button class="badge badge-edit"
+                                style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
+                                    href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>"
+                                    style="color: #ADB5BD;">Version</a></button>
+                            <button class="badge badge-edit <?= $disabled ?>"
+                                style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
+                                    href="<?= site_url('support/communication/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>"
+                                    style="color: #ADB5BD;">History</a></button>
+                            <button class="badge badge-edit"
+                                style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Action</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-submenu">
                                     <a class="dropdown-item dropdown-toggle" href="#">Status</a>
                                     <div class="dropdown-menu">
                                         <!-- Second-level dropdown items -->
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/id_version ?>/1')">Pending Review</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
+                                            Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/id_version ?>/2')">Review</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Reject Review</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal"
+                                            data-target="#modal-default" id="load-modal-button"
+                                            onclick="load_modal(3 ,5)">Reject Review</a>
 
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/id_version ?>/3')">Pending
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
                                             Approve</a>
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/id_version ?>/4')">Approved</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(4)">Reject Approved</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal"
+                                            data-target="#modal-default" id="load-modal-button"
+                                            onclick="load_modal(3 ,6)">Reject Approved</a>
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
@@ -175,21 +171,21 @@
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Create Note</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#"
+                                    onclick="load_modal(4)">Create Note</a>
                             </div>
-
-                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(1)"></i>
+                            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default"
+                                id="load-modal-button" onclick="load_modal(2)"></i>
+                            <!-- show version Control -->
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="row justify-content-center mb-2">
                                 <div class="col-sm-3 ">
-                                    <h6>Version:
-                                        <span class="blue-text">
-                                            <?php echo $data['num_ver']; ?>
-                                        </span>
-                                    </h6>
+                                    <h6>Version: <span class="blue-text">
+                                            <?= $data['num_ver'] ?>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
                                     <h6>Status:
@@ -213,39 +209,32 @@
                                     </h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Approved Date:
-                                        <span class="gray-text">
+                                    <h6>Approved Date: <span class="gray-text">
                                             <?php echo $data['approved_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                             </div>
                             <div class="row justify-content-center mb-2">
                                 <div class="col-sm-3 ">
-                                    <h6>Modified Date:
-                                        <span class="gray-text">
+                                    <h6>Modified Date: <span class="gray-text">
                                             <?php echo $data['modified_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Last Reviewed:
-                                        <span class="gray-text">
+                                    <h6>Last Reviewed: <span class="gray-text">
                                             <?php echo $data['review_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                                 <div class="col-sm-3 ">
-                                    <h6>Announce Date:
-                                        <span class="gray-text">
+                                    <h6>Announce Date: <span class="gray-text">
                                             <?php echo $data['announce_date']; ?>
-                                        </span>
-                                    </h6>
+                                        </span></h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <section class="content">
             <div class="container-fluid">
@@ -257,31 +246,33 @@
                                     <div class="tab-content" id="tabs-tabContent">
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <h4>Communication</h4>
-                                            <div id="btn-Awareness" name="btn-Awareness">
-                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default" onclick="load_modal(2)">
-                                                    <span class="text-nowrap"><i class="fas fa-edit"></i>Create Communication</span>
+                                            <div id="btn-Communication" name="btn-Communication">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    data-toggle="modal" data-target="#modal-default"
+                                                    onclick="load_modal(5,1)">
+                                                    <span class="text-nowrap"><i class="fas fa-edit"></i>Create
+                                                    Communication</span>
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="table-wrapper">
-                                            <table id="example1" class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">ACTION</th>
-                                                        <th>No.</th>
-                                                        <th>WHAT TO COMMUNICATE</th>
-                                                        <th>DETAIL</th>
-                                                        <th>COMMUNICATOR</th>
-                                                        <th>COMMUNICATE WITH WHOM</th>
-                                                        <th>WHEN TO COMMUNICATE</th>
-                                                        <th>HOW TO COMMUNICATE</th>
-                                                        <th>ATTACHMENT FILE</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-                                        </div>
+
+                                        <table id="example1" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">ACTION</th>
+                                                    <th>No.</th>
+                                                    <th>WHAT TO COMMUNICATE</th>
+                                                    <th>DETAIL</th>
+                                                    <th>COMMUNICATOR</th>
+                                                    <th>COMMUNICATE WITH WHOM</th>
+                                                    <th>WHEN TO COMMUNICATE</th>
+                                                    <th>HOW TO COMMUNICATE</th>
+                                                    <th>ATTACHMENT FILE</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -296,8 +287,17 @@
     </div>
 
     <div class="modal fade" id="modal-default">
+        <div id="modal_requirement">
+            <?= $this->include("Modal/Requirement_Modal"); ?>
+        </div>
         <div id="modal_contextver">
             <?= $this->include("Modal/Context_Ver"); ?>
+        </div>
+        <div id="modal_reject">
+            <?= $this->include("Modal/Reject_Modal"); ?>
+        </div>
+        <div id="modal_crud_note">
+            <?= $this->include("Modal/CRUD_Note"); ?>
         </div>
         <div id="modal_crud_support_communication">
             <?= $this->include("Modal/CRUD_Support_Communication"); ?>
@@ -335,17 +335,28 @@
     <script src="<?= base_url('plugins/codemirror/mode/htmlmixed/htmlmixed.js'); ?>"></script>
 
     <script>
-        function load_modal(check, data_encode) {
-            console.log('Function is called with check:', check, 'and check_type:', check_type);
-
+        function load_modal(check, check_type, data_encode) {
+            modal_requirement = document.getElementById("modal_requirement");
             modal_contextver = document.getElementById("modal_contextver");
+            modal_reject = document.getElementById("modal_reject");
+            modal_crud_note = document.getElementById("modal_crud_note");
             modal_crud_support_communication = document.getElementById("modal_crud_support_communication");
-            $(".modal-body #iss").empty();
+
+            var element = <?php echo json_encode($data); ?>; //data version control
 
             if (check == '1') {
                 //--show modal requirment--//
-                console.log('Showing modal 1');
+                modal_requirement.style.display = "block";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
+                modal_crud_support_communication.style.display = "none";
+            } else if (check == '2') {
+                //--show modal Version Control--//
+                modal_requirement.style.display = "none";
                 modal_contextver.style.display = "block";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
                 modal_crud_support_communication.style.display = "none";
                 $(".modal-body #description").text(element.details);
                 $(".modal-body #status").val(element.status);
@@ -360,77 +371,343 @@
                 $(".modal-body #approved").val(element.approved_date);
                 $(".modal-body #announce").val(element.announce_date);
                 check_status(element.status);
-            } else if (check == '2') {
-                //--show modal requirment--//
-                console.log('Showing modal 2');
+            } else if (check == '3') {
+                //--show modal Reject --//
+                modal_requirement.style.display = "none";
                 modal_contextver.style.display = "none";
+                modal_reject.style.display = "block";
+                modal_crud_note.style.display = "none";
+                modal_crud_support_communication.style.display = "none";
+                $(".modal-body #status").val(check_type);
+                $(".modal-body #modified_date").val(element.modified_date);
+            } else if (check == '4') {
+                //--show modal Crate Note --//
+                modal_requirement.style.display = "none";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "block";
+                modal_crud_support_communication.style.display = "none";
+                $(".modal-body #modified").val(element.modified_date);
+                $(".modal-body #check").val(10);
+                $(".modal-body #params").val(10);
+            } else if (check == '5') {
+                //--show modal Support Communication --//
+                modal_requirement.style.display = "none";
+                modal_contextver.style.display = "none";
+                modal_reject.style.display = "none";
+                modal_crud_note.style.display = "none";
                 modal_crud_support_communication.style.display = "block";
+                $(".modal-body #whattocommunicate").val('');
+                $(".modal-body #detail").val('');
+                $(".modal-body #communicator").val('');
+                $(".modal-body #communicatewithwhom").val('');
+                $(".modal-body #whentocommunicate").val('');
+                $(".modal-body #howtocommunicate").val('');
+                if (check_type == '1') {
+                    $(".modal-body #url_route").val("support/communication/create/" + element.id_version + "/" + element.status);
+                } else {
+                    const rowData = JSON.parse(decodeURIComponent(data_encode));
+                    $(".modal-body #whattocommunicate").val(rowData.what_to_communicate);
+                    $(".modal-body #detail").val(rowData.detail);
+                    $(".modal-body #communicator").val(rowData.communicator);
+                    $(".modal-body #communicatewithwhom").val(rowData.communicate_with_whom);
+                    $(".modal-body #whentocommunicate").val(rowData.when_to_communicate);
+                    $(".modal-body #howtocommunicate").val(rowData.how_to_communicate);
+                    $(".modal-body #url_route").val("support/communication/edit/" + rowData.id_communication + "/" + element.id_version + "/" + element.status);
+                }
             }
         }
     </script>
     <script>
-        var Data = [
-            {
-                "WHATTOCOMMUNICATE": "นโยบายด้านความมั่นคงปลอดภัยสารสนเทศ",
-                "DETAIL": "นโยบาย และ วัตถุประสงค์การบริหารจัดการความมั่นคงปลอดภัยสารสนเทศ (ISMS)",
-                "COMMUNICATOR": "",
-                "COMMUNICATEWITHWHOM": ["COMMUNICATEWITHWHOM", "COMMUNICATEWITHWHOM"],
-                "WHENTOCOMMUNICATE": "",
-                "HOWTOCOMMUNICATE": ["HOWTOCOMMUNICATE", "HOWTOCOMMUNICATE"],
-                "ATTACHMENTFILE": "",
-            },
-            {
-                "WHATTOCOMMUNICATE": "แนวนโยบายและแนวปฏิบัติในการคุ้มครองข้อมูลส่วนบุคคล (Data Privacy Policy)",
-                "DETAIL": "วิธีการเก็บรวบรวมข้อมูลส่วนบุคคล ",
-                "COMMUNICATOR": "",
-                "COMMUNICATEWITHWHOM": ["COMMUNICATEWITHWHOM", "COMMUNICATEWITHWHOM"],
-                "WHENTOCOMMUNICATE": "",
-                "HOWTOCOMMUNICATE": ["HOWTOCOMMUNICATE", "HOWTOCOMMUNICATE"],
-                "ATTACHMENTFILE": "",
-            },
-        ];
-
-        var example1TableBody = document.getElementById("example1").getElementsByTagName("tbody")[0];
-
-        Data.forEach(function(row, index) {
-            var newRow = example1TableBody.insertRow();
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            var cell6 = newRow.insertCell(5);
-            var cell7 = newRow.insertCell(6);
-            var cell8 = newRow.insertCell(7);
-            var cell9 = newRow.insertCell(8);
-
-
-            cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-      <li data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)"><a class="dropdown-item" href="#">Edit</a></li>
-      <li><a class="dropdown-item" href="#">Copy</a></li>
-      <li><a class="dropdown-item" href="#">Delete</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)"><a class="dropdown-item" href="#">Create</a></li>
-    </ul>
-  </div>`;
-            cell2.textContent = index + 1;
-            cell3.textContent = row.WHATTOCOMMUNICATE;
-            cell4.textContent = row.DETAIL;
-            cell5.textContent = row.COMMUNICATOR;
-            displayArrayInCell(cell6, row.COMMUNICATEWITHWHOM);
-            cell7.textContent = row.WHENTOCOMMUNICATE;
-            displayArrayInCell(cell8, row.HOWTOCOMMUNICATE);
-            cell9.textContent = row.ATTACHMENTFILE;
-            
-        });
-
-        function displayArrayInCell(cell, dataArray) {
-            if (Array.isArray(dataArray) && dataArray.length > 1) {
-                cell.innerHTML = dataArray.join('<br>');
-            } else {
-                cell.textContent = Array.isArray(dataArray) ? dataArray[0] : dataArray;
+        $(document).ready(function () {
+            getTableData1();
+        })
+    </script>
+    <script>
+        var countTable1 = 0;
+        function getTableData1() {
+            if (countTable1 === 0) {
+            countTable1++;
+            var data_version = <?php echo json_encode($data); ?>;
+            if (data_version.status === '4' || data_version.status === '5') {
+                var disabledAttribute = 'disabled';
             }
+            if ($.fn.DataTable.isDataTable('#example1')) {
+                $('#example1').DataTable().destroy();
+            }
+            $('#example1').DataTable({
+                "processing": $("#interested_table .overlay").show(),
+                "pageLength": 10,
+                "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+                'serverSide': true,
+                    'ajax': {
+                    'url': "<?php echo site_url('support/communication/getdata/'); ?>" + data_version.id_version,
+                    'type': 'GET',
+                    'dataSrc': 'data',
+                },
+                "responsive": false,
+                "lengthChange": false,
+                "autoWidth": true,
+                "searching": true,
+                "ordering": false,
+                "scrollX": true,
+                "drawCallback": function (settings) {
+                    $("#interested_table .overlay").hide();
+                    var daData = settings.json.data;
+                    if (daData.length == 0) {
+                        $('#example1 tbody').html(`
+                            <tr>
+                                <td colspan="9">
+                                    <div class="dropdown">
+                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                            class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false" ${disabledAttribute}></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" onclick="load_modal(5,1)" data-toggle="modal"
+                                                data-target="#modal-default">Create</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>`);
+                    }
+                },
+                'columns': [
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            var number_index = +meta.settings.oAjaxData.start + 1;
+                            const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                            let dropdownHtml = `
+                                <div class="dropdown">
+                                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        ${disabledAttribute}></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" onclick="load_modal(5, 2,'${encodedRowData}')" data-toggle="modal"
+                                            data-target="#modal-default">Edit</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'support/communication/copydata/${data.id_communication}/${number_index}/${data_version.id_version}/${data_version.status}')">Copy</a>
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'support/communication/delete/${data.id_communication}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" onclick="load_modal(5,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                            dropdownHtml += `</div>
+                                </div>`;
+                            return dropdownHtml;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.what_to_communicate) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.detail) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.communicator) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 300,
+                        'render': function (data, type, row, meta) {
+                            const textArry = data.communicate_with_whom.split('\u2022');
+                            let text = '';
+                            textArry.forEach(myFunction);
+
+                            function myFunction(item) {
+                                if (item !== '') {
+                                    text += '\u2022' + item + '</br>';
+                                }
+                            }
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (text) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function (data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.when_to_communicate) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 300,
+                        'render': function (data, type, row, meta) {
+                            const textArry = data.how_to_communicate.split('\u2022');
+                            let text = '';
+                            textArry.forEach(myFunction);
+
+                            function myFunction(item) {
+                                if (item !== '') {
+                                    text += '\u2022' + item + '</br>';
+                                }
+                            }
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (text) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            if (row.id_file > 0) {
+                                var number_index = +meta.settings.oAjaxData.start;
+                                return `<a href="<?php echo base_url('openfile/'); ?>${row.id_file}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">${row.file_data.name_file}
+                        </a>`
+                            } else {
+                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            }
+                        }
+                    },
+                ],
+            });
+            $('[data-toggle="tooltip"]').tooltip();
         }
+        }
+    </script>
+    <script>
+        function action_(url, form) {
+            var formData = new FormData(document.getElementById(form));
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+            $.ajax({
+                url: '<?= base_url() ?>' + url,
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
+                success: function (response) {
+                    Swal.close();
+                    console.log(response);
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            allowOutsideClick: true,
+                        });
+                        if (response.reload) {
+                            setTimeout(function () {
+                                location.reload();
+                            }, 2000);
+                        }
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true,
+                            confirmButtonText: 'ตกลง',
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: "เกิดข้อผิดพลาด",
+                        icon: 'error',
+                        showConfirmButton: true,
+                        confirmButtonText: 'ตกลง',
+                    });
+                }
+            });
+        }
+    </script>
+    <script>
+        function confirm_Alert(text, url) {
+            Swal.fire({
+                title: text,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Submit",
+                preConfirm: () => {
+                    // Show loading indicator here
+                    var loadingIndicator = Swal.fire({
+                        title: 'Loading...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        showConfirmButton: false,
+                        onOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+                    
+                    return $.ajax({
+                        url: '<?= base_url() ?>' + url,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        beforeSend: function () {
+                            // Show loading indicator here
+                            loadingIndicator;
+                        },
+                        complete: function () {
+                            // Hide loading indicator here
+                            Swal.close();
+                        }
+                    }).then(function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                                if (response.reload) {
+                                    
+                                    if (response.newCopy) {
+                                        window.location.href = '<?= site_url("support/communication/index/") ?>' + response.id_version + '/' + response.num_ver;
+                                    } else {
+                                        window.location.reload();
+                                    }
+                                }
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'error',
+                                showConfirmButton: true
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
     </script>

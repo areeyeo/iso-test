@@ -33,6 +33,8 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'AllversionController::loaddata_data_type/1', ['filter' => 'authGuard']);
 $routes->get('/login', 'LoginController::index', ['filter' => 'authGuard_login']);
 $routes->get('/logout', 'LoginController::logout');
+$routes->get('/risk', 'Home::Risk_Criteria_Context_Risk_Level');
+
 $routes->match(['get', 'post'], '/login/loginAuth', 'LoginController::loginAuth');
 
 $routes->get('/profile', 'ProfileController::index', ['filter' => 'authGuard']);
@@ -291,8 +293,17 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'awareness/getdata/(:num)', 'Support_AwarenessController::get_data_awareness/$1'); //getdata
 
     $routes->match(['get', 'post'], 'awareness/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
+    
     //-- Support Communication --//
-    $routes->match(['get', 'post'],'communication', 'Support_CommunicationController::index');
+    $routes->match(['get', 'post'], 'communication/index/(:num)/(:num)', 'Support_CommunicationController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'communication/create/(:num)/(:num)', 'Support_CommunicationController::create_communication/$1/$2'); //create
+    $routes->match(['get', 'post'], 'communication/edit/(:num)/(:num)/(:num)', 'Support_CommunicationController::edit_communication/$1/$2/$3'); //edit
+    $routes->match(['get', 'post'], 'communication/delete/(:num)/(:num)/(:num)/(:num)', 'Support_CommunicationController::delete_communication/$1/$2/$3/$4'); //delete
+    $routes->match(['get', 'post'], 'communication/copydata/(:num)/(:num)/(:num)/(:num)', 'Support_CommunicationController::copy_communication/$1/$2/$3/$4'); //copy
+
+    $routes->match(['get', 'post'], 'communication/getdata/(:num)', 'Support_CommunicationController::get_data_communication/$1'); //getdata
+
+    $routes->match(['get', 'post'], 'communication/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 });
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);

@@ -266,7 +266,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('/support/communication'); ?>" class="nav-link">
+                                    <a href="<?= site_url('context/loaddatatype/14'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Communication</p>
                                     </a>
