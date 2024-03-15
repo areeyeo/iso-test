@@ -33,7 +33,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'AllversionController::loaddata_data_type/1', ['filter' => 'authGuard']);
 $routes->get('/login', 'LoginController::index', ['filter' => 'authGuard_login']);
 $routes->get('/logout', 'LoginController::logout');
-$routes->get('/risk', 'Home::Risk_Criteria_Context_Risk_Level');
+$routes->get('/crud_risk', 'Home::CRUD_RiskOppContext');
 
 $routes->match(['get', 'post'], '/login/loginAuth', 'LoginController::loginAuth');
 
@@ -244,6 +244,55 @@ $routes->group("permission", ['filter' => 'authGuard'], function ($routes) {
 });
 
 $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
+
+    //-- Address Risks & Opportunities --//
+    //context
+    $routes->get('planningAddressRisksOpp/context/index/(:num)/(:num)', 'Planning_AddressRisksOppController::index_context/$1/$2'); //index
+
+    $routes->get('crud_context_risk_opp/(:num)/(:num)', 'Planning_AddressRisksOppController::indexCrudContext/$1/$2'); //index create context
+    $routes->get('crud_context_risk_opp/edit/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::indexEditContext_risk/$1/$2/$3'); //index edit context
+    $routes->get('crud_context_risk_opp/view/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::indexViewContext_risk/$1/$2/$3'); //index view context risk
+    $routes->get('crud_context_risk_opp/opportunities/view/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::indexViewContext_opportunity/$1/$2/$3'); //index view context opportunities
+    $routes->get('crud_context_risk_opp/opportunities/edit/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::indexEditContext_opportunity/$1/$2/$3'); //index edit opp
+
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/risk/create/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::createContext_risk/$1/$2/$3'); //create risk context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/risk/edit/(:num)/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::editContext_risk/$1/$2/$3/$4'); //create risk context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/risk/delete/(:num)/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::deleteContext_risk/$1/$2/$3/$4'); //delete risk context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/risk/getdata/(:num)', 'Planning_AddressRisksOppController::getContext_data_risk/$1'); //getdata risk context
+
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/opportunities/create/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::createContext_opportunity/$1/$2/$3'); //create opportunities context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/opportunities/edit/(:num)/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::editContext_opportunity/$1/$2/$3/$4'); //edit opportunities context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/opportunities/getdata/(:num)', 'Planning_AddressRisksOppController::getContext_data_opportunity/$1'); //getdata risk context
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/opportunities/delete/(:num)/(:num)/(:num)/(:num)', 'Planning_AddressRisksOppController::deleteContext_opportunity/$1/$2/$3/$4'); //delete risk context
+
+
+    $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
+
+    
+    $routes->get('risk_Criteria_Context_Consequence', 'Setting_RiskCriteriaContextController::indexConsequence'); //index Consequence Level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/create', 'Setting_RiskCriteriaContextController::create_consequence'); //create Consequence Level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/edit/(:num)', 'Setting_RiskCriteriaContextController::edit_consequence/$1'); //delete Consequence Level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/delete/(:num)', 'Setting_RiskCriteriaContextController::delete_consequence/$1'); //delete Consequence Level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/change_impact_level/(:num)', 'Setting_RiskCriteriaContextController::change_impact_level/$1'); //change impact Level
+
+    $routes->get('risk_Criteria_Context_Likelihood', 'Setting_RiskCriteriaContextController::indexLikelihood');//index Likelihood context
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Likelihood/edit/(:num)', 'Setting_RiskCriteriaContextController::edit_likelihood/$1');//edit Likelihood context
+
+    $routes->get('risk_Criteria_Context_Risk_Level', 'Setting_RiskCriteriaContextController::indexRiskLevel');//index Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Level/create', 'Setting_RiskCriteriaContextController::create_RiskLevel');//create Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Level/edit/(:num)', 'Setting_RiskCriteriaContextController::edit_RiskLevel/$1');//edit Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Level/delete/(:num)', 'Setting_RiskCriteriaContextController::delete_RiskLevel/$1');//delete Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Level/change_assessment_level/(:num)', 'Setting_RiskCriteriaContextController::change_assessment_level/$1');//change assessment level
+
+    $routes->get('risk_Criteria_Context_Risk_Option', 'Setting_RiskCriteriaContextController::indexRiskOption');//index risk option
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Option/create', 'Setting_RiskCriteriaContextController::create_RiskOption');//create Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Option/edit/(:num)', 'Setting_RiskCriteriaContextController::edit_RiskOption/$1');//edit Risk level
+    $routes->match(['get', 'post'], 'risk_Criteria_Context_Risk_Option/delete/(:num)', 'Setting_RiskCriteriaContextController::delete_RiskOption/$1');//edit Risk level
+
+    //is
+    $routes->get('planningAddressRisksOpp/is/index/(:num)/(:num)', 'Planning_AddressRisksOppController::index_is/$1/$2');
+    $routes->get('crud_is_risk_opp', 'Planning_AddressRisksOppController::indexCrudIS');
+
     //-- Planning IS Objectives --//
     $routes->match(['get', 'post'], 'isobjective/index/(:num)/(:num)', 'Planning_ISObjectivesController::index/$1/$2'); //index
     $routes->match(['get', 'post'], 'isobjective/getdata/(:num)', 'Planning_ISObjectivesController::get_data_objective/$1'); //index
@@ -257,9 +306,7 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'planning/edit/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::edit_planning/$1/$2/$3'); //edit
     $routes->match(['get', 'post'], 'planning/copydata/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::copy_planning/$1/$2/$3/$4'); //copy
     $routes->match(['get', 'post'], 'planning/delete/(:num)/(:num)/(:num)/(:num)/(:num)', 'Planning_ISObjectivesController::delete_planning/$1/$2/$3/$4/$5'); //delete
-
     $routes->match(['get', 'post'], 'summary/getdata/(:num)', 'Planning_ISObjectivesController::get_data_summary/$1'); //getdata
-
     $routes->match(['get', 'post'], 'isobjective/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
     //-- Planning of Change --//
@@ -293,7 +340,7 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'awareness/getdata/(:num)', 'Support_AwarenessController::get_data_awareness/$1'); //getdata
 
     $routes->match(['get', 'post'], 'awareness/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
-    
+
     //-- Support Communication --//
     $routes->match(['get', 'post'], 'communication/index/(:num)/(:num)', 'Support_CommunicationController::index/$1/$2'); //index
     $routes->match(['get', 'post'], 'communication/create/(:num)/(:num)', 'Support_CommunicationController::create_communication/$1/$2'); //create
@@ -305,6 +352,8 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
 
     $routes->match(['get', 'post'], 'communication/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 });
+
+
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);

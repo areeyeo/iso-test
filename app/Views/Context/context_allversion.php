@@ -324,7 +324,7 @@
             if (response.reload) {
               window.location.reload();
             } else {
-              window.location.href = '<?= site_url($url) ?>' + response.id_version + '/' + response.number_ver;
+              window.location.href = '<?= site_url($url) ?>' + response.id_version + '/' + response.num_ver;
             }
           }, 2000);
         } else {

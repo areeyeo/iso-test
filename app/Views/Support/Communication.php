@@ -255,7 +255,6 @@
                                                 </button>
                                             </div>
                                         </div>
-
                                         <table id="example1" class="table table-hover">
                                             <thead>
                                                 <tr>

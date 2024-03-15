@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css'); ?>">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/css/bootstrap-icons.min.css" rel="stylesheet">
 <style>
     tr:nth-child(even) {
         background-color: #F5F5F5;
@@ -144,11 +145,11 @@
 <?php
 // ข้อมูลจากหน้า likelihood
 $likelihoodData = [
-    ["น้อยมาก", 1],
-    ["น้อย", 2],
-    ["ปานกลาง", 3],
+    ["สูงมาก", 5],
     ["สูง", 4],
-    ["สูงมาก", 5]
+    ["ปานกลาง", 3],
+    ["น้อย", 2],
+    ["น้อยมาก", 1]
 ];
 
 // ข้อมูลจากหน้า Consequenc
@@ -180,7 +181,7 @@ function getRiskColor($result)
         <section class="content-header">
             <div class="container-fluid">
                 <div class="">
-                    <h3>&nbsp;Risk Criteria Context</h3>
+                    <h3>&nbsp;Risk Criteria Information Security</h3>
                 </div>
             </div>
         </section>
@@ -275,6 +276,9 @@ function getRiskColor($result)
     </div>
 </body>
 <div class="modal fade" id="modal-risk-level">
+    <div id="modal_crud_criteria_risk_level">
+        <?= $this->include("Modal/CRUD_Criteria_Context_Risk_Level"); ?>
+    </div>
 </div>
 <script>
     function load_modal(check, check_type, data_encode) {

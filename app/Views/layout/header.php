@@ -231,6 +231,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="<?= site_url('context/loaddatatype/15'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Address Risks & Opp</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="<?= site_url('context/loaddatatype/10'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>IS Objectives</p>
@@ -303,6 +309,37 @@
                         <div>
                             <hr>
                         </div>
+                        <li class="nav-header">Management setting</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-cogs"></i>
+                                <p>
+                                    Risk Criteria Context
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <?php $contextLinks = [
+                                    ['text' => 'Consequence Level', 'url' => 'planning/risk_Criteria_Context_Consequence'],
+                                    ['text' => 'Likelihood Level', 'url' => 'planning/risk_Criteria_Context_Likelihood'],
+                                    ['text' => 'Risk Level', 'url' => 'planning/risk_Criteria_Context_Risk_Level'],
+                                    ['text' => 'Risk Options', 'url' => 'planning/risk_Criteria_Context_Risk_Option']
+                                ]; ?>
+                                <?php foreach ($contextLinks as $link): ?>
+                                    <li class="nav-item">
+                                        <a href="<?= site_url($link['url']); ?>" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                <?= $link['text']; ?>
+                                            </p>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                        <div>
+                            <hr>
+                        </div>
                         <li class="nav-header">Initial System</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -351,7 +388,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <div>
                             <hr>
                         </div>

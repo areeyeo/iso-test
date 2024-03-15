@@ -325,7 +325,6 @@
       File_Rename_Modal = document.getElementById("File_Rename_Modal");
       $(".modal-header #title_modal").text("File");
       var element = <?php echo json_encode($data); ?>;
-      console.log(check);
       if (check == '1') {
         //--show modal requirment--//
         Requirement_Modal.style.display = "block";

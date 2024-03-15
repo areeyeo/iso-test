@@ -1,4 +1,4 @@
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="overlay preloader">
                 <i class="fas fa-2x fa-sync fa-spin"></i>

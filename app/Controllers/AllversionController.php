@@ -17,7 +17,9 @@ use App\Models\TimelineModels;
 use App\Models\Note_Models;
 use App\Models\NoteComment_Models;
 use App\Models\Leadership_ObjectiveModels;
-
+use App\Models\Address_Risk_Context_Models;
+use App\Models\Address_Risk_Opp_Context_Data_Models;
+use App\Models\Address_Risk_Opp_Context_Models;
 
 class AllversionController extends BaseController
 {
@@ -97,8 +99,11 @@ class AllversionController extends BaseController
             $data['header'] = "Communication";
             $data['url'] = "support/communication/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 14)->first();
-        }else {
-
+        } else if ($type == '15') {
+            $data['header'] = "Address Risks & Opportunities";
+            $data['url'] = "planning/planningAddressRisksOpp/context/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        } else {
         }
         echo view('layout/header');
         echo view('Context/context_allversion', $data);
@@ -170,12 +175,13 @@ class AllversionController extends BaseController
             return redirect()->to('planning/planningofchange/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '12') {
             return redirect()->to('support/competence/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
-        }else if ($type == '13') {
+        } else if ($type == '13') {
             return redirect()->to('support/awareness/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
-        }else if ($type == '14') {
+        } else if ($type == '14') {
             return redirect()->to('support/communication/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
-        }else {
-
+        } else if ($type == '15') {
+            return redirect()->to('planning/planningAddressRisksOpp/context/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        } else {
         }
     }
     public function context_analysis_version($id_version = null, $num_ver = null)
@@ -237,7 +243,6 @@ class AllversionController extends BaseController
         } else {
             return redirect()->to('context/loaddatatype/' . (int) $type);
         }
-
     }
 
     public function openfile($id_file = null)
@@ -333,7 +338,6 @@ class AllversionController extends BaseController
             } else if ($check == 6) {
                 $check_file = $isms_processmodel->where('id_isms_process', $id_)->findAll();
             } else {
-
             }
             if ($check_file[0]['id_file']) {
                 $del_path = 'public/uploads/' . $check_file[0]['id_file'] . '/'; // For Delete folder
@@ -428,7 +432,6 @@ class AllversionController extends BaseController
                     ];
                     //$TimelineModels->save($data_log);
                 } else {
-
                 }
             }
         }
@@ -596,7 +599,6 @@ class AllversionController extends BaseController
                 ];
             }
         } else {
-
         }
 
         return $this->response->setJSON($response);
@@ -613,12 +615,18 @@ class AllversionController extends BaseController
         $TimelineModels = new TimelineModels();
         $Note_Models = new Note_Models();
         $NoteComment_Models = new NoteComment_Models();
+        $Address_Risk_Context_Models = new Address_Risk_Context_Models();
+        $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
+        $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
 
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
         $interested = $interestedmodel->where('id_version', $id)->findAll();
         $scope = $scopemodel->where('id_version', $id)->findAll();
         $scopead = $scopeadmodel->where('id_version', $id)->findAll();
+        $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
+        $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
+
         $timeline = $TimelineModels->where('id_version', $id)->findAll();
         $note = $Note_Models->where('id_version ', $id)->findAll();
 
@@ -770,6 +778,79 @@ class AllversionController extends BaseController
                 }
             }
         }
+        if ($Address_Risk || $Address_Opp) {
+            if ($Address_Risk) {
+                foreach ($Address_Risk as $key) {
+                    if ($key['file']) {
+                        helper('filesystem');
+
+                        $filemodel->where('id_files ', $key['file'])->delete($key['file']);
+                        $del_path = 'public/uploads/' . $key['file'] . '/'; // For Delete folder
+                        $check1 = delete_files($del_path, true); // Delete files into the folder
+                        $check2 = rmdir($del_path);
+                        if (!$check1) {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถลบ File ของ Address Risks ได้!',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                        if (!$check2) {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถลบ folder ของ Address Risks ได้!',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                    $check = $Address_Risk_Context_Models->where('id_address_risks_context', $key['id_address_risks_context'])->delete($key['id_address_risks_context']);
+                    if (!$check) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ Address Risks ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+            }
+            if ($Address_Opp) {
+                foreach ($Address_Opp as $key) {
+                    $data_Opp = $Address_Risk_Opp_Context_Data_Models->where('id_address_risks_opp_context', $key['id_address_risks_opp_context'])->findAll();
+                    foreach ($data_Opp as $key2) {
+                        if ($key2['file']) {
+                            helper('filesystem');
+                            $filemodel->where('id_files ', $key2['file'])->delete($key2['file']);
+                            $del_path = 'public/uploads/' . $key2['file'] . '/'; // For Delete folder
+                            $check1 = delete_files($del_path, true); // Delete files into the folder
+                            $check2 = rmdir($del_path);
+                            if (!$check1) {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถลบ File ของ Address Opportunities ได้!',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                            if (!$check2) {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถลบ folder ของ Address Opportunities ได้!',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                            $check = $Address_Risk_Opp_Context_Data_Models->where('id_address_risks_opp_context_data', $key2['id_address_risks_opp_context_data'])->delete($key2['id_address_risks_opp_context_data']);
+                            if (!$check) {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถลบ Address Risks ได้!',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         if ($timeline) {
             foreach ($timeline as $key) {
                 $check = $TimelineModels->where('id_timeline', $key['id_timeline'])->delete($key['id_timeline']);
@@ -834,6 +915,9 @@ class AllversionController extends BaseController
         $scopeadmodel = new ISMS_ScopeADModels();
         $filemodel = new FileModels();
         $Leadership_ObjectiveModels = new Leadership_ObjectiveModels();
+        $Address_Risk_Context_Models = new Address_Risk_Context_Models();
+        $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
+        $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
 
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
@@ -841,6 +925,9 @@ class AllversionController extends BaseController
         $scope = $scopemodel->where('id_version', $id)->findAll();
         $scopead = $scopeadmodel->where('id_version', $id)->findAll();
         $Leadership_Objective = $Leadership_ObjectiveModels->where('id_version', $id)->findAll();
+        $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
+        $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
+
         $newData_context = $AllversionModels->copyDataById($id);
         $new_id_version = $AllversionModels->insertID();
         $data = [
@@ -1102,12 +1189,123 @@ class AllversionController extends BaseController
                     }
                 }
             }
+            if ($Address_Risk || $Address_Opp) {
+                if ($Address_Risk) {
+                    foreach ($Address_Risk as $key) {
+                        $file = $filemodel->where('id_files', $key['file'])->findAll();
+                        if ($file) {
+                            $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                            if ($newDataFile) {
+                                $id_file = $filemodel->insertID();
+                                $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                                if (!is_dir($targetDir)) {
+                                    mkdir($targetDir, 0777, true);
+                                }
+                                copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                                $newData_Risk = $Address_Risk_Context_Models->copyDataById($key['id_address_risks_context']);
+                                if ($newData_Risk) {
+                                    $id_Risk_new = $Address_Risk_Context_Models->insertID();
+                                    $Risk_update = [
+                                        'file' => $id_file,
+                                        'id_version' => $new_id_version,
+                                    ];
+                                    $Address_Risk_Context_Models->update($id_Risk_new, $Risk_update);
+                                } else {
+                                    $response = [
+                                        'success' => false,
+                                        'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Risk ได้',
+                                    ];
+                                    return $this->response->setJSON($response);
+                                }
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $newData_Risk = $Address_Risk_Context_Models->copyDataById($key['id_address_risks_context']);
+                            if ($newData_Risk) {
+                                $id_Risk_new = $Address_Risk_Context_Models->insertID();
+                                $Risk_update = [
+                                    'file' => null,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Address_Risk_Context_Models->update($id_Risk_new, $Risk_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Risk ได้',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        }
+                    }
+                }
+                if ($Address_Opp) {
+                    foreach ($Address_Opp as $key) {
+                        $newData_Opp = $Address_Risk_Opp_Context_Models->copyDataById($key['id_address_risks_opp_context']);
+                        if ($newData_Opp) {
+                            $id_Opp_new = $Address_Risk_Opp_Context_Models->insertID();
+                            $Address_Risk_Opp_Context_Models->update($id_Opp_new, [
+                                'id_version' => $new_id_version,
+                            ]);
+                            $data_opp_data = $Address_Risk_Opp_Context_Data_Models->where('id_address_risks_opp_context', $key['id_address_risks_opp_context'])->findAll();
+                            if ($data_opp_data) {
+                                foreach ($data_opp_data as $data) {
+                                    $newData_Opp_data = $Address_Risk_Opp_Context_Data_Models->copyDataById($data['id_address_risks_opp_context_data']);
+                                    if ($newData_Opp_data) {
+                                        $id_Opp_data_new = $Address_Risk_Opp_Context_Data_Models->insertID();
+                                        $Address_Risk_Opp_Context_Data_Models->update($id_Opp_data_new, [
+                                            'id_address_risks_opp_context' => $id_Opp_new,
+                                        ]);
+                                        $file = $filemodel->where('id_files', $data['file'])->findAll();
+                                        if ($file) {
+                                            $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                                            if ($newDataFile) {
+                                                $id_file = $filemodel->insertID();
+                                                $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                                                if (!is_dir($targetDir)) {
+                                                    mkdir($targetDir, 0777, true);
+                                                }
+                                                copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                                                $Address_Risk_Opp_Context_Data_Models->update($id_Opp_data_new, [
+                                                    'file' => $id_file,
+                                                ]);
+                                            } else {
+                                                $response = [
+                                                    'success' => false,
+                                                    'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                                                ];
+                                                return $this->response->setJSON($response);
+                                            }
+                                        }
+                                    } else {
+                                        $response = [
+                                            'success' => false,
+                                            'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Opp data ได้',
+                                        ];
+                                        return $this->response->setJSON($response);
+                                    }
+                                }
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Opp ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
             $type_Version = $AllversionModels->where('id_version', $newData_context)->findColumn('type_version');
             $num_ver = $AllversionModels->where('type_version', $type_Version)->where('id_user', session()->get('id'))->countAllResults();
             $response = [
                 'success' => true,
                 'message' => 'คัดลอกข้อมูลสำเร็จ!',
-                'reload' => true,
+                'reload' => false,
                 'newCopy' => true,
                 'id_version' => $new_id_version,
                 'num_ver' => $num_ver,
@@ -1120,7 +1318,6 @@ class AllversionController extends BaseController
             ];
             return $this->response->setJSON($response);
         }
-
     }
 
     public function update_status($id = null, $status = null)
@@ -1254,7 +1451,6 @@ class AllversionController extends BaseController
             ];
         }
         return $this->response->setJSON($response);
-
     }
 
     public function update_context()

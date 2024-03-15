@@ -32,8 +32,13 @@ class Home extends BaseController
 
     public function Risk_Criteria_Context_Risk_Level()
     {
-        echo view('layout/header');
         echo view('Risk_Criteria_Context_Risk_Level');
+    }
+
+    public function CRUD_RiskOppContext()
+    {
+        echo view('layout/header');
+        echo view('CRUD_RiskOppContext');
     }
 
 
