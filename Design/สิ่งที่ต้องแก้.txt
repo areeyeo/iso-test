@@ -1,0 +1,7 @@
+สิ่งที่ต้องทำ
+- แก้การ copy / delete version ของ  PlanninIS Objectives, Support Competence, Awareness, Communication
+- ทำ 7.5
+
+edit file
+Support = Communication** / Competence*** / Awareness **
+Planing = is objectives planing /  ***

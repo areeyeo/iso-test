@@ -319,12 +319,11 @@
             icon: 'success',
             showConfirmButton: false
           });
-
           setTimeout(() => {
             if (response.reload) {
               window.location.reload();
             } else {
-              window.location.href = '<?= site_url($url) ?>' + response.id_version + '/' + response.num_ver;
+              window.location.href = '<?= site_url($url) ?>' + response.id_version + '/' + response.number_ver;
             }
           }, 2000);
         } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 05:14 AM
+-- Generation Time: Apr 03, 2024 at 06:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -196,7 +196,19 @@ INSERT INTO `activities_log` (`id_activities`, `text_activities`, `type_activiti
 (153, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-12', '09:16:25'),
 (154, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-13', '09:16:28'),
 (155, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-13', '15:03:58'),
-(156, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-14', '09:13:17');
+(156, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-14', '09:13:17'),
+(157, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-21', '09:20:06'),
+(158, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-03-22', '09:29:20'),
+(159, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-25', '09:35:07'),
+(160, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-25', '13:36:21'),
+(161, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-26', '09:01:06'),
+(162, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-27', '09:18:41'),
+(163, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-27', '13:50:44'),
+(164, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-29', '10:57:40'),
+(165, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-03-29', '13:50:50'),
+(166, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-04-01', '09:40:26'),
+(167, 'TNET test ได้เข้าสู่ระบบ ', 4, 5, '2024-04-02', '09:32:01'),
+(168, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-04-03', '09:23:29');
 
 -- --------------------------------------------------------
 
@@ -359,12 +371,27 @@ INSERT INTO `all_version_table` (`id_version`, `modified_date`, `review_date`, `
 (26, NULL, NULL, NULL, NULL, 0, 5, 7),
 (27, NULL, NULL, NULL, NULL, 0, 5, 11),
 (28, NULL, NULL, NULL, NULL, 0, 5, 10),
-(29, NULL, NULL, NULL, NULL, 0, 5, 12),
 (30, NULL, NULL, NULL, NULL, 0, 5, 13),
 (31, NULL, NULL, NULL, NULL, 0, 5, 14),
 (44, NULL, NULL, NULL, NULL, 0, 5, 15),
 (45, NULL, NULL, NULL, NULL, 0, 5, 15),
-(46, '14/03/2024', '14/03/2024', '14/03/2024', NULL, 2, 5, 15);
+(46, '14/03/2024', '14/03/2024', '14/03/2024', NULL, 2, 5, 15),
+(47, NULL, NULL, NULL, NULL, 0, 5, 14),
+(48, NULL, NULL, NULL, NULL, 0, 5, 13),
+(49, NULL, NULL, NULL, NULL, 0, 5, 12),
+(51, NULL, NULL, NULL, NULL, 0, 5, 10),
+(52, NULL, NULL, NULL, NULL, 0, 5, 7),
+(57, NULL, NULL, NULL, NULL, 0, 5, 17),
+(58, NULL, NULL, NULL, NULL, 0, 5, 17),
+(59, NULL, NULL, '29/03/2024', NULL, 1, 5, 17),
+(60, NULL, NULL, NULL, NULL, 0, 5, 7),
+(61, NULL, NULL, NULL, NULL, 0, 5, 10),
+(69, NULL, NULL, NULL, NULL, 0, 5, 3),
+(70, NULL, NULL, NULL, NULL, 0, 5, 3),
+(74, '03/04/2024', '03/04/2024', '03/04/2024', NULL, 2, 5, 18),
+(77, NULL, NULL, NULL, NULL, 0, 5, 18),
+(78, NULL, NULL, NULL, NULL, 0, 5, 18),
+(79, NULL, NULL, NULL, NULL, 0, 5, 18);
 
 -- --------------------------------------------------------
 
@@ -540,7 +567,55 @@ INSERT INTO `files_table` (`id_files`, `name_file`) VALUES
 (84, 'ตัวอย่างแอพที่ต้องการ.pdf'),
 (85, 'arjun.pdf'),
 (86, 'ตัวอย่างแอพที่ต้องการ.pdf'),
-(87, 'ตัวอย่างแอพที่ต้องการ.pdf');
+(87, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(88, 'arjun.pdf'),
+(89, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(93, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(94, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(98, 'arjun.pdf'),
+(99, 'arjun.pdf'),
+(100, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(101, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(102, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(103, 'arjun.pdf'),
+(104, 'arjun.pdf'),
+(105, 'arjun.pdf'),
+(106, 'arjun.pdf'),
+(107, 'arjun.pdf'),
+(108, 'arjun.pdf'),
+(113, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(114, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(115, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(116, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(117, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(118, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(119, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(120, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(121, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(122, 'รายงานยอดขาย.pdf'),
+(124, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(125, 'arjun.pdf'),
+(126, 'รายงานยอดขาย.pdf'),
+(127, 'รายงานยอดขาย.pdf'),
+(128, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(129, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(130, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(131, 'รายงานยอดขาย.pdf'),
+(132, 'รายงานยอดขาย.pdf'),
+(133, 'arjun.pdf'),
+(136, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(138, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(139, 'arjun.pdf'),
+(144, 'รายงานยอดขาย.pdf'),
+(149, 'รายงานยอดขาย.pdf'),
+(150, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(151, 'รายงานยอดขาย.pdf'),
+(152, 'รายงานยอดขาย.pdf'),
+(153, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(154, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(163, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(164, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(165, 'ตัวอย่างแอพที่ต้องการ.pdf');
 
 -- --------------------------------------------------------
 
@@ -719,7 +794,10 @@ CREATE TABLE `leadership_files_table` (
 INSERT INTO `leadership_files_table` (`id_ls_file`, `name_file`, `upload_date`, `id_version`) VALUES
 (1, 'ISO 29110.pdf', '30/10/2023', 6),
 (2, 'SD-ISMS-002_Organization Information Security Management System_Rev0.pdf', '01/11/2023', 15),
-(3, 'IS policies and guidelines V14.pdf', '02/11/2023', 6);
+(3, 'IS policies and guidelines V14.pdf', '02/11/2023', 6),
+(4, 'ตัวอย่างแอพที่ต้องการ.pdf', '29/03/2024', 6),
+(5, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf', '29/03/2024', 6),
+(7, 'รายงานยอดขาย.pdf', '29/03/2024', 7);
 
 -- --------------------------------------------------------
 
@@ -739,7 +817,10 @@ CREATE TABLE `leadership_is_objective_table` (
 
 INSERT INTO `leadership_is_objective_table` (`id_is_objective`, `text`, `id_version`) VALUES
 (1, 'ระบบ ERP มีความพร้อมใช้ 99.99%', 2),
-(2, '', 23);
+(2, '', 23),
+(4, 'sdasd', 26),
+(5, 'sdasd', 52),
+(6, 'sdasd', 60);
 
 -- --------------------------------------------------------
 
@@ -781,7 +862,8 @@ CREATE TABLE `leadership_policy_table` (
 
 INSERT INTO `leadership_policy_table` (`id_policy`, `id_file`, `date_upload`, `id_version`) VALUES
 (1, 6, '01/11/2023', 10),
-(4, 15, '10/01/2024', 4);
+(4, 15, '10/01/2024', 4),
+(5, 128, '29/03/2024', 4);
 
 -- --------------------------------------------------------
 
@@ -803,7 +885,8 @@ CREATE TABLE `leadership_responsibilities_table` (
 --
 
 INSERT INTO `leadership_responsibilities_table` (`id_responsibilities`, `roles`, `responsibilities`, `name_lastname`, `id_file`, `id_version`) VALUES
-(1, 3, 1, 0, 0, 15);
+(1, 3, 1, 0, 0, 15),
+(3, 1, 0, 0, 129, 7);
 
 -- --------------------------------------------------------
 
@@ -887,6 +970,15 @@ CREATE TABLE `planning_is_objectives_objectives_table` (
   `id_version` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `planning_is_objectives_objectives_table`
+--
+
+INSERT INTO `planning_is_objectives_objectives_table` (`id_objective`, `objective`, `evaluation`, `id_version`) VALUES
+(1, 'sdfsdf', 'sdfsdfs', 28),
+(2, '่ท้ท', '้่ท้่ท้่ท', 51),
+(3, 'kjljl', 'jlkjl', 61);
+
 -- --------------------------------------------------------
 
 --
@@ -903,6 +995,14 @@ CREATE TABLE `planning_is_objectives_planning_table` (
   `file` int(10) NOT NULL,
   `id_version` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `planning_is_objectives_planning_table`
+--
+
+INSERT INTO `planning_is_objectives_planning_table` (`id_planning`, `id_objective`, `planning`, `start_date`, `end_date`, `owner`, `file`, `id_version`) VALUES
+(1, 3, 'hjkhjkjh', '29/03/2024', '29/03/2024', 'hjkhjkhjk', 131, 61),
+(2, 3, 'sadasdasd', '01/04/2024', '29/01/2024', 'asdasdasd', 0, 61);
 
 -- --------------------------------------------------------
 
@@ -1039,7 +1139,10 @@ CREATE TABLE `scope_activites_table` (
 --
 
 INSERT INTO `scope_activites_table` (`id_scope_activites`, `id_file`, `date_upload`, `id_version`) VALUES
-(1, 4, '01/11/2023', 12);
+(1, 4, '01/11/2023', 12),
+(4, 163, '02/04/2024', 8),
+(5, 164, '02/04/2024', 69),
+(6, 165, '02/04/2024', 70);
 
 -- --------------------------------------------------------
 
@@ -1062,7 +1165,411 @@ CREATE TABLE `scope_table` (
 
 INSERT INTO `scope_table` (`id_scope`, `location`, `organization`, `system_service`, `scope_statement`, `id_version`) VALUES
 (1, 'HQ', 'T-NET', 'ERP', 'The ISMS applied to...', 12),
-(2, 'test', 'test', 'test', 'test', 20);
+(2, 'test', 'test', 'test', 'test', 20),
+(3, 'asdsa', 'dsadas', 'dasdsa', 'das', 69),
+(4, 'asdsa', 'dsadas', 'dasdsa', 'das', 70);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `soa`
+--
+
+CREATE TABLE `soa` (
+  `id_soa` int(10) NOT NULL,
+  `sec` varchar(20) NOT NULL,
+  `control` varchar(200) NOT NULL,
+  `exclusion` varchar(20) DEFAULT NULL,
+  `justification` varchar(200) DEFAULT NULL,
+  `how_to` varchar(200) DEFAULT NULL,
+  `id_version` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `soa`
+--
+
+INSERT INTO `soa` (`id_soa`, `sec`, `control`, `exclusion`, `justification`, `how_to`, `id_version`) VALUES
+(1039, '5', 'Organizational controls', NULL, NULL, NULL, 74),
+(1040, '5.1', 'Policies for information security', NULL, NULL, NULL, 74),
+(1041, '5.2', 'Information security roles and responsibilities', NULL, NULL, NULL, 74),
+(1042, '5.3', 'Segregation of duties', NULL, NULL, NULL, 74),
+(1043, '5.4', 'Management responsibilities', NULL, NULL, NULL, 74),
+(1044, '5.5', 'Contact with authorities', NULL, NULL, NULL, 74),
+(1045, '5.6', 'Contact with special interest groups', NULL, NULL, NULL, 74),
+(1046, '5.7', 'Threat intelligence', NULL, NULL, NULL, 74),
+(1047, '5.12', 'Classification of information', NULL, NULL, NULL, 74),
+(1048, '5.13', 'Labelling of information', NULL, NULL, NULL, 74),
+(1049, '5.14', 'Information transfer', NULL, NULL, NULL, 74),
+(1050, '5.15', 'Access control', NULL, NULL, NULL, 74),
+(1051, '5.16', 'Identity management', NULL, NULL, NULL, 74),
+(1052, '5.17', 'Authentication information', NULL, NULL, NULL, 74),
+(1053, '5.18', 'Access rights', NULL, NULL, NULL, 74),
+(1054, '5.19', 'Information security in supplier relationships', NULL, NULL, NULL, 74),
+(1055, '5.20', 'Addressing information security within supplier agreements', NULL, NULL, NULL, 74),
+(1056, '5.21', 'Managing information security in the information and communication technology (ICT) supply chain', NULL, NULL, NULL, 74),
+(1057, '5.22', 'Monitoring, review and change management of supplier services', NULL, NULL, NULL, 74),
+(1058, '5.23', 'Information security for use of cloud services', NULL, NULL, NULL, 74),
+(1059, '5.24', 'Information security incident management planning and preparation', NULL, NULL, NULL, 74),
+(1060, '5.25', 'Assessment and decision on information security events', NULL, NULL, NULL, 74),
+(1061, '5.26', 'Response to information security incidents', NULL, NULL, NULL, 74),
+(1062, '5.27', 'Learning from information security incidents', NULL, NULL, NULL, 74),
+(1063, '5.28', 'Collection of evidence', NULL, NULL, NULL, 74),
+(1064, '5.29', 'Information security during disruption', NULL, NULL, NULL, 74),
+(1065, '5.30', 'ICT readiness for business continuity', NULL, NULL, NULL, 74),
+(1066, '5.31', 'Legal, statutory, regulatory and contractual requirements', NULL, NULL, NULL, 74),
+(1067, '5.32', 'Intellectual property rights', NULL, NULL, NULL, 74),
+(1068, '5.33', 'Protection of records', NULL, NULL, NULL, 74),
+(1069, '5.34', 'Privacy and protection of personal identifiable information (PII)', NULL, NULL, NULL, 74),
+(1070, '5.35', 'Independent review of information security', NULL, NULL, NULL, 74),
+(1071, '5.36', 'Compliance with policies, rules and standards for information security', NULL, NULL, NULL, 74),
+(1072, '5.37', 'Documented operating procedures', NULL, NULL, NULL, 74),
+(1073, '6', 'People controls', NULL, NULL, NULL, 74),
+(1074, '6.1', 'Screening', NULL, NULL, NULL, 74),
+(1075, '6.2', 'Terms and conditions of employment', NULL, NULL, NULL, 74),
+(1076, '6.3', 'Information security awareness, education and training', NULL, NULL, NULL, 74),
+(1077, '6.4', 'Disciplinary process', NULL, NULL, NULL, 74),
+(1078, '6.5', 'Responsibilities after termination or change of employment', NULL, NULL, NULL, 74),
+(1079, '6.6', 'Confidentiality or non-disclosure agreements', NULL, NULL, NULL, 74),
+(1080, '6.7', 'Remote working', NULL, NULL, NULL, 74),
+(1081, '6.8', 'Information security event reporting', NULL, NULL, NULL, 74),
+(1082, '7', 'Physical controls', NULL, NULL, NULL, 74),
+(1083, '7.1', 'Physical security perimeters', NULL, NULL, NULL, 74),
+(1084, '7.2', 'Physical entry', NULL, NULL, NULL, 74),
+(1085, '7.3', 'Securing offices, rooms and facilities', NULL, NULL, NULL, 74),
+(1086, '7.4', 'Physical security monitoring', NULL, NULL, NULL, 74),
+(1087, '7.5', 'Protecting against physical and environmental threats', NULL, NULL, NULL, 74),
+(1088, '7.6', 'Working in secure areas', NULL, NULL, NULL, 74),
+(1089, '7.7', 'Clear desk and clear screen', NULL, NULL, NULL, 74),
+(1090, '7.8', 'Equipment siting and protection', NULL, NULL, NULL, 74),
+(1091, '7.9', 'Security of assets off-premises', NULL, NULL, NULL, 74),
+(1092, '7.10', 'Storage media', NULL, NULL, NULL, 74),
+(1093, '7.11', 'Supporting utilities', NULL, NULL, NULL, 74),
+(1094, '7.12', 'Cabling security', NULL, NULL, NULL, 74),
+(1095, '7.13', 'Equipment maintenance', NULL, NULL, NULL, 74),
+(1096, '7.14', 'Secure disposal or re-use of equipment', NULL, NULL, NULL, 74),
+(1097, '8', 'Technological controls', NULL, NULL, NULL, 74),
+(1098, '8.1', 'User end point devices', NULL, NULL, NULL, 74),
+(1099, '8.2', 'Privileged access rights', NULL, NULL, NULL, 74),
+(1100, '8.3', 'Information access restriction', NULL, NULL, NULL, 74),
+(1101, '8.4', 'Access to source code', NULL, NULL, NULL, 74),
+(1102, '8.5', 'Secure authentication', NULL, NULL, NULL, 74),
+(1103, '8.6', 'Capacity management', NULL, NULL, NULL, 74),
+(1104, '8.7', 'Protection against malware', NULL, NULL, NULL, 74),
+(1105, '8.8', 'Management of technical vulnerabilities', NULL, NULL, NULL, 74),
+(1106, '8.9', 'Configuration management', NULL, NULL, NULL, 74),
+(1107, '8.10', 'Information deletion', NULL, NULL, NULL, 74),
+(1108, '8.11', 'Data masking', NULL, NULL, NULL, 74),
+(1109, '8.12', 'Data leakage prevention', NULL, NULL, NULL, 74),
+(1110, '8.13', 'Information backup', NULL, NULL, NULL, 74),
+(1111, '8.14', 'Redundancy of information processing facilities', NULL, NULL, NULL, 74),
+(1112, '8.15', 'Logging', NULL, NULL, NULL, 74),
+(1113, '8.16', 'Monitoring activities', NULL, NULL, NULL, 74),
+(1114, '8.17', 'Clock synchronization', NULL, NULL, NULL, 74),
+(1115, '8.18', 'Use of privileged utility programs', NULL, NULL, NULL, 74),
+(1116, '8.19', 'Installation of software on operational systems', NULL, NULL, NULL, 74),
+(1117, '8.20', 'Networks security', NULL, NULL, NULL, 74),
+(1118, '8.21', 'Security of network services', NULL, NULL, NULL, 74),
+(1119, '8.22', 'Segregation of networks', NULL, NULL, NULL, 74),
+(1120, '8.23', 'Web filtering', NULL, NULL, NULL, 74),
+(1121, '8.24', 'Use of cryptography', NULL, NULL, NULL, 74),
+(1122, '8.25', 'Secure development life cycle', NULL, NULL, NULL, 74),
+(1123, '8.26', 'Application security requirements', NULL, NULL, NULL, 74),
+(1124, '8.27', 'Secure system architecture and engineering principles', NULL, NULL, NULL, 74),
+(1125, '8.28', 'Secure coding', NULL, NULL, NULL, 74),
+(1126, '8.29', 'Security testing in development and acceptance', NULL, NULL, NULL, 74),
+(1127, '8.30', 'Outsourced development', NULL, NULL, NULL, 74),
+(1128, '8.31', 'Separation of development, test and production environments', NULL, NULL, NULL, 74),
+(1129, '8.32', 'Change management', NULL, NULL, NULL, 74),
+(1130, '8.33', 'Test information', NULL, NULL, NULL, 74),
+(1131, '8.34', 'Protection of information systems during audit testing', NULL, NULL, NULL, 74),
+(1132, 'LC001', 'sadasdsa', 'Y', 'sad', 'asd', 74),
+(1133, 'LC002', 'xxxx', 'N', 'xxxx', 'xxxx', 74),
+(1975, '5', 'Organizational controls', NULL, NULL, NULL, 77),
+(1976, '5.1', 'Policies for information security', NULL, NULL, NULL, 77),
+(1977, '5.2', 'Information security roles and responsibilities', NULL, NULL, NULL, 77),
+(1978, '5.3', 'Segregation of duties', NULL, NULL, NULL, 77),
+(1979, '5.4', 'Management responsibilities', NULL, NULL, NULL, 77),
+(1980, '5.5', 'Contact with authorities', NULL, NULL, NULL, 77),
+(1981, '5.6', 'Contact with special interest groups', NULL, NULL, NULL, 77),
+(1982, '5.7', 'Threat intelligence', NULL, NULL, NULL, 77),
+(1983, '5.12', 'Classification of information', NULL, NULL, NULL, 77),
+(1984, '5.13', 'Labelling of information', NULL, NULL, NULL, 77),
+(1985, '5.14', 'Information transfer', NULL, NULL, NULL, 77),
+(1986, '5.15', 'Access control', NULL, NULL, NULL, 77),
+(1987, '5.16', 'Identity management', NULL, NULL, NULL, 77),
+(1988, '5.17', 'Authentication information', NULL, NULL, NULL, 77),
+(1989, '5.18', 'Access rights', NULL, NULL, NULL, 77),
+(1990, '5.19', 'Information security in supplier relationships', NULL, NULL, NULL, 77),
+(1991, '5.20', 'Addressing information security within supplier agreements', NULL, NULL, NULL, 77),
+(1992, '5.21', 'Managing information security in the information and communication technology (ICT) supply chain', NULL, NULL, NULL, 77),
+(1993, '5.22', 'Monitoring, review and change management of supplier services', NULL, NULL, NULL, 77),
+(1994, '5.23', 'Information security for use of cloud services', NULL, NULL, NULL, 77),
+(1995, '5.24', 'Information security incident management planning and preparation', NULL, NULL, NULL, 77),
+(1996, '5.25', 'Assessment and decision on information security events', NULL, NULL, NULL, 77),
+(1997, '5.26', 'Response to information security incidents', NULL, NULL, NULL, 77),
+(1998, '5.27', 'Learning from information security incidents', NULL, NULL, NULL, 77),
+(1999, '5.28', 'Collection of evidence', NULL, NULL, NULL, 77),
+(2000, '5.29', 'Information security during disruption', NULL, NULL, NULL, 77),
+(2001, '5.30', 'ICT readiness for business continuity', NULL, NULL, NULL, 77),
+(2002, '5.31', 'Legal, statutory, regulatory and contractual requirements', NULL, NULL, NULL, 77),
+(2003, '5.32', 'Intellectual property rights', NULL, NULL, NULL, 77),
+(2004, '5.33', 'Protection of records', NULL, NULL, NULL, 77),
+(2005, '5.34', 'Privacy and protection of personal identifiable information (PII)', NULL, NULL, NULL, 77),
+(2006, '5.35', 'Independent review of information security', NULL, NULL, NULL, 77),
+(2007, '5.36', 'Compliance with policies, rules and standards for information security', NULL, NULL, NULL, 77),
+(2008, '5.37', 'Documented operating procedures', NULL, NULL, NULL, 77),
+(2009, '6', 'People controls', NULL, NULL, NULL, 77),
+(2010, '6.1', 'Screening', NULL, NULL, NULL, 77),
+(2011, '6.2', 'Terms and conditions of employment', NULL, NULL, NULL, 77),
+(2012, '6.3', 'Information security awareness, education and training', NULL, NULL, NULL, 77),
+(2013, '6.4', 'Disciplinary process', NULL, NULL, NULL, 77),
+(2014, '6.5', 'Responsibilities after termination or change of employment', NULL, NULL, NULL, 77),
+(2015, '6.6', 'Confidentiality or non-disclosure agreements', NULL, NULL, NULL, 77),
+(2016, '6.7', 'Remote working', NULL, NULL, NULL, 77),
+(2017, '6.8', 'Information security event reporting', NULL, NULL, NULL, 77),
+(2018, '7', 'Physical controls', NULL, NULL, NULL, 77),
+(2019, '7.1', 'Physical security perimeters', NULL, NULL, NULL, 77),
+(2020, '7.2', 'Physical entry', NULL, NULL, NULL, 77),
+(2021, '7.3', 'Securing offices, rooms and facilities', NULL, NULL, NULL, 77),
+(2022, '7.4', 'Physical security monitoring', NULL, NULL, NULL, 77),
+(2023, '7.5', 'Protecting against physical and environmental threats', NULL, NULL, NULL, 77),
+(2024, '7.6', 'Working in secure areas', NULL, NULL, NULL, 77),
+(2025, '7.7', 'Clear desk and clear screen', NULL, NULL, NULL, 77),
+(2026, '7.8', 'Equipment siting and protection', NULL, NULL, NULL, 77),
+(2027, '7.9', 'Security of assets off-premises', NULL, NULL, NULL, 77),
+(2028, '7.10', 'Storage media', NULL, NULL, NULL, 77),
+(2029, '7.11', 'Supporting utilities', NULL, NULL, NULL, 77),
+(2030, '7.12', 'Cabling security', NULL, NULL, NULL, 77),
+(2031, '7.13', 'Equipment maintenance', NULL, NULL, NULL, 77),
+(2032, '7.14', 'Secure disposal or re-use of equipment', NULL, NULL, NULL, 77),
+(2033, '8', 'Technological controls', NULL, NULL, NULL, 77),
+(2034, '8.1', 'User end point devices', NULL, NULL, NULL, 77),
+(2035, '8.2', 'Privileged access rights', NULL, NULL, NULL, 77),
+(2036, '8.3', 'Information access restriction', NULL, NULL, NULL, 77),
+(2037, '8.4', 'Access to source code', NULL, NULL, NULL, 77),
+(2038, '8.5', 'Secure authentication', NULL, NULL, NULL, 77),
+(2039, '8.6', 'Capacity management', NULL, NULL, NULL, 77),
+(2040, '8.7', 'Protection against malware', NULL, NULL, NULL, 77),
+(2041, '8.8', 'Management of technical vulnerabilities', NULL, NULL, NULL, 77),
+(2042, '8.9', 'Configuration management', NULL, NULL, NULL, 77),
+(2043, '8.10', 'Information deletion', NULL, NULL, NULL, 77),
+(2044, '8.11', 'Data masking', NULL, NULL, NULL, 77),
+(2045, '8.12', 'Data leakage prevention', NULL, NULL, NULL, 77),
+(2046, '8.13', 'Information backup', NULL, NULL, NULL, 77),
+(2047, '8.14', 'Redundancy of information processing facilities', NULL, NULL, NULL, 77),
+(2048, '8.15', 'Logging', NULL, NULL, NULL, 77),
+(2049, '8.16', 'Monitoring activities', NULL, NULL, NULL, 77),
+(2050, '8.17', 'Clock synchronization', NULL, NULL, NULL, 77),
+(2051, '8.18', 'Use of privileged utility programs', NULL, NULL, NULL, 77),
+(2052, '8.19', 'Installation of software on operational systems', NULL, NULL, NULL, 77),
+(2053, '8.20', 'Networks security', NULL, NULL, NULL, 77),
+(2054, '8.21', 'Security of network services', NULL, NULL, NULL, 77),
+(2055, '8.22', 'Segregation of networks', NULL, NULL, NULL, 77),
+(2056, '8.23', 'Web filtering', NULL, NULL, NULL, 77),
+(2057, '8.24', 'Use of cryptography', NULL, NULL, NULL, 77),
+(2058, '8.25', 'Secure development life cycle', NULL, NULL, NULL, 77),
+(2059, '8.26', 'Application security requirements', NULL, NULL, NULL, 77),
+(2060, '8.27', 'Secure system architecture and engineering principles', NULL, NULL, NULL, 77),
+(2061, '8.28', 'Secure coding', NULL, NULL, NULL, 77),
+(2062, '8.29', 'Security testing in development and acceptance', NULL, NULL, NULL, 77),
+(2063, '8.30', 'Outsourced development', NULL, NULL, NULL, 77),
+(2064, '8.31', 'Separation of development, test and production environments', NULL, NULL, NULL, 77),
+(2065, '8.32', 'Change management', NULL, NULL, NULL, 77),
+(2066, '8.33', 'Test information', NULL, NULL, NULL, 77),
+(2067, '8.34', 'Protection of information systems during audit testing', NULL, NULL, NULL, 77),
+(2068, 'LC001', 'sadasdsa', 'Y', 'sad', 'asd', 77),
+(2069, 'LC002', 'xxxx', 'N', 'xxxx', 'xxxx', 77),
+(2070, '5', 'Organizational controls', NULL, NULL, NULL, 78),
+(2071, '5.1', 'Policies for information security', NULL, NULL, NULL, 78),
+(2072, '5.2', 'Information security roles and responsibilities', NULL, NULL, NULL, 78),
+(2073, '5.3', 'Segregation of duties', NULL, NULL, NULL, 78),
+(2074, '5.4', 'Management responsibilities', NULL, NULL, NULL, 78),
+(2075, '5.5', 'Contact with authorities', NULL, NULL, NULL, 78),
+(2076, '5.6', 'Contact with special interest groups', NULL, NULL, NULL, 78),
+(2077, '5.7', 'Threat intelligence', NULL, NULL, NULL, 78),
+(2078, '5.12', 'Classification of information', NULL, NULL, NULL, 78),
+(2079, '5.13', 'Labelling of information', NULL, NULL, NULL, 78),
+(2080, '5.14', 'Information transfer', NULL, NULL, NULL, 78),
+(2081, '5.15', 'Access control', NULL, NULL, NULL, 78),
+(2082, '5.16', 'Identity management', NULL, NULL, NULL, 78),
+(2083, '5.17', 'Authentication information', NULL, NULL, NULL, 78),
+(2084, '5.18', 'Access rights', NULL, NULL, NULL, 78),
+(2085, '5.19', 'Information security in supplier relationships', NULL, NULL, NULL, 78),
+(2086, '5.20', 'Addressing information security within supplier agreements', NULL, NULL, NULL, 78),
+(2087, '5.21', 'Managing information security in the information and communication technology (ICT) supply chain', NULL, NULL, NULL, 78),
+(2088, '5.22', 'Monitoring, review and change management of supplier services', NULL, NULL, NULL, 78),
+(2089, '5.23', 'Information security for use of cloud services', NULL, NULL, NULL, 78),
+(2090, '5.24', 'Information security incident management planning and preparation', NULL, NULL, NULL, 78),
+(2091, '5.25', 'Assessment and decision on information security events', NULL, NULL, NULL, 78),
+(2092, '5.26', 'Response to information security incidents', NULL, NULL, NULL, 78),
+(2093, '5.27', 'Learning from information security incidents', NULL, NULL, NULL, 78),
+(2094, '5.28', 'Collection of evidence', NULL, NULL, NULL, 78),
+(2095, '5.29', 'Information security during disruption', NULL, NULL, NULL, 78),
+(2096, '5.30', 'ICT readiness for business continuity', NULL, NULL, NULL, 78),
+(2097, '5.31', 'Legal, statutory, regulatory and contractual requirements', NULL, NULL, NULL, 78),
+(2098, '5.32', 'Intellectual property rights', NULL, NULL, NULL, 78),
+(2099, '5.33', 'Protection of records', NULL, NULL, NULL, 78),
+(2100, '5.34', 'Privacy and protection of personal identifiable information (PII)', NULL, NULL, NULL, 78),
+(2101, '5.35', 'Independent review of information security', NULL, NULL, NULL, 78),
+(2102, '5.36', 'Compliance with policies, rules and standards for information security', NULL, NULL, NULL, 78),
+(2103, '5.37', 'Documented operating procedures', NULL, NULL, NULL, 78),
+(2104, '6', 'People controls', NULL, NULL, NULL, 78),
+(2105, '6.1', 'Screening', NULL, NULL, NULL, 78),
+(2106, '6.2', 'Terms and conditions of employment', NULL, NULL, NULL, 78),
+(2107, '6.3', 'Information security awareness, education and training', NULL, NULL, NULL, 78),
+(2108, '6.4', 'Disciplinary process', NULL, NULL, NULL, 78),
+(2109, '6.5', 'Responsibilities after termination or change of employment', NULL, NULL, NULL, 78),
+(2110, '6.6', 'Confidentiality or non-disclosure agreements', NULL, NULL, NULL, 78),
+(2111, '6.7', 'Remote working', NULL, NULL, NULL, 78),
+(2112, '6.8', 'Information security event reporting', NULL, NULL, NULL, 78),
+(2113, '7', 'Physical controls', NULL, NULL, NULL, 78),
+(2114, '7.1', 'Physical security perimeters', NULL, NULL, NULL, 78),
+(2115, '7.2', 'Physical entry', NULL, NULL, NULL, 78),
+(2116, '7.3', 'Securing offices, rooms and facilities', NULL, NULL, NULL, 78),
+(2117, '7.4', 'Physical security monitoring', NULL, NULL, NULL, 78),
+(2118, '7.5', 'Protecting against physical and environmental threats', NULL, NULL, NULL, 78),
+(2119, '7.6', 'Working in secure areas', NULL, NULL, NULL, 78),
+(2120, '7.7', 'Clear desk and clear screen', NULL, NULL, NULL, 78),
+(2121, '7.8', 'Equipment siting and protection', NULL, NULL, NULL, 78),
+(2122, '7.9', 'Security of assets off-premises', NULL, NULL, NULL, 78),
+(2123, '7.10', 'Storage media', NULL, NULL, NULL, 78),
+(2124, '7.11', 'Supporting utilities', NULL, NULL, NULL, 78),
+(2125, '7.12', 'Cabling security', NULL, NULL, NULL, 78),
+(2126, '7.13', 'Equipment maintenance', NULL, NULL, NULL, 78),
+(2127, '7.14', 'Secure disposal or re-use of equipment', NULL, NULL, NULL, 78),
+(2128, '8', 'Technological controls', NULL, NULL, NULL, 78),
+(2129, '8.1', 'User end point devices', NULL, NULL, NULL, 78),
+(2130, '8.2', 'Privileged access rights', NULL, NULL, NULL, 78),
+(2131, '8.3', 'Information access restriction', NULL, NULL, NULL, 78),
+(2132, '8.4', 'Access to source code', NULL, NULL, NULL, 78),
+(2133, '8.5', 'Secure authentication', NULL, NULL, NULL, 78),
+(2134, '8.6', 'Capacity management', NULL, NULL, NULL, 78),
+(2135, '8.7', 'Protection against malware', NULL, NULL, NULL, 78),
+(2136, '8.8', 'Management of technical vulnerabilities', NULL, NULL, NULL, 78),
+(2137, '8.9', 'Configuration management', NULL, NULL, NULL, 78),
+(2138, '8.10', 'Information deletion', NULL, NULL, NULL, 78),
+(2139, '8.11', 'Data masking', NULL, NULL, NULL, 78),
+(2140, '8.12', 'Data leakage prevention', NULL, NULL, NULL, 78),
+(2141, '8.13', 'Information backup', NULL, NULL, NULL, 78),
+(2142, '8.14', 'Redundancy of information processing facilities', NULL, NULL, NULL, 78),
+(2143, '8.15', 'Logging', NULL, NULL, NULL, 78),
+(2144, '8.16', 'Monitoring activities', NULL, NULL, NULL, 78),
+(2145, '8.17', 'Clock synchronization', NULL, NULL, NULL, 78),
+(2146, '8.18', 'Use of privileged utility programs', NULL, NULL, NULL, 78),
+(2147, '8.19', 'Installation of software on operational systems', NULL, NULL, NULL, 78),
+(2148, '8.20', 'Networks security', NULL, NULL, NULL, 78),
+(2149, '8.21', 'Security of network services', NULL, NULL, NULL, 78),
+(2150, '8.22', 'Segregation of networks', NULL, NULL, NULL, 78),
+(2151, '8.23', 'Web filtering', NULL, NULL, NULL, 78),
+(2152, '8.24', 'Use of cryptography', NULL, NULL, NULL, 78),
+(2153, '8.25', 'Secure development life cycle', NULL, NULL, NULL, 78),
+(2154, '8.26', 'Application security requirements', NULL, NULL, NULL, 78),
+(2155, '8.27', 'Secure system architecture and engineering principles', NULL, NULL, NULL, 78),
+(2156, '8.28', 'Secure coding', NULL, NULL, NULL, 78),
+(2157, '8.29', 'Security testing in development and acceptance', NULL, NULL, NULL, 78),
+(2158, '8.30', 'Outsourced development', NULL, NULL, NULL, 78),
+(2159, '8.31', 'Separation of development, test and production environments', NULL, NULL, NULL, 78),
+(2160, '8.32', 'Change management', NULL, NULL, NULL, 78),
+(2161, '8.33', 'Test information', NULL, NULL, NULL, 78),
+(2162, '8.34', 'Protection of information systems during audit testing', NULL, NULL, NULL, 78),
+(2163, 'LC001', 'sadasdsa', 'Y', 'sad', 'asd', 78),
+(2164, 'LC002', 'xxxx', 'N', 'xxxx', 'xxxx', 78),
+(2165, '5', 'Organizational controls', NULL, NULL, NULL, 79),
+(2166, '5.1', 'Policies for information security', NULL, NULL, NULL, 79),
+(2167, '5.2', 'Information security roles and responsibilities', NULL, NULL, NULL, 79),
+(2168, '5.3', 'Segregation of duties', NULL, NULL, NULL, 79),
+(2169, '5.4', 'Management responsibilities', NULL, NULL, NULL, 79),
+(2170, '5.5', 'Contact with authorities', NULL, NULL, NULL, 79),
+(2171, '5.6', 'Contact with special interest groups', NULL, NULL, NULL, 79),
+(2172, '5.7', 'Threat intelligence', NULL, NULL, NULL, 79),
+(2173, '5.12', 'Classification of information', NULL, NULL, NULL, 79),
+(2174, '5.13', 'Labelling of information', NULL, NULL, NULL, 79),
+(2175, '5.14', 'Information transfer', NULL, NULL, NULL, 79),
+(2176, '5.15', 'Access control', NULL, NULL, NULL, 79),
+(2177, '5.16', 'Identity management', NULL, NULL, NULL, 79),
+(2178, '5.17', 'Authentication information', NULL, NULL, NULL, 79),
+(2179, '5.18', 'Access rights', NULL, NULL, NULL, 79),
+(2180, '5.19', 'Information security in supplier relationships', NULL, NULL, NULL, 79),
+(2181, '5.20', 'Addressing information security within supplier agreements', NULL, NULL, NULL, 79),
+(2182, '5.21', 'Managing information security in the information and communication technology (ICT) supply chain', NULL, NULL, NULL, 79),
+(2183, '5.22', 'Monitoring, review and change management of supplier services', NULL, NULL, NULL, 79),
+(2184, '5.23', 'Information security for use of cloud services', NULL, NULL, NULL, 79),
+(2185, '5.24', 'Information security incident management planning and preparation', NULL, NULL, NULL, 79),
+(2186, '5.25', 'Assessment and decision on information security events', NULL, NULL, NULL, 79),
+(2187, '5.26', 'Response to information security incidents', NULL, NULL, NULL, 79),
+(2188, '5.27', 'Learning from information security incidents', NULL, NULL, NULL, 79),
+(2189, '5.28', 'Collection of evidence', NULL, NULL, NULL, 79),
+(2190, '5.29', 'Information security during disruption', NULL, NULL, NULL, 79),
+(2191, '5.30', 'ICT readiness for business continuity', NULL, NULL, NULL, 79),
+(2192, '5.31', 'Legal, statutory, regulatory and contractual requirements', NULL, NULL, NULL, 79),
+(2193, '5.32', 'Intellectual property rights', NULL, NULL, NULL, 79),
+(2194, '5.33', 'Protection of records', NULL, NULL, NULL, 79),
+(2195, '5.34', 'Privacy and protection of personal identifiable information (PII)', NULL, NULL, NULL, 79),
+(2196, '5.35', 'Independent review of information security', NULL, NULL, NULL, 79),
+(2197, '5.36', 'Compliance with policies, rules and standards for information security', NULL, NULL, NULL, 79),
+(2198, '5.37', 'Documented operating procedures', NULL, NULL, NULL, 79),
+(2199, '6', 'People controls', NULL, NULL, NULL, 79),
+(2200, '6.1', 'Screening', NULL, NULL, NULL, 79),
+(2201, '6.2', 'Terms and conditions of employment', NULL, NULL, NULL, 79),
+(2202, '6.3', 'Information security awareness, education and training', NULL, NULL, NULL, 79),
+(2203, '6.4', 'Disciplinary process', NULL, NULL, NULL, 79),
+(2204, '6.5', 'Responsibilities after termination or change of employment', NULL, NULL, NULL, 79),
+(2205, '6.6', 'Confidentiality or non-disclosure agreements', NULL, NULL, NULL, 79),
+(2206, '6.7', 'Remote working', NULL, NULL, NULL, 79),
+(2207, '6.8', 'Information security event reporting', NULL, NULL, NULL, 79),
+(2208, '7', 'Physical controls', NULL, NULL, NULL, 79),
+(2209, '7.1', 'Physical security perimeters', NULL, NULL, NULL, 79),
+(2210, '7.2', 'Physical entry', NULL, NULL, NULL, 79),
+(2211, '7.3', 'Securing offices, rooms and facilities', NULL, NULL, NULL, 79),
+(2212, '7.4', 'Physical security monitoring', NULL, NULL, NULL, 79),
+(2213, '7.5', 'Protecting against physical and environmental threats', NULL, NULL, NULL, 79),
+(2214, '7.6', 'Working in secure areas', NULL, NULL, NULL, 79),
+(2215, '7.7', 'Clear desk and clear screen', NULL, NULL, NULL, 79),
+(2216, '7.8', 'Equipment siting and protection', NULL, NULL, NULL, 79),
+(2217, '7.9', 'Security of assets off-premises', NULL, NULL, NULL, 79),
+(2218, '7.10', 'Storage media', NULL, NULL, NULL, 79),
+(2219, '7.11', 'Supporting utilities', NULL, NULL, NULL, 79),
+(2220, '7.12', 'Cabling security', NULL, NULL, NULL, 79),
+(2221, '7.13', 'Equipment maintenance', NULL, NULL, NULL, 79),
+(2222, '7.14', 'Secure disposal or re-use of equipment', NULL, NULL, NULL, 79),
+(2223, '8', 'Technological controls', NULL, NULL, NULL, 79),
+(2224, '8.1', 'User end point devices', NULL, NULL, NULL, 79),
+(2225, '8.2', 'Privileged access rights', NULL, NULL, NULL, 79),
+(2226, '8.3', 'Information access restriction', NULL, NULL, NULL, 79),
+(2227, '8.4', 'Access to source code', NULL, NULL, NULL, 79),
+(2228, '8.5', 'Secure authentication', NULL, NULL, NULL, 79),
+(2229, '8.6', 'Capacity management', NULL, NULL, NULL, 79),
+(2230, '8.7', 'Protection against malware', NULL, NULL, NULL, 79),
+(2231, '8.8', 'Management of technical vulnerabilities', NULL, NULL, NULL, 79),
+(2232, '8.9', 'Configuration management', NULL, NULL, NULL, 79),
+(2233, '8.10', 'Information deletion', NULL, NULL, NULL, 79),
+(2234, '8.11', 'Data masking', NULL, NULL, NULL, 79),
+(2235, '8.12', 'Data leakage prevention', NULL, NULL, NULL, 79),
+(2236, '8.13', 'Information backup', NULL, NULL, NULL, 79),
+(2237, '8.14', 'Redundancy of information processing facilities', NULL, NULL, NULL, 79),
+(2238, '8.15', 'Logging', NULL, NULL, NULL, 79),
+(2239, '8.16', 'Monitoring activities', NULL, NULL, NULL, 79),
+(2240, '8.17', 'Clock synchronization', NULL, NULL, NULL, 79),
+(2241, '8.18', 'Use of privileged utility programs', NULL, NULL, NULL, 79),
+(2242, '8.19', 'Installation of software on operational systems', NULL, NULL, NULL, 79),
+(2243, '8.20', 'Networks security', NULL, NULL, NULL, 79),
+(2244, '8.21', 'Security of network services', NULL, NULL, NULL, 79),
+(2245, '8.22', 'Segregation of networks', NULL, NULL, NULL, 79),
+(2246, '8.23', 'Web filtering', NULL, NULL, NULL, 79),
+(2247, '8.24', 'Use of cryptography', NULL, NULL, NULL, 79),
+(2248, '8.25', 'Secure development life cycle', NULL, NULL, NULL, 79),
+(2249, '8.26', 'Application security requirements', NULL, NULL, NULL, 79),
+(2250, '8.27', 'Secure system architecture and engineering principles', NULL, NULL, NULL, 79),
+(2251, '8.28', 'Secure coding', NULL, NULL, NULL, 79),
+(2252, '8.29', 'Security testing in development and acceptance', NULL, NULL, NULL, 79),
+(2253, '8.30', 'Outsourced development', NULL, NULL, NULL, 79),
+(2254, '8.31', 'Separation of development, test and production environments', NULL, NULL, NULL, 79),
+(2255, '8.32', 'Change management', NULL, NULL, NULL, 79),
+(2256, '8.33', 'Test information', NULL, NULL, NULL, 79),
+(2257, '8.34', 'Protection of information systems during audit testing', NULL, NULL, NULL, 79),
+(2258, 'LC001', 'sadasdsa', 'Y', 'sad', 'asd', 79),
+(2259, 'LC002', 'xxxx', 'N', 'xxxx', 'xxxx', 79);
 
 -- --------------------------------------------------------
 
@@ -1085,7 +1592,8 @@ CREATE TABLE `support_awareness_table` (
 
 INSERT INTO `support_awareness_table` (`id_awareness`, `course`, `detail`, `date`, `id_file`, `id_version`) VALUES
 (2, 'rewrw', 'rewrewr', '09/02/2024', '24', 30),
-(3, 'sdaasdasdas', 'asdasd', '06/03/2024', '42,43', 30);
+(3, 'sdaasdasdas', 'asdasd', '06/03/2024', '42,43', 30),
+(7, 'dfgdf', 'gfdgdf', '01/04/2024', NULL, 48);
 
 -- --------------------------------------------------------
 
@@ -1110,7 +1618,8 @@ CREATE TABLE `support_communication_table` (
 --
 
 INSERT INTO `support_communication_table` (`id_communication`, `what_to_communicate`, `detail`, `communicator`, `communicate_with_whom`, `when_to_communicate`, `how_to_communicate`, `id_file`, `id_version`) VALUES
-(4, 'sadsa', 'dasda', 'sas', '• dsad', 'sad', 'saasd', 0, 31);
+(4, 'sadsa', 'dasda', 'sas', '• dsad', 'sad', 'saasd', 0, 31),
+(5, 'asdsad', 'asdasd', 'dasd', '• asd', 'asdas', 'dasdas', 132, 47);
 
 -- --------------------------------------------------------
 
@@ -1124,6 +1633,65 @@ CREATE TABLE `support_competence_table` (
   `id_file` int(10) NOT NULL,
   `id_version` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `support_competence_table`
+--
+
+INSERT INTO `support_competence_table` (`id_competence`, `role`, `id_file`, `id_version`) VALUES
+(2, 'Top Management', 88, 29),
+(3, 'Top Management', 120, 49),
+(4, 'Top Management', 144, 49),
+(5, 'Top Management', 149, 49),
+(6, 'Top Management', 152, 49);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `support_document_create_update_table`
+--
+
+CREATE TABLE `support_document_create_update_table` (
+  `id_document_create_update` int(10) NOT NULL,
+  `document_type` varchar(100) NOT NULL,
+  `document_abbreviation` varchar(100) NOT NULL,
+  `name_th` varchar(200) NOT NULL,
+  `name_eng` varchar(200) NOT NULL,
+  `secret_level` varchar(200) NOT NULL,
+  `document_owner` varchar(200) DEFAULT NULL,
+  `create_update_upload` varchar(200) NOT NULL,
+  `review` varchar(200) NOT NULL,
+  `approval` varchar(200) NOT NULL,
+  `status` int(10) NOT NULL,
+  `version` varchar(100) NOT NULL,
+  `release_date` datetime DEFAULT NULL,
+  `creation_time` datetime DEFAULT NULL,
+  `created_by` varchar(200) DEFAULT NULL,
+  `last_modified_time` datetime DEFAULT NULL,
+  `last_modified_by` varchar(200) DEFAULT NULL,
+  `review_time` datetime DEFAULT NULL,
+  `review_by` varchar(100) DEFAULT NULL,
+  `approval_time` datetime DEFAULT NULL,
+  `approver_by` varchar(200) DEFAULT NULL,
+  `id_file` int(10) DEFAULT NULL,
+  `rejection_details` varchar(200) DEFAULT NULL,
+  `request_details` varchar(200) DEFAULT NULL,
+  `id_version` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `support_document_create_update_table`
+--
+
+INSERT INTO `support_document_create_update_table` (`id_document_create_update`, `document_type`, `document_abbreviation`, `name_th`, `name_eng`, `secret_level`, `document_owner`, `create_update_upload`, `review`, `approval`, `status`, `version`, `release_date`, `creation_time`, `created_by`, `last_modified_time`, `last_modified_by`, `review_time`, `review_by`, `approval_time`, `approver_by`, `id_file`, `rejection_details`, `request_details`, `id_version`) VALUES
+(21, 'Management system manaul', 'MS_001', 'asdasd', 'sadsadas', 'Top secret', NULL, '5', '1', '1', 1, 'v.0.0.1', NULL, '2024-03-29 11:07:47', 'TNET test', '2024-03-29 11:07:47', 'TNET test', NULL, NULL, NULL, NULL, 113, NULL, NULL, 57),
+(22, 'Policy', 'PO_001', 'asdas', 'asdasd', 'Secret', NULL, '5', '5', '5', 1, 'v.0.0.1', NULL, '2024-03-29 11:08:24', 'TNET test', '2024-03-29 11:08:24', 'TNET test', NULL, NULL, NULL, NULL, 114, NULL, NULL, 57),
+(23, 'Management system manaul', 'MS_001', 'asdasd', 'sadsadas', 'Top secret', NULL, '5', '1', '1', 1, 'v.0.0.1', NULL, '2024-03-29 11:07:47', 'TNET test', '2024-03-29 11:07:47', 'TNET test', NULL, NULL, NULL, NULL, 115, NULL, NULL, 58),
+(24, 'Policy', 'PO_001', 'asdas', 'asdasd', 'Secret', NULL, '5', '5', '5', 1, 'v.0.0.1', NULL, '2024-03-29 11:08:24', 'TNET test', '2024-03-29 11:08:24', 'TNET test', NULL, NULL, NULL, NULL, 116, NULL, NULL, 58),
+(25, 'Policy', 'PO_002', 'กหฟก', 'ฟหกฟหก', 'Secret', NULL, '5', '1', '5', 1, 'v.0.0.1', NULL, '2024-03-29 14:20:25', 'TNET test', '2024-03-29 14:20:25', 'TNET test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 58),
+(26, 'Management system manaul', 'MS_001', 'asdasd', 'sadsadas', 'Top secret', NULL, '5', '1', '1', 1, 'v.0.0.1', NULL, '2024-03-29 11:07:47', 'TNET test', '2024-03-29 11:07:47', 'TNET test', NULL, NULL, NULL, NULL, 117, NULL, NULL, 59),
+(27, 'Policy', 'PO_001', 'asdas', 'asdasd', 'Secret', NULL, '5', '5', '5', 1, 'v.0.0.1', NULL, '2024-03-29 11:08:24', 'TNET test', '2024-03-29 11:08:24', 'TNET test', NULL, NULL, NULL, NULL, 118, NULL, NULL, 59),
+(28, 'Policy', 'PO_002', 'กหฟก', 'ฟหกฟหก', 'Secret', NULL, '5', '1', '5', 1, 'v.0.0.1', NULL, '2024-03-29 14:20:25', 'TNET test', '2024-03-29 14:20:25', 'TNET test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 59);
 
 -- --------------------------------------------------------
 
@@ -1194,7 +1762,6 @@ INSERT INTO `timeline_log` (`id_timeline`, `text_timeline`, `type_timeline`, `st
 (52, 'TNET Developer Create Communication', 1, 0, NULL, 5, 31, '2024-02-09', '10:07:06'),
 (53, 'TNET Developer Edit Communication', 1, 0, NULL, 5, 31, '2024-02-09', '10:07:25'),
 (54, 'TNET Developer Create Awareness', 1, 0, NULL, 5, 30, '2024-02-09', '10:08:47'),
-(55, 'TNET Developer Create Competence', 1, 0, NULL, 5, 29, '2024-02-09', '10:09:07'),
 (56, 'TNET Developer Delete Awareness', 1, 0, NULL, 5, 30, '2024-02-09', '10:15:34'),
 (57, 'TNET Developer Create Awareness', 1, 0, NULL, 5, 30, '2024-02-09', '10:27:34'),
 (58, 'TNET Developer Edit Communication', 1, 0, NULL, 5, 31, '2024-02-09', '10:28:03'),
@@ -1207,7 +1774,6 @@ INSERT INTO `timeline_log` (`id_timeline`, `text_timeline`, `type_timeline`, `st
 (66, 'TNET Developer Create Interested Party', 1, 0, NULL, 5, 24, '2024-03-05', '10:11:37'),
 (67, 'TNET Developer change status to', 2, 4, NULL, 5, 24, '2024-03-05', '10:11:44'),
 (72, 'TNET Developer Create Awareness', 1, 0, NULL, 5, 30, '2024-03-06', '14:12:28'),
-(73, 'TNET Developer Delete Competence', 1, 0, NULL, 5, 29, '2024-03-06', '14:34:03'),
 (125, 'TNET Developer Created Address Risk', 1, 0, NULL, 5, 44, '2024-03-14', '10:05:30'),
 (126, 'TNET Developer Created Address Opportunities', 1, 0, NULL, 5, 44, '2024-03-14', '10:05:52'),
 (127, 'TNET Developer change status to', 2, 2, NULL, 5, 46, '2024-03-14', '10:06:48'),
@@ -1215,7 +1781,92 @@ INSERT INTO `timeline_log` (`id_timeline`, `text_timeline`, `type_timeline`, `st
 (129, 'TNET Developer Delete Communication', 1, 0, NULL, 5, 31, '2024-03-14', '10:33:55'),
 (130, 'TNET Developer Delete Communication', 1, 0, NULL, 5, 31, '2024-03-14', '10:34:01'),
 (131, 'TNET Developer Delete Communication', 1, 0, NULL, 5, 31, '2024-03-14', '10:34:17'),
-(132, 'TNET Developer change status to', 2, 2, NULL, 5, 46, '2024-03-14', '11:11:03');
+(132, 'TNET Developer change status to', 2, 2, NULL, 5, 46, '2024-03-14', '11:11:03'),
+(135, 'TNET Developer Create Objective', 1, 0, NULL, 5, 28, '2024-03-21', '10:47:44'),
+(136, 'TNET Developer Create IS Objective', 1, 0, NULL, 5, 26, '2024-03-21', '10:49:42'),
+(204, 'TNET test Create Documented', 1, 0, NULL, 5, 58, '2024-03-29', '14:20:25'),
+(205, 'TNET test change status to', 2, 4, NULL, 5, 59, '2024-03-29', '14:29:54'),
+(206, 'TNET test Create Objective', 1, 0, NULL, 5, 51, '2024-03-29', '14:34:36'),
+(207, 'TNET test Create Competence', 1, 0, NULL, 5, 49, '2024-03-29', '14:37:46'),
+(208, 'TNET test Edit Competence', 1, 0, NULL, 5, 49, '2024-03-29', '14:37:56'),
+(209, 'TNET test Create Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:38:43'),
+(210, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:38:56'),
+(211, 'TNET test Delete Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:39:30'),
+(212, 'TNET test Create Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:39:48'),
+(213, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:39:58'),
+(214, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:41:32'),
+(215, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:41:45'),
+(216, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-03-29', '14:41:52'),
+(217, 'TNET test Edit Address Risk', 1, 2, NULL, 5, 46, '2024-03-29', '14:42:32'),
+(218, 'TNET test Edit Address Risk', 1, 2, NULL, 5, 46, '2024-03-29', '14:42:55'),
+(219, 'TNET test Create Objective', 1, 0, NULL, 5, 61, '2024-03-29', '14:48:29'),
+(220, 'TNET test Create Planning', 1, 0, NULL, 5, 61, '2024-03-29', '14:48:50'),
+(221, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-03-29', '14:49:07'),
+(222, 'TNET test Create Planning', 1, 0, NULL, 5, 61, '2024-04-01', '09:50:23'),
+(223, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:01:55'),
+(224, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:02:09'),
+(225, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:02:39'),
+(226, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:03:13'),
+(227, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:04:48'),
+(228, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:04:55'),
+(229, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:05:03'),
+(230, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:10:11'),
+(231, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:11:33'),
+(232, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:13:37'),
+(233, 'TNET test Edit Planning', 1, 0, NULL, 5, 61, '2024-04-01', '10:14:01'),
+(234, 'TNET test Create Communication', 1, 0, NULL, 5, 47, '2024-04-01', '10:19:07'),
+(235, 'TNET test Edit Communication', 1, 0, NULL, 5, 47, '2024-04-01', '10:21:12'),
+(236, 'TNET test Edit Competence', 1, 0, NULL, 5, 49, '2024-04-01', '10:23:47'),
+(237, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:25:15'),
+(238, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:26:09'),
+(239, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:26:43'),
+(240, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:27:04'),
+(241, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:27:11'),
+(242, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:27:17'),
+(243, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:29:14'),
+(244, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:29:35'),
+(245, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:34:25'),
+(246, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:35:02'),
+(247, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:36:18'),
+(248, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:36:27'),
+(249, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:36:56'),
+(250, 'TNET test Create Competence', 1, 0, NULL, 5, 49, '2024-04-01', '10:38:09'),
+(251, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:38:26'),
+(252, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:38:33'),
+(253, 'TNET test Create Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:39:12'),
+(254, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:39:21'),
+(255, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:39:42'),
+(256, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:40:55'),
+(257, 'TNET test Create Competence', 1, 0, NULL, 5, 49, '2024-04-01', '10:41:17'),
+(258, 'TNET test Delete Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:41:33'),
+(259, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:41:47'),
+(260, 'TNET test Create Competence', 1, 0, NULL, 5, 49, '2024-04-01', '10:43:32'),
+(261, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:44:02'),
+(262, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:44:08'),
+(263, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:44:30'),
+(264, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:45:01'),
+(265, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:45:32'),
+(266, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:45:40'),
+(267, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:47:38'),
+(268, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:47:50'),
+(269, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:47:57'),
+(270, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:48:06'),
+(271, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:48:36'),
+(272, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:48:49'),
+(273, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:49:03'),
+(274, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:49:14'),
+(275, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:49:23'),
+(276, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:51:11'),
+(277, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:51:29'),
+(278, 'TNET test Edit Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:52:17'),
+(279, 'TNET test Delete Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '10:52:35'),
+(280, 'TNET test Create Awareness', 1, 0, NULL, 5, 48, '2024-04-01', '12:39:03'),
+(297, 'TNET test Create Scope Activities Diagram', 1, 0, NULL, 5, 8, '2024-04-02', '16:10:47'),
+(298, 'TNET test Create Scope', 1, 0, NULL, 5, 69, '2024-04-02', '16:11:54'),
+(301, 'TNET test Create Statement of Applicability (SOA)', 1, 0, NULL, 5, 74, '2024-04-02', '16:49:55'),
+(302, 'TNET Developer Create Statement of Applicability (SOA)', 1, 0, NULL, 5, 74, '2024-04-03', '09:27:21'),
+(303, 'TNET Developer change status to', 2, 2, NULL, 5, 74, '2024-04-03', '09:28:25'),
+(304, 'TNET Developer change status to', 2, 1, NULL, 5, 59, '2024-04-03', '09:29:09');
 
 -- --------------------------------------------------------
 
@@ -1484,6 +2135,12 @@ ALTER TABLE `scope_table`
   ADD PRIMARY KEY (`id_scope`);
 
 --
+-- Indexes for table `soa`
+--
+ALTER TABLE `soa`
+  ADD PRIMARY KEY (`id_soa`);
+
+--
 -- Indexes for table `support_awareness_table`
 --
 ALTER TABLE `support_awareness_table`
@@ -1500,6 +2157,12 @@ ALTER TABLE `support_communication_table`
 --
 ALTER TABLE `support_competence_table`
   ADD PRIMARY KEY (`id_competence`);
+
+--
+-- Indexes for table `support_document_create_update_table`
+--
+ALTER TABLE `support_document_create_update_table`
+  ADD PRIMARY KEY (`id_document_create_update`);
 
 --
 -- Indexes for table `timeline_log`
@@ -1527,7 +2190,7 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `activities_log`
 --
 ALTER TABLE `activities_log`
-  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `address_opportunities_context`
@@ -1551,7 +2214,7 @@ ALTER TABLE `address_risk_context`
 -- AUTO_INCREMENT for table `all_version_table`
 --
 ALTER TABLE `all_version_table`
-  MODIFY `id_version` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_version` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `consequence_level_context`
@@ -1581,7 +2244,7 @@ ALTER TABLE `external_table`
 -- AUTO_INCREMENT for table `files_table`
 --
 ALTER TABLE `files_table`
-  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT for table `group`
@@ -1629,13 +2292,13 @@ ALTER TABLE `isms_process_table`
 -- AUTO_INCREMENT for table `leadership_files_table`
 --
 ALTER TABLE `leadership_files_table`
-  MODIFY `id_ls_file` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ls_file` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `leadership_is_objective_table`
 --
 ALTER TABLE `leadership_is_objective_table`
-  MODIFY `id_is_objective` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_is_objective` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `leadership_org_table`
@@ -1647,13 +2310,13 @@ ALTER TABLE `leadership_org_table`
 -- AUTO_INCREMENT for table `leadership_policy_table`
 --
 ALTER TABLE `leadership_policy_table`
-  MODIFY `id_policy` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_policy` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `leadership_responsibilities_table`
 --
 ALTER TABLE `leadership_responsibilities_table`
-  MODIFY `id_responsibilities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_responsibilities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `likelihood_level_context`
@@ -1671,7 +2334,7 @@ ALTER TABLE `note_comment_table`
 -- AUTO_INCREMENT for table `note_table`
 --
 ALTER TABLE `note_table`
-  MODIFY `id_note` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_note` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `planning_changes_table`
@@ -1683,13 +2346,13 @@ ALTER TABLE `planning_changes_table`
 -- AUTO_INCREMENT for table `planning_is_objectives_objectives_table`
 --
 ALTER TABLE `planning_is_objectives_objectives_table`
-  MODIFY `id_objective` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_objective` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `planning_is_objectives_planning_table`
 --
 ALTER TABLE `planning_is_objectives_planning_table`
-  MODIFY `id_planning` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_planning` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `requirement_table`
@@ -1719,37 +2382,49 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `scope_activites_table`
 --
 ALTER TABLE `scope_activites_table`
-  MODIFY `id_scope_activites` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_scope_activites` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `scope_table`
 --
 ALTER TABLE `scope_table`
-  MODIFY `id_scope` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_scope` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `soa`
+--
+ALTER TABLE `soa`
+  MODIFY `id_soa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2260;
 
 --
 -- AUTO_INCREMENT for table `support_awareness_table`
 --
 ALTER TABLE `support_awareness_table`
-  MODIFY `id_awareness` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_awareness` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `support_communication_table`
 --
 ALTER TABLE `support_communication_table`
-  MODIFY `id_communication` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_communication` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `support_competence_table`
 --
 ALTER TABLE `support_competence_table`
-  MODIFY `id_competence` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_competence` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `support_document_create_update_table`
+--
+ALTER TABLE `support_document_create_update_table`
+  MODIFY `id_document_create_update` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `timeline_log`
 --
 ALTER TABLE `timeline_log`
-  MODIFY `id_timeline` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id_timeline` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
 
 --
 -- AUTO_INCREMENT for table `topic_table`

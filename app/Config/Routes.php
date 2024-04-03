@@ -268,7 +268,7 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
 
     $routes->match(['get', 'post'], 'planningAddressRisksOpp/context/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 
-    
+
     $routes->get('risk_Criteria_Context_Consequence', 'Setting_RiskCriteriaContextController::indexConsequence'); //index Consequence Level
     $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/create', 'Setting_RiskCriteriaContextController::create_consequence'); //create Consequence Level
     $routes->match(['get', 'post'], 'risk_Criteria_Context_Consequence/edit/(:num)', 'Setting_RiskCriteriaContextController::edit_consequence/$1'); //delete Consequence Level
@@ -317,6 +317,19 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'planningofchange/delete/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete/$1/$2/$3'); //-delete-//
     $routes->match(['get', 'post'], 'planningofchange/delete_file/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete_file/$1/$2/$3'); //-file_delete-//
     $routes->match(['get', 'post'], 'planningofchange/copydata/(:num)/(:num)', 'Planning_PlanningofChangeController::copyData/$1/$2');  //-copy-// 
+
+    //-- SOA --//
+    // $routes->get('soa', 'SOAController::index');
+    $routes->match(['get', 'post'], 'soa/index/(:num)/(:num)', 'SOAController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'soa/create/(:num)/(:num)', 'SOAController::create_SOA/$1/$2'); //create SOA
+    $routes->match(['get', 'post'], 'soa/edit/(:num)/(:num)/(:num)', 'SOAController::edit_SOA/$1/$2/$3'); //edit SOA
+    $routes->match(['get', 'post'], 'soa/delete/(:num)/(:num)/(:num)', 'SOAController::delete_SOA/$1/$2/$3'); //delete SOA
+    $routes->match(['get', 'post'], 'soa/copydata/(:num)/(:num)/(:num)', 'SOAController::copy_SOA/$1/$2/$3'); //copy SOA
+
+    $routes->match(['get', 'post'], 'soa/getdata/(:num)', 'SOAController::get_data_soa/$1'); //getdata
+
+    $routes->match(['get', 'post'], 'soa/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
+
 });
 
 $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
@@ -351,7 +364,29 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'communication/getdata/(:num)', 'Support_CommunicationController::get_data_communication/$1'); //getdata
 
     $routes->match(['get', 'post'], 'communication/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
+
+    //-- Support Documentation --//
+    $routes->match(['get', 'post'], 'documentation/index/(:num)/(:num)', 'DocumentedController::index/$1/$2'); //index
+    $routes->match(['get', 'post'], 'documentation/create/index/(:num)/(:num)/(:num)', 'DocumentedController::indexCrudCreateUpdate/$1/$2/$3'); //index create documentation
+    $routes->match(['get', 'post'], 'documentation/create/insert/(:num)/(:num)/(:num)', 'DocumentedController::create_documented/$1/$2/$3'); //create documentation
+    $routes->match(['get', 'post'], 'documentation/create/getdata/(:num)', 'DocumentedController::get_data_documented_create/$1'); //getdata create documentation
+
+    $routes->match(['get', 'post'], 'documentation/management/getdata/(:num)', 'DocumentedController::get_data_documented_management/$1'); //getdata management documentation
+    $routes->match(['get', 'post'], 'documentation/management/index/(:num)/(:num)/(:num)/(:num)', 'DocumentedController::indexCrudManagementDoc/$1/$2/$3/$4'); //index management documentation
+    $routes->match(['get', 'post'], 'documentation/management/index/view/(:num)/(:num)/(:num)/(:num)', 'DocumentedController::indexCrudManagementDoc_View/$1/$2/$3/$4'); //index management documentation
+    $routes->match(['get', 'post'], 'documentation/management/edit/(:num)/(:num)/(:num)', 'DocumentedController::edit_documented/$1/$2/$3'); //edit management documentation
+    $routes->match(['get', 'post'], 'documentation/management/update/status/(:num)/(:num)/(:num)/(:num)', 'DocumentedController::update_status_documented/$1/$2/$3/$4'); //update status management documentation
+
+    $routes->match(['get', 'post'], 'documentation/documentControl/index/(:num)/(:num)/(:num)/(:num)', 'DocumentedController::indexCrudControl/$1/$2/$3/$4'); //index management documentation
+    $routes->match(['get', 'post'], 'documentation/documentControl/index/view/(:num)/(:num)/(:num)/(:num)', 'DocumentedController::indexViewControl/$1/$2/$3/$4'); //index management documentation
+    $routes->match(['get', 'post'], 'documentation/documentControl/getdata/(:num)', 'DocumentedController::get_data_documented_approved/$1'); //getdata approved documentation
+    $routes->match(['get', 'post'], 'documentation/documentControl/edit/(:num)/(:num)/(:num)', 'DocumentedController::edit_documented_approved/$1/$2/$3'); //getdata approved documentation
+
+    $routes->match(['get', 'post'], 'documentation/delete/(:num)/(:num)/(:num)', 'DocumentedController::delete_documented/$1/$2/$3'); //delete documentation
+
+    $routes->match(['get', 'post'], 'documentation/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 });
+
 
 
 

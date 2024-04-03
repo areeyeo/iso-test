@@ -20,6 +20,8 @@ use App\Models\Leadership_ObjectiveModels;
 use App\Models\Address_Risk_Context_Models;
 use App\Models\Address_Risk_Opp_Context_Data_Models;
 use App\Models\Address_Risk_Opp_Context_Models;
+use App\Models\Support_DocumentedModels;
+use App\Models\Soa_Models;
 
 class AllversionController extends BaseController
 {
@@ -103,6 +105,14 @@ class AllversionController extends BaseController
             $data['header'] = "Address Risks & Opportunities";
             $data['url'] = "planning/planningAddressRisksOpp/context/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        } else if ($type == '17') {
+            $data['header'] = "Documented Information";
+            $data['url'] = "support/documentation/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        } else if ($type == '18') {
+            $data['header'] = "SOA";
+            $data['url'] = "planning/soa/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
         } else {
         }
         echo view('layout/header');
@@ -181,6 +191,10 @@ class AllversionController extends BaseController
             return redirect()->to('support/communication/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '15') {
             return redirect()->to('planning/planningAddressRisksOpp/context/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        } else if ($type == '17') {
+            return redirect()->to('support/documentation/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        } else if ($type == '18') {
+            return redirect()->to('planning/soa/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else {
         }
     }
@@ -619,6 +633,9 @@ class AllversionController extends BaseController
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
 
+        $Support_DocumentedModels = new Support_DocumentedModels();
+        $Soa_Models = new Soa_Models();
+
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
         $interested = $interestedmodel->where('id_version', $id)->findAll();
@@ -626,6 +643,8 @@ class AllversionController extends BaseController
         $scopead = $scopeadmodel->where('id_version', $id)->findAll();
         $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
         $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
+        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
+        $SOA_DATA = $Soa_Models->where('id_version', $id)->findAll();
 
         $timeline = $TimelineModels->where('id_version', $id)->findAll();
         $note = $Note_Models->where('id_version ', $id)->findAll();
@@ -850,7 +869,51 @@ class AllversionController extends BaseController
                 }
             }
         }
-
+        if ($Support_Documented) {
+            foreach ($Support_Documented as $key) {
+                if ($key['id_file']) {
+                    helper('filesystem');
+                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
+                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Documented ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Documented ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Support_DocumentedModels->where('id_document_create_update', $key['id_document_create_update'])->delete($key['id_document_create_update']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Documented ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($SOA_DATA) {
+            foreach ($SOA_DATA as $key) {
+                $check = $Soa_Models->where('id_soa', $key['id_soa'])->delete($key['id_soa']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ SOA ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
         if ($timeline) {
             foreach ($timeline as $key) {
                 $check = $TimelineModels->where('id_timeline', $key['id_timeline'])->delete($key['id_timeline']);
@@ -918,6 +981,8 @@ class AllversionController extends BaseController
         $Address_Risk_Context_Models = new Address_Risk_Context_Models();
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
+        $Support_DocumentedModels = new Support_DocumentedModels();
+        $Soa_Models = new Soa_Models();
 
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
@@ -927,6 +992,8 @@ class AllversionController extends BaseController
         $Leadership_Objective = $Leadership_ObjectiveModels->where('id_version', $id)->findAll();
         $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
         $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
+        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
+        $SOA_DATA = $Soa_Models->where('id_version', $id)->findAll();
 
         $newData_context = $AllversionModels->copyDataById($id);
         $new_id_version = $AllversionModels->insertID();
@@ -1300,12 +1367,78 @@ class AllversionController extends BaseController
                     }
                 }
             }
+            if ($Support_Documented) {
+                foreach ($Support_Documented as $key) {
+                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+
+                            $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
+                            if ($newData_doc) {
+                                $id_document_new = $Support_DocumentedModels->insertID();
+                                $document_new_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Support_DocumentedModels->update($id_document_new, $document_new_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
+                        if ($newData_doc) {
+                            $id_document_new = $Support_DocumentedModels->insertID();
+                            $inter_update = [
+                                'id_file' => null,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Support_DocumentedModels->update($id_document_new, $inter_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
+            if ($SOA_DATA) {
+                foreach ($SOA_DATA as $key) {
+                    $newData_SOA = $Soa_Models->copyDataById($key['id_soa']);
+                    if ($newData_SOA) {
+                        $id_SOA_new = $Soa_Models->insertID();
+                        $SOA_update = [
+                            'id_version' => $new_id_version,
+                        ];
+                        $Soa_Models->update($id_SOA_new, $SOA_update);
+                    }
+                }
+            }
             $type_Version = $AllversionModels->where('id_version', $newData_context)->findColumn('type_version');
             $num_ver = $AllversionModels->where('type_version', $type_Version)->where('id_user', session()->get('id'))->countAllResults();
             $response = [
                 'success' => true,
                 'message' => 'คัดลอกข้อมูลสำเร็จ!',
-                'reload' => false,
+                'reload' => true,
                 'newCopy' => true,
                 'id_version' => $new_id_version,
                 'num_ver' => $num_ver,

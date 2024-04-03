@@ -551,7 +551,7 @@
                     "autoWidth": false,
                     "searching": true,
                     "ordering": false,
-                    "scrollX": true,
+                    "scrollX": false,
                     "drawCallback": function (settings) {
                         $("#example1 .overlay").hide();
                         var daData = settings.json.data;

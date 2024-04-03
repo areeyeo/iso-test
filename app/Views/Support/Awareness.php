@@ -614,7 +614,7 @@
                 },
                 success: function (response) {
                     Swal.close();
-                    console.log(response);
+                    console.table(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

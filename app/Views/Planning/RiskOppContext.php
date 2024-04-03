@@ -41,7 +41,7 @@
             </button>
             <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/' . $data['type_version']) ?>" style="color: #ADB5BD;">Version</a></button>
             <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;">
-                <a href="<?= base_url('planning/planningAddressRisksOpp/context/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']) ?>" style="color: #ADB5BD;">History</a>
+                <a href="<?= base_url('planning/soa/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']) ?>" style="color: #ADB5BD;">History</a>
             </button>
             <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

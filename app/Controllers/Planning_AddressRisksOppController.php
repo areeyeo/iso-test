@@ -364,7 +364,7 @@ class Planning_AddressRisksOppController extends BaseController
             $residual = $this->request->getVar('residual');
             $rtp_status = 'รอดำเนินการ';
 
-            $file = $this->request->getFile('risk_file');
+            $file = $this->request->getFile('file');
             if ($file->isValid() && !$file->hasMoved()) {
                 $newName = $file->getClientName();
                 $FileModels->insert([

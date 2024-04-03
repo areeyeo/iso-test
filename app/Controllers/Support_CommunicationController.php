@@ -86,22 +86,37 @@ class Support_CommunicationController extends BaseController
     public function edit_communication($id_communication = null, $id_version = null, $status_version = null)
     {
         helper(['form']);
+        helper('filesystem');
         $Support_Communication = new Support_Communication();
         $TimelineModels = new TimelineModels();
         $filemodel = new FileModels();
 
         $file = $this->request->getFile('attachmentfile');
         if ($file->isValid() && !$file->hasMoved()) {
+            $old_id_file = $Support_Communication->where('id_communication', $id_communication)->select('id_file')->first();
+            $id_file = $old_id_file['id_file'];
             $newName = $file->getClientName();
-            $filemodel->insert([
-                'name_file' => $newName,
-            ]);
-            $id_file = $filemodel->insertID();
-            $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-            $data = [
-                'id_file' => $id_file,
-            ];
-            $Support_Communication->update($id_communication, $data);
+            if ($id_file != 0) {
+                $del_path = 'public/uploads/' . $id_file . '/'; // For Delete folder
+                $check_de_file = delete_files($del_path, false); // Delete files into the folder
+                if (!$check_de_file) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'Unable to add new files!',
+                    ];
+                    return $this->response->setJSON($response);
+                } else {
+                    $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
+                    $filemodel->update($id_file, ['name_file' => $newName]);
+                }
+            } else {
+                $filemodel->insert([
+                    'name_file' => $newName,
+                ]);
+                $id_file = $filemodel->insertID();
+                $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
+                $Support_Communication->update($id_communication, ['id_file' => $id_file]);
+            }
         }
         $data__ = [
             'what_to_communicate' => $this->request->getVar('whattocommunicate'),

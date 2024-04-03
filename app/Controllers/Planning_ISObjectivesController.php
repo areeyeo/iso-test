@@ -259,22 +259,37 @@ class Planning_ISObjectivesController extends BaseController
     public function edit_planning($id_planning = null, $id_version = null, $status_version = null)
     {
         helper(['form']);
+        helper('filesystem');
         $Planning_is_planningModels = new Planning_is_planningModels();
         $TimelineModels = new TimelineModels();
         $filemodel = new FileModels();
 
         $file = $this->request->getFile('file');
         if ($file->isValid() && !$file->hasMoved()) {
+            $old_id_file = $Planning_is_planningModels->where('id_planning', $id_planning)->select('file')->first();
+            $id_file = $old_id_file['file'];
             $newName = $file->getClientName();
-            $filemodel->insert([
-                'name_file' => $newName,
-            ]);
-            $id_file = $filemodel->insertID();
-            $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-            $data = [
-                'file' => $id_file,
-            ];
-            $Planning_is_planningModels->update($id_planning, $data);
+            if ($id_file != 0) {
+                $del_path = 'public/uploads/' . $id_file . '/'; // For Delete folder
+                $check_de_file = delete_files($del_path, false); // Delete files into the folder
+                if (!$check_de_file) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'Unable to add new files!',
+                    ];
+                    return $this->response->setJSON($response);
+                } else {
+                    $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
+                    $filemodel->update($id_file, ['name_file' => $newName]);
+                }
+            } else {
+                $filemodel->insert([
+                    'name_file' => $newName,
+                ]);
+                $id_file = $filemodel->insertID();
+                $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
+                $Planning_is_planningModels->update($id_planning, ['file' => $id_file]);
+            }
         }
         $data__ = [
             'id_objective' => $this->request->getVar('objective_evaluation'),
