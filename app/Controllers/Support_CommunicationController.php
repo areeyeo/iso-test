@@ -92,12 +92,11 @@ class Support_CommunicationController extends BaseController
         $filemodel = new FileModels();
 
         $file = $this->request->getFile('attachmentfile');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $old_id_file = $Support_Communication->where('id_communication', $id_communication)->select('id_file')->first();
-            $id_file = $old_id_file['id_file'];
+        if ($file !== null && $file->isValid()) {
             $newName = $file->getClientName();
-            if ($id_file != 0) {
-                $del_path = 'public/uploads/' . $id_file . '/'; // For Delete folder
+            $check_file = $Support_Communication->where('id_communication', $id_communication)->findAll();
+            if ($check_file[0]['id_file']) {
+                $del_path = 'public/uploads/' . $check_file[0]['id_file'] . '/'; // For Delete folder
                 $check_de_file = delete_files($del_path, false); // Delete files into the folder
                 if (!$check_de_file) {
                     $response = [
@@ -106,8 +105,11 @@ class Support_CommunicationController extends BaseController
                     ];
                     return $this->response->setJSON($response);
                 } else {
-                    $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                    $filemodel->update($id_file, ['name_file' => $newName]);
+                    $file->move(ROOTPATH . 'public/uploads/' . $check_file[0]['id_file'], $newName);
+                    $file_update = [
+                        'name_file' => $newName,
+                    ];
+                    $filemodel->update($check_file[0]['id_file'], $file_update);
                 }
             } else {
                 $filemodel->insert([
@@ -115,7 +117,10 @@ class Support_CommunicationController extends BaseController
                 ]);
                 $id_file = $filemodel->insertID();
                 $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                $Support_Communication->update($id_communication, ['id_file' => $id_file]);
+                $data = [
+                    'id_file' => $id_file,
+                ];
+                $Support_Communication->update($id_communication, $data);
             }
         }
         $data__ = [

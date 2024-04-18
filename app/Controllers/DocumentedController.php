@@ -191,6 +191,8 @@ class DocumentedController extends BaseController
         $RequirementModels = new RequirementModels();
         $Support_DocumentedModels = new Support_DocumentedModels();
         $FileModels = new FileModels();
+        $UserModels = new UserModels();
+        $data['user_data'] = $UserModels->findAll();
         $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
@@ -199,7 +201,9 @@ class DocumentedController extends BaseController
             'num_ver' => $num_ver,
             'status' => $status_version
         ];
-        $data['view_mode'] = false;
+        $my_id = session()->get('id');
+
+        $data['view_mode'] = !in_array($my_id, explode(',', $data['data_doc']['create_update_upload']));
         echo view('layout/header');
         echo view('Support/CRUD_Management_Doc', $data);
     }
@@ -210,6 +214,8 @@ class DocumentedController extends BaseController
         $RequirementModels = new RequirementModels();
         $Support_DocumentedModels = new Support_DocumentedModels();
         $FileModels = new FileModels();
+        $UserModels = new UserModels();
+        $data['user_data'] = $UserModels->findAll();
         $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
@@ -288,6 +294,9 @@ class DocumentedController extends BaseController
             'last_modified_by' => session()->get('name') . ' ' . session()->get('lastname'),
             'id_file' => $id_file,
             'id_version' => $id_version,
+            'create_update_upload' => implode(',', $this->request->getPost('tags_create')),
+            'review' => implode(',', $this->request->getPost('tags_review')),
+            'approval' => implode(',', $this->request->getPost('tags_approve')),
         ];
 
         $Support_DocumentedModels->update($id_doc_version, $data);
@@ -316,7 +325,9 @@ class DocumentedController extends BaseController
         $Support_DocumentedModels = new Support_DocumentedModels();
         if ($status == 2) {
             $Support_DocumentedModels->update($id_doc_version, ['status' => $status]);
-        } else if ($status == 3 || $status == 6) {
+        } else if ($status == 3) {
+            $Support_DocumentedModels->update($id_doc_version, ['status' => $status, 'rejection_details' => $this->request->getVar('text_request_modify')]);
+        } else if ($status == 6) {
             $Support_DocumentedModels->update($id_doc_version, ['status' => $status, 'request_details' => $this->request->getVar('text_request_modify')]);
         } else if ($status == 4) {
             $Support_DocumentedModels->update($id_doc_version, [
@@ -351,24 +362,12 @@ class DocumentedController extends BaseController
         ];
         return $this->response->setJSON($response);
     }
-    //get created data document
+    //get management data document
     public function get_data_documented_management($id_version = null)
     {
         $Support_DocumentedModels = new Support_DocumentedModels();
         $FileModels = new FileModels();
-        $UserModels = new UserModels();
         $my_id_user = session()->get('id');
-
-        // // คอลัม create_update_upload
-        // $totalRecords = $Support_DocumentedModels
-        //     ->where('FIND_IN_SET(' . $my_id_user . ', create_update_upload) >', 0)
-        //     ->orWhere('create_update_upload', $my_id_user)
-        //     ->where('FIND_IN_SET(' . $my_id_user . ', review) >', 0)
-        //     ->orWhere('review', $my_id_user)
-        //     ->where('FIND_IN_SET(' . $my_id_user . ', approval) >', 0)
-        //     ->orWhere('approval', $my_id_user)
-        //     ->where('id_version', $id_version)
-        //     ->countAllResults();
 
         $limit = $this->request->getVar('length');
         $start = $this->request->getVar('start');
@@ -383,24 +382,35 @@ class DocumentedController extends BaseController
                 ->groupEnd();
         }
 
-        $data = $Support_DocumentedModels
-            ->where('FIND_IN_SET(' . $my_id_user . ', create_update_upload) >', 0)
+        $totalRecords = $Support_DocumentedModels->where('id_version', $id_version)
+            ->groupStart()
+            ->where("FIND_IN_SET('$my_id_user', create_update_upload) >", 0)
             ->orWhere('create_update_upload', $my_id_user)
-            ->where('FIND_IN_SET(' . $my_id_user . ', review) >', 0)
+            ->orWhere("FIND_IN_SET('$my_id_user', review) >", 0)
             ->orWhere('review', $my_id_user)
-            ->where('FIND_IN_SET(' . $my_id_user . ', approval) >', 0)
+            ->orWhere("FIND_IN_SET('$my_id_user', approval) >", 0)
             ->orWhere('approval', $my_id_user)
+            ->groupEnd()
+            ->countAllResults();
+
+        if (!empty($searchValue)) {
+            $Support_DocumentedModels->groupStart()
+                ->like('document_type', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
+                // ->orLike('effect', $searchValue)
+                // เพิ่มคอลัมน์เพิ่มเติมตามที่ต้องการค้นหา
+                ->groupEnd();
+        }
+        $filteredData = $Support_DocumentedModels->where('id_version', $id_version)
+            ->groupStart()
+            ->where("FIND_IN_SET('$my_id_user', create_update_upload) >", 0)
+            ->orWhere('create_update_upload', $my_id_user)
+            ->orWhere("FIND_IN_SET('$my_id_user', review) >", 0)
+            ->orWhere('review', $my_id_user)
+            ->orWhere("FIND_IN_SET('$my_id_user', approval) >", 0)
+            ->orWhere('approval', $my_id_user)
+            ->groupEnd()
             ->findAll($limit, $start);
 
-        $filteredData = [];
-        // คัดกรองข้อมูลที่มี id_version ตรงกัน
-        foreach ($data as $item) {
-            if ($item['id_version'] == $id_version) {
-                $filteredData[] = $item;
-            }
-        }
-
-        $totalRecords = count($filteredData);
         $recordsFiltered = $totalRecords;
 
         foreach ($filteredData as $key => $value) {
@@ -444,7 +454,8 @@ class DocumentedController extends BaseController
             'recordsTotal' => $totalRecords,
             'recordsFiltered' => $recordsFiltered,
             'data' => $filteredData,
-            'searchValue' => $searchValue
+            'searchValue' => $searchValue,
+            'id_version' => $id_version
         ];
 
         return $this->response->setJSON($response);

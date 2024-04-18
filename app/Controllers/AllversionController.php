@@ -17,11 +17,18 @@ use App\Models\TimelineModels;
 use App\Models\Note_Models;
 use App\Models\NoteComment_Models;
 use App\Models\Leadership_ObjectiveModels;
+use App\Models\Planning_is_objectivesModels;
+use App\Models\Planning_is_planningModels;
+use App\Models\Support_CompetenceModels;
+use App\Models\Support_Awareness;
+use App\Models\Support_Communication;
+use App\Models\Support_DocumentedModels;
 use App\Models\Address_Risk_Context_Models;
 use App\Models\Address_Risk_Opp_Context_Data_Models;
 use App\Models\Address_Risk_Opp_Context_Models;
-use App\Models\Support_DocumentedModels;
-use App\Models\Soa_Models;
+use App\Models\Address_Risk_IS_Models;
+use App\Models\Address_Risk_Opp_IS_Data_Models;
+use App\Models\Address_Risk_Opp_IS_Models;
 
 class AllversionController extends BaseController
 {
@@ -102,8 +109,12 @@ class AllversionController extends BaseController
             $data['url'] = "support/communication/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 14)->first();
         } else if ($type == '15') {
-            $data['header'] = "Address Risks & Opportunities";
+            $data['header'] = "Address Risks & Opportunities Context";
             $data['url'] = "planning/planningAddressRisksOpp/context/index/";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        }  else if ($type == '16') {
+            $data['header'] = "Address Risks & Opportunities IS";
+            $data['url'] = "planning/planningAddressRisksOpp/is/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
         } else if ($type == '17') {
             $data['header'] = "Documented Information";
@@ -191,6 +202,8 @@ class AllversionController extends BaseController
             return redirect()->to('support/communication/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '15') {
             return redirect()->to('planning/planningAddressRisksOpp/context/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
+        } else if ($type == '16') {
+            return redirect()->to('planning/planningAddressRisksOpp/is/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '17') {
             return redirect()->to('support/documentation/index/' . (int) $data['data']['id_version'] . '/' . $data['data']['num_ver']);
         } else if ($type == '18') {
@@ -243,7 +256,7 @@ class AllversionController extends BaseController
                 'message' => 'Successfully created data',
                 'type' => $type,
                 'id_version' => $id_version,
-                'number_ver' => $number_ver,
+                'num_ver' => $number_ver,
                 'reload' => false,
             ];
         } else {
@@ -625,6 +638,12 @@ class AllversionController extends BaseController
         $interestedmodel = new InterestedModels();
         $scopemodel = new ISMS_ScopeModels();
         $scopeadmodel = new ISMS_ScopeADModels();
+        $Planning_is_objectivesModels = new Planning_is_objectivesModels();
+        $Planning_is_planningModels = new Planning_is_planningModels();
+        $Support_CompetenceModels = new Support_CompetenceModels();
+        $Support_AwarenessModels = new Support_Awareness();
+        $Support_CommunicationModels = new Support_Communication();
+        $Support_DocumentedModels = new Support_DocumentedModels();
         $filemodel = new FileModels();
         $TimelineModels = new TimelineModels();
         $Note_Models = new Note_Models();
@@ -633,18 +652,19 @@ class AllversionController extends BaseController
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
 
-        $Support_DocumentedModels = new Support_DocumentedModels();
-        $Soa_Models = new Soa_Models();
-
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
         $interested = $interestedmodel->where('id_version', $id)->findAll();
         $scope = $scopemodel->where('id_version', $id)->findAll();
         $scopead = $scopeadmodel->where('id_version', $id)->findAll();
+        $Planning_is_objectives = $Planning_is_objectivesModels->where('id_version', $id)->findAll();
+        $Planning_is_planning = $Planning_is_planningModels->where('id_version', $id)->findAll();
+        $Support_Competence = $Support_CompetenceModels->where('id_version', $id)->findAll();
+        $Support_Awareness = $Support_AwarenessModels->where('id_version', $id)->findAll();
+        $Support_Communication = $Support_CommunicationModels->where('id_version', $id)->findAll();
+        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
         $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
         $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
-        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
-        $SOA_DATA = $Soa_Models->where('id_version', $id)->findAll();
 
         $timeline = $TimelineModels->where('id_version', $id)->findAll();
         $note = $Note_Models->where('id_version ', $id)->findAll();
@@ -797,6 +817,187 @@ class AllversionController extends BaseController
                 }
             }
         }
+        if ($Planning_is_objectives) {
+            foreach ($Planning_is_objectives as $key) {
+                $check = $Planning_is_objectivesModels->where('id_objective', $key['id_objective'])->delete($key['id_objective']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ IS Objectives ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($Planning_is_planning) {
+            foreach ($Planning_is_planning as $key) {
+                if ($key['file']) {
+                    helper('filesystem');
+
+                    $filemodel->where('id_files ', $key['file'])->delete($key['file']);
+                    $del_path = 'public/uploads/' . $key['file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Planning ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Planning ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Planning_is_planningModels->where('id_planning', $key['id_planning'])->delete($key['id_planning']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Planning ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($Support_Competence) {
+            foreach ($Support_Competence as $key) {
+                if ($key['id_file']) {
+                    helper('filesystem');
+
+                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
+                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Competence ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Competence ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Support_CompetenceModels->where('id_competence', $key['id_competence'])->delete($key['id_competence']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Competence ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($Support_Awareness) {
+            foreach ($Support_Awareness as $key) {
+                if ($key['id_file']) {
+                    helper('filesystem');
+
+                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
+                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Awareness ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Awareness ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Support_AwarenessModels->where('id_awareness', $key['id_awareness'])->delete($key['id_awareness']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Awareness ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($Support_Communication) {
+            foreach ($Support_Communication as $key) {
+                if ($key['id_file']) {
+                    helper('filesystem');
+
+                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
+                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Communication ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Communication ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Support_CommunicationModels->where('id_communication', $key['id_communication'])->delete($key['id_communication']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Communication ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
+        if ($Support_Documented) {
+            foreach ($Support_Documented as $key) {
+                if ($key['id_file']) {
+                    helper('filesystem');
+                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
+                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
+                    $check1 = delete_files($del_path, true); // Delete files into the folder
+                    $check2 = rmdir($del_path);
+                    if (!$check1) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ File ของ Documented ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                    if (!$check2) {
+                        $response = [
+                            'success' => false,
+                            'message' => 'ไม่สามารถลบ folder ของ Documented ได้!',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+                $check = $Support_DocumentedModels->where('id_document_create_update', $key['id_document_create_update'])->delete($key['id_document_create_update']);
+                if (!$check) {
+                    $response = [
+                        'success' => false,
+                        'message' => 'ไม่สามารถลบ Documented ได้!',
+                    ];
+                    return $this->response->setJSON($response);
+                }
+            }
+        }
         if ($Address_Risk || $Address_Opp) {
             if ($Address_Risk) {
                 foreach ($Address_Risk as $key) {
@@ -869,51 +1070,7 @@ class AllversionController extends BaseController
                 }
             }
         }
-        if ($Support_Documented) {
-            foreach ($Support_Documented as $key) {
-                if ($key['id_file']) {
-                    helper('filesystem');
-                    $filemodel->where('id_files ', $key['id_file'])->delete($key['id_file']);
-                    $del_path = 'public/uploads/' . $key['id_file'] . '/'; // For Delete folder
-                    $check1 = delete_files($del_path, true); // Delete files into the folder
-                    $check2 = rmdir($del_path);
-                    if (!$check1) {
-                        $response = [
-                            'success' => false,
-                            'message' => 'ไม่สามารถลบ File ของ Documented ได้!',
-                        ];
-                        return $this->response->setJSON($response);
-                    }
-                    if (!$check2) {
-                        $response = [
-                            'success' => false,
-                            'message' => 'ไม่สามารถลบ folder ของ Documented ได้!',
-                        ];
-                        return $this->response->setJSON($response);
-                    }
-                }
-                $check = $Support_DocumentedModels->where('id_document_create_update', $key['id_document_create_update'])->delete($key['id_document_create_update']);
-                if (!$check) {
-                    $response = [
-                        'success' => false,
-                        'message' => 'ไม่สามารถลบ Documented ได้!',
-                    ];
-                    return $this->response->setJSON($response);
-                }
-            }
-        }
-        if ($SOA_DATA) {
-            foreach ($SOA_DATA as $key) {
-                $check = $Soa_Models->where('id_soa', $key['id_soa'])->delete($key['id_soa']);
-                if (!$check) {
-                    $response = [
-                        'success' => false,
-                        'message' => 'ไม่สามารถลบ SOA ได้!',
-                    ];
-                    return $this->response->setJSON($response);
-                }
-            }
-        }
+
         if ($timeline) {
             foreach ($timeline as $key) {
                 $check = $TimelineModels->where('id_timeline', $key['id_timeline'])->delete($key['id_timeline']);
@@ -978,11 +1135,18 @@ class AllversionController extends BaseController
         $scopeadmodel = new ISMS_ScopeADModels();
         $filemodel = new FileModels();
         $Leadership_ObjectiveModels = new Leadership_ObjectiveModels();
+        $Planning_is_objectivesModels = new Planning_is_objectivesModels();
+        $Planning_is_planningModels = new Planning_is_planningModels();
+        $Support_CompetenceModels = new Support_CompetenceModels();
+        $Support_AwarenessModels = new Support_Awareness();
+        $Support_CommunicationModels = new Support_Communication();
+        $Support_DocumentedModels = new Support_DocumentedModels();
         $Address_Risk_Context_Models = new Address_Risk_Context_Models();
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $Address_Risk_Opp_Context_Data_Models = new Address_Risk_Opp_Context_Data_Models();
-        $Support_DocumentedModels = new Support_DocumentedModels();
-        $Soa_Models = new Soa_Models();
+        $Address_Risk_IS_Models = new Address_Risk_IS_Models();
+        $Address_Risk_Opp_IS_Models = new Address_Risk_Opp_IS_Models();
+        $Address_Risk_Opp_IS_Data_Models = new Address_Risk_Opp_IS_Data_Models();
 
         $inter = $internalmodel->where('id_version', $id)->findAll();
         $exter = $externalmodel->where('id_version', $id)->findAll();
@@ -990,10 +1154,16 @@ class AllversionController extends BaseController
         $scope = $scopemodel->where('id_version', $id)->findAll();
         $scopead = $scopeadmodel->where('id_version', $id)->findAll();
         $Leadership_Objective = $Leadership_ObjectiveModels->where('id_version', $id)->findAll();
+        $Planning_is_objectives = $Planning_is_objectivesModels->where('id_version', $id)->findAll();
+        $Planning_is_planning = $Planning_is_planningModels->where('id_version', $id)->findAll();
+        $Support_Competence = $Support_CompetenceModels->where('id_version', $id)->findAll();
+        $Support_Awareness = $Support_AwarenessModels->where('id_version', $id)->findAll();
+        $Support_Communication = $Support_CommunicationModels->where('id_version', $id)->findAll();
+        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
         $Address_Risk = $Address_Risk_Context_Models->where('id_version', $id)->findAll();
         $Address_Opp = $Address_Risk_Opp_Context_Models->where('id_version', $id)->findAll();
-        $Support_Documented = $Support_DocumentedModels->where('id_version', $id)->findAll();
-        $SOA_DATA = $Soa_Models->where('id_version', $id)->findAll();
+        $Address_Risk_IS = $Address_Risk_IS_Models->where('id_version', $id)->findAll();
+        $Address_Opp_IS = $Address_Risk_Opp_IS_Models->where('id_version', $id)->findAll();
 
         $newData_context = $AllversionModels->copyDataById($id);
         $new_id_version = $AllversionModels->insertID();
@@ -1256,6 +1426,290 @@ class AllversionController extends BaseController
                     }
                 }
             }
+            if ($Planning_is_objectives) {
+                foreach ($Planning_is_objectives as $key) {
+                    $newData_Planning_is_objectives = $Planning_is_objectivesModels->copyDataById($key['id_objective']);
+                    if ($newData_Planning_is_objectives) {
+                        $id_Planning_is_objectives_new = $Planning_is_objectivesModels->insertID();
+                        $Planning_is_objectives_update = [
+                            'id_version' => $new_id_version,
+                        ];
+                        $Planning_is_objectivesModels->update($id_Planning_is_objectives_new, $Planning_is_objectives_update);
+                    } else {
+                        $response = [
+                            'success' => false,
+                            'message' => 'Copy IS Objectives data cannot be copied.',
+                        ];
+                        return $this->response->setJSON($response);
+                    }
+                }
+            }
+            if ($Planning_is_planning) {
+                foreach ($Planning_is_planning as $key) {
+                    $file = $filemodel->where('id_files', $key['file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                            $newData_Planning_is_planning = $Planning_is_planningModels->copyDataById($key['id_planning']);
+                            if ($newData_Planning_is_planning) {
+                                $id_Planning_is_planning_new = $Planning_is_planningModels->insertID();
+                                $Planning_is_planning_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Planning_is_planningModels->update($id_Planning_is_planning_new, $Planning_is_planning_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'Copy IS Planning data cannot be copied.',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_Planning_is_planning = $Planning_is_planningModels->copyDataById($key['id_planning ']);
+                        if ($newData_Planning_is_planning) {
+                            $id_Planning_is_planning_new = $Planning_is_planningModels->insertID();
+                            $Planning_is_planning_update = [
+                                'id_file' => 0,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Planning_is_planningModels->update($id_Planning_is_planning_new, $Planning_is_planning_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'Copy IS Planning data cannot be copied.',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
+            if ($Support_Competence) {
+                foreach ($Support_Competence as $key) {
+                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                            $newData_Support_Competence = $Support_CompetenceModels->copyDataById($key['id_competence']);
+                            if ($newData_Support_Competence) {
+                                $id_Planning_is_planning_new = $Support_CompetenceModels->insertID();
+                                $Planning_is_planning_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Support_CompetenceModels->update($id_Planning_is_planning_new, $Planning_is_planning_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'Copy Competence data cannot be copied.',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_Support_Competence = $Support_CompetenceModels->copyDataById($key['id_competence']);
+                        if ($newData_Support_Competence) {
+                            $id_Support_Competence_new = $Support_CompetenceModels->insertID();
+                            $Support_Competence_update = [
+                                'id_file' => 0,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Support_CompetenceModels->update($id_Support_Competence_new, $Support_Competence_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'Copy Competence data cannot be copied.',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
+            if ($Support_Awareness) {
+                foreach ($Support_Awareness as $key) {
+                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                            $newData_Support_Awareness = $Support_AwarenessModels->copyDataById($key['id_awareness']);
+                            if ($newData_Support_Awareness) {
+                                $id_Support_Awareness_new = $Support_AwarenessModels->insertID();
+                                $Support_Awareness_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Support_AwarenessModels->update($id_Support_Awareness_new, $Support_Awareness_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'Copy Awareness data cannot be copied.',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_Support_Awareness = $Support_AwarenessModels->copyDataById($key['id_awareness']);
+                        if ($newData_Support_Awareness) {
+                            $id_Support_Awareness_new = $Support_AwarenessModels->insertID();
+                            $Support_Awareness_update = [
+                                'id_file' => 0,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Support_AwarenessModels->update($id_Support_Awareness_new, $Support_Awareness_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'Copy Awareness data cannot be copied.',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
+            if ($Support_Communication) {
+                foreach ($Support_Communication as $key) {
+                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                            $newData_Support_Communication = $Support_CommunicationModels->copyDataById($key['id_communication']);
+                            if ($newData_Support_Communication) {
+                                $id_Planning_is_planning_new = $Support_CommunicationModels->insertID();
+                                $Planning_is_planning_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Support_CommunicationModels->update($id_Planning_is_planning_new, $Planning_is_planning_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'Copy Communication data cannot be copied.',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_Support_Communication = $Support_CommunicationModels->copyDataById($key['id_communication']);
+                        if ($newData_Support_Communication) {
+                            $id_Support_Communication_new = $Support_CommunicationModels->insertID();
+                            $Support_Communication_update = [
+                                'id_file' => 0,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Support_CommunicationModels->update($id_Support_Communication_new, $Support_Communication_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'Copy Communication data cannot be copied.',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
+            if ($Support_Documented) {
+                foreach ($Support_Documented as $key) {
+                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
+                    if ($file) {
+                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                        if ($newDataFile) {
+                            $id_file = $filemodel->insertID();
+                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                            if (!is_dir($targetDir)) {
+                                mkdir($targetDir, 0777, true);
+                            }
+                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+
+                            $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
+                            if ($newData_doc) {
+                                $id_document_new = $Support_DocumentedModels->insertID();
+                                $document_new_update = [
+                                    'id_file' => $id_file,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Support_DocumentedModels->update($id_document_new, $document_new_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    } else {
+                        $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
+                        if ($newData_doc) {
+                            $id_document_new = $Support_DocumentedModels->insertID();
+                            $inter_update = [
+                                'id_file' => null,
+                                'id_version' => $new_id_version,
+                            ];
+                            $Support_DocumentedModels->update($id_document_new, $inter_update);
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
+                    }
+                }
+            }
             if ($Address_Risk || $Address_Opp) {
                 if ($Address_Risk) {
                     foreach ($Address_Risk as $key) {
@@ -1367,69 +1821,114 @@ class AllversionController extends BaseController
                     }
                 }
             }
-            if ($Support_Documented) {
-                foreach ($Support_Documented as $key) {
-                    $file = $filemodel->where('id_files', $key['id_file'])->findAll();
-                    if ($file) {
-                        $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
-                        if ($newDataFile) {
-                            $id_file = $filemodel->insertID();
-                            $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
-                            if (!is_dir($targetDir)) {
-                                mkdir($targetDir, 0777, true);
-                            }
-                            copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
-
-                            $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
-                            if ($newData_doc) {
-                                $id_document_new = $Support_DocumentedModels->insertID();
-                                $document_new_update = [
-                                    'id_file' => $id_file,
-                                    'id_version' => $new_id_version,
-                                ];
-                                $Support_DocumentedModels->update($id_document_new, $document_new_update);
+            if ($Address_Risk_IS || $Address_Opp_IS) {
+                if ($Address_Risk_IS) {
+                    foreach ($Address_Risk_IS as $key) {
+                        $file = $filemodel->where('id_files', $key['file'])->findAll();
+                        if ($file) {
+                            $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                            if ($newDataFile) {
+                                $id_file = $filemodel->insertID();
+                                $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                                if (!is_dir($targetDir)) {
+                                    mkdir($targetDir, 0777, true);
+                                }
+                                copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                                $newData_Risk = $Address_Risk_IS_Models->copyDataById($key['id_address_risks_is']);
+                                if ($newData_Risk) {
+                                    $id_Risk_new = $Address_Risk_IS_Models->insertID();
+                                    $Risk_update = [
+                                        'file' => $id_file,
+                                        'id_version' => $new_id_version,
+                                    ];
+                                    $Address_Risk_IS_Models->update($id_Risk_new, $Risk_update);
+                                } else {
+                                    $response = [
+                                        'success' => false,
+                                        'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Risk ได้',
+                                    ];
+                                    return $this->response->setJSON($response);
+                                }
                             } else {
                                 $response = [
                                     'success' => false,
-                                    'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
                                 ];
                                 return $this->response->setJSON($response);
                             }
                         } else {
-                            $response = [
-                                'success' => false,
-                                'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
-                            ];
-                            return $this->response->setJSON($response);
-                        }
-                    } else {
-                        $newData_doc = $Support_DocumentedModels->copyDataById($key['id_document_create_update']);
-                        if ($newData_doc) {
-                            $id_document_new = $Support_DocumentedModels->insertID();
-                            $inter_update = [
-                                'id_file' => null,
-                                'id_version' => $new_id_version,
-                            ];
-                            $Support_DocumentedModels->update($id_document_new, $inter_update);
-                        } else {
-                            $response = [
-                                'success' => false,
-                                'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Document ได้',
-                            ];
-                            return $this->response->setJSON($response);
+                            $newData_Risk = $Address_Risk_IS_Models->copyDataById($key['id_address_risks_is']);
+                            if ($newData_Risk) {
+                                $id_Risk_new = $Address_Risk_IS_Models->insertID();
+                                $Risk_update = [
+                                    'file' => null,
+                                    'id_version' => $new_id_version,
+                                ];
+                                $Address_Risk_IS_Models->update($id_Risk_new, $Risk_update);
+                            } else {
+                                $response = [
+                                    'success' => false,
+                                    'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Risk ได้',
+                                ];
+                                return $this->response->setJSON($response);
+                            }
                         }
                     }
                 }
-            }
-            if ($SOA_DATA) {
-                foreach ($SOA_DATA as $key) {
-                    $newData_SOA = $Soa_Models->copyDataById($key['id_soa']);
-                    if ($newData_SOA) {
-                        $id_SOA_new = $Soa_Models->insertID();
-                        $SOA_update = [
-                            'id_version' => $new_id_version,
-                        ];
-                        $Soa_Models->update($id_SOA_new, $SOA_update);
+                if ($Address_Opp_IS) {
+                    foreach ($Address_Opp_IS as $key) {
+                        $newData_Opp = $Address_Risk_Opp_IS_Models->copyDataById($key['id_address_risks_opp_is']);
+                        if ($newData_Opp) {
+                            $id_Opp_new = $Address_Risk_Opp_IS_Models->insertID();
+                            $Address_Risk_Opp_IS_Models->update($id_Opp_new, [
+                                'id_version' => $new_id_version,
+                            ]);
+                            $data_opp_data = $Address_Risk_Opp_IS_Data_Models->where('id_address_risks_opp_is', $key['id_address_risks_opp_is'])->findAll();
+                            if ($data_opp_data) {
+                                foreach ($data_opp_data as $data) {
+                                    $newData_Opp_data = $Address_Risk_Opp_IS_Data_Models->copyDataById($data['id_address_risks_opp_is_data']);
+                                    if ($newData_Opp_data) {
+                                        $id_Opp_data_new = $Address_Risk_Opp_IS_Data_Models->insertID();
+                                        $Address_Risk_Opp_IS_Data_Models->update($id_Opp_data_new, [
+                                            'id_address_risks_opp_is' => $id_Opp_new,
+                                        ]);
+                                        $file = $filemodel->where('id_files', $data['file'])->findAll();
+                                        if ($file) {
+                                            $newDataFile = $filemodel->copyDataById($file[0]['id_files']);
+                                            if ($newDataFile) {
+                                                $id_file = $filemodel->insertID();
+                                                $targetDir = ROOTPATH . 'public/uploads/' . $id_file; // เปลี่ยนตามต้องการ
+                                                if (!is_dir($targetDir)) {
+                                                    mkdir($targetDir, 0777, true);
+                                                }
+                                                copy(ROOTPATH . 'public/uploads/' . $file[0]['id_files'] . '/' . $file[0]['name_file'], ROOTPATH . 'public/uploads/' . $id_file . '/' . $file[0]['name_file']);
+                                                $Address_Risk_Opp_IS_Data_Models->update($id_Opp_data_new, [
+                                                    'file' => $id_file,
+                                                ]);
+                                            } else {
+                                                $response = [
+                                                    'success' => false,
+                                                    'message' => 'ไม่สามารถคัดลอกข้อมูล File ได้',
+                                                ];
+                                                return $this->response->setJSON($response);
+                                            }
+                                        }
+                                    } else {
+                                        $response = [
+                                            'success' => false,
+                                            'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Opp data ได้',
+                                        ];
+                                        return $this->response->setJSON($response);
+                                    }
+                                }
+                            }
+                        } else {
+                            $response = [
+                                'success' => false,
+                                'message' => 'ไม่สามารถคัดลอกข้อมูล Copy Opp ได้',
+                            ];
+                            return $this->response->setJSON($response);
+                        }
                     }
                 }
             }
@@ -1438,7 +1937,7 @@ class AllversionController extends BaseController
             $response = [
                 'success' => true,
                 'message' => 'คัดลอกข้อมูลสำเร็จ!',
-                'reload' => true,
+                'reload' => false,
                 'newCopy' => true,
                 'id_version' => $new_id_version,
                 'num_ver' => $num_ver,

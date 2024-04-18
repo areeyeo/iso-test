@@ -101,23 +101,14 @@ class Support_AwarenessController extends BaseController
         $data_awareness_idfile = explode(',', $data_awareness_idfile['id_file']);
         if ($id_file_after != '') {
             $id_file_after = explode(',', $id_file_after);
-            foreach ($data_awareness_idfile as $value) {
+            foreach ($data_awareness_idfile as $key => $value) {
                 if (!in_array($value, $id_file_after)) {
-                    $filemodel->where('id_files', $value)->delete($value);
+                    $filemodel->where('id_files ', $value)->delete($value);
                     $del_path = 'public/uploads/' . $value . '/'; // For Delete folder
                     delete_files($del_path, true); // Delete files into the folder
                     rmdir($del_path);
                 } else {
                     $id_file .= $value . ',';
-                }
-            }
-        } else {
-            if ($data_awareness_idfile !== ['']) {
-                foreach ($data_awareness_idfile as $value) {
-                    $filemodel->where('id_files', $value)->delete($value);
-                    $del_path = 'public/uploads/' . $value . '/'; // For Delete folder
-                    delete_files($del_path, true); // Delete files into the folder
-                    rmdir($del_path);
                 }
             }
         }
@@ -161,7 +152,6 @@ class Support_AwarenessController extends BaseController
                 'success' => true,
                 'message' => 'Successfully Edit Awareness',
                 'reload' => true,
-                'id_awareness' => $data_awareness_idfile !== ['']
             ];
         } else {
             $response = [

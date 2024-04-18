@@ -121,7 +121,7 @@ if ($view_mode) {
         $view_button_mode = "";
     } else if (in_array($my_id_, $approval_array) && $data_doc['status'] == "4") {
         $view_button_mode = "";
-    }  else {
+    } else {
         $view_button_mode = "hidden";
     }
 }
@@ -136,14 +136,12 @@ if ($view_mode) {
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>Documented Information
-                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal"
-                                data-target="#modal-default" id="load-modal-button"
-                                onclick="load_modal(1)">Requirement</button>
+                            <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(1)">Requirement</button>
                         </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
                             <li class="breadcrumb-item"><a href="<?= base_url('context/context_analysis/index/17'); ?>">Documented Information</a></li>
                             <li class="breadcrumb-item"><a href="<?= base_url('support/documentation/index/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Version <?= $data['num_ver'] ?></a></li>
                             <li class="breadcrumb-item"><a>Management Control</a></li>
@@ -162,58 +160,44 @@ if ($view_mode) {
                                 <h2 class="card-title">Management Control</h2>
                             </div>
                             <div>
-                                <?php if ($data_doc['status'] === "1" || $data_doc['status'] === "3" || $data_doc['status'] === "6"): ?>
-                                    <button type="button" class="btn btn-outline-dark btn-sm btn-save-draft"
-                                        onclick="confirm_Alert('ต้องการที่จะ Save Draft หรือไม่', 'support/documentation/management/edit/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>')"
-                                        <?= $view_button_mode ?>>
+                                <?php if ($data_doc['status'] === "1" || $data_doc['status'] === "3" || $data_doc['status'] === "6") : ?>
+                                    <button type="button" class="btn btn-outline-dark btn-sm btn-save-draft" onclick="confirm_Alert('ต้องการที่จะ Save Draft หรือไม่', 'support/documentation/management/edit/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>')" <?= $view_button_mode ?>>
                                         <i class="fas fa-save"></i>
                                         &nbsp;Save Draft
                                     </button>
-                                    <button type="button" class="btn btn-outline-primary btn-sm btn-send-review"
-                                        onclick="confirm_Alert('ต้องการที่จะ Send Review หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/2')"
-                                        <?= $view_button_mode ?>>
+                                    <button type="button" class="btn btn-outline-primary btn-sm btn-send-review" onclick="confirm_Alert('ต้องการที่จะ Send Review หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/2')" <?= $view_button_mode ?>>
                                         <i class="fas fa-user-check"></i>
                                         &nbsp;Send Review
                                     </button>
-                                <?php elseif ($data_doc['status'] == "2"): ?>
-                                    <button type="button" class="btn btn-outline-success btn-sm btn-send-approval"
-                                        onclick="confirm_Alert('ต้องการที่จะ Send Approval หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/4')"
-                                        <?= $view_button_mode ?>>
+                                <?php elseif ($data_doc['status'] == "2") : ?>
+                                    <button type="button" class="btn btn-outline-success btn-sm btn-send-approval" onclick="confirm_Alert('ต้องการที่จะ Send Approval หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/4')" <?= $view_button_mode ?>>
                                         <i class="fas fa-paper-plane"></i>
                                         &nbsp;Send Approval
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-rejected" data-toggle="modal"
-                                        data-target="#modal-default" id="load-modal-button" onclick="load_modal(2,1)"
-                                        <?= $view_button_mode ?>>
+                                    <button type="button" class="btn btn-danger btn-sm btn-rejected" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2,1)" <?= $view_button_mode ?>>
                                         <i class="fas fa-times-circle"></i>
                                         &nbsp;Rejected
                                     </button>
-                                <?php elseif ($data_doc['status'] == "4"): ?>
-                                    <button type="button" class="btn btn-success btn-sm btn-approved"
-                                        onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/5')" <?= $view_button_mode ?>>
+                                <?php elseif ($data_doc['status'] == "4") : ?>
+                                    <button type="button" class="btn btn-success btn-sm btn-approved" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'support/documentation/management/update/status/<?= $data_doc['id_document_create_update'] . '/' . $data['id_version'] . '/' . $data['status'] ?>/5')" <?= $view_button_mode ?>>
                                         <i class="fas fa-check-circle"></i>
                                         &nbsp;Approved
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm btn-rejected" data-toggle="modal"
-                                        data-target="#modal-default" id="load-modal-button" onclick="load_modal(2,1)" <?= $view_button_mode ?>>
+                                    <button type="button" class="btn btn-danger btn-sm btn-rejected" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2,1)" <?= $view_button_mode ?>>
                                         <i class="fas fa-times-circle"></i>
                                         &nbsp;Rejected
                                     </button>
-                                <?php elseif ($data_doc['status'] == "5"): ?>
-                                    <button type="button" class="btn btn-warning btn-sm btn-request-modification"
-                                        data-toggle="modal" data-target="#modal-default" id="load-modal-button"
-                                        onclick="load_modal(2,2)">
+                                <?php elseif ($data_doc['status'] == "5") : ?>
+                                    <button type="button" class="btn btn-warning btn-sm btn-request-modification" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2,2)">
                                         <i class="fas fa-sync-alt"></i>
                                         &nbsp;Request Modification
                                     </button>
                                 <?php endif; ?>
-                                <button type="button" class="btn btn-outline-warning btn-sm btn-view-request-details"
-                                    id="view-request-details-button">
+                                <button type="button" class="btn btn-outline-warning btn-sm btn-view-request-details" id="view-request-details-button">
                                     <i class="fas fa-eye"></i>
                                     &nbsp;View Request Modification Details
                                 </button>
-                                <button type="button" class="btn btn-outline-danger btn-sm btn-view-rejection-details"
-                                    id="view-rejection-details-button">
+                                <button type="button" class="btn btn-outline-danger btn-sm btn-view-rejection-details" id="view-rejection-details-button">
                                     <i class="fas fa-eye"></i>
                                     &nbsp;View Rejection Details
                                 </button>
@@ -221,12 +205,10 @@ if ($view_mode) {
                         </div>
                     </div>
                     <div class="card-body">
-                        <form class="mb-3" id="form_documented" action="javascript:void(0)" method="post"
-                            enctype="multipart/form-data">
+                        <form class="mb-3" id="form_documented" action="javascript:void(0)" method="post" enctype="multipart/form-data">
                             <div class="d-flex justify-content-end align-items-baseline">
                                 <span>Status Document:&nbsp;&nbsp;</span>
-                                <span class="badge rounded-pill"
-                                    style="background-color: <?= $badgeStyle['background-color']; ?>; color: <?= $badgeStyle['color']; ?>;">
+                                <span class="badge rounded-pill" style="background-color: <?= $badgeStyle['background-color']; ?>; color: <?= $badgeStyle['color']; ?>;">
                                     <?= $badgeStyle['status']; ?>
                                 </span>
                             </div>
@@ -234,9 +216,8 @@ if ($view_mode) {
                                 <div class="col-lg-4">
                                     <div class="form-group mt-3">
                                         <h6>Document Type</h6>
-                                        <select class="custom-select" id="doc-type-select" name="document_type"
-                                            <?= $edit_mode ?>>
-                                            <?php foreach ($Document_Type as $key => $value): ?>
+                                        <select class="custom-select" id="doc-type-select" name="document_type" <?= $edit_mode ?>>
+                                            <?php foreach ($Document_Type as $key => $value) : ?>
                                                 <?php if ($value == $data_doc['document_type'])
                                                     echo '<option selected>' . $value . '</option>'; ?>
                                                 <?php if ($value != $data_doc['document_type'])
@@ -248,9 +229,7 @@ if ($view_mode) {
                                 <div class="col-lg-4">
                                     <div class="form-group mt-3">
                                         <h6>Document Abbreviation</h6>
-                                        <input class="form-control gray-text" type="text" name="document_abbreviation"
-                                            id="document_abbreviation" value="<?= $data_doc['document_abbreviation'] ?>"
-                                            readonly></input>
+                                        <input class="form-control gray-text" type="text" name="document_abbreviation" id="document_abbreviation" value="<?= $data_doc['document_abbreviation'] ?>" readonly></input>
                                     </div>
                                 </div>
                             </div>
@@ -258,23 +237,20 @@ if ($view_mode) {
                                 <div class="col-lg-4">
                                     <div class="form-group mt-3">
                                         <h6>Document Name TH</h6>
-                                        <input class="form-control gray-text" type="text" name="name_th" id="name_th"
-                                            value="<?= $data_doc['name_th'] ?>" <?= $edit_mode ?>></input>
+                                        <input class="form-control gray-text" type="text" name="name_th" id="name_th" value="<?= $data_doc['name_th'] ?>" <?= $edit_mode ?>></input>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group mt-3">
                                         <h6>Document Name ENG</h6>
-                                        <input class="form-control gray-text" type="text" name="name_eng" id="name_eng"
-                                            value="<?= $data_doc['name_eng'] ?>" <?= $edit_mode ?>></input>
+                                        <input class="form-control gray-text" type="text" name="name_eng" id="name_eng" value="<?= $data_doc['name_eng'] ?>" <?= $edit_mode ?>></input>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group mt-3">
                                         <h6>Secret Level</h6>
-                                        <select class="custom-select" id="doc-secret-level" name="secret_level"
-                                            <?= $edit_mode ?>>
-                                            <?php foreach ($Secret_Level as $key => $value): ?>
+                                        <select class="custom-select" id="doc-secret-level" name="secret_level" <?= $edit_mode ?>>
+                                            <?php foreach ($Secret_Level as $key => $value) : ?>
                                                 <?php if ($value == $data_doc['secret_level'])
                                                     echo '<option selected>' . $value . '</option>'; ?>
                                                 <?php if ($value != $data_doc['secret_level'])
@@ -288,8 +264,7 @@ if ($view_mode) {
                                 <div class="col-lg-6">
                                     <div class="form-group mt-3">
                                         <h6>Management Permissions</h6>
-                                        <select id="tags-management-doc" multiple="multiple"
-                                            class="form-control select2tags" disabled>
+                                        <select id="tags-management-doc" multiple="multiple" class="form-control select2tags" disabled>
                                         </select>
                                     </div>
                                 </div>
@@ -297,30 +272,91 @@ if ($view_mode) {
                                     <div class="form-group user-upload">
                                         <h6>Attach File</h6>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="doc-file"
-                                                accept=".docx, .pdf, .xlsx , .doc" data-max-size="20971520"
-                                                name="doc-file" <?= $edit_mode ?>>
+                                            <input type="file" class="custom-file-input" id="doc-file" accept=".docx, .pdf, .xlsx , .doc" data-max-size="20971520" name="doc-file" <?= $edit_mode ?>>
                                             <label class="custom-file-label" for="doc-file">Choose file</label>
                                         </div>
                                         <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
                                     </div>
-                                    <div class="form-group user-view">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-3" <?= $view_button_mode ?>>
+                                        <h6>Create / Update / Upload</h6>
+                                        <select id="tags-create" name="tags_create[]" multiple="multiple" class="form-control select2tags" required <?= $edit_mode ?>>
+                                            <?php foreach ($user_data as $user) : ?>
+                                                <?php if (in_array($user['id_user'], explode(',', $data_doc['create_update_upload']))) : ?>
+                                                    <option value="<?= $user['id_user']; ?>" selected>
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php else : ?>
+                                                    <?php if ($user['status'] === '0')
+                                                        continue; ?>
+                                                    <option value="<?= $user['id_user']; ?>">
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-3">
                                         <h6>File</h6>
                                         <div class="input-group">
-                                            <input class="form-control gray-text" type="text" name="file_old"
-                                                id="file_old" disabled
-                                                value="<?= $data_doc['id_file'] ? $data_doc['id_file']['name_file'] : 'No File' ?>"></input>
-                                            <?php if ($data_doc['id_file']): ?>
-                                                <a id="button-addon2"
-                                                    href="<?php echo base_url('openfile/' . $data_doc['id_file']['id_files']); ?>"
-                                                    target="_blank">
+                                            <input class="form-control gray-text" type="text" name="file_old" id="file_old" disabled value="<?= $data_doc['id_file'] ? $data_doc['id_file']['name_file'] : 'No File' ?>"></input>
+                                            <?php if ($data_doc['id_file']) : ?>
+                                                <a id="button-addon2" href="<?php echo base_url('openfile/' . $data_doc['id_file']['id_files']); ?>" target="_blank">
                                                     <button type="button"><i class="fas fa-search"></i>&nbsp;View</button>
                                                 </a>
-                                            <?php else: ?>
-                                                <button type="button" id="button-addon2"><i
-                                                        class="fas fa-search"></i>&nbsp;View</button>
+                                            <?php else : ?>
+                                                <button type="button" id="button-addon2"><i class="fas fa-search"></i>&nbsp;View</button>
                                             <?php endif; ?>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" <?= $view_button_mode ?>>
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-3">
+                                        <h6>Review</h6>
+                                        <select id="tags-review" name="tags_review[]" multiple="multiple" class="form-control" required <?= $edit_mode ?>>
+                                            <?php foreach ($user_data as $user) : ?>
+                                                <?php if (in_array($user['id_user'], explode(',', $data_doc['review']))) : ?>
+                                                    <option value="<?= $user['id_user']; ?>" selected>
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php else : ?>
+                                                    <?php if ($user['status'] === '0')
+                                                        continue; ?>
+                                                    <option value="<?= $user['id_user']; ?>">
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" <?= $view_button_mode ?>>
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-3">
+                                        <h6>Approve</h6>
+                                        <select id="tags-approve" name="tags_approve[]" multiple="multiple" class="form-control" required <?= $edit_mode ?>>
+                                            <?php foreach ($user_data as $user) : ?>
+                                                <?php if (in_array($user['id_user'], explode(',', $data_doc['approval']))) : ?>
+                                                    <option value="<?= $user['id_user']; ?>" selected>
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php else : ?>
+                                                    <?php if ($user['status'] === '0')
+                                                        continue; ?>
+                                                    <option value="<?= $user['id_user']; ?>">
+                                                        <?= $user['name_user'] . ' ' . $user['lastname_user']; ?>
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -329,15 +365,13 @@ if ($view_mode) {
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Created By</h6>
-                                    <input class="form-control gray-text" type="text" name="createdby" id="createdby"
-                                        disabled value="<?= $data_doc['created_by'] ?>"></input>
+                                    <input class="form-control gray-text" type="text" name="createdby" id="createdby" disabled value="<?= $data_doc['created_by'] ?>"></input>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Creation Date</h6>
-                                    <input class="form-control gray-text" type="datetime-local" name="creationtime"
-                                        id="creationtime" disabled value="<?= $data_doc['creation_time'] ?>"></input>
+                                    <input class="form-control gray-text" type="datetime-local" name="creationtime" id="creationtime" disabled value="<?= $data_doc['creation_time'] ?>"></input>
                                 </div>
                             </div>
                         </div>
@@ -345,17 +379,13 @@ if ($view_mode) {
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Last Modified By</h6>
-                                    <input class="form-control gray-text" type="text" name="lastmodifiedby"
-                                        id="lastmodifiedby" disabled
-                                        value="<?= $data_doc['last_modified_by'] ?>"></input>
+                                    <input class="form-control gray-text" type="text" name="lastmodifiedby" id="lastmodifiedby" disabled value="<?= $data_doc['last_modified_by'] ?>"></input>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Last Modified Date</h6>
-                                    <input class="form-control gray-text" type="datetime-local" name="lastmodifiedtime"
-                                        id="lastmodifiedtime" disabled
-                                        value="<?= $data_doc['last_modified_time'] ?>"></input>
+                                    <input class="form-control gray-text" type="datetime-local" name="lastmodifiedtime" id="lastmodifiedtime" disabled value="<?= $data_doc['last_modified_time'] ?>"></input>
                                 </div>
                             </div>
                         </div>
@@ -363,22 +393,19 @@ if ($view_mode) {
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Approved By</h6>
-                                    <input class="form-control gray-text" type="text" name="approvedby" id="approvedby"
-                                        disabled value="<?= $data_doc['approver_by'] ?>"></input>
+                                    <input class="form-control gray-text" type="text" name="approvedby" id="approvedby" disabled value="<?= $data_doc['approver_by'] ?>"></input>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group mt-3">
                                     <h6>Approval Date</h6>
-                                    <input class="form-control gray-text" type="datetime-local" name="approvaldate"
-                                        id="approvaldate" disabled value="<?= $data_doc['approval_time'] ?>"></input>
+                                    <input class="form-control gray-text" type="datetime-local" name="approvaldate" id="approvaldate" disabled value="<?= $data_doc['approval_time'] ?>"></input>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mb-5">
-                        <a href="javascript:history.back()"><button type="button" class="btn btn-danger"
-                                data-dismiss="modal" style="margin-left: 30px;">Back</button></a>
+                        <a href="javascript:history.back()"><button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 30px;">Back</button></a>
                     </div>
                 </div>
             </div>
@@ -398,7 +425,26 @@ if ($view_mode) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="<?= base_url('plugins/bs-custom-file-input/bs-custom-file-input.min.js'); ?>"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
+            $('#tags-create').select2({
+                placeholder: "Select or Search",
+                tags: false,
+                tokenSeparators: [',', ' '],
+                width: '100%'
+            });
+            $('#tags-review').select2({
+                placeholder: "Select or Search",
+                tags: false,
+                tokenSeparators: [',', ' '],
+                width: '100%'
+            });
+            $('#tags-approve').select2({
+                placeholder: "Select or Search",
+                tags: false,
+                tokenSeparators: [',', ' '],
+                width: '100%'
+            });
+
             var element = <?php echo json_encode($data_doc); ?>;
             var my_id = <?= session()->get('id') ?>;
             var my_id_string = my_id.toString(); // Convert my_id to string for comparison
@@ -417,7 +463,7 @@ if ($view_mode) {
 
             function checkAndTriggerChange(ids, tag) {
                 if (ids.includes(my_id_string)) {
-                    tags_management_doc.val(function (index, oldValue) {
+                    tags_management_doc.val(function(index, oldValue) {
                         return (oldValue || []).concat([tag]);
                     }).trigger('change');
                 }
@@ -427,10 +473,9 @@ if ($view_mode) {
             checkAndTriggerChange(review_ids, "Review");
             checkAndTriggerChange(approval_ids, "Approval");
         });
-        $(function () {
+        $(function() {
             bsCustomFileInput.init();
         });
-
     </script>
     <script>
         function load_modal(check, data_, status) {
@@ -461,7 +506,7 @@ if ($view_mode) {
     <script>
         var element = <?php echo json_encode($data_doc); ?>;
 
-        $('#view-request-details-button').click(function () {
+        $('#view-request-details-button').click(function() {
             Swal.fire({
                 title: 'Request Modification Details',
                 html: '<p>' + (element.request_details ? element.request_details : 'No Request Details') + '</p>',
@@ -470,7 +515,7 @@ if ($view_mode) {
             });
         });
 
-        $('#view-rejection-details-button').click(function () {
+        $('#view-rejection-details-button').click(function() {
             Swal.fire({
                 title: 'Rejection Details',
                 html: '<p>' + (element.rejection_details ? element.rejection_details : 'No Rejection Details') + '</p>',
@@ -506,7 +551,7 @@ if ($view_mode) {
                         headers: {
                             'X-Requested-With': 'XMLHttpRequest'
                         },
-                        beforeSend: function () {
+                        beforeSend: function() {
                             Swal.fire({
                                 title: 'Loading...',
                                 allowEscapeKey: false,
@@ -517,7 +562,7 @@ if ($view_mode) {
                                 }
                             });
                         },
-                        success: function (response) {
+                        success: function(response) {
                             console.log(response);
                             if (response.success) {
                                 Swal.fire({
@@ -540,7 +585,7 @@ if ($view_mode) {
                                 });
                             }
                         },
-                        error: function (xhr, status, error) {
+                        error: function(xhr, status, error) {
                             Swal.fire({
                                 title: "เกิดข้อผิดพลาด",
                                 icon: 'error',
@@ -566,7 +611,7 @@ if ($view_mode) {
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
-                beforeSend: function () {
+                beforeSend: function() {
                     Swal.fire({
                         title: 'Loading...',
                         allowEscapeKey: false,
@@ -577,7 +622,7 @@ if ($view_mode) {
                         }
                     });
                 },
-                success: function (response) {
+                success: function(response) {
                     Swal.close();
                     if (response.success) {
                         Swal.fire({
@@ -586,7 +631,7 @@ if ($view_mode) {
                             allowOutsideClick: true,
                         });
                         if (response.reload) {
-                            setTimeout(function () {
+                            setTimeout(function() {
                                 location.reload();
                             }, 2000);
                         }
@@ -599,7 +644,7 @@ if ($view_mode) {
                         });
                     }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     Swal.fire({
                         title: "เกิดข้อผิดพลาด",
                         icon: 'error',

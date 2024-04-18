@@ -1,32 +1,23 @@
 <title>Address risks & opportunities</title>
 
 <style>
-    .table-wrapper {
-        max-height: 400px;
-        overflow-y: auto;
+    tr:nth-child(even) {
+        background-color: #F5F5F5;
     }
 
-    .table-wrapper::-webkit-scrollbar {
-        width: 10px;
+    th {
+        background-color: #F5F6FA;
+        text-align: center;
+        border-bottom: none;
     }
 
-    .table-wrapper::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    tbody {
+        border-bottom: 10px solid #ccc;
+        text-align: center;
     }
 
-    .table-wrapper::-webkit-scrollbar-thumb {
-        background-color: #ADB5BD;
-        border-radius: 10px;
-        border: 3px solid #f1f1f1;
-    }
-
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
-        background-color: #6C757D;
-    }
-
-    .table th,
-    .table td {
-        white-space: nowrap;
+    .table thead th {
+        border-bottom: none;
     }
 
     .custom-select {
@@ -37,11 +28,8 @@
         padding: .375rem .75rem;
         margin-bottom: 10px;
     }
+    
 </style>
-<?php
-$consequenceData = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
-$consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
-?>
 
 <!-- Main content -->
 <div class="card">
@@ -51,44 +39,34 @@ $consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                 <i class="fas fa-minus"></i>
             </button>
-            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
-                    href="<?= site_url('context/context_analysis/index/') ?>"
-                    style="color: #ADB5BD;">Version</a></button>
+            <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/' . $data['type_version']) ?>" style="color: #ADB5BD;">Version</a></button>
             <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;">
-                <a href="<?= site_url('context/ISObjective/timeline_log/') ?>" style="color: #ADB5BD;">History</a>
+                <a href="<?= base_url('planning/planningAddressRisksOpp/is/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']) ?>" style="color: #ADB5BD;">History</a>
             </button>
-            <button class="badge badge-edit"
-                style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+            <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <div class="dropdown-submenu">
                     <a class="dropdown-item dropdown-toggle" href="#">Status</a>
                     <div class="dropdown-menu">
                         <!-- Second-level dropdown items -->
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'is/status_update/<?= $data['id_version'] ?>/1')">Pending
                             Review</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'is/status_update/<?= $data['id_version'] ?>/2')">Review</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
-                            id="load-modal-button" onclick="load_modal(7,5)">Reject Review</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(7,5)">Reject Review</a>
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'is/status_update/<?= $data['id_version'] ?>/3')">Pending
                             Approve</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'is/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
-                            id="load-modal-button" onclick="load_modal(7,6)">Reject
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(7,6)">Reject
                             Approved</a>
                     </div>
                 </div>
@@ -96,21 +74,17 @@ $consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
                 <div class="dropdown-submenu">
                     <a class="dropdown-item dropdown-toggle" href="#">Update</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('Would you like to confirm the update review date?', 'context/update_date/<?= $data['id_version'] ?>/1')">Update
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('Would you like to confirm the update review date?', 'is/update_date/<?= $data['id_version'] ?>/1')">Update
                             review date</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('ต้องการที่จะ Copy ข้อมูลหรือไม่', 'context/copydata/<?= $data['id_version'] ?>')">Revise</a>
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Copy ข้อมูลหรือไม่', 'is/copydata/<?= $data['id_version'] ?>')">Revise</a>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" id="load-modal-button"
-                    href="#" onclick="load_modal(4)">Create Note</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" id="load-modal-button" href="#" onclick="load_modal(6)">Create Note</a>
             </div>
 
-            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button"
-                onclick="load_modal(2)"></i>
+            <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2)"></i>
         </div>
     </div>
     <div class="card-body">
@@ -178,58 +152,54 @@ $consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
         </div>
     </div>
 </div>
-<div class="card" id="information-security-ana">
+<div class="card" id="is-ana">
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
                 <div class="form-group">
                     <ul class="nav nav-pills" id="tabs-tab" role="tablist">
                         <li class="nav-item-tab" style="padding-right: 10px;">
-                            <a class="nav-link active" id="risk-information-security-tab" data-toggle="pill"
-                                href="#risk-information-security" role="tab" aria-controls="risk-information-security"
-                                aria-selected="true">Risk</a>
+                            <a class="nav-link active" id="risk-is-tab" data-toggle="pill" href="#risk-is" role="tab" aria-controls="risk-is" aria-selected="true">Risk</a>
                         </li>
                         <li class="nav-item-tab">
-                            <a class="nav-link" id="opportunity-information-security-tab" data-toggle="pill"
-                                href="#opportunity-information-security" role="tab"
-                                aria-controls="opportunity-information-security" aria-selected="false">Opportunity</a>
+                            <a class="nav-link" id="opportunity-is-tab" data-toggle="pill" href="#opportunity-is" role="tab" aria-controls="opportunity-is" aria-selected="false" onclick="getTableData2()">Opportunity</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class=" d-flex">
                 <div id="btn-Awareness" name="btn-Awareness">
-                    <button type="button" class="btn btn-outline-primary" onclick="CRUDInformationSecurityRiskOpp()">
-                        <span class="text-nowrap"><i class="fas fa-edit"></i>Create Information Security</span>
-                    </button>
+                    <a type="button" class="btn btn-outline-primary" href="<?= base_url('planning/crud_is_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">
+                        <span class="text-nowrap"><i class="fas fa-edit"></i>Create IS</span>
+                    </a>
                 </div>
             </div>
         </div>
         <hr>
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="risk-information-security" role="tabpanel"
-                aria-labelledby="org-strategy-tab">
-                <div class="d-flex justify-content-start align-items-center" id="information-security-risk-table">
+            <div class="tab-pane fade show active" id="risk-is" role="tabpanel" aria-labelledby="org-strategy-tab">
+                <div class="d-flex justify-content-start align-items-center" id="content-risk-table">
                     <span>Content:</span>
                     <div class="col-4 d-flex">
                         <select class="custom-select" id="select-content">
-                            <option selected>Select Content</option>
                             <option value="1">Risks that must be prepared as a risk treatment plan.</option>
-                            <option value="2">Risks that do not have risks exceeding the risk assessment level.</option>
+                            <option value="2">Risks that do not have risks exceeding the risk assessment level.
+                            </option>
                             <option value="3">Risks that are being done risk treatment.</option>
                             <option value="4">Risks that have completed risk treatment</option>
-                            <option value="5">All risk context.</option>
+                            <option value="0" selected>All risk is.</option>
                         </select>
                     </div>
+
                     <div class="col-2">
-                        <select class="custom-select" id="table-is-display-select">
-                            <option value="full-table-is">Full Table</option>
-                            <option value="short-table-is">Short Table</option>
+                        <select class="custom-select" id="table-display-select">
+                            <option value="full">Full Table</option>
+                            <option value="short">Short Table</option>
                         </select>
                     </div>
                 </div>
-                <div class="table-wrapper">
-                    <table id="risk-information-security-table-full" class="table table-hover">
+                <div>
+                    <table id="risk-is-table-full" class="table table-hover">
                         <thead>
                             <tr>
                                 <th class="text-center">ACTION</th>
@@ -237,64 +207,35 @@ $consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
                                 <th>TYPE</th>
                                 <th>ASSET GROUP</th>
                                 <th>THREAT</th>
-                                <th style="max-width: 200px;">VULNERABILITY</th>
+                                <th>VULNERABILITY</th>
                                 <th>EXISTING CONTROLS</th>
-                                <?php
-                                foreach ($consequenceData as $data_) {
-                                    echo "<th>$data_</th>";
-                                }
-                                ?>
-                                <th>CONSEQUENCE</th>
+                                <th class="text-center">CONSEQUENCE</th>
+                                <th>IMPACT</th>
                                 <th>LIKELIHOOD</th>
                                 <th>RISK LEVEL</th>
-                                <th>RISK ASSESSMENT LEVEL</th>
+                                <th id="display_element_risk">RISK ASSESSMENT LEVEL</th>
                                 <th>RISK OPTIONS</th>
                                 <th>RISK TREATMENT PLAN</th>
                                 <th>RISK OWNER</th>
-                                <th>START DATE</th>
-                                <th>END DATE</th>
-                                <th>APPROVE</th>
-                                <th>RTP STATUS</th>
-                                <th>FILE</th>
-                                <?php
-                                foreach ($consequenceData2 as $data_) {
-                                    echo "<th>$data_</th>";
-                                }
-                                ?>
-                                <th>CONSEQUENCE</th>
-                                <th>LIKELIHOOD</th>
+                                <th id="display_element_startdate">START DATE</th>
+                                <th id="display_element_enddate">END DATE</th>
+                                <th id="display_element_approve">APPROVE</th>
+                                <th id="display_element_rtp">RTP STATUS</th>
+                                <th id="display_element_file">FILE</th>
+                                <th class="text-center" id="display_element">CONSEQUENCE</th>
+                                <th id="display_element_impact">IMPACT</th>
+                                <th id="display_element_likelihood">LIKELIHOOD</th>
                                 <th>RESIDUAL</th>
-                            </tr>
-
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                    <table id="risk-information-security-table-short" class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th class="text-center">ACTION</th>
-                                <th>NO.</th>
-                                <th>TYPE</th>
-                                <th>ASSET GROUP</th>
-                                <th>CONSEQUENCE</th>
-                                <th>LIKELIHOOD</th>
-                                <th>RISK LEVEL</th>
-                                <th>RISK OPTIONS</th>
-                                <th>RISK TREATMENT PLAN</th>
-                                <th>RISK OWNER</th>
-                                <th>RESIDUAL</th>
+                                <th>RTP NO.</th>
                             </tr>
                         </thead>
                         <tbody>
                         </tbody>
                     </table>
                 </div>
-
             </div>
-            <div class="tab-pane table-wrapper fade show" id="opportunity-information-security" role="tabpanel"
-                aria-labelledby="opportunity-information-security-tab">
-                <table id="opp-information-security-table" class="table table-hover">
+            <div class="tab-pane fade show" id="opportunity-is" role="tabpanel" aria-labelledby="opportunity-is-tab">
+                <table id="opp_is_table" class="table table-hover" width="1500">
                     <thead>
                         <tr>
                             <th class="text-center">ACTION</th>
@@ -302,354 +243,713 @@ $consequenceData2 = ["CENTRAL", "INTELLIGENCE", "AGENCY"];
                             <th>TYPE</th>
                             <th>ASSET GROUP</th>
                             <th>QUANTITY OF PLANNING</th>
-                            <th>OPPORTUNITY PLANNINGS</th>
-                            <th>OPPORTUNITIES OWNNER</th>
-                            <th>START DATE</th>
-                            <th>END DATE</th>
-                            <th>FILE</th>
+                            <th class="text-center">OPPORTUNITY PLANNINGS</th>
+                            <th class="text-center">RISK OWNNER</th>
+                            <th class="text-center">START DATE</th>
+                            <th class="text-center">END DATE</th>
+                            <th class="text-center">FILE</th>
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
-    <!-- <div class="overlay dark">
-                <i class="fas fa-2x fa-sync-alt fa-spin"></i>
-            </div> -->
 </div>
 
 <script>
-    // ดึงข้อมูลมาจากตาราง risk level minimum maximum color  
-    function getRiskColor(result) {
-        if (result <= 4) {
-            return "#92D050";
-        } else if (result <= 9) {
-            return "#FFFF00";
-        } else if (result <= 19) {
-            return "#FFC000";
-        } else if (result > 19) {
-            return "#FD2B2B";
-        } else {
-            return ""; // คืนค่าว่างให้กลับไป
+    $(document).ready(function() {
+        getTableData1();
+    })
+</script>
+<script>
+    var countTable1 = 0;
+    var data_lenght = 0;
+    var table_show = true;
+
+    function getTableData1() {
+        if (countTable1 === 0) {
+            var select_Content = document.getElementById('select-content');
+
+            countTable1++;
+            var data_version = <?php echo json_encode($data); ?>;
+            if (data_version.status === '4' || data_version.status === '5') {
+                var disabledAttribute = 'disabled';
+            }
+            if ($.fn.DataTable.isDataTable('#risk-is-table-full')) {
+                $('#risk-is-table-full').DataTable().destroy();
+            }
+            $('#risk-is-table-full').DataTable({
+                "processing": true,
+                "pageLength": 10,
+                "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+                'serverSide': true,
+                'ajax': {
+                    'url': "<?php echo site_url('planning/planningAddressRisksOpp/is/risk/getdata/'); ?>" + data_version.id_version,
+                    'type': 'GET',
+                    'data': {
+                        'select_Content': select_Content.value
+                    }
+                },
+                "responsive": false,
+                "lengthChange": false,
+                "autoWidth": true,
+                "searching": true,
+                "ordering": false,
+                "scrollX": true,
+                "drawCallback": function(settings) {
+                    var daData = settings.json.data;
+                    data_lenght = daData.length;
+                    if (daData.length == 0) {
+                        $('#risk-is-table-full tbody').html(`
+                            <tr>
+                                <td colspan="5">
+                                    <div class="dropdown">
+                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                            class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false" ${disabledAttribute}>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Create</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td colspan="15">
+                                </td>
+                            </tr>`);
+                    }
+                },
+                'columns': [{
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            var number_index = +meta.settings.oAjaxData.start + 1;
+                            const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                            let dropdownHtml = `
+                                <div class="dropdown">
+                                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        ${disabledAttribute}></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/edit/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_is}">Edit</a>    
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/view/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_is}">View Detail</a>    
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planningAddressRisksOpp/is/risk/delete/${data.id_address_risks_is}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Create</a>`;
+                            dropdownHtml += `</div>
+                                </div>`;
+                            return dropdownHtml;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.type + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.asset_group + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.threat + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.vulnerability + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.existing_controls + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html_consequence = '';
+                            var data_consequence = data.consequence.split(',')
+                            for (var i = 0; i < data_consequence.length; i++) {
+                                var number = data_consequence[i].split('-')
+                                html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + data.consequence_data[i].consequence_name + ': ' + number[1] + '</li>';
+                            }
+                            return html_consequence;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            var max_value = 0;
+                            var data_consequence = data.consequence.split(',')
+                            for (var i = 0; i < data_consequence.length; i++) {
+                                var number = data_consequence[i].split('-')
+                                if (number[1] > max_value) {
+                                    max_value = number[1];
+                                }
+                            }
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + max_value + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.likelihood + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 100,
+                        'render': function(data, type, row, meta) {
+                            return data.risk_level;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.risk_assessment_level + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.risk_options ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.risk_treatment_plan ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.risk_ownner ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 100,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 100,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 100,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.approve ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            if (data.rtp_status != null) {
+                                if (data.rtp_status == 'รอดำเนินการ') {
+                                    return '<p style="color: #DC3545; border-style: solid">' + data.rtp_status + '</p>';
+                                } else if (data.rtp_status == 'ดำเนินการเสร็จสิ้น') {
+                                    return '<div style="color: #28A745; border-style: solid">' + data.rtp_status + '</div>';
+                                } else if (data.rtp_status == 'กำลังดำเนินการ') {
+                                    return '<div style="color: #FFC107; border-style: solid">' + data.rtp_status + '</div>';
+                                }
+                            } else {
+                                return '<div style="color: rgba(0, 123, 255, 1);">ไม่มีข้อมูล</div>';
+                            }
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            if (data.risk_options != null) {
+                                if (data.file != null) {
+                                    return `<a href="<?php echo base_url('openfile/'); ?>${data.file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                                ${data.file.name_file}
+                                </a>`
+                                } else {
+                                    return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                                }
+                            } else {
+                                return '';
+                            }
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            var html_consequence = '';
+                            if (data.consequence_after != null) {
+                                var data_consequence_after = data.consequence_after.split(',')
+                                for (var i = 0; i < data_consequence_after.length; i++) {
+                                    var number = data_consequence_after[i].split('-')
+                                    html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + data.consequence_after_data[i].consequence_name + ': ' + number[1] + '</li>';
+                                }
+                                return html_consequence;
+                            } else {
+                                return '';
+                            }
+
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            var max_value = 0;
+                            if (data.consequence_after != null) {
+                                var data_consequence = data.consequence_after.split(',')
+                                for (var i = 0; i < data_consequence.length; i++) {
+                                    var number = data_consequence[i].split('-')
+                                    if (number[1] > max_value) {
+                                        max_value = number[1];
+                                    }
+                                }
+                                return '<div style="color: rgba(0, 123, 255, 1);">' + max_value + '</div>';
+                            } else {
+                                return '';
+                            }
+
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'visible': table_show,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.likelihood_after ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return (data.residual ?? '');
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.rtp_no ?? '') + '</div>';
+                        }
+                    },
+                ],
+                createdRow: function(row, data, index) {
+                    var Risk_level_is = <?php echo json_encode($Risk_level_is); ?>;
+                    if (table_show) {
+                        if (Risk_level_is != null) {
+                            Risk_level_is.forEach(element => {
+                                if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
+                                    $('td:eq(11)', row).css('background-color', element.risk_color);
+                                }
+                                if (data.residual != null) {
+                                    if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
+                                        $('td:eq(23)', row).css('background-color', element.risk_color);
+                                    }
+                                }
+                            });
+                        } else {
+                            if (parseInt(data.risk_level) <= 4) {
+                                $('td:eq(11)', row).css('background-color', '#92D050');
+                            } else if (parseInt(data.risk_level) <= 9) {
+                                $('td:eq(11)', row).css('background-color', '#FFFF00');
+                            } else if (parseInt(data.risk_level) <= 19) {
+                                $('td:eq(11)', row).css('background-color', '#FFC000');
+                            } else {
+                                $('td:eq(11)', row).css('background-color', '#FD2B2B');
+                            }
+                        }
+
+                        if (Risk_level_is != null) {
+                            Risk_level_is.forEach(element => {
+                                if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
+                                    $('td:eq(11)', row).css('color', element.text_color);
+                                }
+                                if (data.residual != null) {
+                                    if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
+                                        $('td:eq(23)', row).css('color', element.text_color);
+                                    }
+                                }
+                            })
+                        } else {
+                            $('td:eq(11)', row).css('color', '"#000000"');
+                        }
+                    } else {
+                        if (Risk_level_is != null) {
+                            Risk_level_is.forEach(element => {
+                                if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
+                                    $('td:eq(9)', row).css('background-color', element.risk_color);
+                                }
+                                if (data.residual != null) {
+                                    if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
+                                        $('td:eq(13)', row).css('background-color', element.risk_color);
+                                    }
+                                }
+                            });
+                        } else {
+                            if (parseInt(data.risk_level) <= 4) {
+                                $('td:eq(9)', row).css('background-color', '#92D050');
+                            } else if (parseInt(data.risk_level) <= 9) {
+                                $('td:eq(9)', row).css('background-color', '#FFFF00');
+                            } else if (parseInt(data.risk_level) <= 19) {
+                                $('td:eq(9)', row).css('background-color', '#FFC000');
+                            } else {
+                                $('td:eq(9)', row).css('background-color', '#FD2B2B');
+                            }
+                        }
+
+                        if (Risk_level_is != null) {
+                            Risk_level_is.forEach(element => {
+                                if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
+                                    $('td:eq(9)', row).css('color', element.text_color);
+                                }
+                                if (data.residual != null) {
+                                    if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
+                                        $('td:eq(13)', row).css('color', element.text_color);
+                                    }
+                                }
+                            })
+                        } else {
+                            $('td:eq(9)', row).css('color', '"#000000"');
+                        }
+                    }
+
+                },
+            });
+            $('[data-toggle="tooltip"]').tooltip();
         }
     }
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var selectElement = document.getElementById('table-is-display-select');
-        var fullTable = document.getElementById('risk-information-security-table-full');
-        var shortTable = document.getElementById('risk-information-security-table-short');
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectElement = document.getElementById('select-content');
+        var selectElement_Display = document.getElementById('table-display-select');
 
-        if (!selectElement || !fullTable || !shortTable) {
-            console.error('อิเล็กเมนต์หรือตารางไม่ถูกต้อง');
-            return;
-        }
-
-        fullTable.style.display = 'block';
-        shortTable.style.display = 'none';
-
-        selectElement.addEventListener('change', function (e) {
-            var selectedValue = e.target.value;
-
-            if (selectedValue === 'full-table-is') {
-                fullTable.style.display = 'block';
-                shortTable.style.display = 'none';
-            } else if (selectedValue === 'short-table-is') {
-                fullTable.style.display = 'none';
-                shortTable.style.display = 'block';
+        selectElement_Display.addEventListener('change', function(e) {
+            if (selectElement_Display.value == 'full') {
+                table_show = true;
+                countTable1 = 0;
+                getTableData1();
+            } else {
+                table_show = false;
+                countTable1 = 0;
+                getTableData1();
             }
         });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var contentRiskTable = document.getElementById('information-security-risk-table');
-        var riskInformationSecurityTab = document.getElementById('risk-information-security-tab');
-
-        contentRiskTable.style.display = 'none';
-
-        riskInformationSecurityTab.addEventListener('click', function () {
-            contentRiskTable.style.display = 'flex';
-        });
-
-        var opportunityInformationSecurityTab = document.getElementById('opportunity-information-security-tab');
-
-        opportunityInformationSecurityTab.addEventListener('click', function () {
-            contentRiskTable.style.display = 'none';
+        selectElement.addEventListener('change', function(e) {
+            countTable1 = 0;
+            getTableData1();
         });
     });
 </script>
 <script>
-    var Data = [{
-        "TYPE": "Hardward",
-        "ASSET_GROUP": "Computer",
-        "THREAT": "	การขอความยินยอมไม่ถูกต้อง",
-        "VULNERABILITY": "ขาดการขอความยินยอมข้อมูลส่วนบุคคลแบบเป็นลายลักษณ์อักษร",
-        "EXISTING_CONTROLS": "มีกระบวนการดำเนินการในการขอความยินยอมข้อมูลส่วนบุคคลแบบเป็นลายลักษณ์อักษร",
-        "CONFIDENTIALITY": "3",
-        "INTEGRITY": "2",
-        "AVAILABILITY": "1",
-        "CONSEQUENCE": "3",
-        "LIKELIHOOD": "2",
-        "RISK_LEVEL": "6",
-        "RISK_ASSESSMENT_LEVEL": "2",
-        "RISK_OPTIONS": "การยอมรับความเสี่ยง",
-        "RISK_TREATMENT_PLAN": "จัดทำเอกสาร Configuration baseline",
-        "OPP_OWNNER": "Areeya.D",
-        "START_DATE": "01/01/2024",
-        "END_DATE": "01/01/2024",
-        "APPROVE": "Areeya.D",
-        "RTP_STATUS": "รอดำเนินการ",
-        "FILE": "FILE",
-        "CONFIDENTIALITY2": "1",
-        "INTEGRITY2": "2",
-        "AVAILABILITY2": "2",
-        "CONSEQUENCE2": "2",
-        "LIKELIHOOD2": "2",
-        "RESIDUAL": "4",
-    },
-    {
-        "TYPE": "Hardward",
-        "ASSET_GROUP": "Computer",
-        "THREAT": "	การขอความยินยอมไม่ถูกต้อง",
-        "VULNERABILITY": "ขาดการขอความยินยอมข้อมูลส่วนบุคคลแบบเป็นลายลักษณ์อักษร",
-        "EXISTING_CONTROLS": "มีกระบวนการดำเนินการในการขอความยินยอมข้อมูลส่วนบุคคลแบบเป็นลายลักษณ์อักษร",
-        "CONFIDENTIALITY": "3",
-        "INTEGRITY": "2",
-        "AVAILABILITY": "1",
-        "CONSEQUENCE": "3",
-        "LIKELIHOOD": "2",
-        "RISK_LEVEL": "6",
-        "RISK_ASSESSMENT_LEVEL": "2",
-        "RISK_OPTIONS": "การยอมรับความเสี่ยง",
-        "RISK_TREATMENT_PLAN": "จัดทำเอกสาร Configuration baseline",
-        "OPP_OWNNER": "Areeya.D",
-        "START_DATE": "01/01/2024",
-        "END_DATE": "01/01/2024",
-        "APPROVE": "Areeya.D",
-        "RTP_STATUS": "กำลังดำเนินการ",
-        "FILE": "FILE",
-        "CONFIDENTIALITY2": "1",
-        "INTEGRITY2": "2",
-        "AVAILABILITY2": "2",
-        "CONSEQUENCE2": "2",
-        "LIKELIHOOD2": "2",
-        "RESIDUAL": "4",
-    },
-    ];
-
-    var riskcontextfull = document.getElementById("risk-information-security-table-full").getElementsByTagName("tbody")[0];
-
-    Data.forEach(function (row, index) {
-        var newRow = riskcontextfull.insertRow();
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-        var cell6 = newRow.insertCell(5);
-        var cell7 = newRow.insertCell(6);
-        var cell8 = newRow.insertCell(7);
-        var cell9 = newRow.insertCell(8);
-        var cell10 = newRow.insertCell(9);
-        var cell11 = newRow.insertCell(10);
-        var cell12 = newRow.insertCell(11);
-        var cell13 = newRow.insertCell(12);
-        var cell14 = newRow.insertCell(13);
-        var cell15 = newRow.insertCell(14);
-        var cell16 = newRow.insertCell(15);
-        var cell17 = newRow.insertCell(16);
-        var cell18 = newRow.insertCell(17);
-        var cell19 = newRow.insertCell(18);
-        var cell20 = newRow.insertCell(19);
-        var cell21 = newRow.insertCell(20);
-        var cell22 = newRow.insertCell(21);
-        var cell23 = newRow.insertCell(22);
-        var cell24 = newRow.insertCell(23);
-        var cell25 = newRow.insertCell(24);
-        var cell26 = newRow.insertCell(25);
-        var cell27 = newRow.insertCell(26);
-        var cell28 = newRow.insertCell(27);
-
-        cell1.innerHTML = `<div class="dropdown">
-                                <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-                                <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Edit</a></li>
-                                <li><a class="dropdown-item" href="#">View</a></li>
-                                <li><a class="dropdown-item" href="#">Delete</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Create</a></li>
-                                </ul>
-                            </div>`;
-        cell2.textContent = index + 1;
-        cell3.textContent = row.TYPE;
-        cell4.textContent = row.ASSET_GROUP;
-        cell5.textContent = row.THREAT;
-        cell6.textContent = row.VULNERABILITY;
-        cell7.textContent = row.EXISTING_CONTROLS;
-        cell8.textContent = row.CONFIDENTIALITY;
-        cell9.textContent = row.INTEGRITY;
-        cell10.textContent = row.AVAILABILITY;
-        cell11.textContent = row.CONSEQUENCE;
-        cell12.textContent = row.LIKELIHOOD;
-        cell13.textContent = row.RISK_LEVEL;
-        cell13.style.backgroundColor = getRiskColor(parseInt(row.RISK_LEVEL));
-        cell14.textContent = row.RISK_ASSESSMENT_LEVEL;
-        cell15.textContent = row.RISK_OPTIONS;
-        cell16.textContent = row.RISK_TREATMENT_PLAN;
-        cell17.textContent = row.OPP_OWNNER;
-        cell18.textContent = row.START_DATE;
-        cell19.textContent = row.END_DATE;
-        cell20.textContent = row.APPROVE;
-        cell21.innerHTML = row.RTP_STATUS === 'รอดำเนินการ' ? '<span class="badge badge-danger">รอดำเนินการ</span>' : row.RTP_STATUS === 'กำลังดำเนินการ' ? '<span class="badge badge-warning">กำลังดำเนินการ</span>' : row.RTP_STATUS === 'กำลังดำเนินการ' ? '<span class="badge badge-warning">กำลังดำเนินการ</span>' : '';
-        cell22.textContent = row.FILE;
-        cell23.textContent = row.CONFIDENTIALITY2;
-        cell24.textContent = row.INTEGRITY2;
-        cell25.textContent = row.AVAILABILITY2;
-        cell26.textContent = row.CONSEQUENCE2;
-        cell27.textContent = row.LIKELIHOOD2;
-        cell28.textContent = row.RESIDUAL;
-        cell28.style.backgroundColor = row.RESIDUAL ? getRiskColor(parseInt(row.RESIDUAL)) : "";
-    });
-</script>
-<script>
-    var Data = [
-        {
-            "TYPE": "Hardward",
-            "ASSET_GROUP": "Computer",
-            "CONSEQUENCE": "3",
-            "LIKELIHOOD": "2",
-            "RISK_LEVEL": "6",
-            "RISK_OPTIONS": "การลดความเสี่ยง",
-            "RISK_TREATMENT_PLAN": "ดำเนินการจัดทำเอกสาร Configuration baseline",
-            "OPP_OWNNER": "Areeya.D",
-            "RESIDUAL": "4",
-        },];
-
-    var riskinformationsecurityshort = document.getElementById("risk-information-security-table-short").getElementsByTagName("tbody")[0];
-
-    Data.forEach(function (row, index) {
-        var newRow = riskinformationsecurityshort.insertRow();
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-        var cell6 = newRow.insertCell(5);
-        var cell7 = newRow.insertCell(6);
-        var cell8 = newRow.insertCell(7);
-        var cell9 = newRow.insertCell(8);
-        var cell10 = newRow.insertCell(9);
-        var cell11 = newRow.insertCell(10);
-
-        cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-        <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Edit</a></li>
-        <li><a class="dropdown-item" href="#">View</a></li>
-        <li><a class="dropdown-item" href="#">Delete</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Create</a></li>
-        </ul>
-    </div>`;
-        cell2.textContent = index + 1;
-        cell3.textContent = row.TYPE;
-        cell4.textContent = row.ASSET_GROUP;
-        cell5.textContent = row.CONSEQUENCE;
-        cell6.textContent = row.LIKELIHOOD;
-        cell7.textContent = row.RISK_LEVEL;
-        cell7.style.backgroundColor = getRiskColor(parseInt(row.RISK_LEVEL));
-        cell8.textContent = row.RISK_OPTIONS;
-        cell9.textContent = row.RISK_TREATMENT_PLAN;
-        cell10.textContent = row.OPP_OWNNER;
-        cell11.textContent = row.RESIDUAL;
-        cell11.style.backgroundColor = row.RESIDUAL ? getRiskColor(parseInt(row.RESIDUAL)) : "";
-    });
-</script>
-<script>
-    var Data = [
-        {
-            "TYPE": "text",
-            "ASSET_GROUP": "text",
-            "QUANTITY_PLANNING": "1",
-            "OPPORTUNITY_PLANNINGS": ["OPPORTUNITY PLANNINGS1", "OPPORTUNITY PLANNINGS2"],
-            "OPP_OWNNER": ["Areeya", "Jennifer"],
-            "START_DATE": ["01/01/2024", "01/01/2024"],
-            "END_DATE": ["01/01/2024", "01/01/2024"],
-            "ATTACHMENTFILE": ["file1.pdf", "file1.pdf"],
-        },
-        {
-            "TYPE": "text",
-            "ASSET_GROUP": "text",
-            "QUANTITY_PLANNING": "1",
-            "OPPORTUNITY_PLANNINGS": ["OPPORTUNITY PLANNINGS1", "OPPORTUNITY PLANNINGS2"],
-            "OPP_OWNNER": ["Areeya", "Jennifer"],
-            "START_DATE": ["01/01/2024", "01/01/2024"],
-            "END_DATE": ["01/01/2024", "01/01/2024"],
-            "ATTACHMENTFILE": ["file1.pdf", "file1.pdf"],
-        },
-        {
-            "TYPE": "text",
-            "ASSET_GROUP": "text",
-            "QUANTITY_PLANNING": "1",
-            "OPPORTUNITY_PLANNINGS": ["OPPORTUNITY PLANNINGS1", "OPPORTUNITY PLANNINGS2"],
-            "OPP_OWNNER": ["Areeya", "Jennifer"],
-            "START_DATE": ["01/01/2024", "01/01/2024"],
-            "END_DATE": ["01/01/2024", "01/01/2024"],
-            "ATTACHMENTFILE": ["file1.pdf", "file1.pdf"],
-        },
-    ];
-
-    var oppisTableBody = document.getElementById("opp-information-security-table").getElementsByTagName("tbody")[0];
-
-    Data.forEach(function (row, index) {
-        var newRow = oppisTableBody.insertRow();
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-        var cell6 = newRow.insertCell(5);
-        var cell7 = newRow.insertCell(6);
-        var cell8 = newRow.insertCell(7);
-        var cell9 = newRow.insertCell(8);
-        var cell10 = newRow.insertCell(9);
-
-
-        cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-        <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Edit</a></li>
-        <li><a class="dropdown-item" href="#">Copy</a></li>
-        <li><a class="dropdown-item" href="#">Delete</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li data-toggle="modal" data-target="#modal-default" onclick="CRUDInformationSecurityRiskOpp()"><a class="dropdown-item" href="#">Create</a></li>
-        </ul>
-    </div>`;
-        cell2.textContent = index + 1;
-        cell3.textContent = row.TYPE;
-        cell4.textContent = row.ASSET_GROUP;
-        displayArrayInCell(cell5, row.QUANTITY_PLANNING);
-        displayArrayInCell(cell6, row.OPPORTUNITY_PLANNINGS);
-        displayArrayInCell(cell7, row.OPP_OWNNER);
-        displayArrayInCell(cell8, row.START_DATE);
-        displayArrayInCell(cell9, row.END_DATE);
-        displayArrayInCell(cell10, row.ATTACHMENTFILE);
-
-    });
-
-    function displayArrayInCell(cell, dataArray) {
-        if (Array.isArray(dataArray) && dataArray.length > 1) {
-            cell.innerHTML = dataArray.join('<br>');
-        } else {
-            cell.textContent = Array.isArray(dataArray) ? dataArray[0] : dataArray;
-        }
+    function confirm_Alert(text, url) {
+        Swal.fire({
+            title: text,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: "#28a745",
+            confirmButtonText: "Submit",
+            preConfirm: () => {
+                return $.ajax({
+                    url: '<?= base_url() ?>' + url,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    beforeSend: function() {
+                        Swal.fire({
+                            title: 'Loading...',
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
+                            showConfirmButton: false,
+                            onOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                showConfirmButton: false,
+                                allowOutsideClick: true
+                            });
+                            setTimeout(() => {
+                                if (response.reload) {
+                                    window.location.reload();
+                                }
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'error',
+                                showConfirmButton: true
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        Swal.fire({
+                            title: "เกิดข้อผิดพลาด",
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                })
+            }
+        });
     }
 </script>
 <script>
-    function CRUDInformationSecurityRiskOpp() {
-        window.location.href = "crud_is_risk_opp";
+    var countTable2 = 0;
+    function getTableData2() {
+        if (countTable2 === 0) {
+
+            countTable2++;
+            var data_version = <?php echo json_encode($data); ?>;
+            if (data_version.status === '4' || data_version.status === '5') {
+                var disabledAttribute = 'disabled';
+            }
+            if ($.fn.DataTable.isDataTable('#opp_is_table')) {
+                $('#opp_is_table').DataTable().destroy();
+            }
+            $('#opp_is_table').DataTable({
+                "processing": true,
+                "pageLength": 10,
+                "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+                'serverSide': true,
+                'ajax': {
+                    'url': "<?php echo site_url('planning/planningAddressRisksOpp/is/opportunities/getdata/'); ?>" + data_version.id_version,
+                    'type': 'GET',
+                },
+                "responsive": false,
+                "lengthChange": false,
+                "autoWidth": true,
+                "searching": false,
+                "ordering": false,
+                "scrollX": true,
+                "drawCallback": function(settings) {
+                    var daData = settings.json.data;
+                    if (daData.length == 0) {
+                        $('#opp_is_table tbody').html(`
+                            <tr>
+                                <td colspan="8">
+                                    <div class="dropdown">
+                                        <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                            class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false" ${disabledAttribute}>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Create</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td colspan="15">
+                                </td>
+                            </tr>`);
+                    }
+                },
+                'columns': [{
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            var number_index = +meta.settings.oAjaxData.start + 1;
+                            const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                            let dropdownHtml = `
+                                <div class="dropdown">
+                                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        ${disabledAttribute}></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/opportunities/edit/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_opp_is}">Edit</a>    
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/opportunities/view/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_opp_is}">View Detail</a>    
+                                        <a class="dropdown-item" href="#"
+                                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planningAddressRisksOpp/is/opportunities/delete/${data.id_address_risks_opp_is}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="<?= base_url('planning/crud_is_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Create</a>`;
+                            dropdownHtml += `</div>
+                                </div>`;
+                            return dropdownHtml;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.type + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.asset_group + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 150,
+                        'render': function(data, type, row, meta) {
+                            var length = data.opp_data.length;
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + length + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 300,
+                        'render': function(data, type, row, meta) {
+                            var html = '';
+                            data.opp_data.forEach(element => {
+                                if (element.opportunity_plannings != null) {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">' + (element.opportunity_plannings ?? '') + '</li>';
+                                } else {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">No Date</li>';
+                                }
+                            });
+                            return html;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 300,
+                        'render': function(data, type, row, meta) {
+                            var html = '';
+                            data.opp_data.forEach(element => {
+                                if (element.opp_ownner != null) {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">' + (element.opp_ownner ?? '') + '</li>';
+                                } else {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">No Date</li>';
+                                }
+                            });
+                            return html;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html = '';
+                            data.opp_data.forEach(element => {
+                                if (element.start_date != null) {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">' + (element.start_date ?? '') + '</li>';
+                                } else {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">No Date</li>';
+                                }
+                            });
+                            return html;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html = '';
+                            data.opp_data.forEach(element => {
+                                if (element.end_date != null) {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">' + (element.end_date ?? '') + '</li>';
+                                } else {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">No Date</li>';
+                                }
+                            });
+                            return html;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 300,
+                        'render': function(data, type, row, meta) {
+                            var html = '';
+                            data.opp_data.forEach(element => {
+                                if (element.file != null) {
+                                    html += `<li style="color: rgba(0, 123, 255, 1);"> <a href="<?php echo base_url('openfile/'); ?>${element.file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                                ${element.file.name_file}
+                                </a></li> <br>`;
+                                } else {
+                                    html += '<li style="color: rgba(0, 123, 255, 1);">No File</li>';
+                                }
+
+                            });
+                            return html;
+                        }
+                    },
+                ],
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+        }
     }
 </script>

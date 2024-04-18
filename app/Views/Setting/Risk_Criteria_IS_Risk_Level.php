@@ -1,4 +1,4 @@
-<title>Risk Criteria Context</title>
+<title>Risk Criteria IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -6,13 +6,13 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet"
+    href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css'); ?>">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/css/bootstrap-icons.min.css" rel="stylesheet">
 <style>
     tr:nth-child(even) {
         background-color: #F5F5F5;
@@ -100,7 +100,7 @@
     .table-wrapper::-webkit-scrollbar-thumb:hover {
         background-color: #6C757D;
     }
-    
+
 
     .table th,
     .table td {
@@ -142,38 +142,41 @@
         vertical-align: middle;
     }
 </style>
+
 <?php
-// ข้อมูลจากหน้า likelihood
-$likelihoodData = [
-    ["สูงมาก", 5],
-    ["สูง", 4],
-    ["ปานกลาง", 3],
-    ["น้อย", 2],
-    ["น้อยมาก", 1]
-];
-
-// ข้อมูลจากหน้า Consequenc
-$impactData = [
-    ["น้อยมาก", 1],
-    ["น้อย", 2],
-    ["ปานกลาง", 3],
-    ["สูง", 4],
-    ["สูงมาก", 5]
-];
-
-function getRiskColor($result)
+function getRiskColor($result, $data)
 {
-    if ($result <= 4) {
-        return "#92D050";
-    } else if ($result <= 9) {
-        return "#FFFF00";
-    } else if ($result <= 19) {
-        return "#FFC000";
+    if (!empty($data)) {
+        foreach ($data as $key => $value) {
+            if ($result <= $value['maximum']) {
+                return $value['risk_color'];
+            }
+        }
     } else {
-        return "#FD2B2B";
+        if ($result <= 4) {
+            return "#92D050";
+        } else if ($result <= 9) {
+            return "#FFFF00";
+        } else if ($result <= 19) {
+            return "#FFC000";
+        } else {
+            return "#FD2B2B";
+        }
     }
-}
-?>
+} ?>
+<?php
+function getTextColor($result, $data)
+{
+    if (!empty($data)) {
+        foreach ($data as $key => $value) {
+            if ($result <= $value['maximum']) {
+                return $value['text_color'];
+            }
+        }
+    } else {
+        return '#000000';
+    }
+} ?>
 
 <body class="hold-transition sidebar-mini">
     <div class="content-wrapper">
@@ -193,40 +196,45 @@ function getRiskColor($result)
                         <div class="d-flex justify-content-between">
                             <h4>Risk Level</h4>
                         </div>
-                        <div class="d-flex justify-content-center mt-3 mb-3" id="risklevelmaxtrix">
+                        <div class="" id="risklevelmaxtrix" style="overflow-x:auto;">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px;background-color: #fff;" class="text-center" rowspan="2" colspan="2"></th>
-                                        <th style="width: 130px; background-color: #658ABF;color: floralwhite; font-weight: 500;" class="text-center" colspan="8">
+                                        <th style="width: 10px;background-color: #fff;" class="text-center" rowspan="2"
+                                            colspan="2"></th>
+                                        <th style="width: 130px; background-color: #658ABF;color: floralwhite; font-weight: 500;"
+                                            class="text-center" colspan="<?= count($Likelihood_level_is) ?>">
                                             <div>ผลกระทบ</div>
                                             <div style="font-size:90%;">(Impact)</div>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <?php foreach ($impactData as $impact) : ?>
+                                        <?php foreach ($Likelihood_level_is as $impact): ?>
                                             <th class="text-center " style="background-color: #E2EEFF; font-weight: 400;">
-                                                <?= $impact[0] ?> (<?= $impact[1] ?>)
+                                                <?= $impact['likelihood_name'] ?> (
+                                                <?= $impact['likelihood_level'] ?>)
                                             </th>
                                         <?php endforeach; ?>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th rowspan="6" style="background-color: #658ABF; color: floralwhite; font-weight: 500; text-align: center;">
+                                        <th rowspan="<?= count($Likelihood_level_is) + 1 ?>"
+                                            style="background-color: #658ABF; color: floralwhite; font-weight: 500; text-align: center;">
                                             <div>โอกาสเกิด</div>
                                             <div style="font-size:90%;">(Likelihood)</div>
                                         </th>
                                     </tr>
-
-                                    <?php foreach ($likelihoodData as $likelihood) : ?>
+                                    <?php foreach ($Likelihood_level_is as $likelihood): ?>
                                         <tr>
                                             <th class="text-center" style="background-color: #E2EEFF; font-weight: 400;">
-                                                <?= $likelihood[0] ?> (<?= $likelihood[1] ?>)
+                                                <?= $likelihood['likelihood_name'] ?> (
+                                                <?= $likelihood['likelihood_level'] ?>)
                                             </th>
-                                            <?php foreach ($impactData as $impact) : ?>
-                                                <?php $result = $impact[1] * $likelihood[1] ?>
-                                                <td class="text-center" style="background-color: <?= getRiskColor($result) ?>">
+                                            <?php foreach ($Likelihood_level_is as $impact): ?>
+                                                <?php $result = $impact['likelihood_level'] * $likelihood['likelihood_level'] ?>
+                                                <td class="text-center"
+                                                    style="background-color: <?= getRiskColor($result, $Risk_level_is) ?>; color: <?= getTextColor($result, $Risk_level_is) ?>">
                                                     <?= $result ?>
                                                 </td>
                                             <?php endforeach; ?>
@@ -235,8 +243,7 @@ function getRiskColor($result)
                                 </tbody>
                             </table>
                         </div>
-
-                        <div class="risklevel table-wrapper">
+                        <div class="risklevel table-wrapper mt-3">
                             <table id="risklevel1" class="table table-hover">
                                 <thead>
                                     <tr>
@@ -245,12 +252,27 @@ function getRiskColor($result)
                                         <th>DESCRIPTION</th>
                                     </tr>
                                 </thead>
-                                <tbody></tbody>
+                                <tbody>
+                                    <?php foreach ($Risk_level_is as $key => $risk): ?>
+                                        <tr>
+                                            <td>
+                                                <?= $key + 1 ?>
+                                            </td>
+                                            <td style="background-color: <?= $risk['risk_color'] ?>">
+                                                <?= $risk['risk_level'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $risk['description'] ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
                         <div class="risklevel-management">
                             <div class="d-flex justify-content-end">
-                                <button type="button" class="btn btn-outline-primary mt-3 mb-3" data-toggle="modal" data-target="#modal-risk-level" onclick="load_modal(1)">
+                                <button type="button" class="btn btn-outline-primary mt-3 mb-3" data-toggle="modal"
+                                    data-target="#modal-risk-level" onclick="load_modal(1)">
                                     <i class="fas fa-plus"></i>&nbsp;&nbsp;Risk Level
                                 </button>
                             </div>
@@ -266,7 +288,51 @@ function getRiskColor($result)
                                         <th>RISK ASSESSMENT LEVEL</th>
                                     </tr>
                                 </thead>
-                                <tbody></tbody>
+                                <tbody>
+                                    <?php foreach ($Risk_level_is as $key => $risk): ?>
+                                        <tr>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <i class="fas fa-ellipsis-v pointer text-primary"
+                                                        id="dropdownMenuButton_<?= $key ?>" data-toggle="dropdown"
+                                                        aria-expanded="false"></i>
+                                                    <ul class="dropdown-menu"
+                                                        aria-labelledby="dropdownMenuButton_<?= $key ?>">
+                                                        <li data-toggle="modal" data-target="#modal-risk-level"
+                                                            onclick="load_modal(2,<?= $key ?>)"><a
+                                                                class="dropdown-item">Edit</a></li>
+                                                        <li><a class="dropdown-item"
+                                                                onclick="confirm_Alert('Do you want to delete risk level <?= $risk['risk_level'] ?> ?', 'planning/risk_Criteria_IS_Risk_Level/delete/<?= $risk['id_risk_level_is'] ?>')">Delete</a>
+                                                        </li>
+                                                        <li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li data-toggle="modal" data-target="#modal-risk-level"
+                                                            onclick="load_modal(1)"><a class="dropdown-item">Create</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <?= $risk['risk_level'] ?>
+                                            </td>
+                                            <td style="background-color: <?= $risk['risk_color'] ?>">
+                                            </td>
+                                            <td style="background-color: <?= $risk['text_color'] ?>">
+                                            </td>
+                                            <td>
+                                                <?= $risk['minimum'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $risk['maximum'] ?>
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="radio_<?= $key ?>" name="riskAssessment"
+                                                    <?= $risk['risk_assessment_level'] == 1 ? "checked" : "" ?>
+                                                    onclick="change_assessment_level('planning/risk_Criteria_IS_Risk_Level/change_assessment_level/<?= $risk['id_risk_level_is'] ?>')">
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -276,102 +342,159 @@ function getRiskColor($result)
     </div>
 </body>
 <div class="modal fade" id="modal-risk-level">
-    <div id="modal_crud_criteria_risk_level">
-        <?= $this->include("Modal/CRUD_Criteria_Context_Risk_Level"); ?>
+    <div id="modal_crud_criteria_risk_levell">
+        <?= $this->include("Modal/CRUD_Criteria_IS_Risk_Level"); ?>
     </div>
 </div>
 <script>
     function load_modal(check, check_type, data_encode) {
-        console.log('Function is called with check:', check, 'and check_type:', check_type);
-
-        modal_crud_criteria_risk_level = document.getElementById("modal_crud_criteria_risk_level");
-        $(".modal-body #iss").empty();
+        modal_crud_criteria_risk_levell = document.getElementById("modal_crud_criteria_risk_levell");
+        $(".modal-body #risklevel").val('');
+        $(".modal-body #minranges").val('');
+        $(".modal-body #maxranges").val('');
+        $(".modal-body #description").val('');
+        var risk_levell_data = <?php echo json_encode($Risk_level_is); ?>;
 
         if (check == '1') {
-            //--show modal requirment--//
-            console.log('Showing modal 1');;
-            modal_crud_criteria_risk_level.style.display = "block";
+            //--show modal risk Level--//
+            modal_crud_criteria_risk_levell.style.display = "block";
+            $(".modal-body #url_route").val("planning/risk_Criteria_IS_Risk_Level/create");
+        } else if (check == '2') {
+            modal_crud_criteria_risk_levell.style.display = "block";
+            $(".modal-body #risklevel").val(risk_levell_data[check_type]['risk_level']);
+            $(".modal-body #riskcolor").val(risk_levell_data[check_type]['risk_color']);
+            $(".modal-body #textcolor").val(risk_levell_data[check_type]['text_color']);
+            $(".modal-body #minranges").val(risk_levell_data[check_type]['minimum']);
+            $(".modal-body #maxranges").val(risk_levell_data[check_type]['maximum']);
+            $(".modal-body #description").val(risk_levell_data[check_type]['description']);
+            $(".modal-body #url_route").val("planning/risk_Criteria_IS_Risk_Level/edit/" + risk_levell_data[check_type]['id_risk_level_is']);
         }
     }
 </script>
 <script>
-    var Data = [{
-            "RISK LEVEL": "น้อยมาก",
-            "DESCRIPTION": "ระดับความเสี่ยงที่องค์กรยอมรับ (Acceptable) อาจมีมาตรการที่มีอยู่แล้วป้องกันหรือไม่ก็ได้",
-            "RISK COLOR": "#92D050",
-            "TEXT COLOR": "#000000",
-            "MINIMUM": 1,
-            "MAXIMUM": 4,
-            "RISK ASSESSMENT LEVEL": ""
-        },
-        {
-            "RISK LEVEL": "น้อย",
-            "DESCRIPTION": "ระดับความเสี่ยงที่องค์กรสามารถยอมรับได้ แต่ต้องมีการควบคุม เพื่อป้องกันไม่ให้ความเสี่ยงมีค่าสูงขึ้นไปยังระดับที่ไม่สามารถยอมรับได้",
-            "RISK COLOR": "#FFF700",
-            "TEXT COLOR": "#000000",
-            "MINIMUM": 5,
-            "MAXIMUM": 9,
-            "RISK ASSESSMENT LEVEL": ""
-        },
-        {
-            "RISK LEVEL": "ปานกลาง",
-            "DESCRIPTION": "ระดับความเสี่ยงที่องค์กรไม่สามารถยอมรับได้ โดยต้องจัดการความเสี่ยงเพื่อให้อยู่ในระดับที่สามารถยอมรับหรือยอมรับได้ต่อไป",
-            "RISK COLOR": "#FFC000",
-            "TEXT COLOR": "#000000",
-            "MINIMUM": 10,
-            "MAXIMUM": 16,
-            "RISK ASSESSMENT LEVEL": ""
-        },
-        {
-            "RISK LEVEL": "สูง",
-            "DESCRIPTION": "ระดับความเสี่ยงที่องค์กรไม่สามารถยอมรับได้ และต้องจำเป็นต้องเร่งจัดการความเสี่ยงจนกระทั่งให้อยู่ในระดับที่สามารถยอมรับได้ทันที",
-            "RISK COLOR": "#FD2B2B",
-            "TEXT COLOR": "#ffffff",
-            "MINIMUM": 17,
-            "MAXIMUM": 25,
-            "RISK ASSESSMENT LEVEL": ""
+    function action_(url, form) {
+        if (form != null) {
+            var formData = new FormData(document.getElementById(form));
         }
-    ];
-
-    var risklevelTableBody1 = document.getElementById("risklevel1").getElementsByTagName("tbody")[0];
-    Data.forEach(function(row, index) {
-        var newRow1 = risklevelTableBody1.insertRow();
-        var cell1_1 = newRow1.insertCell(0);
-        var cell2_1 = newRow1.insertCell(1);
-        var cell3_1 = newRow1.insertCell(2);
-
-        cell1_1.textContent = index + 1;
-        cell2_1.textContent = row["RISK LEVEL"];
-        cell2_1.style.backgroundColor = row["RISK COLOR"];
-        cell2_1.style.color = row["TEXT COLOR"];
-        cell3_1.textContent = row["DESCRIPTION"];
-    });
-
-    var risklevelTableBody2 = document.getElementById("risklevel2").getElementsByTagName("tbody")[0];
-    Data.forEach(function(row, index) {
-        var newRow2 = risklevelTableBody2.insertRow();
-        var cell1_2 = newRow2.insertCell(0);
-        var cell2_2 = newRow2.insertCell(1);
-        var cell3_2 = newRow2.insertCell(2);
-        var cell4_2 = newRow2.insertCell(3);
-        var cell5_2 = newRow2.insertCell(4);
-        var cell6_2 = newRow2.insertCell(5);
-        var cell7_2 = newRow2.insertCell(6);
-
-        cell1_2.innerHTML =`<div class="dropdown">
-                                <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-                                <li data-toggle="modal" data-target="#modal-context " onclick="load_modal(2)"><a class="dropdown-item" href="#">Edit</a></li>
-                                <li><a class="dropdown-item" href="#">Delete</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li data-toggle="modal" data-target="#modal-context " onclick="load_modal(2)"><a class="dropdown-item" href="#">Create</a></li>
-                                </ul>
-                            </div>`;
-        cell2_2.textContent = row["RISK LEVEL"];
-        cell3_2.style.backgroundColor = row["RISK COLOR"];
-        cell4_2.style.backgroundColor = row["TEXT COLOR"];
-        cell5_2.textContent = row["MINIMUM"];
-        cell6_2.textContent = row["MAXIMUM"];
-        cell7_2.innerHTML = `<input type="radio" id="radio${index}_1" name="riskAssessment" value="${index}">`;
-    });
+        $.ajax({
+            url: '<?= base_url() ?>' + url,
+            type: "POST",
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: "JSON",
+            beforeSend: function () {
+                Swal.fire({
+                    title: 'Loading...',
+                    allowEscapeKey: false,
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    onOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            },
+            success: function (response) {
+                if (response.success) {
+                    Swal.fire({
+                        title: response.message,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        allowOutsideClick: true
+                    });
+                    setTimeout(() => {
+                        if (response.reload) {
+                            window.location.reload();
+                        }
+                    }, 2000);
+                } else {
+                    Swal.fire({
+                        title: response.message,
+                        icon: 'error',
+                        showConfirmButton: true
+                    });
+                }
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    title: "เกิดข้อผิดพลาด",
+                    icon: 'error',
+                    showConfirmButton: true
+                });
+            }
+        });
+    }
+</script>
+<script>
+    function confirm_Alert(text, url) {
+        Swal.fire({
+            title: text,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: "#28a745",
+            confirmButtonText: "Submit",
+            preConfirm: () => {
+                return $.ajax({
+                    url: '<?= base_url() ?>' + url,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    beforeSend: function () {
+                        Swal.fire({
+                            title: 'Loading...',
+                            allowEscapeKey: false,
+                            allowOutsideClick: false,
+                            showConfirmButton: false,
+                            onOpen: () => {
+                                Swal.showLoading();
+                            }
+                        });
+                    },
+                }).then(function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            showConfirmButton: false
+                        });
+                        setTimeout(() => {
+                            if (response.reload) {
+                                window.location.reload();
+                            }
+                        }, 2000);
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                });
+            }
+        });
+    }
+</script>
+<script>
+    function change_assessment_level(url) {
+        $.ajax({
+            url: '<?= base_url() ?>' + url,
+            type: "POST",
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                var Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                });
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Change Risk Assessment Level Success.'
+                })
+            }
+        });
+    }
 </script>

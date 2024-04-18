@@ -807,7 +807,7 @@
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false" ${disabledAttribute}></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(5,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>

@@ -30,7 +30,6 @@ class Support_CompetenceController extends BaseController
     public function create_competence($id_version = null, $status_version = null)
     {
         helper(['form']);
-        helper('filesystem');
         $Support_CompetenceModels = new Support_CompetenceModels();
         $TimelineModels = new TimelineModels();
         $filemodel = new FileModels();
@@ -88,12 +87,11 @@ class Support_CompetenceController extends BaseController
         $filemodel = new FileModels();
 
         $file = $this->request->getFile('file');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $old_id_file = $Support_CompetenceModels->where('id_competence', $id_competence)->select('id_file')->first();
-            $id_file = $old_id_file['id_file'];
+        if ($file !== null && $file->isValid()) {
             $newName = $file->getClientName();
-            if ($id_file != 0) {
-                $del_path = 'public/uploads/' . $id_file . '/'; // For Delete folder
+            $check_file = $Support_CompetenceModels->where('id_competence', $id_competence)->findAll();
+            if ($check_file[0]['id_file']) {
+                $del_path = 'public/uploads/' . $check_file[0]['id_file'] . '/'; // For Delete folder
                 $check_de_file = delete_files($del_path, false); // Delete files into the folder
                 if (!$check_de_file) {
                     $response = [
@@ -102,8 +100,11 @@ class Support_CompetenceController extends BaseController
                     ];
                     return $this->response->setJSON($response);
                 } else {
-                    $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                    $filemodel->update($id_file, ['name_file' => $newName]);
+                    $file->move(ROOTPATH . 'public/uploads/' . $check_file[0]['id_file'], $newName);
+                    $file_update = [
+                        'name_file' => $newName,
+                    ];
+                    $filemodel->update($check_file[0]['id_file'], $file_update);
                 }
             } else {
                 $filemodel->insert([
@@ -111,21 +112,12 @@ class Support_CompetenceController extends BaseController
                 ]);
                 $id_file = $filemodel->insertID();
                 $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                $Support_CompetenceModels->update($id_competence, ['id_file' => $id_file]);
+                $data = [
+                    'id_file' => $id_file,
+                ];
+                $Support_CompetenceModels->update($id_competence, $data);
             }
         }
-        // if ($file->isValid() && !$file->hasMoved()) {
-        //     $newName = $file->getClientName();
-        //     $filemodel->insert([
-        //         'name_file' => $newName,
-        //     ]);
-        //     $id_file = $filemodel->insertID();
-        //     $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-        //     $data = [
-        //         'id_file' => $id_file,
-        //     ];
-        //     $Support_CompetenceModels->update($id_competence, $data);
-        // }
         $data__ = [
             'role' => $this->request->getVar('role'),
         ];

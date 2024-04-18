@@ -244,29 +244,25 @@ function getTextColor($result, $data)
                             </table>
                         </div>
                         <div class="risklevel table-wrapper mt-3">
-                            <table id="risklevel1" class="table table-hover">
+                        <table id="risklevel1" class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>NO.</th>
-                                        <th>RISK NAME</th>
                                         <th>RISK LEVEL</th>
                                         <th>DESCRIPTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($Likelihood_level_context as $key => $likelihood): ?>
+                                    <?php foreach ($Risk_level_context as $key => $risk): ?>
                                         <tr>
                                             <td>
                                                 <?= $key + 1 ?>
                                             </td>
-                                            <td class="blue-text">
-                                                <?= $likelihood['likelihood_name'] ?>
+                                            <td style="background-color: <?= $risk['risk_color'] ?>">
+                                                <?= $risk['risk_leve'] ?>
                                             </td>
-                                            <td class="blue-text">
-                                                <?= $likelihood['likelihood_level'] ?>
-                                            </td>
-                                            <td class="blue-text">
-                                                <?= $likelihood['description'] ?>
+                                            <td>
+                                                <?= $risk['description'] ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

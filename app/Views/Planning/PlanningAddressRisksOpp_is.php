@@ -96,7 +96,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
                             <li class="breadcrumb-item active">Address Risks & Opportunities</li>
-                            <li class="breadcrumb-item topic active">Context</li>
+                            <li class="breadcrumb-item topic active">IS</li>
                             <li class="breadcrumb-item version active">
                                 Version
                                 <?= $data['num_ver'] ?>
@@ -116,15 +116,15 @@
                             Context</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link title-topic active" id="pills-context-tab" data-toggle="pill"
-                            data-target="#pills-context" type="button" role="tab" aria-controls="pills-context"
+                        <a class="nav-link title-topic active" id="pills-is-tab" data-toggle="pill"
+                            data-target="#pills-is" type="button" role="tab" aria-controls="pills-is"
                             aria-selected="true">
                             Information Security</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-context" role="tabpanel"
-                        aria-labelledby="pills-context-tab">
+                    <div class="tab-pane fade show active" id="pills-is" role="tabpanel"
+                        aria-labelledby="pills-is-tab">
                         <?php include("RiskOppInformationSecurity.php"); ?>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
             <?= $this->include("Modal/Requirement_Modal"); ?>
         </div>
         <div id="modal2">
-            <?= $this->include("Modal/Context_Ver"); ?>
+            <?= $this->include("Modal/IS_Ver"); ?>
         </div>
         <div id="modal3">
             <?= $this->include("Modal/CRUD_Leadership_modal"); ?>

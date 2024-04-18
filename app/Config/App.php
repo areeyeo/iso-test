@@ -18,6 +18,7 @@ class App extends BaseConfig
      *    http://example.com/
      */
     // public string $baseURL = 'http://192.168.19.160/iso-optimize/';
+    // public string $baseURL = 'http://192.168.19.160/iso-optimize/';
     public string $baseURL = 'http://localhost/iso-optimize/';
 
     /**
@@ -111,7 +112,7 @@ class App extends BaseConfig
      *
      * @see https://www.php.net/manual/en/timezones.php for list of timezones supported by PHP.
      */
-    public $appTimezone = 'Asia/Bangkok';
+    public string $appTimezone = 'UTC';
 
     /**
      * --------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<title>Risk Criteria Information Security</title>
+<title>Risk Criteria IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -6,13 +6,13 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet"
+  href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css'); ?>">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/css/bootstrap-icons.min.css" rel="stylesheet">
 <style>
   tr:nth-child(even) {
     background-color: #F5F5F5;
@@ -117,13 +117,14 @@
     border-radius: 4px;
   }
 </style>
+
 <body class="hold-transition sidebar-mini">
   <div class="content-wrapper">
     <!-- Page header -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="">
-          <h3>&nbsp;Risk Criteria Context</h3>
+          <h3>&nbsp;Risk Criteria IS</h3>
         </div>
       </div>
     </section>
@@ -136,7 +137,8 @@
               <h4>
                 Risk Options
               </h4>
-              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-risk-option" onclick="load_modal(1)">
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-risk-option"
+                onclick="load_modal(1)">
                 <i class="fas fa-plus"></i>&nbsp;&nbsp;Risk Options
               </button>
             </div>
@@ -150,6 +152,35 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php foreach ($risk_options as $key => $risk): ?>
+                    <tr>
+                      <td>
+                        <div class="dropdown">
+                          <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}"
+                            data-toggle="dropdown" aria-expanded="false"></i>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
+                            <li data-toggle="modal" data-target="#modal-risk-option" onclick="load_modal(2,<?= $key ?>)">
+                              <a class="dropdown-item" href="#">Edit</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                onclick="confirm_Alert('Do you want to delete Risk Option <?= $risk['options'] ?> ?', 'planning/risk_Criteria_IS_Risk_Option/delete/<?= $risk['id_risk_options_is'] ?>')">Delete</a>
+                            </li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                            <li data-toggle="modal" data-target="#modal-risk-option" onclick="load_modal(1)"><a
+                                class="dropdown-item">Create</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>
+                        <?= $risk['options'] ?>
+                      </td>
+                      <td>
+                        <?= $risk['description'] ?>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -161,64 +192,129 @@
 </body>
 <div class="modal fade" id="modal-risk-option">
   <div id="modal_crud_criteria_risk_option">
-    <?= $this->include("Modal/CRUD_Criteria_Context_Risk_Option"); ?>
+    <?= $this->include("Modal/CRUD_Criteria_IS_Risk_Option"); ?>
   </div>
 </div>
 <script>
   function load_modal(check, check_type, data_encode) {
-    console.log('Function is called with check:', check, 'and check_type:', check_type);
-
     modal_crud_criteria_risk_option = document.getElementById("modal_crud_criteria_risk_option");
-    $(".modal-body #iss").empty();
+    $(".modal-body #riskoption").val('');
+    $(".modal-body #description").val('');
+    var risk_options = <?php echo json_encode($risk_options); ?>;
 
     if (check == '1') {
-      //--show modal requirment--//
-      console.log('Showing modal 1');;
+      //--show modal create--//
       modal_crud_criteria_risk_option.style.display = "block";
+      $(".modal-body #url_route").val("planning/risk_Criteria_IS_Risk_Option/create");
+    } else if (check == '2') {
+      modal_crud_criteria_risk_option.style.display = "block";
+      $(".modal-body #riskoption").val(risk_options[check_type]['options']);
+      $(".modal-body #description").val(risk_options[check_type]['description']);
+      $(".modal-body #url_route").val("planning/risk_Criteria_IS_Risk_Option/edit/" + risk_options[check_type]['id_risk_options_is']);
     }
   }
 </script>
 <script>
-  var DataSummary = [{
-      "OPTION": "Risk Treatment",
-      "DESCRIPTION": "การรักษาความเสี่ยง",
-    },
-    {
-      "OPTION": "Risk Modification",
-      "DESCRIPTION": "การปรับเปลี่ยนความเสี่ยง",
-    },
-    {
-      "OPTION": "Risk Avoidance",
-      "DESCRIPTION": "การหลีกเลี่ยงความเสี่ยง",
-    },
-    {
-      "OPTION": "Risk Sharing",
-      "DESCRIPTION": "การแบ่งปันความเสี่ยง",
-    },
-    {
-      "OPTION": "Risk Acceptance",
-      "DESCRIPTION": "การยอมรับความเสี่ยง",
-    },
-  ];
-
-  var example3TableBody = document.getElementById("example3").getElementsByTagName("tbody")[0];
-
-  DataSummary.forEach(function(row, index) {
-    var newRow = example3TableBody.insertRow();
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-
-    cell1.innerHTML = `<div class="dropdown">
-                          <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-                                  <li data-toggle="modal" data-target="#modal-risk-option" onclick="load_modal(1)"><a class="dropdown-item" href="#" >Edit</a></li>
-                                  <li><a class="dropdown-item" href="#">Delete</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li data-toggle="modal" data-target="#modal-risk-option" onclick="load_modal(1)"><a class="dropdown-item">Create</a></li>
-                              </ul>
-                      </div>`;
-    cell2.textContent = row.OPTION;
-    cell3.textContent = row.DESCRIPTION;
-  });
+  function action_(url, form) {
+    if (form != null) {
+      var formData = new FormData(document.getElementById(form));
+    }
+    $.ajax({
+      url: '<?= base_url() ?>' + url,
+      type: "POST",
+      cache: false,
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: "JSON",
+      beforeSend: function () {
+        Swal.fire({
+          title: 'Loading...',
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          showConfirmButton: false,
+          onOpen: () => {
+            Swal.showLoading();
+          }
+        });
+      },
+      success: function (response) {
+        if (response.success) {
+          Swal.fire({
+            title: response.message,
+            icon: 'success',
+            showConfirmButton: false,
+            allowOutsideClick: true
+          });
+          setTimeout(() => {
+            if (response.reload) {
+              window.location.reload();
+            }
+          }, 2000);
+        } else {
+          Swal.fire({
+            title: response.message,
+            icon: 'error',
+            showConfirmButton: true
+          });
+        }
+      },
+      error: function (xhr, status, error) {
+        Swal.fire({
+          title: "เกิดข้อผิดพลาด",
+          icon: 'error',
+          showConfirmButton: true
+        });
+      }
+    });
+  }
+</script>
+<script>
+  function confirm_Alert(text, url) {
+    Swal.fire({
+      title: text,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: "#28a745",
+      confirmButtonText: "Submit",
+      preConfirm: () => {
+        return $.ajax({
+          url: '<?= base_url() ?>' + url,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          beforeSend: function () {
+            Swal.fire({
+              title: 'Loading...',
+              allowEscapeKey: false,
+              allowOutsideClick: false,
+              showConfirmButton: false,
+              onOpen: () => {
+                Swal.showLoading();
+              }
+            });
+          },
+        }).then(function (response) {
+          if (response.success) {
+            Swal.fire({
+              title: response.message,
+              icon: 'success',
+              showConfirmButton: false
+            });
+            setTimeout(() => {
+              if (response.reload) {
+                window.location.reload();
+              }
+            }, 2000);
+          } else {
+            Swal.fire({
+              title: response.message,
+              icon: 'error',
+              showConfirmButton: true
+            });
+          }
+        });
+      }
+    });
+  }
 </script>

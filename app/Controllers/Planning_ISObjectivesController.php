@@ -265,12 +265,12 @@ class Planning_ISObjectivesController extends BaseController
         $filemodel = new FileModels();
 
         $file = $this->request->getFile('file');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $old_id_file = $Planning_is_planningModels->where('id_planning', $id_planning)->select('file')->first();
-            $id_file = $old_id_file['file'];
+        
+        if ($file !== null && $file->isValid()) {
             $newName = $file->getClientName();
-            if ($id_file != 0) {
-                $del_path = 'public/uploads/' . $id_file . '/'; // For Delete folder
+            $check_file = $Planning_is_planningModels->where('id_planning', $id_planning)->findAll();
+            if ($check_file[0]['file']) {
+                $del_path = 'public/uploads/' . $check_file[0]['file'] . '/'; // For Delete folder
                 $check_de_file = delete_files($del_path, false); // Delete files into the folder
                 if (!$check_de_file) {
                     $response = [
@@ -279,8 +279,11 @@ class Planning_ISObjectivesController extends BaseController
                     ];
                     return $this->response->setJSON($response);
                 } else {
-                    $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                    $filemodel->update($id_file, ['name_file' => $newName]);
+                    $file->move(ROOTPATH . 'public/uploads/' . $check_file[0]['file'], $newName);
+                    $file_update = [
+                        'name_file' => $newName,
+                    ];
+                    $filemodel->update($check_file[0]['file'], $file_update);
                 }
             } else {
                 $filemodel->insert([
@@ -288,7 +291,10 @@ class Planning_ISObjectivesController extends BaseController
                 ]);
                 $id_file = $filemodel->insertID();
                 $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
-                $Planning_is_planningModels->update($id_planning, ['file' => $id_file]);
+                $data = [
+                    'file' => $id_file,
+                ];
+                $Planning_is_planningModels->update($id_planning, $data);
             }
         }
         $data__ = [

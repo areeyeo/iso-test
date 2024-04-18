@@ -434,7 +434,7 @@
                 "scrollX": true,
                 "drawCallback": function (settings) {
                     var daData = settings.json.data;
-                    console.log(daData);
+                    console.log(settings.json);
                     if (daData.length == 0) {
                         $('#table-management-doc tbody').html(`
                         <tr>

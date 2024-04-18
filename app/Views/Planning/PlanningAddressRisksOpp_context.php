@@ -95,7 +95,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link title-topic btn" id="pills-is-tab" type="button"
-                            href="<?= base_url('planning/planningAddressRisksOpp/is/index/1/1') ?>">
+                            href="<?= base_url('context/loaddatatype/16') ?>">
                             Information Security</a>
                     </li>
                 </ul>

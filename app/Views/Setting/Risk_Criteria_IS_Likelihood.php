@@ -1,4 +1,4 @@
-<title>Risk Criteria Information Security</title>
+<title>Risk Criteria IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -6,13 +6,13 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet"
+  href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?= base_url('plugins/summernote/summernote-bs4.min.css'); ?>">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/dist/css/bootstrap-icons.min.css" rel="stylesheet">
 <style>
   tr:nth-child(even) {
     background-color: #F5F5F5;
@@ -124,7 +124,7 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="">
-          <h3>&nbsp;Risk Criteria Information Security</h3>
+          <h3>&nbsp;Risk Criteria IS</h3>
         </div>
       </div>
     </section>
@@ -137,10 +137,6 @@
               <h4>
                 Likelihood Level
               </h4>
-              <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-likelihood" onclick="load_modal(1)">
-        <i class="fas fa-edit"></i>&nbsp;&nbsp;Create Likelihood
-      </button> -->
-
             </div>
             <div class="mt-3">
               <table id="likelihood" class="table table-hover">
@@ -153,6 +149,29 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php foreach ($Likelihood_level_is as $index => $item): ?>
+                    <tr>
+                      <td>
+                        <div class="dropdown">
+                          <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}"
+                            data-toggle="dropdown" aria-expanded="false"></i>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
+                            <li data-toggle="modal" data-target="#modal-likelihood"
+                              onclick="load_modal(1, <?= $index ?>)"><a class="dropdown-item">Edit</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td class="blue-text">
+                        <?php echo $item['likelihood_name']; ?>
+                      </td>
+                      <td class="blue-text">
+                        <?php echo $item['likelihood_level']; ?>
+                      </td>
+                      <td class="blue-text">
+                        <?php echo $item['description']; ?>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -164,68 +183,78 @@
 </body>
 <div class="modal fade" id="modal-likelihood">
   <div id="modal_crud_criteria_likelihood">
-    <?= $this->include("Modal/CRUD_Criteria_Context_Likelihood"); ?>
+    <?= $this->include("Modal/CRUD_Criteria_IS_Likelihood"); ?>
   </div>
 </div>
 <script>
   function load_modal(check, check_type, data_encode) {
-    console.log('Function is called with check:', check, 'and check_type:', check_type);
 
     modal_likelihood = document.getElementById("modal-likelihood");
-    $(".modal-body #iss").empty();
 
     if (check == '1') {
-      //--show modal requirment--//
-      console.log('Showing modal 1');
+      //--show modal edit Likelihood --//
+      var element = <?php echo json_encode($Likelihood_level_is); ?>;
       modal_likelihood.style.display = "block";
+      $(".modal-body #likelihoodname").val(element[check_type]['likelihood_name']);
+      $(".modal-body #likelihoodlevel").val(element[check_type]['likelihood_level']);
+      $(".modal-body #description").val(element[check_type]['description']);
+      $(".modal-body #url_route").val('planning/risk_Criteria_IS_Likelihood/edit/' + element[check_type]['id_likelihood_level_is']);
     }
   }
 </script>
 <script>
-  var Data = [{
-      "LIKELIHOODNAME": "น้อยมาก",
-      "LIKELIHOODLEVEL": 1,
-      "DESCRIPTION": "แทบจะไม่เกิดหรืออย่างมากปีละ 1 ครั้ง",
-    },
-    {
-      "LIKELIHOODNAME": "น้อย",
-      "LIKELIHOODLEVEL": 2,
-      "DESCRIPTION": "โอกาสเกิดน้อยหรืออย่างมากไม่เกินปีละ 2 ครั้ง",
-    },
-    {
-      "LIKELIHOODNAME": "ปานกลาง",
-      "LIKELIHOODLEVEL": 3,
-      "DESCRIPTION": "ปานกลาง ปีละ 3-5 ครั้ง",
-    },
-    {
-      "LIKELIHOODNAME": "สูง",
-      "LIKELIHOODLEVEL": 4,
-      "DESCRIPTION": "ค่อนข้างบ่อย ปีละ 6-10 ครั้ง",
-    },
-    {
-      "LIKELIHOODNAME": "สูงมาก",
-      "LIKELIHOODLEVEL": 5,
-      "DESCRIPTION": "บ่อยครั้ง ปีละ 11-15 ครั้ง",
-    },
-  ];
-
-  var likelihoodTableBody = document.getElementById("likelihood").getElementsByTagName("tbody")[0];
-
-  Data.forEach(function(row, index) {
-    var newRow = likelihoodTableBody.insertRow();
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-    var cell4 = newRow.insertCell(3);
-
-    cell1.innerHTML = `<div class="dropdown">
-                          <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-                                  <li data-toggle="modal" data-target="#modal-likelihood" onclick="load_modal(1)"><a class="dropdown-item" href="#" >Edit</a></li>
-                              </ul>
-                      </div>`;
-    cell2.textContent = row.LIKELIHOODNAME;
-    cell3.textContent = row.LIKELIHOODLEVEL;
-    cell4.textContent = row.DESCRIPTION;
-  });
+  function action_(url, form) {
+    if (form != null) {
+      var formData = new FormData(document.getElementById(form));
+    }
+    $.ajax({
+      url: '<?= base_url() ?>' + url,
+      type: "POST",
+      cache: false,
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: "JSON",
+      beforeSend: function () {
+        Swal.fire({
+          title: 'Loading...',
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          showConfirmButton: false,
+          onOpen: () => {
+            Swal.showLoading();
+          }
+        });
+      },
+      success: function (response) {
+        console.log(response);
+        if (response.success) {
+          Swal.fire({
+            title: response.message,
+            icon: 'success',
+            showConfirmButton: false,
+            allowOutsideClick: false
+          });
+          setTimeout(() => {
+            if (response.reload) {
+              window.location.reload();
+            }
+          }, 2000);
+        } else {
+          Swal.fire({
+            title: response.message,
+            icon: 'error',
+            showConfirmButton: true
+          });
+        }
+      },
+      error: function (xhr, status, error) {
+        Swal.fire({
+          title: "เกิดข้อผิดพลาด",
+          icon: 'error',
+          showConfirmButton: true
+        });
+      }
+    });
+  }
 </script>

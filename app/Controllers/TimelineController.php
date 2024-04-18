@@ -89,6 +89,11 @@ class TimelineController extends BaseController
             $data['url_allversion'] = "/context/context_analysis/index/15";
             $data['text_path'] = "Address Risks & Opportunities";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        } else if ($type == '16') {
+            $data['url_version'] = "/planning/planningAddressRisksOpp/is/index/" . $id_context . '/' . $num_ver;
+            $data['url_allversion'] = "/context/context_analysis/index/16";
+            $data['text_path'] = "Address Risks & Opportunities";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
         }else if ($type == '17') {
             $data['url_version'] = "/support/documentation/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/17";
