@@ -13,7 +13,7 @@ class SOAController extends BaseController
     {
         $AllversionModels = new AllversionModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['data'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [
             'num_ver' => $num_ver

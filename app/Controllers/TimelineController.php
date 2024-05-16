@@ -87,23 +87,23 @@ class TimelineController extends BaseController
         } else if ($type == '15') {
             $data['url_version'] = "/planning/planningAddressRisksOpp/context/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/15";
-            $data['text_path'] = "Address Risks & Opportunities";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['text_path'] = "RA & RTP Result IS";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         } else if ($type == '16') {
             $data['url_version'] = "/planning/planningAddressRisksOpp/is/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/16";
-            $data['text_path'] = "Address Risks & Opportunities";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['text_path'] = "RA & RTP Result IS";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         }else if ($type == '17') {
             $data['url_version'] = "/support/documentation/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/17";
             $data['text_path'] = "Documented Information";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         } else if ($type == '18') {
             $data['url_version'] = "/planning/soa/index/" . $id_context . '/' . $num_ver;
             $data['url_allversion'] = "/context/context_analysis/index/18";
             $data['text_path'] = "SOA";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         } else {
 
         }

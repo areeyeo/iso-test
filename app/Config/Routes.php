@@ -351,7 +351,7 @@ $routes->group("planning", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'planningofchange/(:num)/(:num)', 'Planning_PlanningofChangeController::planningofchange_index/$1/$2');
     $routes->match(['get', 'post'], 'planningofchange/find_data/(:num)', 'Planning_PlanningofChangeController::get_planning_of_changes_table/$1'); //--find data--//
     $routes->match(['get', 'post'], 'planningofchange/store/(:num)', 'Planning_PlanningofChangeController::store/$1'); //-create-//
-    $routes->match(['get', 'post'], 'planningofchange/edit', 'Planning_PlanningofChangeController::edit'); //-edit-//
+    $routes->match(['get', 'post'], 'planningofchange/edit/(:num)', 'Planning_PlanningofChangeController::edit/$1'); //-edit-//
     $routes->match(['get', 'post'], 'planningofchange/delete/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete/$1/$2/$3'); //-delete-//
     $routes->match(['get', 'post'], 'planningofchange/delete_file/(:num)/(:num)/(:num)', 'Planning_PlanningofChangeController::delete_file/$1/$2/$3'); //-file_delete-//
     $routes->match(['get', 'post'], 'planningofchange/copydata/(:num)/(:num)', 'Planning_PlanningofChangeController::copyData/$1/$2');  //-copy-// 
@@ -425,7 +425,25 @@ $routes->group("support", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'documentation/timeline_log/(:num)/(:num)/(:num)', 'TimelineController::index/$1/$2/$3'); //timeline
 });
 
+$routes->group("operations", ['filter' => 'authGuard'], function ($routes) {
+    $routes->match(['get', 'post'], 'operations_management/index', 'OP_OperationsManagementController::index_operations_management');
 
+    $routes->match(['get', 'post'], 'operations_management/risk_context/getdata', 'OP_OperationsManagementController::get_data_risk_context');
+    $routes->match(['get', 'post'], 'operations_management/risk_context/edit/(:num)', 'OP_OperationsManagementController::operation_edit_risk_context/$1');
+
+    $routes->match(['get', 'post'], 'operations_management/risk_is/getdata', 'OP_OperationsManagementController::get_data_risk_is');
+    $routes->match(['get', 'post'], 'operations_management/risk_is/edit/(:num)', 'OP_OperationsManagementController::operation_edit_risk_is/$1');
+
+    $routes->match(['get', 'post'], 'operations_management/is_objectives/getdata', 'OP_OperationsManagementController::get_data_is_objectives');
+    $routes->match(['get', 'post'], 'operations_management/is_objectives/edit/(:num)/(:num)', 'OP_OperationsManagementController::operation_edit_is_objectives/$1/$2');
+
+    $routes->match(['get', 'post'], 'operations_management/planning_change/getdata', 'OP_OperationsManagementController::get_data_planning_change');
+    $routes->match(['get', 'post'], 'operations_management/planning_change/edit/(:num)', 'OP_OperationsManagementController::operation_edit_planning_change/$1');
+});
+
+$routes->get('performance_evaluation', 'Perf_PerformanceEvaluationController::index');
+$routes->get('internal_audit', 'Perf_InternalAuditController::index');
+$routes->get('management_review', 'Perf_ManagementReviewController::index');
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);

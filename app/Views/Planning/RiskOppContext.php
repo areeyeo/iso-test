@@ -1,4 +1,4 @@
-<title>Address risks & opportunities</title>
+<title>RA & RTP Result IS</title>
 
 <style>
     tr:nth-child(even) {
@@ -211,7 +211,8 @@
                                 <th>RISK LEVEL</th>
                                 <th id="display_element_risk">RISK ASSESSMENT LEVEL</th>
                                 <th>RISK OPTIONS</th>
-                                <th>RISK TREATMENT PLAN</th>
+                                <th>NAME OF RISK TREATMENT PLAN</th>
+                                <th>EVALUATION</th>
                                 <th>RISK OWNER</th>
                                 <th id="display_element_startdate">START DATE</th>
                                 <th id="display_element_enddate">END DATE</th>
@@ -425,7 +426,15 @@
                         'class': 'text-center',
                         'width': 200,
                         'render': function(data, type, row, meta) {
-                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.risk_treatment_plan ?? '') + '</div>';
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.name_of_risk_treatment_plan ?? '') + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (data.evaluation ?? '') + '</div>';
                         }
                     },
                     {

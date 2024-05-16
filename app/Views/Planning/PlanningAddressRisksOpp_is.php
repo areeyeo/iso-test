@@ -1,4 +1,4 @@
-<title>Address risks & opportunities</title>
+<title>RA & RTP Result IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -86,7 +86,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Address Risks & Opportunities
+                        <h1>RA & RTP Result IS
                             <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal"
                                 data-target="#modal-default" id="load-modal-button"
                                 onclick="load_modal(1)">Requirement</button>
@@ -95,7 +95,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
-                            <li class="breadcrumb-item active">Address Risks & Opportunities</li>
+                            <li class="breadcrumb-item active">RA & RTP Result IS</li>
                             <li class="breadcrumb-item topic active">IS</li>
                             <li class="breadcrumb-item version active">
                                 Version

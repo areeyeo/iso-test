@@ -109,21 +109,21 @@ class AllversionController extends BaseController
             $data['url'] = "support/communication/index/";
             $data['data_requirement'] = $RequirementModels->where('id_standard', 14)->first();
         } else if ($type == '15') {
-            $data['header'] = "Address Risks & Opportunities Context";
+            $data['header'] = "RA & RTP Result IS (Context)";
             $data['url'] = "planning/planningAddressRisksOpp/context/index/";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
-        }  else if ($type == '16') {
-            $data['header'] = "Address Risks & Opportunities IS";
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
+        } else if ($type == '16') {
+            $data['header'] = "RA & RTP Result IS (IS)";
             $data['url'] = "planning/planningAddressRisksOpp/is/index/";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         } else if ($type == '17') {
             $data['header'] = "Documented Information";
             $data['url'] = "support/documentation/index/";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         } else if ($type == '18') {
             $data['header'] = "SOA";
             $data['url'] = "planning/soa/index/";
-            $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+            $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         } else {
         }
         echo view('layout/header');

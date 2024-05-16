@@ -33,9 +33,12 @@ class Planning_ISObjectivesController extends BaseController
     {
         helper(['form']);
         $Planning_is_objectivesModels = new Planning_is_objectivesModels();
+        $num_obj_no = $Planning_is_objectivesModels->where('id_version', $id_version)->countAllResults();
+        $obj_no = sprintf("OBJ_%03d", $num_obj_no + 1);
         $data = [
             'objective' => $this->request->getVar('objective'),
             'evaluation' => $this->request->getVar('evaluation'),
+            'obj_no' => $obj_no,
             'id_version' => $id_version
         ];
         $check = $Planning_is_objectivesModels->insert($data);
@@ -135,6 +138,10 @@ class Planning_ISObjectivesController extends BaseController
     {
         $Planning_is_objectivesModels = new Planning_is_objectivesModels();
         $check = $Planning_is_objectivesModels->copyDataById($id_objective);
+        $num_obj_no = $Planning_is_objectivesModels->where('id_version', $id_version)->countAllResults();
+        $obj_no = sprintf("OBJ_%03d", $num_obj_no);
+        $Planning_is_objectivesModels->update($check, ['obj_no' => $obj_no]);
+
         if ($check) {
             $TimelineModels = new TimelineModels();
             $data_log = [
@@ -228,6 +235,9 @@ class Planning_ISObjectivesController extends BaseController
             'owner' => $this->request->getVar('owner'),
             'file' => $id_file,
             'id_version' => $id_version,
+            'date_evaluation' => $this->request->getVar('date_of_evaluation'),
+            'evaluation_methods' => $this->request->getVar('evaluation_methods'),
+
         ];
         $check = $Planning_is_planningModels->save($data);
 
@@ -303,6 +313,8 @@ class Planning_ISObjectivesController extends BaseController
             'start_date' => $this->request->getVar('start_date'),
             'end_date' => $this->request->getVar('end_date'),
             'owner' => $this->request->getVar('owner'),
+            'date_evaluation' => $this->request->getVar('date_of_evaluation'),
+            'evaluation_methods' => $this->request->getVar('evaluation_methods'),
         ];
         $check = $Planning_is_planningModels->update($id_planning, $data__);
 

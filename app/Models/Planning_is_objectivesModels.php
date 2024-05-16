@@ -10,7 +10,7 @@ class Planning_is_objectivesModels extends Model
 
     protected $primaryKey = 'id_objective';
 
-    protected $allowedFields = ['objective' , 'evaluation' , 'id_version'];
+    protected $allowedFields = ['objective' , 'evaluation' , 'id_version', 'obj_no'];
 
     public function copyDataById($id)
     {

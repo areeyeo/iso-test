@@ -1,4 +1,4 @@
-<title>Address risks & opportunities</title>
+<title>RA & RTP Result IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -151,7 +151,7 @@ function getRiskColor($result)
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>
-                            Address risks & opportunities
+                            RA & RTP Result IS
                             <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal"
                                 data-target="#modal-default" id="load-modal-button">Requirement</button>
                         </h1>
@@ -159,7 +159,7 @@ function getRiskColor($result)
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
-                            <li class="breadcrumb-item"><a>Address risks & opportunities</a></li>
+                            <li class="breadcrumb-item"><a>RA & RTP Result IS</a></li>
                         </ol>
                     </div>
                 </div>

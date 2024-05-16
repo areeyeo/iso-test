@@ -18,7 +18,6 @@ class App extends BaseConfig
      *    http://example.com/
      */
     // public string $baseURL = 'http://192.168.19.160/iso-optimize/';
-    // public string $baseURL = 'http://192.168.19.160/iso-optimize/';
     public string $baseURL = 'http://localhost/iso-optimize/';
 
     /**

@@ -10,7 +10,7 @@ class Planning_of_changesModels extends Model
 
     protected $primaryKey = 'id_planning_changes ';
 
-    protected $allowedFields = ['id_file', 'date_upload', 'id_version'];
+    protected $allowedFields = ['id_file', 'date_upload', 'id_version' , 'pl_no', 'name_planing_change', 'plan_origin', 'start_date', 'end_date', 'owner', 'evaluation', 'status', 'result'];
 
     public function copyDataById($id)
     {

@@ -10,7 +10,7 @@ class Planning_is_planningModels extends Model
 
     protected $primaryKey = 'id_planning';
 
-    protected $allowedFields = ['id_objective' , 'planning' , 'start_date' , 'end_date' , 'owner' , 'file' , 'id_version'];
+    protected $allowedFields = ['id_objective' , 'planning' , 'start_date' , 'end_date' , 'owner' , 'file' , 'id_version', 'status', 'result', 'date_evaluation', 'evaluation_methods'];
 
     public function copyDataById($id)
     {

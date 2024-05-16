@@ -24,7 +24,7 @@ class DocumentedController extends BaseController
     {
         $RequirementModels = new RequirementModels();
         $AllversionModels = new AllversionModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         $data['data'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [
             'num_ver' => $num_ver
@@ -193,7 +193,7 @@ class DocumentedController extends BaseController
         $FileModels = new FileModels();
         $UserModels = new UserModels();
         $data['user_data'] = $UserModels->findAll();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
         $data['data'] = [
@@ -216,7 +216,7 @@ class DocumentedController extends BaseController
         $FileModels = new FileModels();
         $UserModels = new UserModels();
         $data['user_data'] = $UserModels->findAll();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
         $data['data'] = [
@@ -467,7 +467,7 @@ class DocumentedController extends BaseController
         $RequirementModels = new RequirementModels();
         $Support_DocumentedModels = new Support_DocumentedModels();
         $FileModels = new FileModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
         $data['data'] = [
@@ -486,7 +486,7 @@ class DocumentedController extends BaseController
         $RequirementModels = new RequirementModels();
         $Support_DocumentedModels = new Support_DocumentedModels();
         $FileModels = new FileModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 15)->first();
         $data['data_doc'] = $Support_DocumentedModels->where('id_document_create_update ', $id_doc_version)->first();
         $data['data_doc']['id_file'] = $FileModels->where('id_files', $data['data_doc']['id_file'])->first();
         $data['data'] = [

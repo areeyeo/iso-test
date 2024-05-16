@@ -113,13 +113,15 @@
                                                     <option value="5" id="5">5.1 Leadership</option>
                                                     <option value="6" id="6">5.2 Policy</option>
                                                     <option value="7" id="7">5.3 Org Roles</option>
-                                                    <option value="8" id="8">6.1 Address Risks & Opportunities</option>
+                                                    <option value="8" id="8">6.1</option>
                                                     <option value="9" id="9">6.2 Information security objectives and planning to achieve them</option>
                                                     <option value="10" id="10">6.3 Planning of changes</option>
                                                     <option value="11" id="11">7.1 รอข้อมูล</option>
                                                     <option value="12" id="12">7.2 Competence</option>
                                                     <option value="13" id="13">7.3 Awareness</option>
                                                     <option value="14" id="14">7.4 Communication</option>
+                                                    <option value="15" id="15">7.5</option>
+                                                    <option value="16" id="16">8.2 Information security risk assessment</option>
                                                 </select>
                                             </div>
                                             <!-- /.form-group -->

@@ -1,4 +1,4 @@
-<title>Address risks & opportunities</title>
+<title>RA & RTP Result IS</title>
 <!-- DataTables -->
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?= base_url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
@@ -159,7 +159,7 @@ function getTextColor($result, $data)
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>
-                            Address risks & opportunities
+                        RA & RTP Result IS
                             <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default" id="load-modal-button">Requirement</button>
                         </h1>
                     </div>
@@ -523,19 +523,19 @@ function getTextColor($result, $data)
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-lg-6">
-                                                <div class="form-group mt-3">
-                                                    <h6>Risk Treatment Plan</h6>
+                                                <div class="form-group mt-2">
+                                                    <h6>Name Of Risk Treatment Plan</h6>
                                                     <?php if ($data_risk !== null) : ?>
-                                                        <textarea class="form-control" rows="5" placeholder="Text..." name="risk_treatmentplan" id="risk_treatmentplan" <?= $disabled_view ?>><?= $data_risk['risk_treatment_plan'] ?></textarea>
+                                                        <input class="form-control" type="text" placeholder="Text..." name="risk_owner" id="risk_owner" value="<?= $data_risk['name_of_risk_treatment_plan'] ?>" <?= $disabled_view ?>></input>
                                                     <?php else : ?>
-                                                        <textarea class="form-control" rows="5" placeholder="Text..." name="risk_treatmentplan" id="risk_treatmentplan"></textarea>
+                                                        <input class="form-control" type="text" placeholder="Text..." name="risk_owner" id="risk_owner"></input>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 mt-2">
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-lg-6 mt-2">
                                                 <div class="form-group mt-2">
                                                     <h6>Risk Owner</h6>
                                                     <?php if ($data_risk !== null) : ?>
@@ -568,6 +568,16 @@ function getTextColor($result, $data)
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
+                                                <div class="form-group mt-3">
+                                                    <h6>Detail</h6>
+                                                    <?php if ($data_risk !== null) : ?>
+                                                        <textarea class="form-control" rows="5" placeholder="Text..." name="risk_treatmentplan" id="risk_treatmentplan" <?= $disabled_view ?>><?= $data_risk['risk_treatment_plan'] ?></textarea>
+                                                    <?php else : ?>
+                                                        <textarea class="form-control" rows="5" placeholder="Text..." name="risk_treatmentplan" id="risk_treatmentplan"></textarea>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <h6>Attach File</h6>
                                                     <div class="custom-file">
@@ -576,6 +586,16 @@ function getTextColor($result, $data)
                                                             file</label>
                                                     </div>
                                                     <h6 class="gray-text">.doc .xls .pdf (20 MB per file)</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group mt-2">
+                                                    <h6>Evaluation</h6>
+                                                    <?php if ($data_risk !== null) : ?>
+                                                        <input class="form-control" type="text" placeholder="Text..." name="risk_owner" id="risk_owner" value="<?= $data_risk['evaluation'] ?>" <?= $disabled_view ?>></input>
+                                                    <?php else : ?>
+                                                        <input class="form-control" type="text" placeholder="Text..." name="risk_owner" id="risk_owner"></input>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div>

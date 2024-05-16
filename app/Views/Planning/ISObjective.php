@@ -8,8 +8,7 @@
 <!-- daterange picker -->
 <link rel="stylesheet" href="<?= base_url('plugins/daterangepicker/daterangepicker.css'); ?>">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet"
-  href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700&display=swap">
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="<?= base_url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css'); ?>">
@@ -89,8 +88,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>IS Objectives
-              <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default"
-                id="load-modal-button" onclick="load_modal(1)">Requirement</button>
+              <button type="button" class="btn btn-secondary btn-xs" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(1)">Requirement</button>
             </h1>
           </div>
           <div class="col-sm-6">
@@ -120,44 +118,31 @@
                   } else {
                     $disabled = '';
                   } ?>
-                  <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
-                      href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>"
-                      style="color: #ADB5BD;">Version</a></button>
-                  <button class="badge badge-edit <?= $disabled ?>"
-                    style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a
-                      href="<?= site_url('planning/isobjective/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>"
-                      style="color: #ADB5BD;">History</a></button>
-                  <button class="badge badge-edit"
-                    style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                  <button class="badge badge-edit" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('context/context_analysis/index/' . $data['type_version']); ?>" style="color: #ADB5BD;">Version</a></button>
+                  <button class="badge badge-edit <?= $disabled ?>" style="background-color: #FFFFFF;  border: 1px solid #ADB5BD;"><a href="<?= site_url('planning/isobjective/timeline_log/' . $data['id_version'] . '/' . $data['type_version'] . '/' . $data['num_ver']); ?>" style="color: #ADB5BD;">History</a></button>
+                  <button class="badge badge-edit" style="background-color: #007BFF; color: #ffffff; border: 1px solid #007BFF" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div class="dropdown-submenu">
                       <a class="dropdown-item dropdown-toggle" href="#">Status</a>
                       <div class="dropdown-menu">
                         <!-- Second-level dropdown items -->
-                        <a class="dropdown-item" href="#"
-                          onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Reviewed หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/1')">Pending
                           Review</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#"
-                          onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Review หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/2')">Review</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
-                          id="load-modal-button" onclick="load_modal(3 ,5)">Reject Review</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,5)">Reject Review</a>
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"
-                          onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Pending Approve หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/3')">Pending
                           Approve</a>
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="#"
-                          onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
+                        <a class="dropdown-item" href="#" onclick="confirm_Alert('ต้องการที่จะ Approved หรือไม่', 'context/status_update/<?= $data['id_version'] ?>/4')">Approved</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default"
-                          id="load-modal-button" onclick="load_modal(3 ,6)">Reject Approved</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(3 ,6)">Reject Approved</a>
                       </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -170,11 +155,9 @@
                       </div>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#"
-                      onclick="load_modal(4)">Create Note</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-default" href="#" onclick="load_modal(4)">Create Note</a>
                   </div>
-                  <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button"
-                    onclick="load_modal(2)"></i>
+                  <i class="fas fa-cog" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(2)"></i>
                   <!-- show version Control -->
                 </div>
               </div>
@@ -240,30 +223,25 @@
                     <div class="form-group">
                       <ul class="nav nav-pills" id="tabs-tab" role="tablist">
                         <li class="nav-item-tab" style="padding-right: 10px;">
-                          <a class="nav-link active" id="Objectives-tab" data-toggle="pill" href="#Objectives"
-                            role="tab" aria-controls="Objectives" aria-selected="true">Objectives</a>
+                          <a class="nav-link active" id="Objectives-tab" data-toggle="pill" href="#Objectives" role="tab" aria-controls="Objectives" aria-selected="true">Objectives</a>
                         </li>
                         <li class="nav-item-tab">
-                          <a class="nav-link" id="Planning-tab" data-toggle="pill" href="#Planning" role="tab"
-                            aria-controls="Planning" aria-selected="false" onclick="getTableData2();">Planning</a>
+                          <a class="nav-link" id="Planning-tab" data-toggle="pill" href="#Planning" role="tab" aria-controls="Planning" aria-selected="false" onclick="getTableData2();">Planning</a>
                         </li>
                         <li class="nav-item-tab">
-                          <a class="nav-link" id="Summary-tab" data-toggle="pill" href="#Summary" role="tab"
-                            aria-controls="Summary" aria-selected="false" onclick="getTableData3();">Summary</a>
+                          <a class="nav-link" id="Summary-tab" data-toggle="pill" href="#Summary" role="tab" aria-controls="Summary" aria-selected="false" onclick="getTableData3();">Summary</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div class="d-flex">
                     <div id="btn-Objectives" name="btn-Objectives">
-                      <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#modal-default " onclick="load_modal(5,1)">
+                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default " onclick="load_modal(5,1)">
                         <span class="text-nowrap"><i class="fas fa-edit"></i>Create Objectives</span>
                       </button>
                     </div>
                     <div id="btn-Planning" name="btn-Planning">
-                      <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#modal-default" onclick="load_modal(6,1)">
+                      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default" onclick="load_modal(6,1)">
                         <span class="text-nowrap"><i class="fas fa-edit"></i>Create Planning</span>
                     </div>
                   </div>
@@ -271,13 +249,13 @@
 
                 <hr>
                 <div class="tab-content">
-                  <div class="tab-pane fade show active" id="Objectives" role="tabpanel"
-                    aria-labelledby="org-strategy-tab">
+                  <div class="tab-pane fade show active" id="Objectives" role="tabpanel" aria-labelledby="org-strategy-tab">
                     <table id="example1" class="table table-hover">
                       <thead>
                         <tr>
                           <th class="text-center">ACTION</th>
                           <th>No.</th>
+                          <th>OBJ NO.</th>
                           <th>OBJECTIVES</th>
                           <th>EVALUATION</th>
                         </tr>
@@ -292,12 +270,15 @@
                         <tr>
                           <th class="text-center">ACTION</th>
                           <th>No.</th>
+                          <th>OBJ NO.</th>
                           <th>OBJECTIVES</th>
                           <th>EVALUATION</th>
                           <th>PLANNING</th>
                           <th>START DATE</th>
                           <th>END DATE</th>
                           <th>OWNER</th>
+                          <th>DATE EVALUATION</th>
+                          <th>EVALUATION METHODS</th>
                           <th>FILE</th>
                         </tr>
                       </thead>
@@ -310,12 +291,15 @@
                       <thead>
                         <tr>
                           <th>No.</th>
+                          <th>OBJ NO.</th>
                           <th>OBJECTIVES</th>
                           <th>EVALUATION</th>
                           <th>PLANNING</th>
                           <th>START DATE</th>
                           <th>END DATE</th>
                           <th>OWNER</th>
+                          <th>DATE EVALUATION</th>
+                          <th>EVALUATION METHODS</th>
                           <th>FILE</th>
                         </tr>
                       </thead>
@@ -488,6 +472,8 @@
         $(".modal-body #start_date").val("");
         $(".modal-body #end_date").val("");
         $(".modal-body #owner").val("");
+        $(".modal-body #date_of_evaluation").val("");
+        $(".modal-body #evaluation_methods").val("");
         $(".modal-body #objective_evaluation").empty();
         $(".modal-body #evaluation_detail").val("");
         if (select_objective.length == 0) {
@@ -520,6 +506,8 @@
             $(".modal-body #start_date").val(rowData.start_date);
             $(".modal-body #end_date").val(rowData.end_date);
             $(".modal-body #owner").val(rowData.owner);
+            $(".modal-body #date_of_evaluation").val(rowData.date_evaluation);
+            $(".modal-body #evaluation_methods").val(rowData.evaluation_methods);
             $(".modal-body #url_route").val("planning/planning/edit/" + rowData.id_planning + "/" + element.id_version + "/" + element.status);
           }
         }
@@ -527,17 +515,17 @@
     }
   </script>
   <script>
-    $('#Objectives-tab').on('click', function () {
+    $('#Objectives-tab').on('click', function() {
       // console.log('Objectives-tab');
       $('#btn-Objectives').show();
       $('#btn-Planning').hide();
     });
-    $('#Planning-tab').on('click', function () {
+    $('#Planning-tab').on('click', function() {
       // console.log('Planning-tab');
       $('#btn-Objectives').hide();
       $('#btn-Planning').show();
     })
-    $('#Summary-tab').on('click', function () {
+    $('#Summary-tab').on('click', function() {
       // console.log('Summary-tab');
       $('#btn-Objectives').hide();
       $('#btn-Planning').hide();
@@ -564,11 +552,11 @@
         processData: false,
         contentType: false,
         dataType: "JSON",
-        beforeSend: function () {
+        beforeSend: function() {
           // Show loading indicator here
           loadingIndicator;
         },
-        success: function (response) {
+        success: function(response) {
           if (response.success) {
             Swal.fire({
               title: response.message,
@@ -589,7 +577,7 @@
             });
           }
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
           Swal.fire({
             title: "เกิดข้อผิดพลาด",
             icon: 'error',
@@ -624,15 +612,15 @@
             headers: {
               'X-Requested-With': 'XMLHttpRequest'
             },
-            beforeSend: function () {
+            beforeSend: function() {
               // Show loading indicator here
               loadingIndicator;
             },
-            complete: function () {
+            complete: function() {
               // Hide loading indicator here
               Swal.close();
             }
-          }).then(function (response) {
+          }).then(function(response) {
             if (response.success) {
               Swal.fire({
                 title: response.message,
@@ -659,16 +647,16 @@
         }
       });
     }
-
   </script>
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       getTableData1();
       getTableData3();
     })
   </script>
   <script>
     var countTable1 = 0;
+
     function getTableData1() {
 
       if (countTable1 === 0) {
@@ -695,7 +683,7 @@
           "autoWidth": false,
           "searching": true,
           "ordering": false,
-          "drawCallback": function (settings) {
+          "drawCallback": function(settings) {
             $("#example1 .overlay").hide();
             var daData = settings.json.data;
             if (daData.length == 0) {
@@ -715,11 +703,10 @@
               </tr>`);
             }
           },
-          'columns': [
-            {
+          'columns': [{
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 var number_index = +meta.settings.oAjaxData.start + 1;
                 const encodedRowData = encodeURIComponent(JSON.stringify(row));
                 let dropdownHtml = `
@@ -744,21 +731,28 @@
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.obj_no) + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
                 return '<div style="color: rgba(0, 123, 255, 1);">' + (data.objective) + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 return '<div style="color: rgba(0, 123, 255, 1);">' + (data.evaluation) + '</div>';
               }
             },
@@ -770,6 +764,7 @@
   </script>
   <script>
     var countTable2 = 0;
+
     function getTableData2() {
       if (countTable2 === 0) {
         countTable2++;
@@ -781,7 +776,7 @@
           $('#example2').DataTable().destroy();
         }
         $('#example2').DataTable({
-          "processing": $("#interested_table .overlay").show(),
+          "processing": true,
           "pageLength": 10,
           "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
           'serverSide': true,
@@ -795,13 +790,12 @@
           "autoWidth": false,
           "searching": true,
           "ordering": false,
-          "drawCallback": function (settings) {
-            $("#interested_table .overlay").hide();
+          "drawCallback": function(settings) {
             var daData = settings.json.data;
             if (daData.length == 0) {
               $('#example2 tbody').html(`
               <tr>
-                  <td colspan="9">
+                  <td colspan="10">
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -815,11 +809,10 @@
               </tr>`);
             }
           },
-          'columns': [
-            {
+          'columns': [{
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 var number_index = +meta.settings.oAjaxData.start + 1;
                 const encodedRowData = encodeURIComponent(JSON.stringify(row));
                 let dropdownHtml = `
@@ -844,60 +837,83 @@
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 var objective = <?php echo json_encode($objective); ?>;
                 let matobjective = objective.find(element_objective => element_objective.id_objective === data.id_objective);
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (matobjective.objective) + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (matobjective.obj_no ?? '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
                 var objective = <?php echo json_encode($objective); ?>;
                 let matobjective = objective.find(element_objective => element_objective.id_objective === data.id_objective);
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (matobjective.evaluation) + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (matobjective.objective ?? '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.planning) + '</div>';
+              'render': function(data, type, row, meta) {
+                var objective = <?php echo json_encode($objective); ?>;
+                let matobjective = objective.find(element_objective => element_objective.id_objective === data.id_objective);
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (matobjective.evaluation ?? '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date) + '</div>';
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.planning !== null ? (data.planning !== '' ? data.planning : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date) + '</div>';
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '' ? data.start_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.owner) + '</div>';
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '' ? data.end_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
-              'render': function (data, type, row, meta) {
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.owner !== null ? (data.owner !== '' ? data.owner : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.date_evaluation !== null ? (data.date_evaluation !== '' ? data.date_evaluation : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.evaluation_methods !== null ? (data.evaluation_methods !== '' ? data.evaluation_methods : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
                 if (row.file > 0) {
                   var number_index = +meta.settings.oAjaxData.start;
                   return `<a href="<?php echo base_url('openfile/'); ?>${row.file}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
@@ -916,6 +932,7 @@
   </script>
   <script>
     var countTable3 = 0;
+
     function getTableData3() {
 
       if (countTable3 === 0) {
@@ -928,7 +945,7 @@
           $('#example3').DataTable().destroy();
         }
         $('#example3').DataTable({
-          "processing": $("#interested_table .overlay").show(),
+          "processing": true,
           "pageLength": 10,
           "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
           'serverSide': true,
@@ -942,7 +959,7 @@
           "autoWidth": false,
           "searching": true,
           "ordering": false,
-          "drawCallback": function (settings) {
+          "drawCallback": function(settings) {
             $("#interested_table .overlay").hide();
             var daData = settings.json.data;
             var count_ = 0;
@@ -961,6 +978,7 @@
                 var table = `
                 <tr>
                   <td style="color: #007bff">${count_}</td>
+                  <td style="color: #007bff">${element.obj_no}</td>
                   <td style="color: #007bff">${element.objective}</td>
                   <td style="color: #007bff">${element.evaluation}</td>`;
                 var check_round = 0;
@@ -968,21 +986,21 @@
                   // Concatenate the HTML string for each planning data
                   if (check_round > 0) {
                     table += `
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td style="color: #007bff">${element_planning.planning}</td>
+                    <td colspan="4"></td>
+                    <td style="color: #007bff">${element_planning.planning !== '' ? element_planning.planning : '-'}</td>
                     `;
                   } else {
                     check_round++;
-                    table += `<td style="color: #007bff">${element_planning.planning}</td>`;
+                    table += `<td style="color: #007bff">${element_planning.planning !== '' ? element_planning.planning : '-'}</td>`;
                   }
-                  table += `<td style="color: #007bff">${element_planning.start_date}</td>`;
-                  table += `<td style="color: #007bff">${element_planning.end_date}</td>`;
-                  table += `<td style="color: #007bff">${element_planning.owner}</td>`;
-                  if (element_planning.file_data == null){
+                  table += `<td style="color: #007bff">${element_planning.start_date !== '' ? element_planning.start_date : '-'}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.end_date !== '' ? element_planning.end_date : '-'}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.owner !== '' ? element_planning.owner : '-'}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.date_evaluation !== '' ? element_planning.date_evaluation : '-'}</td>`;
+                  table += `<td style="color: #007bff">${element_planning.evaluation_methods !== '' ? element_planning.evaluation_methods : '-'}</td>`;
+                  if (element_planning.file_data == null) {
                     table += `<td style="color: #007bff">No File</td>`;
-                  }else{
+                  } else {
                     table += `<td style="color: #007bff"><a href="<?php echo base_url('openfile/'); ?>${element_planning.file_data.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">${element_planning.file_data.name_file}</a></td>`;
                   }
                   table += `</tr>`;

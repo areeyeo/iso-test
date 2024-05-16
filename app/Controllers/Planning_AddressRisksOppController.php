@@ -39,7 +39,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Risk_level_context_Models = new Risk_level_context_Models();
         $data['Risk_level_context'] = $Risk_level_context_Models->findAll();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['data_context'] = $AllversionModels->where('id_version', $id_version)->first();
         $data['data_is'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [
@@ -57,7 +57,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Risk_level_is_Models = new Risk_level_is_Models();
         $data['Risk_level_is'] = $Risk_level_is_Models->findAll();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['data_is'] = $AllversionModels->where('id_version', $id_version)->first();
         $data['data_is'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [
@@ -86,7 +86,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Interested_issuesModels = new Interested_issuesModels();
         $AllversionModels = new AllversionModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
 
         $data['risk_options'] = $Risk_options_context_Models->findAll();
         $data['Likelihood_level_context'] = $Likelihood_level_context_Models->findAll();
@@ -162,7 +162,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Address_Risk_Context_Models = new Address_Risk_Context_Models();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['risk_options'] = $Risk_options_context_Models->findAll();
         $data['Likelihood_level_context'] = $Likelihood_level_context_Models->findAll();
         $data['Risk_level_context'] = $Risk_level_context_Models->findAll();
@@ -237,7 +237,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Address_Risk_Context_Models = new Address_Risk_Context_Models();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['risk_options'] = $Risk_options_context_Models->findAll();
         $data['Likelihood_level_context'] = $Likelihood_level_context_Models->findAll();
         $data['Risk_level_context'] = $Risk_level_context_Models->findAll();
@@ -331,7 +331,9 @@ class Planning_AddressRisksOppController extends BaseController
         }
 
         $risk_options = null;
+        $name_of_risk_treatment_plan = null;
         $risk_treatment_plan = null;
+        $evaluation = null;
         $risk_ownner = null;
         $start_date = null;
         $end_date = null;
@@ -347,7 +349,9 @@ class Planning_AddressRisksOppController extends BaseController
             if ($risk_options == 0) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Please select risk options.', 'reload' => false]);
             }
+            $name_of_risk_treatment_plan = $this->request->getVar('name_of_risk_treatment_plan');
             $risk_treatment_plan = $this->request->getVar('risk_treatmentplan');
+            $evaluation = $this->request->getVar('evaluation');
             $risk_ownner = $this->request->getVar('risk_owner');
             $start_date = $this->request->getVar('startdate_context');
             $end_date = $this->request->getVar('enddate_context');
@@ -390,7 +394,9 @@ class Planning_AddressRisksOppController extends BaseController
             'risk_level' => $risklevel,
             'risk_assessment_level' => $this->request->getVar('risk_assessment_level_max'),
             'risk_options' => $risk_options,
+            'name_of_risk_treatment_plan' => $name_of_risk_treatment_plan,
             'risk_treatment_plan' => $risk_treatment_plan,
+            'evaluation' => $evaluation,
             'risk_ownner' => $risk_ownner,
             'start_date' => $start_date,
             'end_date' => $end_date,
@@ -470,7 +476,9 @@ class Planning_AddressRisksOppController extends BaseController
         }
 
         $risk_options = null;
+        $name_of_risk_treatment_plan = null;
         $risk_treatment_plan = null;
+        $evaluation = null;
         $risk_ownner = null;
         $start_date = null;
         $end_date = null;
@@ -484,7 +492,9 @@ class Planning_AddressRisksOppController extends BaseController
             if ($risk_options == 0) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Please select risk options.', 'reload' => false]);
             }
+            $name_of_risk_treatment_plan = $this->request->getVar('name_of_risk_treatment_plan');
             $risk_treatment_plan = $this->request->getVar('risk_treatmentplan');
+            $evaluation = $this->request->getVar('evaluation');
             $risk_ownner = $this->request->getVar('risk_owner');
             $start_date = $this->request->getVar('startdate_context');
             $end_date = $this->request->getVar('enddate_context');
@@ -557,7 +567,9 @@ class Planning_AddressRisksOppController extends BaseController
             'risk_level' => $risklevel,
             'risk_assessment_level' => $this->request->getVar('risk_assessment_level_max'),
             'risk_options' => $risk_options,
+            'name_of_risk_treatment_plan' => $name_of_risk_treatment_plan,
             'risk_treatment_plan' => $risk_treatment_plan,
+            'evaluation' => $evaluation,
             'risk_ownner' => $risk_ownner,
             'start_date' => $start_date,
             'end_date' => $end_date,
@@ -905,7 +917,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $FileModels = new FileModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $all_version_internal_external = $AllversionModels
             ->where('type_version', 1)
             ->where('approved_date IS NOT NULL', null, false)
@@ -1115,7 +1127,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Address_Risk_Opp_Context_Models = new Address_Risk_Opp_Context_Models();
         $FileModels = new FileModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $all_version_internal_external = $AllversionModels
             ->where('type_version', 1)
             ->where('approved_date IS NOT NULL', null, false)
@@ -1179,7 +1191,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Risk_options_is_Models = new Risk_options_is_Models();
         $AllversionModels = new AllversionModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
 
         $data['risk_options'] = $Risk_options_is_Models->findAll();
         $data['Likelihood_level_is'] = $Likelihood_level_is_Models->findAll();
@@ -1214,7 +1226,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Address_Risk_IS_Models = new Address_Risk_IS_Models();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['risk_options'] = $Risk_options_is_Models->findAll();
         $data['Likelihood_level_is'] = $Likelihood_level_is_Models->findAll();
         $data['Risk_level_is'] = $Risk_level_is_Models->findAll();
@@ -1248,7 +1260,7 @@ class Planning_AddressRisksOppController extends BaseController
         $AllversionModels = new AllversionModels();
         $Address_Risk_IS_Models = new Address_Risk_IS_Models();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         $data['risk_options'] = $Risk_options_is_Models->findAll();
         $data['Likelihood_level_is'] = $Likelihood_level_is_Models->findAll();
         $data['Risk_level_is'] = $Risk_level_is_Models->findAll();
@@ -1312,7 +1324,9 @@ class Planning_AddressRisksOppController extends BaseController
         }
 
         $risk_options = null;
+        $name_of_risk_treatment_plan = null;
         $risk_treatment_plan = null;
+        $evaluation = null;
         $risk_ownner = null;
         $start_date = null;
         $end_date = null;
@@ -1328,7 +1342,9 @@ class Planning_AddressRisksOppController extends BaseController
             if ($risk_options == 0) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Please select risk options.', 'reload' => false]);
             }
+            $name_of_risk_treatment_plan = $this->request->getVar('name_of_risk_treatment_plan');
             $risk_treatment_plan = $this->request->getVar('risk_treatmentplan');
+            $evaluation = $this->request->getVar('evaluation');
             $risk_ownner = $this->request->getVar('risk_owner');
             $start_date = $this->request->getVar('startdate_is');
             $end_date = $this->request->getVar('enddate_is');
@@ -1373,7 +1389,7 @@ class Planning_AddressRisksOppController extends BaseController
                 $file->move(ROOTPATH . 'public/uploads/' . $id_file, $newName);
             }
             $num_rtp_no = $Address_Risk_IS_Models->where('id_version', $id_version)->where('risk_ownner IS NOT NULL')->countAllResults();
-            $rtp_no = sprintf("RTP_CONTEXT_%03d", $num_rtp_no + 1);
+            $rtp_no = sprintf("RTP_ASSET_%03d", $num_rtp_no + 1);
         }
         $consequence_str = implode(',', $value_operational_consequences);
 
@@ -1388,7 +1404,9 @@ class Planning_AddressRisksOppController extends BaseController
             'risk_level' => $risklevel,
             'risk_assessment_level' => $this->request->getVar('risk_assessment_level_max'),
             'risk_options' => $risk_options,
+            'name_of_risk_treatment_plan' => $name_of_risk_treatment_plan,
             'risk_treatment_plan' => $risk_treatment_plan,
+            'evaluation' => $evaluation,
             'risk_ownner' => $risk_ownner,
             'start_date' => $start_date,
             'end_date' => $end_date,
@@ -1473,7 +1491,9 @@ class Planning_AddressRisksOppController extends BaseController
         }
 
         $risk_options = null;
+        $name_of_risk_treatment_plan = null;
         $risk_treatment_plan = null;
+        $evaluation = null;
         $risk_ownner = null;
         $start_date = null;
         $end_date = null;
@@ -1487,7 +1507,9 @@ class Planning_AddressRisksOppController extends BaseController
             if ($risk_options == 0) {
                 return $this->response->setJSON(['success' => false, 'message' => 'Please select risk options.', 'reload' => false]);
             }
+            $name_of_risk_treatment_plan = $this->request->getVar('name_of_risk_treatment_plan');
             $risk_treatment_plan = $this->request->getVar('risk_treatmentplan');
+            $evaluation = $this->request->getVar('evaluation');
             $risk_ownner = $this->request->getVar('risk_owner');
             $start_date = $this->request->getVar('startdate_is');
             $end_date = $this->request->getVar('enddate_is');
@@ -1571,7 +1593,9 @@ class Planning_AddressRisksOppController extends BaseController
             'risk_level' => $risklevel,
             'risk_assessment_level' => $this->request->getVar('risk_assessment_level_max'),
             'risk_options' => $risk_options,
+            'name_of_risk_treatment_plan' => $name_of_risk_treatment_plan,
             'risk_treatment_plan' => $risk_treatment_plan,
+            'evaluation' => $evaluation,
             'risk_ownner' => $risk_ownner,
             'start_date' => $start_date,
             'end_date' => $end_date,
@@ -1914,7 +1938,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Address_Risk_Opp_IS_Models = new Address_Risk_Opp_IS_Models();
         $FileModels = new FileModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         
         $data['data'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [
@@ -2085,7 +2109,7 @@ class Planning_AddressRisksOppController extends BaseController
         $Address_Risk_Opp_IS_Models = new Address_Risk_Opp_IS_Models();
         $FileModels = new FileModels();
         $RequirementModels = new RequirementModels();
-        $data['data_requirement'] = $RequirementModels->where('id_standard', 8)->first();
+        $data['data_requirement'] = $RequirementModels->where('id_standard', 16)->first();
         
         $data['data'] = $AllversionModels->where('id_version', $id_version)->first();
         $numver = [

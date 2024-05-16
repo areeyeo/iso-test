@@ -34,6 +34,9 @@ class Planning_PlanningofChangeController extends BaseController
         $file = $this->request->getFile('file');
         $id_file = 0;
 
+        $num_pl_no = $planning_of_changesmodel->where('id_version', $id_version)->where('pl_no IS NOT NULL')->countAllResults();
+        $pl_no = sprintf("PLO_%03d", $num_pl_no + 1);
+
         if ($file->isValid() && !$file->hasMoved()) {
             $newName = $file->getClientName();
 
@@ -48,6 +51,13 @@ class Planning_PlanningofChangeController extends BaseController
             'id_file' => $id_file,
             'date_upload' => date("d/m/Y"),
             'id_version' => $id_version,
+            'pl_no' => $pl_no,
+            'name_planing_change' => $this->request->getVar('nameplan'),
+            'plan_origin' => $this->request->getVar('planorigin'),
+            'start_date' => $this->request->getVar('start_date'),
+            'end_date' => $this->request->getVar('end_date'),
+            'owner' => $this->request->getVar('owner'),
+            'evaluation' => $this->request->getVar('evaluation'),
         ];
         $check = $planning_of_changesmodel->save($data);
 
@@ -66,13 +76,12 @@ class Planning_PlanningofChangeController extends BaseController
         return $this->response->setJSON($response);
     }
 
-    public function edit()
+    public function edit($id_planning_changes = null)
     {
         helper('filesystem');
         helper(['form']);
         $filemodel = new FileModels();
         $planning_of_changesmodel = new Planning_of_changesModels();
-        $id_planning_changes = $this->request->getVar('id_');
         $file = $this->request->getFile('file');
         if ($file->isValid() && !$file->hasMoved()) {
             $newName = $file->getClientName();
@@ -96,11 +105,6 @@ class Planning_PlanningofChangeController extends BaseController
                         'date_upload' => date("d/m/Y"),
                     ];
                     $planning_of_changesmodel->update($id_planning_changes, $data);
-                    $response = [
-                        'success' => true,
-                        'message' => 'Planning of changes data edited successfully!',
-                        'reload' => true,
-                    ];
                 }
             } else {
                 $filemodel->insert([
@@ -113,19 +117,23 @@ class Planning_PlanningofChangeController extends BaseController
                     'date_upload' => date("d/m/Y"),
                 ];
                 $planning_of_changesmodel->update($id_planning_changes, $data);
-                $response = [
-                    'success' => true,
-                    'message' => 'Planning of changes data edited successfully!',
-                    'reload' => true,
-                ];
             }
-        } else {
-            $response = [
-                'success' => false,
-                'message' => 'Please upload file.',
-                'file' => $id_planning_changes,
-            ];
         }
+
+        $newdata_ = [
+            'name_planing_change' => $this->request->getVar('nameplan'),
+            'plan_origin' => $this->request->getVar('planorigin'),
+            'start_date' => $this->request->getVar('start_date'),
+            'end_date' => $this->request->getVar('end_date'),
+            'owner' => $this->request->getVar('owner'),
+            'evaluation' => $this->request->getVar('evaluation'),
+        ];
+        $planning_of_changesmodel->update($id_planning_changes, $newdata_);
+        $response = [
+            'success' => true,
+            'message' => 'Planning of changes data edited successfully!',
+            'reload' => true,
+        ];
         return $this->response->setJSON($response);
     }
 
@@ -242,6 +250,10 @@ class Planning_PlanningofChangeController extends BaseController
         } else {
             $newData = $planning_of_changesmodel->copyDataById($id);
             if ($newData == true) {
+                $num_pl_no = $planning_of_changesmodel->where('id_version', $id_planning_changes[0]['id_version'])->where('pl_no IS NOT NULL')->countAllResults();
+                $pl_no = sprintf("PLO_%03d", $num_pl_no);
+                $planning_of_changesmodel->update($newData, ['pl_no' => $pl_no]);
+
                 $response = [
                     'success' => true,
                     'message' => 'Successfully copied Planning of changes No. ' . $No . '',
@@ -255,13 +267,15 @@ class Planning_PlanningofChangeController extends BaseController
             }
             return $this->response->setJSON($response);
         }
-        $newData = $planning_of_changesmodel->copyDataById($id);
-        $id_planning_changes_new = $planning_of_changesmodel->insertID();
-        $inter_update = [
-            'id_file' => $id_file
+        $newData_id = $planning_of_changesmodel->copyDataById($id);
+        $num_pl_no = $planning_of_changesmodel->where('id_version', $id_planning_changes[0]['id_version'])->where('pl_no IS NOT NULL')->countAllResults();
+        $pl_no = sprintf("PLO_%03d", $num_pl_no);
+        $planing_changes_update = [
+            'id_file' => $id_file,
+            'pl_no' => $pl_no,
         ];
-        $planning_of_changesmodel->update($id_planning_changes_new, $inter_update);
-        if ($newData == true) {
+        $planning_of_changesmodel->update($newData_id, $planing_changes_update);
+        if ($newData_id == true) {
             $response = [
                 'success' => true,
                 'message' => 'Successfully copied Planning of changes No.' . $No . '',
