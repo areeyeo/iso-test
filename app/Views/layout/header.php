@@ -369,13 +369,33 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= site_url('/under_construction'); ?>" class="nav-link">
+                            <a class="nav-link">
                                 <i class="nav-icon fas fa-chart-bar"></i>
                                 <p>
                                     Performance
                                     <i class="right fas fa-angle-right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/performance/performance_management/index'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Performance Evalua...</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/internal_audit'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Internal Audit</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/performance/management_review/index'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Management Review</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="<?= site_url('/under_construction'); ?>" class="nav-link">

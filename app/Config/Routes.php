@@ -441,9 +441,21 @@ $routes->group("operations", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'operations_management/planning_change/edit/(:num)', 'OP_OperationsManagementController::operation_edit_planning_change/$1');
 });
 
-$routes->get('performance_evaluation', 'Perf_PerformanceEvaluationController::index');
+$routes->group("performance", ['filter' => 'authGuard'], function ($routes) {
+    $routes->match(['get', 'post'], 'performance_management/index', 'Perf_PerformanceEvaluationController::index_performance_management');
+    $routes->match(['get', 'post'], 'performance_management/getdata/(:num)', 'Perf_PerformanceEvaluationController::get_data_planning_is_objective/$1');
+    $routes->match(['get', 'post'], 'performance_management/edit/(:num)', 'Perf_PerformanceEvaluationController::edit_performance_management/$1');
+
+    $routes->match(['get', 'post'], 'management_review/index', 'Perf_ManagementReviewController::index_management_review');
+    $routes->match(['get', 'post'], 'management_review/getdata', 'Perf_ManagementReviewController::get_data_management_review');
+    $routes->match(['get', 'post'], 'management_review/create', 'Perf_ManagementReviewController::create_management_review');
+    $routes->match(['get', 'post'], 'management_review/edit/(:num)', 'Perf_ManagementReviewController::edit_management_review/$1');
+    $routes->match(['get', 'post'], 'management_review/copydata/(:num)', 'Perf_ManagementReviewController::copy_management_review/$1');
+    $routes->match(['get', 'post'], 'management_review/delete/(:num)', 'Perf_ManagementReviewController::delete_management_review/$1');
+
+    
+});
 $routes->get('internal_audit', 'Perf_InternalAuditController::index');
-$routes->get('management_review', 'Perf_ManagementReviewController::index');
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);

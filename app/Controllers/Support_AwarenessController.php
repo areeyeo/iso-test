@@ -111,6 +111,13 @@ class Support_AwarenessController extends BaseController
                     $id_file .= $value . ',';
                 }
             }
+        }else {
+            foreach ($data_awareness_idfile as $key => $value) {
+                $filemodel->where('id_files ', $value)->delete($value);
+                $del_path = 'public/uploads/' . $value . '/'; // For Delete folder
+                delete_files($del_path, true); // Delete files into the folder
+                rmdir($del_path);
+            }
         }
         if (isset($files['file']) && is_array($files['file'])) {
             foreach ($files['file'] as $file) {
