@@ -455,6 +455,17 @@ $routes->group("performance", ['filter' => 'authGuard'], function ($routes) {
 
     
 });
+
+$routes->group("improvements", ['filter' => 'authGuard'], function ($routes) {
+    $routes->match(['get', 'post'], 'improvements_overview/index', 'Impr_ImprovementsOverviewController::index');
+    $routes->match(['get', 'post'], 'improvements_overview/getdata', 'Impr_ImprovementsOverviewController::get_data_improvements_overview');
+
+    $routes->match(['get', 'post'], 'improvements_overview/create', 'Impr_ImprovementsOverviewController::create_improvements_overview');
+    $routes->match(['get', 'post'], 'improvements_overview/update/(:num)', 'Impr_ImprovementsOverviewController::update_improvements_overview/$1');
+    $routes->match(['get', 'post'], 'improvements_overview/copydata/(:num)', 'Impr_ImprovementsOverviewController::copy_improvements_overview/$1');
+    $routes->match(['get', 'post'], 'improvements_overview/delete/(:num)', 'Impr_ImprovementsOverviewController::delete_improvements_overview/$1');
+});
+
 $routes->get('internal_audit', 'Perf_InternalAuditController::index');
 
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);

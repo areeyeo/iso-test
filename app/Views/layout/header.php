@@ -405,6 +405,18 @@
                                     <i class="right fas fa-angle-right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= site_url('/improvements/improvements_overview/index'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Improvements Overvi..</p>
+                                    </a>
+                                    <a href="<?= site_url('/nonconformity_action'); ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Nonconformity & Act...</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <div>
                             <hr>
