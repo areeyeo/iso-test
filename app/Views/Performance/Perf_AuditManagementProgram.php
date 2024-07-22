@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="nav-item-tab">
-                            <a class="nav-link" id="Audit-Plan-tab" data-toggle="pill" href="#Audit-Plan" role="tab" aria-controls="Audit-Plan" aria-selected="false" onclick="getTableData2();">
+                            <a class="nav-link" id="Audit-Plan-tab" data-toggle="pill" href="#Audit-Plan" role="tab" aria-controls="Audit-Plan" aria-selected="false" onclick="getTableData_AMP_AuditPlan()">
                                 Audit Plan
                             </a>
                         </li>
@@ -76,118 +76,267 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            getTableData_AMP_AuditProgram();
+        });
+    </script>
 
     <!-- change page -->
     <script>
         function OpenAuditManagement() {
-            window.location.href = "internal_audit";
+            window.location.href = "index";
         }
     </script>
 
     <!-- table audit program -->
     <script>
-        var Data = [{
-                "APNO": "AP_001",
-                "PROGRAMNAME": "TEXT",
-                "STARTDATE": "01/01/2024",
-                "ENDDATE": "01/01/2024",
+    var countTable1 = 0;
+
+    function getTableData_AMP_AuditProgram() {
+      if (countTable1 === 0) {
+        countTable1++;
+    
+        if ($.fn.DataTable.isDataTable('#example1')) {
+          $('#example1').DataTable().destroy();
+        }
+        $('#example1').DataTable({
+          "processing": true,
+          "pageLength": 10,
+          "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+          'serverSide': true,
+          'ajax': {
+            'url': "<?php echo site_url('internal_audit/audit_management/audit_program/getdata'); ?>",
+            'type': 'GET',
+            'dataSrc': 'data',
+          },
+          "responsive": true,
+          "lengthChange": false,
+          "autoWidth": false,
+          "searching": false,
+          "ordering": false,
+          "drawCallback": function(settings) {
+            var daData = settings.json.data;
+            if (daData.length == 0) {
+              $('#example1 tbody').html(`
+              <tr>
+                  <td colspan="10">
+                      <div class="dropdown">
+                          <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                              class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false"></button>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                                  data-target="#modal-default">Create</a>
+                          </div>
+                      </div>
+                  </td>
+              </tr>`);
+            }
+          },
+          'columns': [{
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                var number_index = +meta.settings.oAjaxData.start + 1;
+                const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                let dropdownHtml = `
+                <div class="dropdown">
+                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                            data-target="#modal-default">Edit</a>
+                        <a class="dropdown-item" href="#"
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                        <a class="dropdown-item" href="#"
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                dropdownHtml += `</div>
+                </div>`;
+                return dropdownHtml;
+              }
             },
             {
-                "APNO": "AP_002",
-                "PROGRAMNAME": "TEXT",
-                "STARTDATE": "01/01/2024",
-                "ENDDATE": "01/01/2024",
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_report_no !== null ? (data.audit_report_no !== '' ? data.audit_report_no : '-') : '-') + '</div>';
+              }
             },
-        ];
-
-        var example1TableBody = document.getElementById("example1").getElementsByTagName("tbody")[0];
-
-        Data.forEach(function(row, index) {
-            var newRow = example1TableBody.insertRow();
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            var cell6 = newRow.insertCell(5);
-
-
-            cell1.innerHTML = `<div class="dropdown">
-    <i class="fas fa-ellipsis-v pointer text-primary" id="dropdownMenuButton${index}" data-toggle="dropdown" aria-expanded="false"></i>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${index}">
-      <li data-toggle="modal" data-target="#modal-default" onclick="load_modal(3)"><a class="dropdown-item" href="#">Edit</a></li>
-      <li><a class="dropdown-item" href="#">Copy</a></li>
-      <li><a class="dropdown-item" href="#">Delete</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li data-toggle="modal" data-target="#modal-default" onclick="load_modal(3)"><a class="dropdown-item" href="#">Create</a></li>
-    </ul>
-  </div>`;
-            cell2.textContent = index + 1;
-            cell3.textContent = row.APNO;
-            cell4.textContent = row.PROGRAMNAME;
-            cell5.textContent = row.STARTDATE;
-            cell6.textContent = row.ENDDATE;
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.program_name !== null ? (data.program_name !== '' ? data.program_name : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '' ? data.start_date : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '' ? data.end_date : '-') : '-') + '</div>';
+              }
+            },
+          ],
         });
-    </script>
+        $('[data-toggle="tooltip"]').tooltip();
+      }
+    }
+  </script>
 
     <!-- table audit plan -->
     <script>
-        var Data = [{
-                "APNO": "AP_001",
-                "PROGRAMNAME": "TEXT",
-                "SCOPE": "TEXT",
-                "OBJECTIVE": "TEXT",
-                "CRITERIA": "TEXT",
-                "AUDITLEAD": "TEXT",
-                "AUDITTEAM": ["name1", "name2", "name3"],
-                "FILE": "qqq.pdf",
+    var countTable2 = 0;
+
+    function getTableData_AMP_AuditPlan() {
+      if (countTable2 === 0) {
+        countTable2++;
+    
+        if ($.fn.DataTable.isDataTable('#example2')) {
+          $('#example2').DataTable().destroy();
+        }
+        $('#example2').DataTable({
+          "processing": true,
+          "pageLength": 10,
+          "pagingType": "full_numbers", // Display pagination as 1, 2, 3... instead of Previous, Next buttons
+          'serverSide': true,
+          'ajax': {
+            'url': "<?php echo site_url('internal_audit/audit_management/audit_plan/getdata'); ?>",
+            'type': 'GET',
+            'dataSrc': 'data',
+          },
+          "responsive": true,
+          "lengthChange": false,
+          "autoWidth": false,
+          "searching": false,
+          "ordering": false,
+          "drawCallback": function(settings) {
+            var daData = settings.json.data;
+            if (daData.length == 0) {
+              $('#example2 tbody').html(`
+              <tr>
+                  <td colspan="10">
+                      <div class="dropdown">
+                          <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                              class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false"></button>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                                  data-target="#modal-default">Create</a>
+                          </div>
+                      </div>
+                  </td>
+              </tr>`);
+            }
+          },
+          'columns': [{
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                var number_index = +meta.settings.oAjaxData.start + 1;
+                const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                let dropdownHtml = `
+                <div class="dropdown">
+                    <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
+                        class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                            data-target="#modal-default">Edit</a>
+                        <a class="dropdown-item" href="#"
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                        <a class="dropdown-item" href="#"
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                dropdownHtml += `</div>
+                </div>`;
+                return dropdownHtml;
+              }
             },
             {
-                "APNO": "AP_002",
-                "PROGRAMNAME": "TEXT",
-                "SCOPE": "TEXT",
-                "OBJECTIVE": "TEXT",
-                "CRITERIA": "TEXT",
-                "AUDITLEAD": "TEXT",
-                "AUDITTEAM": ["name1", "name2"],
-                "FILE": "qqq.pdf",
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_report_no !== null ? (data.audit_report_no !== '' ? data.audit_report_no : '-') : '-') + '</div>';
+              }
             },
-        ];
-
-        var example2TableBody = document.getElementById("example2").getElementsByTagName("tbody")[0];
-
-        Data.forEach(function(row, index) {
-            var newRow = example2TableBody.insertRow();
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            var cell6 = newRow.insertCell(5);
-            var cell7 = newRow.insertCell(6);
-            var cell8 = newRow.insertCell(7);
-            var cell9 = newRow.insertCell(8);
-
-            cell1.innerHTML = `<span style="color:#007BFF; cursor:pointer;" onclick="load_modal(9)" data-toggle="modal" data-target="#modal-default"><i class="fas fa-user-edit"></i></span>`;
-            cell2.textContent = row.APNO;
-            cell3.textContent = row.PROGRAMNAME;
-            cell4.textContent = row.SCOPE;
-            cell5.textContent = row.OBJECTIVE;
-            cell6.textContent = row.CRITERIA;
-            cell7.textContent = row.AUDITLEAD;
-            displayArrayInCell(cell8, row.AUDITTEAM);
-            cell9.textContent = row.FILE;
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.program_name !== null ? (data.program_name !== '' ? data.program_name : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_scope !== null ? (data.audit_scope !== '' ? data.audit_scope : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_objective !== null ? (data.audit_objective !== '' ? data.audit_objective : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_criteria !== null ? (data.audit_criteria !== '' ? data.audit_criteria : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_lead !== null ? (data.audit_lead !== '' ? data.audit_lead : '-') : '-') + '</div>';
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.audit_team !== null ? (data.audit_team !== '' ? data.audit_team : '-') : '-') + '</div>';
+              }
+            },
+            {
+                        'data': 'file_data',
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            if (data == null) {
+                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            } else {
+                                return `<a href="<?php echo base_url('openfile/'); ?>${data.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                                    ${data.name_file}
+                                    </a>`;
+                            }
+                        }
+                    },
+          ],
         });
-
-
-        function displayArrayInCell(cell, dataArray) {
-            if (Array.isArray(dataArray) && dataArray.length > 1) {
-                cell.innerHTML = dataArray.join('<br>');
-            } else {
-                cell.textContent = Array.isArray(dataArray) ? dataArray[0] : dataArray;
-            }
-        }
-    </script>
+        $('[data-toggle="tooltip"]').tooltip();
+      }
+    }
+  </script>
 
     <!-- switch tabs -->
     <script>

@@ -1694,7 +1694,6 @@ class Planning_AddressRisksOppController extends BaseController
         $Consequence_level_is_Models = new Consequence_level_is_Models();
         $Risk_options_is_Models = new Risk_options_is_Models();
         $FileModels = new FileModels();
-        $totalRecords = $Address_Risk_IS_Models->where('id_version', $id_version)->countAllResults();
 
         $limit = $this->request->getVar('length');
         $start = $this->request->getVar('start');
@@ -1703,15 +1702,25 @@ class Planning_AddressRisksOppController extends BaseController
 
         if (!empty($searchValue)) {
             $Address_Risk_IS_Models->groupStart()
-                ->like('issue', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
+                ->like('asset_group', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 // ->orLike('effect', $searchValue)
                 // เพิ่มคอลัมน์เพิ่มเติมตามที่ต้องการค้นหา
                 ->groupEnd();
         }
 
+        $totalRecords = $Address_Risk_IS_Models->where('id_version', $id_version)->countAllResults();
         $recordsFiltered = $totalRecords;
+
+        if (!empty($searchValue)) {
+            $Address_Risk_IS_Models->groupStart()
+                ->like('asset_group', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
+                // ->orLike('effect', $searchValue)
+                // เพิ่มคอลัมน์เพิ่มเติมตามที่ต้องการค้นหา
+                ->groupEnd();
+        }
+
         $select_Content = $this->request->getVar('select_Content');
-        if ($select_Content == 0) {
+        if($select_Content == 0) {
             $data = $Address_Risk_IS_Models->where('id_version', $id_version)->findAll($limit, $start);
         } else if ($select_Content == 1) {
             $data = $Address_Risk_IS_Models->where('id_version', $id_version)->where('rtp_status', 'รอดำเนินการ')->findAll($limit, $start);

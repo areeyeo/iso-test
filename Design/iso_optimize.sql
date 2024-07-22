@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 16, 2024 at 09:26 AM
+-- Host: 127.0.0.1
+-- Generation Time: May 28, 2024 at 04:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -258,7 +258,13 @@ INSERT INTO `activities_log` (`id_activities`, `text_activities`, `type_activiti
 (215, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-10', '14:30:33'),
 (216, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-13', '11:21:17'),
 (217, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-13', '14:26:13'),
-(218, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-16', '10:42:40');
+(218, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-16', '10:42:40'),
+(219, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-16', '14:31:35'),
+(220, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-17', '09:04:28'),
+(221, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-17', '13:47:37'),
+(222, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-20', '10:14:08'),
+(223, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-27', '14:33:55'),
+(224, 'TNET Developer ได้เข้าสู่ระบบ ', 4, 5, '2024-05-28', '09:22:03');
 
 -- --------------------------------------------------------
 
@@ -530,7 +536,7 @@ INSERT INTO `all_version_table` (`id_version`, `modified_date`, `review_date`, `
 (25, NULL, NULL, '05/03/2024', NULL, 4, 5, 1),
 (26, NULL, NULL, NULL, NULL, 0, 5, 7),
 (27, NULL, NULL, NULL, NULL, 0, 5, 11),
-(28, NULL, NULL, NULL, NULL, 0, 5, 10),
+(28, NULL, NULL, '16/05/2024', NULL, 4, 5, 10),
 (29, NULL, NULL, NULL, NULL, 0, 5, 12),
 (30, NULL, NULL, NULL, NULL, 0, 5, 13),
 (31, NULL, NULL, NULL, NULL, 0, 5, 14),
@@ -799,7 +805,40 @@ INSERT INTO `files_table` (`id_files`, `name_file`) VALUES
 (97, 'iso27001-2022-ไทย-v1.0.1.pdf'),
 (98, 'xxxx.pdf'),
 (107, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
-(108, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf');
+(108, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(109, 'arjun.pdf'),
+(110, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(111, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(112, 'รายงานยอดขาย.pdf'),
+(113, 'arjun.pdf'),
+(114, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(115, 'รายงานยอดขาย.pdf'),
+(116, 'arjun.pdf'),
+(117, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(118, 'รายงานยอดขาย.pdf'),
+(120, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(122, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(127, 'arjun.pdf'),
+(128, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(129, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(131, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(132, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(133, 'รายงานยอดขาย.pdf'),
+(138, 'arjun.pdf'),
+(142, 'arjun.pdf'),
+(143, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(144, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(145, 'รายงานยอดขาย.pdf'),
+(162, 'arjun.pdf'),
+(163, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(164, 'ตัวอย่างแอพที่ต้องการ.pdf'),
+(166, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(169, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(170, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(171, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(172, 'Cert.T-Net Co.,Ltd- 9001_2015 Imp.-3-4.03.2024.pdf'),
+(174, 'arjun.pdf'),
+(175, 'รายงานยอดขาย.pdf');
 
 -- --------------------------------------------------------
 
@@ -856,6 +895,27 @@ CREATE TABLE `impact_level_is` (
 
 INSERT INTO `impact_level_is` (`id_impact_level`, `number_level`) VALUES
 (1, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `improvements_overview`
+--
+
+CREATE TABLE `improvements_overview` (
+  `id_management_review` int(11) NOT NULL,
+  `improvements_list` varchar(200) NOT NULL,
+  `recorder` varchar(50) NOT NULL,
+  `file` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `improvements_overview`
+--
+
+INSERT INTO `improvements_overview` (`id_management_review`, `improvements_list`, `recorder`, `file`) VALUES
+(8, 'wwwww', 'zzzzzz', 174),
+(9, 'หฟกฟหกหฟกกกกก', 'ฟหกฟหกฟกกก', 175);
 
 -- --------------------------------------------------------
 
@@ -1136,6 +1196,27 @@ INSERT INTO `likelihood_level_is` (`id_likelihood_level_is`, `likelihood_name`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `management_review`
+--
+
+CREATE TABLE `management_review` (
+  `id_management_review` int(10) NOT NULL,
+  `meeting_id` varchar(50) NOT NULL,
+  `meeting_date` date NOT NULL,
+  `meeting_doc` varchar(100) DEFAULT NULL,
+  `meeting_minutes_doc` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `management_review`
+--
+
+INSERT INTO `management_review` (`id_management_review`, `meeting_id`, `meeting_date`, `meeting_doc`, `meeting_minutes_doc`) VALUES
+(4, '17/24', '2024-05-16', '162,163', 164);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `note_comment_table`
 --
 
@@ -1273,20 +1354,23 @@ CREATE TABLE `planning_is_objectives_planning_table` (
   `status` int(10) DEFAULT NULL,
   `result` varchar(200) DEFAULT NULL,
   `date_evaluation` varchar(100) DEFAULT NULL,
-  `evaluation_methods` varchar(300) DEFAULT NULL
+  `evaluation_methods` varchar(300) DEFAULT NULL,
+  `actual` date DEFAULT NULL,
+  `criteria` varchar(255) DEFAULT NULL,
+  `evaluation_results` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `planning_is_objectives_planning_table`
 --
 
-INSERT INTO `planning_is_objectives_planning_table` (`id_planning`, `id_objective`, `planning`, `start_date`, `end_date`, `owner`, `file`, `id_version`, `status`, `result`, `date_evaluation`, `evaluation_methods`) VALUES
-(1, 1, 'xxxxxx', '01/04/2024', '01/04/2024', 'xxxxx', 0, 28, 10, 'xxxx', '25/04/2024', 'dasdas'),
-(2, 2, '', '25/04/2024', '25/04/2024', 'sdsd', 0, 28, NULL, NULL, '25/04/2024', 's'),
-(3, 2, 'asdasd', '25/04/2024', '25/04/2024', 'asdasdasd', 0, 28, NULL, NULL, '25/04/2024', 'asdasd'),
-(4, 1, '', '25/04/2024', '25/04/2024', 'sadsad', 0, 28, NULL, NULL, '25/04/2024', 'asdasd'),
-(5, 1, '', '25/04/2024', '25/04/2024', 'sadsad', 0, 28, NULL, NULL, '25/04/2024', 'asdasd'),
-(6, 2, 'asdasdsad', '29/04/2024', '29/04/2024', 'asdsadsa', 108, 28, NULL, NULL, '29/04/2024', 'asdasd');
+INSERT INTO `planning_is_objectives_planning_table` (`id_planning`, `id_objective`, `planning`, `start_date`, `end_date`, `owner`, `file`, `id_version`, `status`, `result`, `date_evaluation`, `evaluation_methods`, `actual`, `criteria`, `evaluation_results`) VALUES
+(1, 1, 'xxxxxx', '01/04/2024', '01/04/2024', 'xxxxx', 0, 28, 10, 'xxxx', '25/04/2024', 'dasdas', '2024-05-16', 'testxxxx', '1'),
+(2, 2, '', '25/04/2024', '25/04/2024', 'sdsd', 0, 28, NULL, NULL, '25/04/2024', 's', '2024-05-17', 'asdsa', '1'),
+(3, 2, 'asdasd', '25/04/2024', '25/04/2024', 'asdasdasd', 0, 28, NULL, NULL, '25/04/2024', 'asdasd', NULL, NULL, NULL),
+(4, 1, '', '25/04/2024', '25/04/2024', 'sadsad', 0, 28, NULL, NULL, '25/04/2024', 'asdasd', '2024-05-15', 'sadsad', '2'),
+(5, 1, '', '25/04/2024', '25/04/2024', 'sadsad', 0, 28, NULL, NULL, '25/04/2024', 'asdasd', NULL, NULL, NULL),
+(6, 2, 'asdasdsad', '29/04/2024', '29/04/2024', 'asdsadsa', 108, 28, NULL, NULL, '29/04/2024', 'asdasd', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2111,7 +2195,8 @@ CREATE TABLE `support_awareness_table` (
 
 INSERT INTO `support_awareness_table` (`id_awareness`, `course`, `detail`, `date`, `id_file`, `id_version`) VALUES
 (2, 'rewrw', 'rewrewr', '09/02/2024', '24', 30),
-(3, 'sdaasdasdas', 'asdasd', '06/03/2024', '42,43', 30);
+(3, 'sdaasdasdas', 'asdasd', '06/03/2024', '42,43,142,143,144,145', 30),
+(4, 'ฟหกฟหก', 'ฟหกฟหก', '17/05/2024', NULL, 30);
 
 -- --------------------------------------------------------
 
@@ -2448,7 +2533,11 @@ INSERT INTO `timeline_log` (`id_timeline`, `text_timeline`, `type_timeline`, `st
 (286, 'TNET Developer Created Address Risk', 1, 0, NULL, 5, 62, '2024-04-25', '13:45:53'),
 (287, 'TNET Developer Create Planning', 1, 0, NULL, 5, 28, '2024-04-25', '14:00:28'),
 (288, 'TNET Developer Copy Planning', 1, 0, NULL, 5, 28, '2024-04-29', '09:09:50'),
-(289, 'TNET Developer Create Planning', 1, 0, NULL, 5, 28, '2024-04-29', '09:23:43');
+(289, 'TNET Developer Create Planning', 1, 0, NULL, 5, 28, '2024-04-29', '09:23:43'),
+(290, 'TNET Developer change status to', 2, 4, NULL, 5, 28, '2024-05-16', '15:34:42'),
+(291, 'TNET Developer Create Awareness', 1, 0, NULL, 5, 30, '2024-05-17', '09:36:26'),
+(292, 'TNET Developer Edit Awareness', 1, 0, NULL, 5, 30, '2024-05-17', '15:27:27'),
+(293, 'TNET Developer Edit Awareness', 1, 0, NULL, 5, 30, '2024-05-17', '15:31:40');
 
 -- --------------------------------------------------------
 
@@ -2623,6 +2712,12 @@ ALTER TABLE `impact_level_is`
   ADD PRIMARY KEY (`id_impact_level`);
 
 --
+-- Indexes for table `improvements_overview`
+--
+ALTER TABLE `improvements_overview`
+  ADD PRIMARY KEY (`id_management_review`);
+
+--
 -- Indexes for table `interested_issues_table`
 --
 ALTER TABLE `interested_issues_table`
@@ -2693,6 +2788,12 @@ ALTER TABLE `likelihood_level_context`
 --
 ALTER TABLE `likelihood_level_is`
   ADD PRIMARY KEY (`id_likelihood_level_is`);
+
+--
+-- Indexes for table `management_review`
+--
+ALTER TABLE `management_review`
+  ADD PRIMARY KEY (`id_management_review`);
 
 --
 -- Indexes for table `note_comment_table`
@@ -2834,7 +2935,7 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `activities_log`
 --
 ALTER TABLE `activities_log`
-  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id_activities` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
 -- AUTO_INCREMENT for table `address_opportunities_context`
@@ -2918,7 +3019,7 @@ ALTER TABLE `external_table`
 -- AUTO_INCREMENT for table `files_table`
 --
 ALTER TABLE `files_table`
-  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id_files` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT for table `group`
@@ -2937,6 +3038,12 @@ ALTER TABLE `impact_level_context`
 --
 ALTER TABLE `impact_level_is`
   MODIFY `id_impact_level` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `improvements_overview`
+--
+ALTER TABLE `improvements_overview`
+  MODIFY `id_management_review` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `interested_issues_table`
@@ -3009,6 +3116,12 @@ ALTER TABLE `likelihood_level_context`
 --
 ALTER TABLE `likelihood_level_is`
   MODIFY `id_likelihood_level_is` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `management_review`
+--
+ALTER TABLE `management_review`
+  MODIFY `id_management_review` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `note_comment_table`
@@ -3104,7 +3217,7 @@ ALTER TABLE `soa`
 -- AUTO_INCREMENT for table `support_awareness_table`
 --
 ALTER TABLE `support_awareness_table`
-  MODIFY `id_awareness` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_awareness` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `support_communication_table`
@@ -3128,7 +3241,7 @@ ALTER TABLE `support_document_create_update_table`
 -- AUTO_INCREMENT for table `timeline_log`
 --
 ALTER TABLE `timeline_log`
-  MODIFY `id_timeline` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+  MODIFY `id_timeline` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=294;
 
 --
 -- AUTO_INCREMENT for table `topic_table`

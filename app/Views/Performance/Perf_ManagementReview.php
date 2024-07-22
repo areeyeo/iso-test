@@ -231,7 +231,7 @@
                 modal1.style.display = "none";
                 modal2.style.display = "block";
 
-                const rowData = JSON.parse(decodeURIComponent(data_encode));
+                const rowData = JSON.parse(decodeURIComponent(1));
                 $(".modal-body #meetingdate").val(rowData.meeting_date);
                 if (rowData.meeting_minutes_doc != null) {
                     $(".modal-body #label_meeting_minutes_doc").text(rowData.meeting_minutes_doc['name_file']);

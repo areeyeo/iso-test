@@ -74,22 +74,22 @@ $datatest = [
                                 <input class="form-control gray-text #" type="date" placeholder="Text..." name="dateplan" id="dateplan"></input>
                             </div>
 
-                            <?php foreach ($datatest as $item) : ?>
+                            <?php foreach ($schedule_plan as $item) : ?>
                                 <div class="card-body mt-3" style="background-color: #E2F0FF; border-radius: 4px;">
                                     <div class="d-flex justify-content-between">
                                         <div>
                                             <span style="color: #666666; font-size: large;">Project Name:&nbsp;</span>
-                                            <span id="projectname" style="color: #007BFF; font-size: large;"><?php echo $item['projectname']; ?></span>
+                                            <span id="projectname" style="color: #007BFF; font-size: large;"><?php echo $item['program_name']; ?></span>
                                         </div>
                                         <div>
-                                            <span style="color: #007BFF; cursor: pointer;" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(9)">
+                                            <span style="color: #007BFF; cursor: pointer;" data-toggle="modal" data-target="#modal-default" id="load-modal-button" onclick="load_modal(9,<?php echo $item['id_audit_plan']; ?>)">
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </span>
                                         </div>
                                     </div>
                                     <div>
                                         <span style="color: #666666;">Event Name:&nbsp;</span>
-                                        <span id="period" style="color: #007BFF;"><?php echo $item['eventname']; ?></span>
+                                        <span id="period" style="color: #007BFF;"><?php echo $item['event_name']; ?></span>
                                     </div>
                                     <div>
                                         <span style="color: #666666;">Detail:&nbsp;</span>
@@ -101,7 +101,7 @@ $datatest = [
                                     </div>
                                     <div>
                                         <span style="color: #666666;">Time:&nbsp;</span>
-                                        <span id="period" style="color: #007BFF;"><?php echo $item['time']; ?></span>
+                                        <span id="period" style="color: #007BFF;"><?php echo $item['start_time']; echo " - "; echo $item['end_time']; ?></span>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -147,38 +147,22 @@ $datatest = [
             },
             eventClick: function(info) { // ฟังก์ชันที่เรียกเมื่อเลือก Event
                 console.log('Clicked on event: ', info.event.title);
+                console.log('Clicked on event: ', info.event.id);
                 $("#modal-default").modal('toggle');
-                load_modal(9);
+                load_modal(9,info.event.id);
             },
             dayMaxEvents: true,
-            events: [{
-                    title: 'Example Event',
-                    start: '2024-05-01',
-                    end: '2024-05-01',
+            events: [
+                <?php foreach($audit_plan as $row) { ?>
+                {
+                    id: '<?=$row['id_audit_plan']?>',
+                    title: '<?=$row['program_name']?>',
+                    start: '<?=$row['start_date']?>',
+                    end: '<?=$row['end_date']?>',
                     backgroundColor: '#82B4FF',
                     borderColor: '#F5F6FA'
                 },
-                {
-                    title: 'Long Event',
-                    start: '2024-05-07',
-                    end: '2024-05-15',
-                    backgroundColor: '#82B4FF',
-                    borderColor: '#F5F6FA'
-                },
-                {
-                    title: 'test',
-                    start: '2024-05-11',
-                    end: '2024-05-13',
-                    backgroundColor: '#82B4FF',
-                    borderColor: '#F5F6FA'
-                },
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2024-05-28',
-                    backgroundColor: '#82B4FF',
-                    borderColor: '#F5F6FA'
-                }
+                <?php } ?>
             ],
         });
         calendar.render();

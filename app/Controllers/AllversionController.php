@@ -135,13 +135,32 @@ class AllversionController extends BaseController
         $AllversionModels = new AllversionModels();
         $userId = session()->get('id');
 
-        $getdata1 = $AllversionModels
-            ->where('id_user', $userId)
-            ->where('type_version', $type)
-            ->where('announce_date IS NOT NULL', null, false)
-            ->where('status', 4)
-            ->orderBy('id_version', 'desc') // Assuming you have a created_at column
-            ->first();
+        if ($type === '17') {
+            $getdata1 = $AllversionModels
+                ->where('type_version', $type)
+                ->where('announce_date IS NOT NULL', null, false)
+                ->where('status', 4)
+                ->orderBy('id_version', 'desc') // Assuming you have a created_at column
+                ->first();
+            if (empty($getdata1)) {
+                $getdata1 = $AllversionModels
+                    ->where('type_version', $type)
+                    ->orderBy('id_version', 'desc') // แบบนี้จะเรียกข้อมูลล่าสุดก่อน
+                    ->first();
+                if (empty($getdata1)) {
+                    return redirect()->to('context/version/create/' . $type . '/2');
+                }
+            }
+        } else {
+            $getdata1 = $AllversionModels
+                ->where('id_user', $userId)
+                ->where('type_version', $type)
+                ->where('announce_date IS NOT NULL', null, false)
+                ->where('status', 4)
+                ->orderBy('id_version', 'desc') // Assuming you have a created_at column
+                ->first();
+        }
+
 
         if (empty($getdata1)) {
             $getdata1 = $AllversionModels

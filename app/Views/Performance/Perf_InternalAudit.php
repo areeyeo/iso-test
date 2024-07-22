@@ -100,29 +100,6 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= site_url('/'); ?>">Home</a></li>
                             <li class="breadcrumb-item active">Internal Audit</li>
-                            <li class="breadcrumb-item topic active">
-                                <?php
-                                $active_tab = 'audit-management';
-                                if (isset($_GET['active_tab'])) {
-                                    $active_tab = $_GET['active_tab'];
-                                }
-                                if ($active_tab == 'audit-management') {
-                                    echo 'Audit Manegement';
-                                } elseif ($active_tab == 'follow-up') {
-                                    echo 'Follow-up';
-                                }
-                                ?>
-                            </li>
-                            <li class="breadcrumb-item version active">
-                                <?php
-                                $active_tab = isset($_GET['active_tab']) ? $_GET['active_tab'] : 'audit-management';
-                                if ($active_tab == 'audit-management' && isset($data['num_ver'])) {
-                                    echo ' Version ' . $data['num_ver'];
-                                } elseif ($active_tab == 'follow-up' && isset($data['num_ver'])) {
-                                    echo ' Version ' . $data['num_ver'];
-                                }
-                                ?>
-                            </li>
                         </ol>
                     </div>
                 </div>
@@ -133,20 +110,18 @@
             <div class="container-fluid">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link title-topic active" id="pills-audit-management-tab" data-toggle="pill" data-target="#pills-audit-management" type="button" role="tab" aria-follow-ups="pills-audit-management" aria-selected="true">
-                            Audit Manegement</a>
+                        <a class="nav-link title-topic active" id="pills-audit-management-tab" data-toggle="pill" href="#pills-audit-management" role="tab" aria-controls="pills-audit-management" aria-selected="true">Audit Management</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link title-topic btn" id="pills-follow-up-tab" data-toggle="pill" data-target="#pills-follow-up" type="button" role="tab" aria-follow-ups="pills-follow-up" aria-selected="false">
-                            Follow-up</button>
+                        <a class="nav-link title-topic" id="pills-audit-result-tab" data-toggle="pill" href="#pills-audit-result" role="tab" aria-controls="pills-audit-result" aria-selected="false" onclick="getTableData();">Audit Result</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-audit-management" role="tabpanel" aria-labelledby="pills-audit-management-tab">
                         <?php include("Perf_AuditManagement.php"); ?>
                     </div>
-                    <div class="tab-pane fade" id="pills-follow-up" role="tabpanel" aria-labelledby="pills-follow-up-tab">
-                        <?php include("Perf_Followup.php"); ?>
+                    <div class="tab-pane fade" id="pills-audit-result" role="tabpanel" aria-labelledby="pills-audit-result-tab">
+                        <?php include("Perf_Audit_Result.php"); ?>
                     </div>
                 </div>
             </div>
@@ -181,7 +156,7 @@
             <?= $this->include("Modal/CRUD_Perf_Audit_Report"); ?>
         </div>
         <div id="modal10">
-            <?= $this->include("Modal/CRUD_Perf_Audit_Followup"); ?>
+            <?= $this->include("Modal/CRUD_Perf_Audit_Result"); ?>
         </div>
     </div>
     <!-- DataTables  & Plugins -->
@@ -212,6 +187,7 @@
     <script src="<?= base_url('plugins/codemirror/mode/css/css.js'); ?>"></script>
     <script src="<?= base_url('plugins/codemirror/mode/xml/xml.js'); ?>"></script>
     <script src="<?= base_url('plugins/codemirror/mode/htmlmixed/htmlmixed.js'); ?>"></script>
+
     <script>
         function load_modal(check, data_, status) {
             modal1 = document.getElementById("modal1");
@@ -278,6 +254,8 @@
                 modal8.style.display = "none";
                 modal9.style.display = "none";
                 modal10.style.display = "none";
+
+                $(".modal-body #url_route").val('internal_audit/audit_program/create');
 
             } else if (check == '4') {
                 //--show modal objective create--//
@@ -405,6 +383,38 @@
                 modal9.style.display = "none";
                 modal10.style.display = "none";
 
+                var data_id = data_;
+
+                getTableData1(data_id);
+                getTableData2(data_id);
+                getTableData3(data_id);
+
+                <?php foreach($audit_plan as $row1) { ?>
+                    if (<?=$row1['id_audit_plan']?> == data_id) {
+                        document.getElementById('projectname_detail').innerHTML = "<?=$row1['program_name']?>";
+                        document.getElementById('startdate_detail').innerHTML = "<?=$row1['start_date']?>";
+                        document.getElementById('enddate_detail').innerHTML = "<?=$row1['end_date']?>";
+
+                        $(".p-4 #id_plan_schedule").val('<?=$row1['id_audit_plan']?>');
+                        $(".p-4 #id_plan_checklist").val('<?=$row1['id_audit_plan']?>');
+                        $(".p-4 #id_plan_report").val('<?=$row1['id_audit_plan']?>');
+                        $(".p-4 #url_route_schedule").val('internal_audit/schedule/create');
+                        $(".p-4 #url_route_checklist").val('internal_audit/checklist/create');
+                        $(".p-4 #url_route_report").val('internal_audit/report/create');
+                    }
+                <?php } ?>
+
+                <?php foreach($initial_data as $row2) { ?>
+                    if (<?=$row2['id_audit_plan']?> == data_id) {
+                        $(".modal-body #auditobjectives").val('<?=$row2['audit_objective']?>');
+                        $(".modal-body #auditscope").val('<?=$row2['audit_scope']?>');
+                        $(".modal-body #auditcriteria").val('<?=$row2['audit_criteria']?>');
+                        $(".modal-body #auditlead").val('<?=$row2['audit_lead']?>');
+                        $(".modal-body #auditteam").val('<?=$row2['audit_team']?>');
+                        $(".modal-body #url_route").val('internal_audit/initial_data/update/<?=$row2['id_initial_data']?>');
+                    }
+                <?php } ?>
+
             } else if (check == '10') {
                 //--show modal audit program-//
                 modal1.style.display = "none";
@@ -431,8 +441,7 @@
                 modal9.style.display = "block";
                 modal10.style.display = "none";
 
-            }
-            else if (check == '12') {
+            } else if (check == '12') {
                 //--show modal audit program-//
                 modal1.style.display = "none";
                 modal2.style.display = "none";
@@ -446,6 +455,110 @@
                 modal10.style.display = "block";
 
             }
+        }
+    </script>
+    <script>
+        function action_(url, form) {
+            var formData = new FormData(document.getElementById(form));
+
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            $.ajax({
+                url: '<?= base_url() ?>' + url,
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                        setTimeout(() => {
+                            if (response.reload) {
+                                window.location.reload();
+                            }
+                        }, 2000);
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: "เกิดข้อผิดพลาด",
+                        icon: 'error',
+                        showConfirmButton: true
+                    });
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function confirm_Alert(text, url) {
+            Swal.fire({
+                title: text,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Submit",
+                preConfirm: () => {
+                    return $.ajax({
+                        url: '<?= base_url() ?>' + url,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        beforeSend: function() {
+                            Swal.fire({
+                                title: 'Loading...',
+                                allowEscapeKey: false,
+                                allowOutsideClick: false,
+                                showConfirmButton: false,
+                            });
+                        },
+                    }).then(function(response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                                if (response.reload) {
+                                    window.location.reload();
+                                }
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'error',
+                                showConfirmButton: true
+                            });
+                        }
+                    });
+                }
+            });
         }
     </script>
 </body>

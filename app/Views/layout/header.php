@@ -384,7 +384,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('/internal_audit'); ?>" class="nav-link">
+                                    <a href="<?= site_url('/internal_audit/index'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Internal Audit</p>
                                     </a>
@@ -411,7 +411,7 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Improvements Overvi..</p>
                                     </a>
-                                    <a href="<?= site_url('/nonconformity_action'); ?>" class="nav-link">
+                                    <a href="<?= site_url('/improvements/nonconformity_action/index'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Nonconformity & Act...</p>
                                     </a>

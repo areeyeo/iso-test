@@ -32,12 +32,17 @@ class Perf_PerformanceEvaluationController extends BaseController
         $start = $this->request->getVar('start');
         $draw = $this->request->getVar('draw');
         $id_version = $this->get_last_version_approved();
+
+        $data_count['count_pass'] = 0;
+        $data_count['count_fail'] = 0;
+
         if (empty($id_version)) {
             $response = [
                 'draw' => intval($draw),
                 'recordsTotal' => 0,
                 'recordsFiltered' => 0,
                 'data' => [],
+                'data_count' => $data_count 
             ];
             return $this->response->setJSON($response);
         }
@@ -46,8 +51,7 @@ class Perf_PerformanceEvaluationController extends BaseController
         $recordsFiltered = $totalRecords;
 
         $data = $Planning_is_objectivesModels->where('id_version', $id_version)->findAll($limit, $start);
-        $data_count['count_pass'] = 0;
-        $data_count['count_fail'] = 0;
+
         foreach ($data as $key => $value) {
             if ($select_about == 0) {
                 $data_Planning = $Planning_is_planningModels->where('id_objective', $value['id_objective'])->findAll();
@@ -73,7 +77,7 @@ class Perf_PerformanceEvaluationController extends BaseController
             'recordsTotal' => $totalRecords,
             'recordsFiltered' => $recordsFiltered,
             'data' => $data,
-            'data_count' => $data_count,
+            'data_count' => $data_count
         ];
 
         return $this->response->setJSON($response);
