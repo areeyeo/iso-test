@@ -10,7 +10,7 @@ class Followup_Nonconformity_Models extends Model
 
     protected $primaryKey = 'id_nonconformity';
 
-    protected $allowedFields = ['id_audit_report', 'nonconformity_issue', 'corrective_action', 'responsible_person', 'start_date', 'end_date', 'status', 'annual', 'level_of_nonconformity', 'detail', 'requirements_control'];
+    protected $allowedFields = ['id_audit_report', 'nonconformity_issue', 'corrective_action', 'responsible_person', 'start_date', 'end_date', 'finish_date', 'status', 'annual', 'level_of_nonconformity', 'detail', 'requirements_control'];
 
     public function copyDataById($id)
     {

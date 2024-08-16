@@ -421,64 +421,6 @@
                         <div>
                             <hr>
                         </div>
-                        <li class="nav-header">Management setting</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Risk Criteria Context
-                                    <i class="right fas fa-angle-right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <?php $contextLinks = [
-                                    ['text' => 'Consequence Level', 'url' => 'planning/risk_Criteria_Context_Consequence'],
-                                    ['text' => 'Likelihood Level', 'url' => 'planning/risk_Criteria_Context_Likelihood'],
-                                    ['text' => 'Risk Level', 'url' => 'planning/risk_Criteria_Context_Risk_Level'],
-                                    ['text' => 'Risk Options', 'url' => 'planning/risk_Criteria_Context_Risk_Option']
-                                ]; ?>
-                                <?php foreach ($contextLinks as $link) : ?>
-                                    <li class="nav-item">
-                                        <a href="<?= site_url($link['url']); ?>" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                <?= $link['text']; ?>
-                                            </p>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Risk Criteria Informa...
-                                    <i class="right fas fa-angle-right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <?php $contextLinks = [
-                                    ['text' => 'Consequence Level', 'url' => 'planning/risk_Criteria_IS_Consequence'],
-                                    ['text' => 'Likelihood Level', 'url' => 'planning/risk_Criteria_IS_Likelihood'],
-                                    ['text' => 'Risk Level', 'url' => 'planning/risk_Criteria_IS_Risk_Level'],
-                                    ['text' => 'Risk Options', 'url' => 'planning/risk_Criteria_IS_Risk_Option']
-                                ]; ?>
-                                <?php foreach ($contextLinks as $link) : ?>
-                                    <li class="nav-item">
-                                        <a href="<?= site_url($link['url']); ?>" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                <?= $link['text']; ?>
-                                            </p>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </li>
-                        <div>
-                            <hr>
-                        </div>
                         <li class="nav-header">Initial System</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -559,7 +501,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('dist/js/demo.js'); ?>"></script>
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- DataTables  & Plugins -->
     <script src="<?= base_url('plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
     <script src="<?= base_url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>

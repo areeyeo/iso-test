@@ -316,9 +316,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -337,14 +337,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(13, '${encodedRowData}', 1)" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/nonconformity/copydata/${row.id_nonconformity}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/nonconformity/delete/${row.id_nonconformity}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
@@ -419,9 +419,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -440,14 +440,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(13,'${encodedRowData}', 2)" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/observation/copydata/${row.id_observation}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/observation/delete/${row.id_observation}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
@@ -515,9 +515,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -536,14 +536,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(13,'${encodedRowData}', 3)" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/opportunity/copydata/${row.id_opportunity}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/opportunity/delete/${row.id_opportunity}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(12)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;

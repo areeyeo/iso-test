@@ -1,10 +1,3 @@
-<?php
-$data = [
-    'type' => 'Nonconformity Issue',
-];
-
-$type = $data['type'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +30,7 @@ $type = $data['type'];
                 <h4 class="modal-title" id="title_modal" name="title_modal">Nonconformity & Action</h4>
             </div>
             <div class="modal-body">
-                <form class="mb-3" id="form_crud" action="javascript:void(0)" method="post" enctype="multipart/form-data">
+                <form class="mb-3" id="form_crud_nonconformity_action" action="javascript:void(0)" method="post" enctype="multipart/form-data">
                     <div>
                         <h6>Description</h6>
                     </div>
@@ -51,30 +44,36 @@ $type = $data['type'];
                     </div>
                     <div class="form-group mt-3">
                         <h6>Audit Report No.</h6>
-                        <input class="form-control gray-text" type="text" placeholder="Text..." name="auditreport" id="auditreport"></input>
+                        <select id="tags-reportname" name="tags-reportname[]" multiple="multiple" class="form-control select2tags" required>
+                            <?php foreach ($audit_report as $report): ?>
+                            <option value="<?= $report['id_audit_report']; ?>">
+                                <?= $report['audit_report_no'] . ' ' . $report['report_about']; ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-5">
                             <h6>Type</h6>
-                            <input class="form-control gray-text" type="text" placeholder="Text..." name="type" id="type" value="<?php echo htmlspecialchars($type); ?>" readonly></input>
+                            <input class="form-control gray-text" type="text" placeholder="Text..." name="type" id="type" readonly></input>
                         </div>
                         <div class="col-lg-7">
-                            <?php if ($type === 'Nonconformity Issue') : ?>
+                            
                                 <div class="form-group" id="ipnonconformity">
                                     <h6>Nonconformity Issue</h6>
                                     <input class="form-control gray-text" type="text" placeholder="Text..." name="nonconformity" id="nonconformity">
                                 </div>
-                            <?php elseif ($type === 'Observation Issue') : ?>
+                            
                                 <div class="form-group" id="ipobservation">
                                     <h6>Observation Issue</h6>
                                     <input class="form-control gray-text" type="text" placeholder="Text..." name="observation" id="observation">
                                 </div>
-                            <?php elseif ($type === 'Opportunity Issue') : ?>
+
                                 <div class="form-group" id="ipopportunity">
                                     <h6>Opportunity Issue</h6>
                                     <input class="form-control gray-text" type="text" placeholder="Text..." name="opportunity" id="opportunity">
                                 </div>
-                            <?php endif; ?>
+
                         </div>
                     </div>
                     <div class="form-group">
@@ -83,12 +82,12 @@ $type = $data['type'];
                     </div>
                     <div class="row">
                         <div class="col-lg-5">
-                            <?php if ($type === 'Nonconformity Issue') : ?>
-                                <div class="form-group">
+
+                                <div class="form-group" id="lnonconformity">
                                 <h6>Level of Nonconformity</h6>
                                 <input class="form-control gray-text" type="text" placeholder="Text..." name="levelnonconformity" id="levelnonconformity"></input>
                             </div>
-                            <?php endif; ?>
+
                             <div class="form-group">
                                 <h6>Requirements/Control</h6>
                                 <input class="form-control gray-text" type="text" placeholder="Text..." name="control" id="control"></input>
@@ -123,13 +122,13 @@ $type = $data['type'];
                         <div class="col-6">
                             <div class="form-group">
                                 <h6>Annual</h6>
-                                <input class="form-control gray-text" type="number" id="annual" name="annual" min="1900" max="2100" placeholder="yyyy" required>
+                                <input class="form-control gray-text" type="number" id="annual" name="annual" min="1900" max="2100" placeholder="yyyy">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <h6>Finish Date</h6>
-                                <input class="form-control gray-text" type="date" name="end_date" id="end_date"></input>
+                                <input class="form-control gray-text" type="date" name="finish_date" id="finish_date"></input>
                             </div>
                         </div>
                     </div>
@@ -152,9 +151,7 @@ $type = $data['type'];
             $(".overlay").hide();
 
             // ใช้งาน select2 กับ select tags-reportname
-            var selectData = ["AR_001 รายงานโปรเจคตัวอย่างที่ 1", "AR_002 รายงานโปรเจคตัวอย่างที่ 2", "AR_003 รายงานโปรเจคตัวอย่างที่ 3", "AR_004 รายงานโปรเจคตัวอย่างที่ 4", "AR_005 รายงานโปรเจคตัวอย่างที่ 5"];
             $('#tags-reportname').select2({
-                data: selectData,
                 placeholder: "Select or Search",
                 tags: false,
                 tokenSeparators: [',', ' '],
@@ -162,10 +159,10 @@ $type = $data['type'];
                 maximumSelectionLength: 1
             });
 
-            $("#form_crud").on('submit', function(e) {
+            $("#form_crud_nonconformity_action").on('submit', function(e) {
                 e.preventDefault();
                 const urlRouteInput = document.getElementById("url_route");
-                action_(urlRouteInput.value, 'form_crud');
+                action_(urlRouteInput.value, 'form_crud_nonconformity_action');
             });
         });
     </script>

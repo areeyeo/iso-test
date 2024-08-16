@@ -127,11 +127,9 @@
     }
 
     $('#Create-Update-tab').on('click', function () {
-        console.log('Create-Update-tab');
         $('#btn-Document').show();
     });
     $('#Management-Doc-tab').on('click', function () {
-        console.log('Management-Doc-tab');
         $('#btn-Document').hide();
     })
     const statusMap = {
@@ -434,7 +432,6 @@
                 "scrollX": true,
                 "drawCallback": function (settings) {
                     var daData = settings.json.data;
-                    console.log(daData);
                     if (daData.length == 0) {
                         $('#table-management-doc tbody').html(`
                         <tr>

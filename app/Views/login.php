@@ -134,7 +134,6 @@
                                 }
                             }, 2000);
                         } else {
-                            // console.log(response);
                             Swal.fire({
                                 title: response.message,
                                 icon: 'error',

@@ -346,7 +346,6 @@
         });
 
         function load_modal(check, check_type, data_encode) {
-            console.log('Function is called with check:', check, 'and check_type:', check.check_type);
 
             modal1 = document.getElementById("modal1");
             modal2 = document.getElementById("modal2");
@@ -358,6 +357,77 @@
             } else if (check == '2') {
                 modal1.style.display = "none";
                 modal2.style.display = "block";
+
+                const rowData = JSON.parse(decodeURIComponent(data_encode));
+                if (check_type == 1) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/'+rowData.id_nonconformity);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    ipnonconformity.style.display = "block";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #type").val('Nonconformity Issue');
+                    $(".modal-body #nonconformity").val(rowData.nonconformity_issue);
+                    lnonconformity.style.display = "block";
+                    $(".modal-body #levelnonconformity").val(rowData.level_of_nonconformity);
+                } else if (check_type == 2) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/'+rowData.id_observation);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "block";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #type").val('Observation Issue');
+                    $(".modal-body #observation").val(rowData.non_inconsistent);
+                    lnonconformity.style.display = "none";
+                } else if (check_type == 3) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/'+rowData.id_opportunity);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "block";
+                    $(".modal-body #type").val('Opportunity Issue');
+                    $(".modal-body #observation").val(rowData.non_inconsistent);
+                    lnonconformity.style.display = "none";
+                } else {
+
+                }
+
+                $(".modal-body #correctiveaction").val(rowData.corrective_action);
+                $(".modal-body #responsibleperson").val(rowData.responsible_person);
+                $(".modal-body #start_date").val(rowData.start_date);
+                $(".modal-body #end_date").val(rowData.end_date);
+                $(".modal-body #status").val(rowData.status);
+                $(".modal-body #annual").val(rowData.annual);
+                $(".modal-body #detail").val(rowData.detail);
+                $(".modal-body #control").val(rowData.requirements_control);
+            }  else if (check == '3') {
+              modal1.style.display = "none";
+              modal2.style.display = "block";
+
+              if (check_type == 1) {
+                    ipnonconformity.style.display = "block";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #type").val('Nonconformity Issue');
+                    lnonconformity.style.display = "block";
+                } else if (check_type == 2) {
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "block";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #type").val('Observation Issue');
+                    lnonconformity.style.display = "none";
+                } else if (check_type == 3) {
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "block";
+                    $(".modal-body #type").val('Opportunity Issue');
+                    lnonconformity.style.display = "none";
+                } else {
+
+                }
+
+                $(".modal-body #url_route").val('internal_audit/audit_result/follow/create');
+            } else {
+
             }
         }
     </script>
@@ -384,6 +454,111 @@
                 });
             });
         });
+    </script>
+
+      <script>
+        function action_(url, form) {
+            var formData = new FormData(document.getElementById(form));
+
+            var loadingIndicator = Swal.fire({
+                title: 'Loading...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                onOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            $.ajax({
+                url: '<?= base_url() ?>' + url,
+                type: "POST",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "JSON",
+                beforeSend: function () {
+                    // Show loading indicator here
+                    loadingIndicator;
+                },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'success',
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                        setTimeout(() => {
+                            if (response.reload) {
+                                window.location.reload();
+                            }
+                        }, 2000);
+                    } else {
+                        Swal.fire({
+                            title: response.message,
+                            icon: 'error',
+                            showConfirmButton: true
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: "เกิดข้อผิดพลาด",
+                        icon: 'error',
+                        showConfirmButton: true
+                    });
+                }
+            });
+        }
+      </script>
+
+<script>
+        function confirm_Alert(text, url) {
+            Swal.fire({
+                title: text,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: "#28a745",
+                confirmButtonText: "Submit",
+                preConfirm: () => {
+                    return $.ajax({
+                        url: '<?= base_url() ?>' + url,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        beforeSend: function() {
+                            Swal.fire({
+                                title: 'Loading...',
+                                allowEscapeKey: false,
+                                allowOutsideClick: false,
+                                showConfirmButton: false,
+                            });
+                        },
+                    }).then(function(response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'success',
+                                showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                                if (response.reload) {
+                                    window.location.reload();
+                                }
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                title: response.message,
+                                icon: 'error',
+                                showConfirmButton: true
+                            });
+                        }
+                    });
+                }
+            });
+        }
     </script>
 
 <script>
@@ -421,9 +596,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(3, 1)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -442,14 +617,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(2, 1, '${encodedRowData}')" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/nonconformity/copydata/${row.id_nonconformity}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/nonconformity/delete/${row.id_nonconformity}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(3, 1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
@@ -510,28 +685,38 @@
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '' ? data.start_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '0000-00-00' ? data.start_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '' ? data.end_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '0000-00-00' ? data.end_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.status !== null ? (data.status !== '' ? data.status : '-') : '-') + '</div>';
+                if (data.status == 1) {
+                  return '<span class="badge badge-dark">Pending</span>';
+                } else if (data.status == 2) {
+                  return '<span class="badge badge-warning">In Progress</span>';
+                } else if (data.status == 3) {
+                  return '<span class="badge badge-success">Completed</span>';
+                } else if (data.status == 0) {
+                  return '<span class="badge badge-danger">Incomplete</span>';
+                } else {
+                  
+                }
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '' ? data.annual : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '0000' ? data.annual : '-') : '-') + '</div>';
               }
             },
           ],
@@ -566,9 +751,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(3, 2)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -587,14 +772,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(2, 2,'${encodedRowData}')" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/observation/copydata/${row.id_observation}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/observation/delete/${row.id_observation}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(3, 2)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
@@ -648,28 +833,38 @@
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '' ? data.start_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '0000-00-00' ? data.start_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '' ? data.end_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '0000-00-00' ? data.end_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.status !== null ? (data.status !== '' ? data.status : '-') : '-') + '</div>';
+                if (data.status == 1) {
+                  return '<span class="badge badge-dark">Pending</span>';
+                } else if (data.status == 2) {
+                  return '<span class="badge badge-warning">In Progress</span>';
+                } else if (data.status == 3) {
+                  return '<span class="badge badge-success">Completed</span>';
+                } else if (data.status == 0) {
+                  return '<span class="badge badge-danger">Incomplete</span>';
+                } else {
+                  
+                }
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '' ? data.annual : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '0000' ? data.annual : '-') : '-') + '</div>';
               }
             },
           ],
@@ -704,9 +899,9 @@
                       <div class="dropdown">
                           <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" ${disabledAttribute}></button>
+                              aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(3, 3)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -725,14 +920,14 @@
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(2, 3,'${encodedRowData}')" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
+                            onclick="confirm_Alert('You want to copy data ${number_index} ?', 'internal_audit/audit_result/opportunity/copydata/${row.id_opportunity}')">Copy</a>
                         <a class="dropdown-item" href="#"
-                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
+                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'internal_audit/audit_result/opportunity/delete/${row.id_opportunity}')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(3, 3)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
@@ -786,28 +981,38 @@
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '' ? data.start_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.start_date !== null ? (data.start_date !== '0000-00-00' ? data.start_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '' ? data.end_date : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.end_date !== null ? (data.end_date !== '0000-00-00' ? data.end_date : '-') : '-') + '</div>';
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.status !== null ? (data.status !== '' ? data.status : '-') : '-') + '</div>';
+                if (data.status == 1) {
+                  return '<span class="badge badge-dark">Pending</span>';
+                } else if (data.status == 2) {
+                  return '<span class="badge badge-warning">In Progress</span>';
+                } else if (data.status == 3) {
+                  return '<span class="badge badge-success">Completed</span>';
+                } else if (data.status == 0) {
+                  return '<span class="badge badge-danger">Incomplete</span>';
+                } else {
+                  
+                }
               }
             },
             {
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '' ? data.annual : '-') : '-') + '</div>';
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (data.annual !== null ? (data.annual !== '0000' ? data.annual : '-') : '-') + '</div>';
               }
             },
           ],

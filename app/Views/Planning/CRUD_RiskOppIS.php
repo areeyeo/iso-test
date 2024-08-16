@@ -877,7 +877,6 @@ function getTextColor($result, $data)
         $(document).ready(function() {
             var data_risk = <?php echo json_encode($data_risk); ?>;
             var data_opportunity = <?php echo json_encode($data_opportunity); ?>;
-            console.log(data_risk, data_opportunity);
             if (data_risk !== null) {
                 showMaxValueInImpact();
                 showMaxValueInImpactResidual();
@@ -1052,7 +1051,6 @@ function getTextColor($result, $data)
                     });
                 },
                 success: function(response) {
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,
@@ -1156,7 +1154,6 @@ function getTextColor($result, $data)
             $(document).ready(function() {
                 // ซ่อน input เมื่อโหลดหน้าเว็บ
                 var type = document.getElementById("type").value;
-                // console.log(type)
                 if (type == "Other") {
                     $('#input-othertype').show();
                 } else {

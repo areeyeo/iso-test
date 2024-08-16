@@ -450,7 +450,6 @@
                     });
                 },
                 success: function(response) {
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,
@@ -752,6 +751,8 @@
                     "drawCallback": function(settings) {
                         $("#interested_table .overlay").hide();
                         var daData = settings.json.data;
+                        console.log(settings.json);
+                        
                         if (daData.length == 0) {
                             $('#table-is-objectives tbody').html(`
                             <tr>
@@ -874,7 +875,6 @@
                     "drawCallback": function(settings) {
                         $("#interested_table .overlay").hide();
                         var daData = settings.json.data;
-                        console.table(daData);
                         if (daData.length == 0) {
                             $('#table-planning-of-change tbody').html(`
                             <tr>

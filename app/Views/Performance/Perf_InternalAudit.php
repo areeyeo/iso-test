@@ -243,7 +243,6 @@
                 check_status(element.status);
             } else if (check == '3') {
                 //--show modal audit program-//
-                console.log('open modal audit program')
                 modal1.style.display = "none";
                 modal2.style.display = "none";
                 modal3.style.display = "block";
@@ -389,29 +388,30 @@
                 getTableData2(data_id);
                 getTableData3(data_id);
 
-                <?php foreach($audit_plan as $row1) { ?>
-                    if (<?=$row1['id_audit_plan']?> == data_id) {
-                        document.getElementById('projectname_detail').innerHTML = "<?=$row1['program_name']?>";
-                        document.getElementById('startdate_detail').innerHTML = "<?=$row1['start_date']?>";
-                        document.getElementById('enddate_detail').innerHTML = "<?=$row1['end_date']?>";
+                <?php foreach ($audit_plan as $row1) { ?>
+                    if (<?= $row1['id_audit_plan'] ?> == data_id) {
+                        document.getElementById('projectname_detail').innerHTML = "<?= $row1['program_name'] ?>";
+                        document.getElementById('startdate_detail').innerHTML = "<?= $row1['start_date'] ?>";
+                        document.getElementById('enddate_detail').innerHTML = "<?= $row1['end_date'] ?>";
 
-                        $(".p-4 #id_plan_schedule").val('<?=$row1['id_audit_plan']?>');
-                        $(".p-4 #id_plan_checklist").val('<?=$row1['id_audit_plan']?>');
-                        $(".p-4 #id_plan_report").val('<?=$row1['id_audit_plan']?>');
+                        $(".p-4 #id_plan_schedule").val('<?= $row1['id_audit_plan'] ?>');
+                        $(".p-4 #id_plan_checklist").val('<?= $row1['id_audit_plan'] ?>');
+                        $(".p-4 #id_plan_report").val('<?= $row1['id_audit_plan'] ?>');
                         $(".p-4 #url_route_schedule").val('internal_audit/schedule/create');
                         $(".p-4 #url_route_checklist").val('internal_audit/checklist/create');
                         $(".p-4 #url_route_report").val('internal_audit/report/create');
                     }
                 <?php } ?>
 
-                <?php foreach($initial_data as $row2) { ?>
-                    if (<?=$row2['id_audit_plan']?> == data_id) {
-                        $(".modal-body #auditobjectives").val('<?=$row2['audit_objective']?>');
-                        $(".modal-body #auditscope").val('<?=$row2['audit_scope']?>');
-                        $(".modal-body #auditcriteria").val('<?=$row2['audit_criteria']?>');
-                        $(".modal-body #auditlead").val('<?=$row2['audit_lead']?>');
-                        $(".modal-body #auditteam").val('<?=$row2['audit_team']?>');
-                        $(".modal-body #url_route").val('internal_audit/initial_data/update/<?=$row2['id_initial_data']?>');
+                <?php foreach ($initial_data as $row2) { ?>
+                    if (<?= $row2['id_audit_plan'] ?> == data_id) {
+                        $(".modal-body #auditobjectives").val('<?= $row2['audit_objective'] ?>');
+                        $(".modal-body #auditscope").val('<?= $row2['audit_scope'] ?>');
+                        $(".modal-body #auditcriteria").val('<?= $row2['audit_criteria'] ?>');
+                        $(".modal-body #auditlead").val('<?= $row2['audit_lead'] ?>');
+                        var auditTeam = <?= json_encode($row2['audit_team']) ?>;
+                        $(".modal-body #auditteam").val(auditTeam);
+                        $(".modal-body #url_route").val('internal_audit/initial_data/update/<?= $row2['id_initial_data'] ?>');
                     }
                 <?php } ?>
 
@@ -454,6 +454,55 @@
                 modal9.style.display = "none";
                 modal10.style.display = "block";
 
+                $(".modal-body #url_route").val('internal_audit/audit_result/follow/create');
+
+            } else if (check == '13') {
+                //--show modal audit program-//
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "none";
+                modal5.style.display = "none";
+                modal6.style.display = "none";
+                modal7.style.display = "none";
+                modal8.style.display = "none";
+                modal9.style.display = "none";
+                modal10.style.display = "block";
+
+                const rowData = JSON.parse(decodeURIComponent(data_));
+                if (status == 1) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/' + rowData.id_nonconformity);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    $(".modal-body #auditresulttype").val(1);
+                    ipnonconformity.style.display = "block";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #nonconformity").val(rowData.nonconformity_issue);
+                    zzzz.style.display = "block";
+                    $(".modal-body #levelnonconformity").val(rowData.level_of_nonconformity);
+                } else if (status == 2) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/' + rowData.id_observation);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    $(".modal-body #auditresulttype").val(2);
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "block";
+                    ipopportunity.style.display = "none";
+                    $(".modal-body #observation").val(rowData.non_inconsistent);
+                    zzzz.style.display = "none";
+                } else if (status == 3) {
+                    $(".modal-body #url_route").val('internal_audit/audit_result/follow/update/' + rowData.id_opportunity);
+                    $(".modal-body #tags-reportname").val(rowData.id_audit_report).trigger('change');
+                    $(".modal-body #auditresulttype").val(3);
+                    ipnonconformity.style.display = "none";
+                    ipobservation.style.display = "none";
+                    ipopportunity.style.display = "block";
+                    $(".modal-body #observation").val(rowData.non_inconsistent);
+                    zzzz.style.display = "none";
+                } else {
+
+                }
+                $(".modal-body #detail").val(rowData.detail);
+                $(".modal-body #control").val(rowData.requirements_control);
             }
         }
     </script>
@@ -479,16 +528,17 @@
                 processData: false,
                 contentType: false,
                 dataType: "JSON",
-                beforeSend: function () {
+                beforeSend: function() {
                     // Show loading indicator here
                     loadingIndicator;
                 },
-                success: function (response) {
+                success: function(response) {
+
                     if (response.success) {
                         Swal.fire({
                             title: response.message,
                             icon: 'success',
-                            showConfirmButton: false,
+                            showConfirmButton: true,
                             allowOutsideClick: false
                         });
                         setTimeout(() => {
@@ -504,7 +554,7 @@
                         });
                     }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
                     Swal.fire({
                         title: "เกิดข้อผิดพลาด",
                         icon: 'error',

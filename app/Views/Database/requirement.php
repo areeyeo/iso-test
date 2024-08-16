@@ -280,14 +280,12 @@
     <script>
         var topic_select = document.getElementById("topic");
         var data_requirement = <?php echo json_encode($data_requirement); ?>;
-        console.log(data_requirement);
         // topic_select.addEventListener("change", function () {
         //     changeData(topic_select.value - 1);
         // });
         function changeData(id) {
             var topic_select = document.getElementById("topic");
             id = topic_select.value - 1;
-            console.log(data_requirement[id]);
             $("#topic_").summernote('code', data_requirement[id]['topic_standart']);
             $("#details_").summernote('code', data_requirement[id]['details']);
             $("#id_").val(data_requirement[id]['id_standard']);

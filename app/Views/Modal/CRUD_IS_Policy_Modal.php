@@ -119,7 +119,6 @@
         }
       }).fail(function (jqXHR, textStatus, errorThrown) {
         // กรณีเกิด Error ใน Ajax Request
-        console.log("Error:", textStatus, errorThrown);
         Swal.fire({
           title: "เกิดข้อผิดพลาดในการส่งข้อมูล",
           text: "โปรดลองอีกครั้งในภายหลัง",

@@ -192,7 +192,6 @@
   </script>
   <script>
     function getTableData() {
-      // console.log(check, url);
       var data_context = <?php echo json_encode($data); ?>;
       if (data_context.status === '4' || data_context.status === '5') {
         var disabledAttribute = 'disabled';
@@ -238,7 +237,6 @@
             'data': null,
             'class': 'text-center',
             'render': function(data, type, row, meta) {
-              console.table(row);
               var number_index = +meta.settings.oAjaxData.start + 1;
               const encodedRowData = encodeURIComponent(JSON.stringify(row));
               let dropdownHtml = `
@@ -335,8 +333,6 @@
             'data': null,
             'class': 'text-center',
             'render': function(data, type, row, meta) {
-              // console.log(data_context);
-
               if (row.id_file > 0) {
                 var number_index = +meta.settings.oAjaxData.start;
 
@@ -355,8 +351,6 @@
   </script>
   <script>
     function load_modal(check, data_encode) {
-      // console.log(check);
-      // console.log(data)
       Requirement_Modal = document.getElementById("Requirement_Modal");
       CRUD_Planning_Planning_of_change = document.getElementById("CRUD_Planning_Planning_of_change");
       File_Rename_Modal = document.getElementById("File_Rename_Modal");

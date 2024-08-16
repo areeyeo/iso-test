@@ -2,101 +2,102 @@
 <html lang="en">
 
 <body>
-    <div class="card">
-        <div class="card-body">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-between">
-                    <h4>Audit Management Program</h4>
-                    <button type="button" class="btn btn-dark" onclick="OpenAuditManagement()"><i class="fas fa-book"></i>&nbsp;&nbsp;Audit Program Main</button>
-                </div>
-                <hr>
-                <div>
-                    <ul class="nav nav-pills" id="tabs-tab" role="tablist">
-                        <li class="nav-item-tab" style="padding-right: 10px;">
-                            <a class="nav-link active" id="Audit-Program-tab" data-toggle="pill" href="#Audit-Program" role="tab" aria-controls="Audit-Program" aria-selected="true">
-                                Audit Program
-                            </a>
-                        </li>
-                        <li class="nav-item-tab">
-                            <a class="nav-link" id="Audit-Plan-tab" data-toggle="pill" href="#Audit-Plan" role="tab" aria-controls="Audit-Plan" aria-selected="false" onclick="getTableData_AMP_AuditPlan()">
-                                Audit Plan
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-content mt-3">
-                    <div class="tab-pane fade show active" id="Audit-Program" role="tabpanel" aria-labelledby="Audit-Program-tab">
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-outline-primary mb-3" onclick="load_modal(3)" data-toggle="modal" data-target="#modal-default">
-                                <i class="fas fa-edit"></i>&nbsp;&nbsp;Create Program
-                            </button>
-                        </div>
-
-                        <div class="table-wrapper">
-                            <table id="example1" class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">ACTION</th>
-                                        <th>NO.</th>
-                                        <th>AP NO.</th>
-                                        <th>PROGRAM NAME</th>
-                                        <th>START DATE</th>
-                                        <th>END DATE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade show" id="Audit-Plan" role="tabpanel" aria-labelledby="Audit-Plan-tab">
-                        <div class="table-wrapper">
-                            <table id="example2" class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">ACTION</th>
-                                        <th>AP NO.</th>
-                                        <th>PROGRAM NAME</th>
-                                        <th>SCOPE</th>
-                                        <th>OBJECTIVE</th>
-                                        <th>CRITERIA</th>
-                                        <th>AUDIT LEAD</th>
-                                        <th>AUDIT TEAM</th>
-                                        <th>FILE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+          <h4>Audit Management Program</h4>
+          <button type="button" class="btn btn-dark" onclick="OpenAuditManagement()"><i class="fas fa-book"></i>&nbsp;&nbsp;Audit Program Main</button>
         </div>
+        <hr>
+        <div>
+          <ul class="nav nav-pills" id="tabs-tab" role="tablist">
+            <li class="nav-item-tab" style="padding-right: 10px;">
+              <a class="nav-link active" id="Audit-Program-tab" data-toggle="pill" href="#Audit-Program" role="tab" aria-controls="Audit-Program" aria-selected="true">
+                Audit Program
+              </a>
+            </li>
+            <li class="nav-item-tab">
+              <a class="nav-link" id="Audit-Plan-tab" data-toggle="pill" href="#Audit-Plan" role="tab" aria-controls="Audit-Plan" aria-selected="false" onclick="getTableData_AMP_AuditPlan()">
+                Audit Plan
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content mt-3">
+          <div class="tab-pane fade show active" id="Audit-Program" role="tabpanel" aria-labelledby="Audit-Program-tab">
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-outline-primary mb-3" onclick="load_modal(3)" data-toggle="modal" data-target="#modal-default">
+                <i class="fas fa-edit"></i>&nbsp;&nbsp;Create Program
+              </button>
+            </div>
+
+            <div class="table-wrapper">
+              <table id="example1" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th class="text-center">ACTION</th>
+                    <th>NO.</th>
+                    <th>AP NO.</th>
+                    <th>PROGRAM NAME</th>
+                    <th>START DATE</th>
+                    <th>END DATE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="Audit-Plan" role="tabpanel" aria-labelledby="Audit-Plan-tab">
+            <div class="table-wrapper">
+              <table id="example2" class="table table-hover">
+                <thead>
+                  <tr>
+                    <th class="text-center">ACTION</th>
+                    <th>NO.</th>
+                    <th>AP NO.</th>
+                    <th>PROGRAM NAME</th>
+                    <th>SCOPE</th>
+                    <th>OBJECTIVE</th>
+                    <th>CRITERIA</th>
+                    <th>AUDIT LEAD</th>
+                    <th>AUDIT TEAM</th>
+                    <th>FILE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            getTableData_AMP_AuditProgram();
-        });
-    </script>
+  </div>
+  <script>
+    $(document).ready(function() {
+      getTableData_AMP_AuditProgram();
+    });
+  </script>
 
-    <!-- change page -->
-    <script>
-        function OpenAuditManagement() {
-            window.location.href = "index";
-        }
-    </script>
+  <!-- change page -->
+  <script>
+    function OpenAuditManagement() {
+      window.location.href = "index";
+    }
+  </script>
 
-    <!-- table audit program -->
-    <script>
+  <!-- table audit program -->
+  <script>
     var countTable1 = 0;
 
     function getTableData_AMP_AuditProgram() {
       if (countTable1 === 0) {
         countTable1++;
-    
+
         if ($.fn.DataTable.isDataTable('#example1')) {
           $('#example1').DataTable().destroy();
         }
@@ -126,7 +127,7 @@
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(3)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -138,33 +139,39 @@
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                var number_index = +meta.settings.oAjaxData.start + 1;
+                console.log(meta.settings.oAjaxData);
+                var number_index =+ meta.settings.oAjaxData.start + 1;
                 const encodedRowData = encodeURIComponent(JSON.stringify(row));
+                let id_audit_plan = 0;
+                if (data.id_audit_plan !== null) {
+                  id_audit_plan = data.id_audit_plan;
+                }
+
                 let dropdownHtml = `
                 <div class="dropdown">
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(9,'${id_audit_plan }')" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
                             onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
                         <a class="dropdown-item" href="#"
                             onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(3)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
               }
             },
             {
-                        'data': null,
-                        'class': 'text-center',
-                        'render': function(data, type, row, meta) {
-                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
-                        }
-                    },
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+              }
+            },
             {
               'data': null,
               'class': 'text-center',
@@ -200,14 +207,14 @@
     }
   </script>
 
-    <!-- table audit plan -->
-    <script>
+  <!-- table audit plan -->
+  <script>
     var countTable2 = 0;
 
     function getTableData_AMP_AuditPlan() {
       if (countTable2 === 0) {
         countTable2++;
-    
+
         if ($.fn.DataTable.isDataTable('#example2')) {
           $('#example2').DataTable().destroy();
         }
@@ -237,7 +244,7 @@
                               class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false"></button>
                           <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal"
+                              <a class="dropdown-item" onclick="load_modal(3)" data-toggle="modal"
                                   data-target="#modal-default">Create</a>
                           </div>
                       </div>
@@ -249,24 +256,33 @@
               'data': null,
               'class': 'text-center',
               'render': function(data, type, row, meta) {
-                var number_index = +meta.settings.oAjaxData.start + 1;
+                console.log(meta.settings.oAjaxData);
+                var number_index =+ meta.settings.oAjaxData.start + 1;
+                
                 const encodedRowData = encodeURIComponent(JSON.stringify(row));
                 let dropdownHtml = `
                 <div class="dropdown">
                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" onclick="load_modal(6, 2,'${encodedRowData}')" data-toggle="modal"
+                        <a class="dropdown-item" onclick="load_modal(9,'${data.id_audit_plan }')" data-toggle="modal"
                             data-target="#modal-default">Edit</a>
                         <a class="dropdown-item" href="#"
                             onclick="confirm_Alert('You want to copy data ${number_index} ?', 'planning/planning/copydata/')">Copy</a>
                         <a class="dropdown-item" href="#"
                             onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planning/delete/')">Delete</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" onclick="load_modal(6,1)" data-toggle="modal" data-target="#modal-default">Create</a>`;
+                        <a class="dropdown-item" onclick="load_modal(3)" data-toggle="modal" data-target="#modal-default">Create</a>`;
                 dropdownHtml += `</div>
                 </div>`;
                 return dropdownHtml;
+              }
+            },
+            {
+              'data': null,
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
               }
             },
             {
@@ -319,18 +335,18 @@
               }
             },
             {
-                        'data': 'file_data',
-                        'class': 'text-center',
-                        'render': function(data, type, row, meta) {
-                            if (data == null) {
-                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
-                            } else {
-                                return `<a href="<?php echo base_url('openfile/'); ?>${data.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+              'data': 'file_data',
+              'class': 'text-center',
+              'render': function(data, type, row, meta) {
+                if (data == null) {
+                  return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                } else {
+                  return `<a href="<?php echo base_url('openfile/'); ?>${data.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
                                     ${data.name_file}
                                     </a>`;
-                            }
-                        }
-                    },
+                }
+              }
+            },
           ],
         });
         $('[data-toggle="tooltip"]').tooltip();
@@ -338,17 +354,15 @@
     }
   </script>
 
-    <!-- switch tabs -->
-    <script>
-        $('#Audit-Program-tab').on('click', function() {
-            console.log('Audit-Program-tab');
-            $('#btn-Document').show();
-        });
-        $('#Audit-Plan-tab').on('click', function() {
-            console.log('Audit-Plan-tab');
-            $('#btn-Document').hide();
-        })
-    </script>
+  <!-- switch tabs -->
+  <script>
+    $('#Audit-Program-tab').on('click', function() {
+      $('#btn-Document').show();
+    });
+    $('#Audit-Plan-tab').on('click', function() {
+      $('#btn-Document').hide();
+    })
+  </script>
 </body>
 
 </html>

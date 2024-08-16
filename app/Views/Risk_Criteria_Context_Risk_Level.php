@@ -278,14 +278,12 @@ function getRiskColor($result)
 </div>
 <script>
     function load_modal(check, check_type, data_encode) {
-        console.log('Function is called with check:', check, 'and check_type:', check_type);
 
         modal_crud_criteria_risk_level = document.getElementById("modal_crud_criteria_risk_level");
         $(".modal-body #iss").empty();
 
         if (check == '1') {
             //--show modal requirment--//
-            console.log('Showing modal 1');;
             modal_crud_criteria_risk_level.style.display = "block";
         }
     }

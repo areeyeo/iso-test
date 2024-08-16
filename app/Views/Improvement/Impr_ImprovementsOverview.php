@@ -282,7 +282,6 @@
                         'data': null,
                         'class': 'text-center',
                         'render': function(data, type, row, meta) {
-                            // console.log(row);
                             var number_index = +meta.settings.oAjaxData.start + 1;
                             const encodedRowData = encodeURIComponent(JSON.stringify(row));
                             let dropdownHtml = `
@@ -355,7 +354,6 @@
                 },
                 success: function(response) {
                     Swal.close();
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

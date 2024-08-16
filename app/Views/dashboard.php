@@ -200,7 +200,6 @@
     <script>
         $(document).ready(function () {
             var data = <?php echo json_encode($data); ?>;
-            console.log(data);
             $(function () {
 
                 //-------------
@@ -299,7 +298,6 @@
                 barChartData.datasets[0] = temp0
                 barChartData.datasets[1] = temp1
 
-                console.log(barChartData);
 
                 var barChartOptions = {
                     responsive: true,
@@ -325,7 +323,6 @@
 
     <script>
         function load_modal(params, check) {
-            console.log(params);
 
             modal1 = document.getElementById("modal1");
             modal2 = document.getElementById("modal2");

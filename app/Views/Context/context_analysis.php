@@ -974,12 +974,10 @@
   </script>
   <script>
     $('#internal-tab').on('click', function () {
-      console.log('internal-tab');
       $('#btn-internal').show();
       $('#btn-external').hide();
     });
     $('#external-tab').on('click', function () {
-      console.log('external-tab');
       $('#btn-internal').hide();
       $('#btn-external').show();
     })

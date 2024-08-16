@@ -516,17 +516,14 @@
   </script>
   <script>
     $('#Objectives-tab').on('click', function() {
-      // console.log('Objectives-tab');
       $('#btn-Objectives').show();
       $('#btn-Planning').hide();
     });
     $('#Planning-tab').on('click', function() {
-      // console.log('Planning-tab');
       $('#btn-Objectives').hide();
       $('#btn-Planning').show();
     })
     $('#Summary-tab').on('click', function() {
-      // console.log('Summary-tab');
       $('#btn-Objectives').hide();
       $('#btn-Planning').hide();
     })

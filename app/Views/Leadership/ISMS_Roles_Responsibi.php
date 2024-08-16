@@ -233,7 +233,6 @@
                 modal4.style.display = "block";
 
                 const rowData = JSON.parse(decodeURIComponent(data_));
-                console.log(rowData);
                 // แบ่งข้อความด้วยจุด (.)
                 var parts = rowData.name_file.split('.');
 
@@ -263,7 +262,6 @@
                 modal4.style.display = "block";
 
                 const rowData = JSON.parse(decodeURIComponent(data_));
-                console.log(rowData);
                 // แบ่งข้อความด้วยจุด (.)
                 var parts = rowData.name_file.split('.');
 
@@ -372,7 +370,6 @@
                     loadingIndicator;
                 },
                 success: function (response) {
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

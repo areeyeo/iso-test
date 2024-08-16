@@ -299,10 +299,7 @@
                     loadingIndicator;
                 },
                 success: function (response) {
-                    console.log(response);
-
                     if (response.success) {
-                        console.log(response.data);
                         Swal.fire({
                             title: response.message,
                             icon: 'success',
@@ -322,8 +319,6 @@
                     }
                 },
                 error: function (xhr, status, error) {
-                    console.error(error);
-
                     Swal.fire({
                         title: "เกิดข้อผิดพลาด",
                         icon: 'error',
@@ -339,9 +334,6 @@
         //     $("#topic").on("change", function () {
         //         var selectedValue = $(this).val(); // Get the selected value
         //         var selectedText = $("#topic option:selected").text(); // Get the selected option text
-
-        //         console.log("Selected Value: " + selectedValue);
-        //         console.log("Selected Text: " + selectedText);
 
         //         var topic_table = <?php echo json_encode($topic_table); ?>;
         //         var create_id_user = topic_table[selectedValue - 1]['create_id_user'];

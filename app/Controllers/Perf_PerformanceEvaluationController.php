@@ -42,7 +42,7 @@ class Perf_PerformanceEvaluationController extends BaseController
                 'recordsTotal' => 0,
                 'recordsFiltered' => 0,
                 'data' => [],
-                'data_count' => $data_count 
+                'data_count' => $data_count,
             ];
             return $this->response->setJSON($response);
         }
@@ -77,7 +77,7 @@ class Perf_PerformanceEvaluationController extends BaseController
             'recordsTotal' => $totalRecords,
             'recordsFiltered' => $recordsFiltered,
             'data' => $data,
-            'data_count' => $data_count
+            'data_count' => $data_count,
         ];
 
         return $this->response->setJSON($response);

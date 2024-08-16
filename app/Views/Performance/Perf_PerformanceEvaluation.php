@@ -256,8 +256,8 @@
                 };
                 const formattedDate_start = date_start.toLocaleDateString('en-GB', options).replace(/\./g, '');
                 const formattedDate_end = date_end.toLocaleDateString('en-GB', options).replace(/\./g, '');
-                $(".modal-body #startdate_detail").text(formattedDate_start == 'Invalid Date' ?  '-' : formattedDate_start);
-                $(".modal-body #enddate_detail").text(formattedDate_end == 'Invalid Date' ?  '-' : formattedDate_end);
+                $(".modal-body #startdate_detail").text(formattedDate_start == 'Invalid Date' ? '-' : formattedDate_start);
+                $(".modal-body #enddate_detail").text(formattedDate_end == 'Invalid Date' ? '-' : formattedDate_end);
                 $(".modal-body #who_detail").text(element_planning.owner);
                 $(".modal-body #methods_detail").text(element_planning.evaluation_methods);
                 $(".modal-body #when_evaluated_detail").text(element_planning.date_evaluation);
@@ -344,8 +344,9 @@
                     }
                 },
                 'columns': [{
-                    'data': null,
-                }, ],
+                    'data': null
+                }, ]
+
             });
             $('[data-toggle="tooltip"]').tooltip();
         }

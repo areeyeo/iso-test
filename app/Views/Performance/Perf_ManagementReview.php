@@ -231,7 +231,8 @@
                 modal1.style.display = "none";
                 modal2.style.display = "block";
 
-                const rowData = JSON.parse(decodeURIComponent(1));
+                var rowData = JSON.parse(decodeURIComponent(data_encode));
+
                 $(".modal-body #meetingdate").val(rowData.meeting_date);
                 if (rowData.meeting_minutes_doc != null) {
                     $(".modal-body #label_meeting_minutes_doc").text(rowData.meeting_minutes_doc['name_file']);
@@ -319,6 +320,8 @@
                     'data': null,
                     'class': 'text-center',
                     'render': function(data, type, row, meta) {
+                        console.log(data);
+                        
                         var number_index = (meta.settings.oAjaxData.start += 1);
                         const encodedRowData = encodeURIComponent(JSON.stringify(data));
                         return `<div class="dropdown">
@@ -405,7 +408,6 @@
             file_array2.forEach(element => {
                 id_file_after += element.id_files + ",";
             });
-            console.log(id_file_after);
             formData.append("id_file_after", id_file_after);
             $.ajax({
                 url: '<?= base_url() ?>' + url,
@@ -426,7 +428,6 @@
                 },
                 success: function(response) {
                     Swal.close();
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

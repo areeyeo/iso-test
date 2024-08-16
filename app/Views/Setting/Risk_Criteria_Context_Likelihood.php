@@ -227,7 +227,6 @@
         });
       },
       success: function (response) {
-        console.log(response);
         if (response.success) {
           Swal.fire({
             title: response.message,

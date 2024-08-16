@@ -157,8 +157,6 @@
 
     <script>
         function load_modal(params, id_) {
-            // console.log(check);
-            // console.log(data)
             modal1 = document.getElementById("modal1");
 
             if (params == '1') {

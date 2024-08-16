@@ -464,7 +464,6 @@
                             'data': null,
                             'class': 'text-center',
                             'render': function(data, type, row, meta) {
-                                console.log(data);
                                 const encodedRowData = encodeURIComponent(JSON.stringify(row));
                                 number = parseFloat(data.sec);
                                 

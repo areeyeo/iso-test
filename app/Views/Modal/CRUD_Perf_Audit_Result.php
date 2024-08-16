@@ -28,7 +28,7 @@
       <h4 class="modal-title" id="title_modal" name="title_modal">Audit Result</h4>
     </div>
     <div class="modal-body">
-      <form class="mb-3" id="form_crud" action="javascript:void(0)" method="post" enctype="multipart/form-data">
+      <form class="mb-3" id="form_crud_follow" action="javascript:void(0)" method="post" enctype="multipart/form-data">
         <div>
           <h6>Description</h6>
         </div>
@@ -42,7 +42,12 @@
         </div>
         <div class="form-group mt-3">
           <h6>Audit Report No.</h6>
-          <select id="tags-reportname" multiple="multiple" class="form-control">
+          <select id="tags-reportname" name="tags-reportname[]" multiple="multiple" class="form-control select2tags" required>
+            <?php foreach ($audit_report as $report): ?>
+              <option value="<?= $report['id_audit_report']; ?>">
+                <?= $report['audit_report_no'] . ' ' . $report['report_about']; ?>
+              </option>
+            <?php endforeach; ?>
           </select>
         </div>
         <div class="form-group mt-3">
@@ -102,10 +107,10 @@
     $(".overlay").hide();
   });
 
-  $("#form_crud").on('submit', function(e) {
+  $("#form_crud_follow").on('submit', function(e) {
     e.preventDefault();
     const urlRouteInput = document.getElementById("url_route");
-    action_(urlRouteInput.value, 'form_crud');
+    action_(urlRouteInput.value, 'form_crud_follow');
   });
 </script>
 
@@ -135,20 +140,12 @@
 <!-- select seacrh -->
 <script>
   $(document).ready(function() {
-    var selectData = ["AR_001 รายงานโปรเจคตัวอย่างที่ 1", "AR_002 รายงานโปรเจคตัวอย่างที่ 2", "AR_003 รายงานโปรเจคตัวอย่างที่ 3", "AR_004 รายงานโปรเจคตัวอย่างที่ 4", "AR_005 รายงานโปรเจคตัวอย่างที่ 5"];
     $('#tags-reportname').select2({
-      data: selectData,
       placeholder: "Select or Search",
       tags: false,
       tokenSeparators: [',', ' '],
       width: '100%',
       maximumSelectionLength: 1
     });
-  });
-
-  $("#form_crud").on('submit', function(e) {
-    e.preventDefault();
-    const urlRouteInput = document.getElementById("url_route");
-    action_(urlRouteInput.value, 'form_crud');
   });
 </script>

@@ -195,6 +195,7 @@ class OP_OperationsManagementController extends BaseController
             'recordsTotal' => $totalRecords,
             'recordsFiltered' => $recordsFiltered,
             'data' => $data,
+            'versions' => $version
         ];
 
         return $this->response->setJSON($response);

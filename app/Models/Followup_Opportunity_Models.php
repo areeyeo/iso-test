@@ -10,7 +10,7 @@ class Followup_Opportunity_Models extends Model
 
     protected $primaryKey = 'id_opportunity';
 
-    protected $allowedFields = ['id_audit_report', 'non_inconsistent', 'corrective_action', 'responsible_person', 'start_date', 'end_date', 'status', 'annual', 'detail', 'requirements_control'];
+    protected $allowedFields = ['id_audit_report', 'non_inconsistent', 'corrective_action', 'responsible_person', 'start_date', 'end_date', 'finish_date', 'status', 'annual', 'detail', 'requirements_control'];
 
     public function copyDataById($id)
     {

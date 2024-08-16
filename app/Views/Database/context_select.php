@@ -421,8 +421,6 @@
     </script>
     <script>
         function ShowEdit(id, check) {
-            // console.log(id);
-            // console.log(check);
             if (check == 1) {
                 var data_inter_iss = <?php echo json_encode($data_inter_iss); ?>;
                 data_inter_iss.forEach(element => {

@@ -234,7 +234,6 @@
                 "destroy": true,
                 "drawCallback": function (settings) {
                     var date_search = settings.json.date_search;
-                    console.log(date_search);
                 }
             });
         }

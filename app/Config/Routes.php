@@ -473,6 +473,7 @@ $routes->group("improvements", ['filter' => 'authGuard'], function ($routes) {
 
 $routes->group("internal_audit", ['filter' => 'authGuard'], function ($routes) {
     $routes->get('index', 'Perf_InternalAuditController::index');
+    $routes->match(['get', 'post'], 'getdata/schedule_plan', 'Perf_InternalAuditController::get_data_Audit_Plan_with_Date');
 
     $routes->match(['get', 'post'], 'audit_program/create', 'Perf_InternalAuditController::create_audit_plan');
 
@@ -490,6 +491,15 @@ $routes->group("internal_audit", ['filter' => 'authGuard'], function ($routes) {
     $routes->match(['get', 'post'], 'report/copydata/(:num)', 'Perf_InternalAuditController::copy_report/$1');
     $routes->match(['get', 'post'], 'report/delete/(:num)', 'Perf_InternalAuditController::delete_report/$1');
 
+    $routes->match(['get', 'post'], 'audit_result/follow/create', 'Perf_InternalAuditController::create_audit_result_follow');
+    $routes->match(['get', 'post'], 'audit_result/follow/update/(:num)', 'Perf_InternalAuditController::update_audit_result_follow/$1');
+    $routes->match(['get', 'post'], 'audit_result/nonconformity/copydata/(:num)', 'Perf_InternalAuditController::copy_audit_result_nonconformity/$1');
+    $routes->match(['get', 'post'], 'audit_result/observation/copydata/(:num)', 'Perf_InternalAuditController::copy_audit_result_observation/$1');
+    $routes->match(['get', 'post'], 'audit_result/opportunity/copydata/(:num)', 'Perf_InternalAuditController::copy_audit_result_opportunity/$1');
+    $routes->match(['get', 'post'], 'audit_result/nonconformity/delete/(:num)', 'Perf_InternalAuditController::delete_audit_result_nonconformity/$1');
+    $routes->match(['get', 'post'], 'audit_result/observation/delete/(:num)', 'Perf_InternalAuditController::delete_audit_result_observation/$1');
+    $routes->match(['get', 'post'], 'audit_result/opportunity/delete/(:num)', 'Perf_InternalAuditController::delete_audit_result_opportunity/$1');
+
     $routes->match(['get', 'post'], 'audit_management/schedule_plan/getdata/(:num)', 'Perf_InternalAuditController::get_data_audit_management_schedule_plan/$1'); //index
     $routes->match(['get', 'post'], 'audit_management/audit_checklist/getdata/(:num)', 'Perf_InternalAuditController::get_data_audit_management_audit_checklist/$1'); //index
     $routes->match(['get', 'post'], 'audit_management/audit_report/getdata/(:num)', 'Perf_InternalAuditController::get_data_audit_management_audit_report/$1'); //index
@@ -506,6 +516,7 @@ $routes->group("internal_audit", ['filter' => 'authGuard'], function ($routes) {
 $routes->match(['get', 'post'], 'openfile/(:num)', 'AllversionController::openfile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'renamefile/(:num)', 'AllversionController::renamefile/$1', ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], 'dowloadfile/(:num)', 'AllversionController::dowloadfile/$1', ['filter' => 'authGuard']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -311,9 +311,6 @@
     <script src="<?= base_url('plugins/codemirror/mode/xml/xml.js'); ?>"></script>
     <script src="<?= base_url('plugins/codemirror/mode/htmlmixed/htmlmixed.js'); ?>"></script>
     <script>
-        var element = <?php echo json_encode($data); ?>; //data version control
-        console.log(element);
-
         function load_modal(check, check_type, data_encode) {
             modal_requirement = document.getElementById("modal_requirement");
             modal_contextver = document.getElementById("modal_contextver");
@@ -321,6 +318,7 @@
             modal_crud_note = document.getElementById("modal_crud_note");
 
             var element = <?php echo json_encode($data); ?>; //data version control
+
             if (check == '1') {
                 //--show modal requirment--//
                 modal_requirement.style.display = "block";

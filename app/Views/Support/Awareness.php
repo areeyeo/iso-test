@@ -390,7 +390,6 @@
                     if (rowData.id_file != null) {
                         rowData.file_data.forEach((element, i) => {
                             file_array2.push(element);
-                            console.log(i);
                             var fileNameContainer = document.createElement('div');
                             fileNameContainer.classList.add('file-name');
                             fileNameContainer.id = 'fileNameContainer2_' + element.id_files;
@@ -590,7 +589,6 @@
                 },
                 success: function(response) {
                     Swal.close();
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

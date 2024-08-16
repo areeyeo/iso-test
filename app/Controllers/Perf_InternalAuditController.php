@@ -17,12 +17,12 @@ class Perf_InternalAuditController extends BaseController
 {
     public function index($id_version = null, $num_ver = null)
     {
-        
+
         $RequirementModels = new RequirementModels();
         $data['data_requirement'] = $RequirementModels->where('id_standard', 2)->first();
         $audit_planmodel = new Audit_Plan_Models();
         $data['audit_plan'] = $audit_planmodel->orderBy('id_audit_plan', 'AES')->findAll();
-        
+
         $initial_datamodel = new Initial_Data_Models();
         $data['initial_data'] = $initial_datamodel->orderBy('id_initial_data', 'AES')->findAll();
         $schedule_planmodel = new Schedule_Plan_Models();
@@ -32,7 +32,6 @@ class Perf_InternalAuditController extends BaseController
         $audit_reportmodel = new Audit_Report_Models();
         $data['audit_report'] = $audit_reportmodel->orderBy('id_audit_report', 'AES')->findAll();
         $followup_nonconformitymodel = new Followup_Nonconformity_Models();
-        
         $data['followup_nonconformity'] = $followup_nonconformitymodel->orderBy('id_nonconformity', 'AES')->findAll();
         $followup_observationmodel = new Followup_Observation_Models();
         $data['followup_observation'] = $followup_observationmodel->orderBy('id_observation', 'AES')->findAll();
@@ -49,10 +48,28 @@ class Perf_InternalAuditController extends BaseController
             'type_version' => 1,
             'num_ver' => 1,
         ];
-        
+
         echo view('layout/header');
         echo view('Performance/Perf_InternalAudit', $data);
     }
+
+    public function get_data_Audit_Plan_with_Date()
+    {
+        $audit_planmodel = new Audit_Plan_Models();
+        $date = $this->request->getVar('date');
+
+        $data_Audit_Plan = $audit_planmodel->where('start_date <=', $date)
+            ->where('end_date >=', $date)
+            ->orWhere('start_date IS NULL')
+            ->orWhere('end_date IS NULL')
+            ->select('audit_plan.*, schedule_plan.*, audit_plan.id_audit_plan as id_audit_plan')
+            ->join('schedule_plan', 'schedule_plan.id_audit_plan = audit_plan.id_audit_plan', 'LEFT')
+            ->findAll();
+
+        // // ส่งผลลัพธ์กลับหรือใช้ข้อมูล $data_Audit_Plan ตามต้องการ
+        return $this->response->setJSON(['data' => $data_Audit_Plan]);
+    }
+
 
     public function get_data_audit_management_schedule_plan($pid)
     {
@@ -64,21 +81,22 @@ class Perf_InternalAuditController extends BaseController
         $searchValue = $this->request->getVar('search')['value'];
 
         if (!empty($searchValue)) {
-            $schedule_planmodel->where('id_audit_plan',$pid)->groupStart()
+            $schedule_planmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_schedule_plan', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $totalRecords = $schedule_planmodel->where('id_audit_plan',$pid)->countAllResults();
+        $totalRecords = $schedule_planmodel->where('id_audit_plan', $pid)->countAllResults();
         $recordsFiltered = $totalRecords;
 
         if (!empty($searchValue)) {
-            $schedule_planmodel->where('id_audit_plan',$pid)->groupStart()
+            $schedule_planmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_schedule_plan', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $data = $schedule_planmodel->where('id_audit_plan',$pid)->groupBy('date')->findAll($limit, $start);
+
+        $data = $schedule_planmodel->where('id_audit_plan', $pid)->groupBy('date')->findAll($limit, $start);
 
         foreach ($data as $key => $value) {
             $data_List = $schedule_planmodel->where('date', $value['date'])->findAll();
@@ -107,21 +125,21 @@ class Perf_InternalAuditController extends BaseController
         $searchValue = $this->request->getVar('search')['value'];
 
         if (!empty($searchValue)) {
-            $audit_checklistmodel->where('id_audit_plan',$pid)->groupStart()
+            $audit_checklistmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_audit_checklist', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $totalRecords = $audit_checklistmodel->where('id_audit_plan',$pid)->countAllResults();
+        $totalRecords = $audit_checklistmodel->where('id_audit_plan', $pid)->countAllResults();
         $recordsFiltered = $totalRecords;
 
         if (!empty($searchValue)) {
-            $audit_checklistmodel->where('id_audit_plan',$pid)->groupStart()
+            $audit_checklistmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_audit_checklist', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $data = $audit_checklistmodel->where('id_audit_plan',$pid)->findAll($limit, $start);
+        $data = $audit_checklistmodel->where('id_audit_plan', $pid)->findAll($limit, $start);
 
         foreach ($data as $key => $value) {
             if (!empty($value['attach_file_audit_checklist'] && $value['attach_file_audit_checklist'] != null)) {
@@ -152,21 +170,21 @@ class Perf_InternalAuditController extends BaseController
         $searchValue = $this->request->getVar('search')['value'];
 
         if (!empty($searchValue)) {
-            $audit_reportmodel->where('id_audit_plan',$pid)->groupStart()
+            $audit_reportmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_audit_report', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $totalRecords = $audit_reportmodel->where('id_audit_plan',$pid)->countAllResults();
+        $totalRecords = $audit_reportmodel->where('id_audit_plan', $pid)->countAllResults();
         $recordsFiltered = $totalRecords;
 
         if (!empty($searchValue)) {
-            $audit_reportmodel->where('id_audit_plan',$pid)->groupStart()
+            $audit_reportmodel->where('id_audit_plan', $pid)->groupStart()
                 ->like('id_audit_report', $searchValue) // แทน 'column1', 'column2', ... ด้วยชื่อคอลัมน์ที่คุณต้องการค้นหา
                 ->orLike('detail', $searchValue)
                 ->groupEnd();
         }
-        $data = $audit_reportmodel->where('id_audit_plan',$pid)->findAll($limit, $start);
+        $data = $audit_reportmodel->where('id_audit_plan', $pid)->findAll($limit, $start);
 
         foreach ($data as $key => $value) {
             if (!empty($value['attach_file_audit_checklist'] && $value['attach_file_audit_checklist'] != null)) {
@@ -189,15 +207,22 @@ class Perf_InternalAuditController extends BaseController
     public function get_data_audit_management_audit_program()
     {
         $audit_reportmodel = new Audit_Report_Models();
+        $audit_planmodel = new Audit_Plan_Models();
 
         $limit = $this->request->getVar('length');
         $start = $this->request->getVar('start');
         $draw = $this->request->getVar('draw');
 
-        $totalRecords = $audit_reportmodel->countAllResults();
+        $totalRecords = $audit_planmodel->select('audit_plan.*, audit_report.*, audit_plan.id_audit_plan as id_audit_plan')
+            ->join('audit_report', 'audit_report.id_audit_plan = audit_plan.id_audit_plan', 'LEFT')
+            ->countAllResults();
+
         $recordsFiltered = $totalRecords;
 
-        $data = $audit_reportmodel->join('audit_plan', 'audit_plan.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->findAll($limit, $start);
+        // $data = $audit_reportmodel->join('audit_plan', 'audit_plan.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->findAll($limit, $start);
+        $data = $audit_planmodel->select('audit_plan.*, audit_report.*, audit_plan.id_audit_plan as id_audit_plan')
+            ->join('audit_report', 'audit_report.id_audit_plan = audit_plan.id_audit_plan', 'LEFT')
+            ->findAll($limit, $start);
 
         $response = [
             'draw' => intval($draw),
@@ -212,16 +237,24 @@ class Perf_InternalAuditController extends BaseController
     public function get_data_audit_management_audit_plan()
     {
         $audit_reportmodel = new Audit_Report_Models();
+        $audit_planmodel = new Audit_Plan_Models();
         $filemodel = new FileModels();
 
         $limit = $this->request->getVar('length');
         $start = $this->request->getVar('start');
         $draw = $this->request->getVar('draw');
 
-        $totalRecords = $audit_reportmodel->countAllResults();
+        $totalRecords = $audit_planmodel->select('audit_plan.*, audit_report.*, audit_plan.id_audit_plan as id_audit_plan , initial_data.*')
+            ->join('audit_report', 'audit_report.id_audit_plan = audit_plan.id_audit_plan', 'LEFT')
+            ->join('initial_data', 'initial_data.id_audit_plan = audit_report.id_audit_plan', 'LEFT')
+            ->countAllResults();
         $recordsFiltered = $totalRecords;
 
-        $data = $audit_reportmodel->join('audit_plan', 'audit_plan.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->join('initial_data', 'initial_data.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->findAll($limit, $start);
+        // $data = $audit_reportmodel->join('audit_plan', 'audit_plan.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->join('initial_data', 'initial_data.id_audit_plan = audit_report.id_audit_plan', 'LEFT')->findAll($limit, $start);
+        $data = $audit_planmodel->select('audit_plan.*, audit_report.*, audit_plan.id_audit_plan as id_audit_plan , initial_data.*')
+            ->join('audit_report', 'audit_report.id_audit_plan = audit_plan.id_audit_plan', 'LEFT')
+            ->join('initial_data', 'initial_data.id_audit_plan = audit_report.id_audit_plan', 'LEFT')
+            ->findAll($limit, $start);
 
         foreach ($data as $key => $value) {
             if (!empty($value['attach_file_audit_plan'] && $value['attach_file_audit_plan'] != null)) {
@@ -355,9 +388,10 @@ class Perf_InternalAuditController extends BaseController
     }
 
     //-- create data audit plan --//
-    public function create_audit_plan(){
+    public function create_audit_plan()
+    {
         helper(['form']);
-      
+
         $audit_planmodel = new Audit_Plan_Models();
         $initial_datamodel = new Initial_Data_Models();
 
@@ -450,9 +484,10 @@ class Perf_InternalAuditController extends BaseController
     }
 
     //-- create data schedule --//
-    public function create_schedule(){
+    public function create_schedule()
+    {
         helper(['form']);
-      
+
         $schedule_planmodel = new Schedule_Plan_Models();
 
         $data = [
@@ -470,12 +505,12 @@ class Perf_InternalAuditController extends BaseController
         if ($check == false) {
             $response = [
                 'success' => false,
-                'message' => 'Unable to create Audit Program!',
+                'message' => 'Unable to create Schedule!',
             ];
         } else {
             $response = [
                 'success' => true,
-                'message' => 'Successfully created Audit Program',
+                'message' => 'Successfully created Schedule',
                 'reload' => true,
             ];
         }
@@ -483,10 +518,11 @@ class Perf_InternalAuditController extends BaseController
     }
 
     //-- create data checklist --//
-    public function create_checklist(){
+    public function create_checklist()
+    {
         helper(['form']);
         helper('filesystem');
-      
+
         $audit_checklistmodel = new Audit_Checklist_Models();
         $filemodel = new FileModels();
         $id_file = null;
@@ -512,12 +548,12 @@ class Perf_InternalAuditController extends BaseController
         if ($check == false) {
             $response = [
                 'success' => false,
-                'message' => 'Unable to create Audit Program!',
+                'message' => 'Unable to create Checklist!',
             ];
         } else {
             $response = [
                 'success' => true,
-                'message' => 'Successfully created Audit Program',
+                'message' => 'Successfully created Checklist',
                 'reload' => true,
             ];
         }
@@ -564,12 +600,12 @@ class Perf_InternalAuditController extends BaseController
         if ($check == false) {
             $response = [
                 'success' => false,
-                'message' => 'Unable to update Initial Data!',
+                'message' => 'Unable to update Checklist!',
             ];
         } else {
             $response = [
                 'success' => true,
-                'message' => 'Successfully updated Initial Data',
+                'message' => 'Successfully updated Checklist',
                 'reload' => true,
             ];
         }
@@ -578,7 +614,8 @@ class Perf_InternalAuditController extends BaseController
     }
 
     //-- copy data checklist --//
-    public function copy_checklist($id_audit_checklist = null){
+    public function copy_checklist($id_audit_checklist = null)
+    {
         helper(['form']);
         helper('filesystem');
         $audit_checklistmodel = new Audit_Checklist_Models();
@@ -598,7 +635,7 @@ class Perf_InternalAuditController extends BaseController
             } else {
                 $response = [
                     'success' => false,
-                    'message' => 'Unable to copy Improvements Overview file!',
+                    'message' => 'Unable to copy Checklist file!',
                 ];
                 return $this->response->setJSON($response);
             }
@@ -609,13 +646,13 @@ class Perf_InternalAuditController extends BaseController
             $audit_checklistmodel->update($id_audit_checklist_new, ['attach_file_audit_checklist' => $id_file]);
             $response = [
                 'success' => true,
-                'message' => 'Successfully copied Improvements Overview',
+                'message' => 'Successfully copied Checklist',
                 'reload' => true,
             ];
-        }else{
+        } else {
             $response = [
                 'success' => false,
-                'message' => 'Unable to copy Improvements Overview!',
+                'message' => 'Unable to copy Checklist!',
             ];
         }
 
@@ -641,7 +678,7 @@ class Perf_InternalAuditController extends BaseController
                 if (!$check1) {
                     $response = [
                         'success' => false,
-                        'message' => 'Unable to delete Improvements Overview file!',
+                        'message' => 'Unable to delete Checklist file!',
                     ];
 
                     return $this->response->setJSON($response);
@@ -649,7 +686,7 @@ class Perf_InternalAuditController extends BaseController
                 if (!$check2) {
                     $response = [
                         'success' => false,
-                        'message' => 'Unable to delete folder Improvements Overview!',
+                        'message' => 'Unable to delete folder Checklist!',
                     ];
 
                     return $this->response->setJSON($response);
@@ -661,29 +698,30 @@ class Perf_InternalAuditController extends BaseController
             if ($check == false) {
                 $response = [
                     'success' => false,
-                    'message' => 'Unable to delete Improvements Overview!',
+                    'message' => 'Unable to delete Checklist!',
                 ];
             } else {
                 $response = [
                     'success' => true,
-                    'message' => 'Successfully deleted Improvements Overview',
+                    'message' => 'Successfully deleted Checklist',
                     'reload' => true,
                 ];
             }
         } else {
             $response = [
                 'success' => false,
-                'message' => 'Improvements Overview not found!',
+                'message' => 'Checklist not found!',
             ];
         }
         return $this->response->setJSON($response);
     }
 
     //-- create data report --//
-    public function create_report(){
+    public function create_report()
+    {
         helper(['form']);
         helper('filesystem');
-      
+
         $audit_reportmodel = new Audit_Report_Models();
         $filemodel = new FileModels();
         $id_file = null;
@@ -715,12 +753,12 @@ class Perf_InternalAuditController extends BaseController
         if ($check == false) {
             $response = [
                 'success' => false,
-                'message' => 'Unable to create Audit Program!',
+                'message' => 'Unable to create Report!',
             ];
         } else {
             $response = [
                 'success' => true,
-                'message' => 'Successfully created Audit Program',
+                'message' => 'Successfully created Report',
                 'reload' => true,
             ];
         }
@@ -768,12 +806,12 @@ class Perf_InternalAuditController extends BaseController
         if ($check == false) {
             $response = [
                 'success' => false,
-                'message' => 'Unable to update Initial Data!',
+                'message' => 'Unable to update Report!',
             ];
         } else {
             $response = [
                 'success' => true,
-                'message' => 'Successfully updated Initial Data',
+                'message' => 'Successfully updated Report',
                 'reload' => true,
             ];
         }
@@ -782,7 +820,8 @@ class Perf_InternalAuditController extends BaseController
     }
 
     //-- copy data report --//
-    public function copy_report($id_audit_report = null){
+    public function copy_report($id_audit_report = null)
+    {
         helper(['form']);
         helper('filesystem');
         $audit_reportmodel = new Audit_Report_Models();
@@ -802,7 +841,7 @@ class Perf_InternalAuditController extends BaseController
             } else {
                 $response = [
                     'success' => false,
-                    'message' => 'Unable to copy Improvements Overview file!',
+                    'message' => 'Unable to copy Report file!',
                 ];
                 return $this->response->setJSON($response);
             }
@@ -817,13 +856,13 @@ class Perf_InternalAuditController extends BaseController
             $audit_reportmodel->update($id_audit_report_new, ['attach_file_audit_checklist' => $id_file]);
             $response = [
                 'success' => true,
-                'message' => 'Successfully copied Improvements Overview',
+                'message' => 'Successfully copied Report',
                 'reload' => true,
             ];
-        }else{
+        } else {
             $response = [
                 'success' => false,
-                'message' => 'Unable to copy Improvements Overview!',
+                'message' => 'Unable to copy Report!',
             ];
         }
 
@@ -849,7 +888,7 @@ class Perf_InternalAuditController extends BaseController
                 if (!$check1) {
                     $response = [
                         'success' => false,
-                        'message' => 'Unable to delete Improvements Overview file!',
+                        'message' => 'Unable to delete Report file!',
                     ];
 
                     return $this->response->setJSON($response);
@@ -857,7 +896,7 @@ class Perf_InternalAuditController extends BaseController
                 if (!$check2) {
                     $response = [
                         'success' => false,
-                        'message' => 'Unable to delete folder Improvements Overview!',
+                        'message' => 'Unable to delete folder Report!',
                     ];
 
                     return $this->response->setJSON($response);
@@ -869,19 +908,381 @@ class Perf_InternalAuditController extends BaseController
             if ($check == false) {
                 $response = [
                     'success' => false,
-                    'message' => 'Unable to delete Improvements Overview!',
+                    'message' => 'Unable to delete Report!',
                 ];
             } else {
                 $response = [
                     'success' => true,
-                    'message' => 'Successfully deleted Improvements Overview',
+                    'message' => 'Successfully deleted Report',
                     'reload' => true,
                 ];
             }
         } else {
             $response = [
                 'success' => false,
-                'message' => 'Improvements Overview not found!',
+                'message' => 'Report not found!',
+            ];
+        }
+        return $this->response->setJSON($response);
+    }
+
+    //-- create data audit result follow --//
+    public function create_audit_result_follow()
+    {
+        helper(['form']);
+
+        $followup_nonconformitymodel = new Followup_Nonconformity_Models();
+        $followup_observationmodel = new Followup_Observation_Models();
+        $followup_opportunitymodel = new Followup_Opportunity_Models();
+        $check = false;
+        $message = '';
+        $type = $this->request->getVar('auditresulttype');
+        if ($type == null) {
+            $type = $this->request->getVar('type');
+        }
+
+        $date_now = date("Y-m-d");
+
+        $start_date = $this->request->getVar('start_date');
+        $end_date = $this->request->getVar('end_date');
+        $finish_date = $this->request->getVar('finish_date');
+
+        if ($date_now < $start_date) {
+            $status = 1;
+        } else if ($date_now >= $start_date && $date_now <= $end_date) {
+            $status = 2;
+        } else if ($finish_date != null) {
+            $status = 3;
+        } else if ($date_now > $end_date && $finish_date == null) {
+            $status = 0;
+        } else {
+        }
+
+        if ($type == 1 || $type == 'Nonconformity Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'nonconformity_issue' => $this->request->getVar('nonconformity'),
+                // 'corrective_action' => $this->request->getVar('correctiveaction'),
+                'level_of_nonconformity' => $this->request->getVar('levelnonconformity'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                // 'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                // 'annual' => $this->request->getVar('annual'),
+                // 'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Nonconformity';
+
+            $check = $followup_nonconformitymodel->insert($data);
+        } else if ($type == 2 || $type == 'Observation Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'non_inconsistent' => $this->request->getVar('observation'),
+                // 'corrective_action' => $this->request->getVar('correctiveaction'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                // 'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                // 'annual' => $this->request->getVar('annual'),
+                // 'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Observation';
+
+            $check = $followup_observationmodel->insert($data);
+        } else if ($type == 3 || $type == 'Opportunity Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'non_inconsistent' => $this->request->getVar('opportunity'),
+                // 'corrective_action' => $this->request->getVar('correctiveaction'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                // 'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                // 'annual' => $this->request->getVar('annual'),
+                // 'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Opportunity';
+
+            $check = $followup_opportunitymodel->insert($data);
+        } else {
+        }
+
+        if ($check == false) {
+            $response = [
+                'success' => false,
+                'message' => 'Unable to create ' . $message . '!',
+                'reload' => false,
+            ];
+        } else {
+            $response = [
+                'success' => true,
+                'message' => 'Successfully created ' . $message,
+                'reload' => true,
+            ];
+        }
+        return $this->response->setJSON($response);
+    }
+
+    //-- edit data audit result follow --//
+    public function update_audit_result_follow($id_follow = null)
+    {
+        helper(['form']);
+
+        $followup_nonconformitymodel = new Followup_Nonconformity_Models();
+        $followup_observationmodel = new Followup_Observation_Models();
+        $followup_opportunitymodel = new Followup_Opportunity_Models();
+
+        $type = $this->request->getVar('auditresulttype');
+        if ($type == null) {
+            $type = $this->request->getVar('type');
+        }
+
+        $date_now = date("Y-m-d");
+
+        $start_date = $this->request->getVar('start_date');
+        $end_date = $this->request->getVar('end_date');
+        $finish_date = $this->request->getVar('finish_date');
+
+        if ($date_now < $start_date) {
+            $status = 1;
+        } else if ($date_now >= $start_date && $date_now <= $end_date) {
+            $status = 2;
+        } else if ($finish_date != null) {
+            $status = 3;
+        } else if ($date_now > $end_date && $finish_date == null) {
+            $status = 0;
+        } else {
+        }
+
+        if ($type == 1 || $type == 'Nonconformity Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'nonconformity_issue' => $this->request->getVar('nonconformity'),
+                'corrective_action' => $this->request->getVar('correctiveaction'),
+                'level_of_nonconformity' => $this->request->getVar('levelnonconformity'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                'annual' => $this->request->getVar('annual'),
+                'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Nonconformity';
+
+            $check = $followup_nonconformitymodel->update($id_follow, $data);
+        } else if ($type == 2 || $type == 'Observation Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'non_inconsistent' => $this->request->getVar('observation'),
+                'corrective_action' => $this->request->getVar('correctiveaction'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                'annual' => $this->request->getVar('annual'),
+                'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Opportunity';
+
+            $check = $followup_observationmodel->update($id_follow, $data);
+        } else if ($type == 3 || $type == 'Opportunity Issue') {
+            $data = [
+                'id_audit_report' => $this->request->getVar('tags-reportname'),
+                'non_inconsistent' => $this->request->getVar('opportunity'),
+                'corrective_action' => $this->request->getVar('correctiveaction'),
+                'detail' => $this->request->getVar('detail'),
+                'requirements_control' => $this->request->getVar('control'),
+                'responsible_person' => $this->request->getVar('responsibleperson'),
+                'start_date' => $start_date,
+                'end_date' =>  $end_date,
+                'annual' => $this->request->getVar('annual'),
+                'finish_date' => $finish_date,
+                'status' => $status,
+            ];
+            $message = 'Opportunity';
+
+            $check = $followup_opportunitymodel->update($id_follow, $data);
+        } else {
+        }
+
+        if ($check == false) {
+            $response = [
+                'success' => false,
+                'message' => 'Unable to update ' . $message,
+            ];
+        } else {
+            $response = [
+                'success' => true,
+                'message' => 'Successfully updated ' . $message,
+                'reload' => true,
+            ];
+        }
+
+        return $this->response->setJSON($response);
+    }
+
+    //-- copy data audit result all follow --//
+    public function copy_audit_result_nonconformity($id_follow = null)
+    {
+        helper(['form']);
+
+        $followup_nonconformitymodel = new Followup_Nonconformity_Models();
+
+        $id_follow_new = $followup_nonconformitymodel->copyDataById($id_follow);
+
+        if ($id_follow_new) {
+            $response = [
+                'success' => true,
+                'message' => 'Successfully copied Nonconformity',
+                'reload' => true,
+            ];
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Unable to copy Nonconformity!',
+            ];
+        }
+
+        return $this->response->setJSON($response);
+    }
+    public function copy_audit_result_observation($id_follow = null)
+    {
+        helper(['form']);
+
+        $followup_observationmodel = new Followup_Observation_Models();
+
+        $id_follow_new = $followup_observationmodel->copyDataById($id_follow);
+
+        if ($id_follow_new) {
+            $response = [
+                'success' => true,
+                'message' => 'Successfully copied Observation',
+                'reload' => true,
+            ];
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Unable to copy Observation!',
+            ];
+        }
+
+        return $this->response->setJSON($response);
+    }
+    public function copy_audit_result_opportunity($id_follow = null)
+    {
+        helper(['form']);
+
+        $followup_opportunitymodel = new Followup_Opportunity_Models();
+
+        $id_follow_new = $followup_opportunitymodel->copyDataById($id_follow);
+
+        if ($id_follow_new) {
+            $response = [
+                'success' => true,
+                'message' => 'Successfully copied Opportunity',
+                'reload' => true,
+            ];
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Unable to copy Opportunity!',
+            ];
+        }
+
+        return $this->response->setJSON($response);
+    }
+
+    //-- delete data audit result follow --//
+    public function delete_audit_result_nonconformity($id_follow = null)
+    {
+        helper(['form']);
+        $followup_nonconformitymodel = new Followup_Nonconformity_Models();
+
+        if (!empty($followup_nonconformitymodel)) {
+            $check = $followup_nonconformitymodel->where('id_nonconformity', $id_follow)->delete($id_follow);
+
+            if ($check == false) {
+                $response = [
+                    'success' => false,
+                    'message' => 'Unable to delete Nonconformity!',
+                ];
+            } else {
+                $response = [
+                    'success' => true,
+                    'message' => 'Successfully deleted Nonconformity',
+                    'reload' => true,
+                ];
+            }
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Nonconformity not found!',
+            ];
+        }
+        return $this->response->setJSON($response);
+    }
+    public function delete_audit_result_observation($id_follow = null)
+    {
+        helper(['form']);
+        $followup_observationmodel = new Followup_Observation_Models();
+
+        if (!empty($followup_observationmodel)) {
+            $check = $followup_observationmodel->where('id_observation', $id_follow)->delete($id_follow);
+
+            if ($check == false) {
+                $response = [
+                    'success' => false,
+                    'message' => 'Unable to delete Observation!',
+                ];
+            } else {
+                $response = [
+                    'success' => true,
+                    'message' => 'Successfully deleted Observation',
+                    'reload' => true,
+                ];
+            }
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Observation not found!',
+            ];
+        }
+        return $this->response->setJSON($response);
+    }
+    public function delete_audit_result_opportunity($id_follow = null)
+    {
+        helper(['form']);
+        $followup_opportunitymodel = new Followup_Opportunity_Models();
+
+        if (!empty($followup_opportunitymodel)) {
+            $check = $followup_opportunitymodel->where('id_opportunity', $id_follow)->delete($id_follow);
+
+            if ($check == false) {
+                $response = [
+                    'success' => false,
+                    'message' => 'Unable to delete Opportunity!',
+                ];
+            } else {
+                $response = [
+                    'success' => true,
+                    'message' => 'Successfully deleted Opportunity',
+                    'reload' => true,
+                ];
+            }
+        } else {
+            $response = [
+                'success' => false,
+                'message' => 'Opportunity not found!',
             ];
         }
         return $this->response->setJSON($response);

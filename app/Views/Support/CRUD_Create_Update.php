@@ -311,7 +311,6 @@ $badgeStyle = $statuses[$status];
             var data_doc = <?php echo json_encode($data_doc); ?>;
             var doc_type_select = document.getElementById("doc-type-select");
             var secret_level = document.getElementById("doc-secret-level");
-            console.log(doc_type_select.value, secret_level.value);
             if (doc_type_select.value == 0 || secret_level.value == 0) {
                 Swal.fire({
                     icon: 'error',
@@ -354,7 +353,6 @@ $badgeStyle = $statuses[$status];
                     });
                 },
                 success: function (response) {
-                    console.log(response);
                     if (response.success) {
                         Swal.fire({
                             title: response.message,

@@ -67,7 +67,6 @@
     const urlRouteInput = document.getElementById("url_route");
     const minranges = document.getElementById("minranges");
     const maxranges = document.getElementById("maxranges");
-    console.log(minranges.value, maxranges.value);
     if (parseInt(minranges.value) >= parseInt(maxranges.value)) {
       Swal.fire({
         title: "Max Range must be greater than Min Range",
