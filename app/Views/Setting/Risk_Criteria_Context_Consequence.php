@@ -4,6 +4,7 @@
     .table td {
         text-align: center;
     }
+
     .blue-text {
         color: #0000FF;
     }
@@ -37,7 +38,7 @@ $count_2 = 0;
                                 <div class="" style="margin-left: 10px; margin-right: 10px;">
                                     <select class="custom-select" id="select_impact_level">
                                         <?php for ($i = 1; $i <= 10; $i++): ?>
-                                            <?php if ($i == $impact_level[0]['number_level']): ?>
+                                            <?php if (!empty($impact_level) && isset($impact_level[0]['number_level']) && $i == $impact_level[0]['number_level']): ?>
                                                 <option value="<?= $i ?>" selected>
                                                     <?= $i ?>
                                                 </option>
@@ -57,7 +58,7 @@ $count_2 = 0;
                         </div>
                         <?php if (!empty($consequence_level_context)): ?>
                             <nav style="border-color: #0000FF">
-                                <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist" >
+                                <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist">
                                     <?php foreach ($consequence_level_context as $item): ?>
                                         <?php if ($count_1 == 0):
                                             $count_1++ ?>
@@ -144,9 +145,9 @@ $count_2 = 0;
                                                     <?php } ?>
                                                 </tbody>
                                             </table>
+                                            </div>
+                                        <?php } ?>
                                         </div>
-                                    <?php } ?>
-                                </div>
                             </div>
                         <?php else: ?>
                             <h3 class="text-center">No Data</h3>
@@ -198,7 +199,7 @@ $count_2 = 0;
 </script>
 <script>
     var select_impact_level = document.getElementById("select_impact_level");
-    select_impact_level.addEventListener("change", function () {
+    select_impact_level.addEventListener("change", function() {
         var url_select = 'planning/risk_Criteria_Context_Consequence/change_impact_level/' + select_impact_level.value;
         action_(url_select, null);
     })
@@ -216,7 +217,7 @@ $count_2 = 0;
             processData: false,
             contentType: false,
             dataType: "JSON",
-            beforeSend: function () {
+            beforeSend: function() {
                 Swal.fire({
                     title: 'Loading...',
                     allowEscapeKey: false,
@@ -227,7 +228,7 @@ $count_2 = 0;
                     }
                 });
             },
-            success: function (response) {
+            success: function(response) {
                 if (response.success) {
                     Swal.fire({
                         title: response.message,
@@ -248,7 +249,7 @@ $count_2 = 0;
                     });
                 }
             },
-            error: function (xhr, status, error) {
+            error: function(xhr, status, error) {
                 Swal.fire({
                     title: "เกิดข้อผิดพลาด",
                     icon: 'error',
@@ -272,7 +273,7 @@ $count_2 = 0;
                     headers: {
                         'X-Requested-With': 'XMLHttpRequest'
                     },
-                    beforeSend: function () {
+                    beforeSend: function() {
                         Swal.fire({
                             title: 'Loading...',
                             allowEscapeKey: false,
@@ -283,7 +284,7 @@ $count_2 = 0;
                             }
                         });
                     },
-                }).then(function (response) {
+                }).then(function(response) {
                     if (response.success) {
                         Swal.fire({
                             title: response.message,
@@ -306,5 +307,4 @@ $count_2 = 0;
             }
         });
     }
-
 </script>
