@@ -1,38 +1,152 @@
-<title>Documented Information Version</title>
-<style>
-    .table-wrapper {
-        max-height: 400px;
-        overflow-y: auto;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documented Information Version</title>
+    <style>
+    table {
+        table-layout: fixed;
+        width: 100%;
+        word-wrap: break-word;
     }
 
-    .table-wrapper::-webkit-scrollbar {
-        width: 10px;
+    tr:nth-child(even) {
+        background-color: #F5F5F5;
     }
 
-    .table-wrapper::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    th {
+        background-color: #F5F6FA;
+        text-align: center !important;
+        border-bottom: none;
     }
 
-    .table-wrapper::-webkit-scrollbar-thumb {
-        background-color: #ADB5BD;
-        border-radius: 10px;
-        border: 3px solid #f1f1f1;
+    tbody {
+        border-bottom: 10px solid #ccc;
+        text-align: center;
     }
 
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
-        background-color: #6C757D;
-    }
-
-    .table th,
-    .table td {
+    .table thead th {
+        border-bottom: none;
         white-space: nowrap;
+        text-align: center !important;
     }
 
-    div.dataTables_scrollBody.dropdown-visible {
-        overflow: visible !important;
+    .table td {
+        white-space: normal !important;
+        word-wrap: break-word;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .md-column-1 {
+        width: 100px !important;
+    }
+
+    .md-column-2 {
+        width: 50px !important;
+    }
+
+    .md-column-3 {
+        width: 250px !important;
+    }
+
+    .md-column-4 {
+        width: 200px !important;
+    }
+
+    .md-column-5 {
+        width: 200px !important;
+    }
+
+    .md-column-6 {
+        width: 150px !important;
+    }
+
+    .md-column-7 {
+        width: 150px !important;
+    }
+
+    .md-column-8 {
+        width: 300px !important;
+    }
+
+    .md-column-9 {
+        width: 100px !important;
+    }
+
+    .md-column-10 {
+        width: 150px !important;
+    }
+
+    .md-column-11 {
+        width: 300px !important;
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+
+    .cu-column-1 {
+        width: 100px !important;
+    }
+
+    .cu-column-2 {
+        width: 50px !important;
+    }
+
+    .cu-column-3 {
+        width: 250px !important;
+    }
+
+    .cu-column-4 {
+        width: 200px !important;
+    }
+
+    .cu-column-5 {
+        width: 200px !important;
+    }
+
+    .cu-column-6 {
+        width: 150px !important;
+    }
+
+    .cu-column-7 {
+        width: 150px !important;
+    }
+
+    .cu-column-8 {
+        width: 250px !important;
+    }
+
+    .cu-column-9 {
+        width: 250px !important;
+    }
+
+    .cu-column-10 {
+        width: 250px !important;
+    }
+
+    .cu-column-11 {
+        width: 70px !important;
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+
+    .cu-column-12 {
+        width: 70px !important;
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+
+    .cu-column-12 {
+        width: 300px !important;
+        white-space: normal !important;
+        word-wrap: break-word;
     }
 </style>
+</head>
 
+<body>
 <div class="card" id="context-ana">
     <div class="card-body">
         <div class="form-group d-flex justify-content-between align-items-center">
@@ -64,19 +178,19 @@
                     <table id="table-craete-update" class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="text-center">ACTION</th>
-                                <th>NO.</th>
-                                <th>DOCUMENT TYPE</th>
-                                <th>DOCUMENT ABBREVIATION</th>
-                                <th>NAME TH</th>
-                                <th>NAME ENG</th>
-                                <th>SECRET LEVEL</th>
-                                <th class="text-center">CREATE / UPDATE / UPLOAD</th>
-                                <th class="text-center">REVIEW</th>
-                                <th class="text-center">APPROVAL</th>
-                                <th class="text-center">VERSION</th>
-                                <th class="text-center">STATUS</th>
-                                <th class="text-center">FILE</th>
+                                <th class="cu-column-1 text-center">ACTION</th>
+                                <th class="cu-column-2">NO.</th>
+                                <th class="cu-column-3">DOCUMENT TYPE</th>
+                                <th class="cu-column-4">DOCUMENT ABBREVIATION</th>
+                                <th class="cu-column-5">NAME TH</th>
+                                <th class="cu-column-6">NAME ENG</th>
+                                <th class="cu-column-7">SECRET LEVEL</th>
+                                <th class="cu-column-8 text-center">CREATE / UPDATE / UPLOAD</th>
+                                <th class="cu-column-9 text-center">REVIEW</th>
+                                <th class="cu-column-10 text-center">APPROVAL</th>
+                                <th class="cu-column-11 text-center">VERSION</th>
+                                <th class="cu-column-12 text-center">STATUS</th>
+                                <th class="cu-column-12 text-center">FILE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,17 +203,17 @@
                     <table id="table-management-doc" class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ACTION</th>
-                                <th>NO.</th>
-                                <th>DOCUMENT TYPE</th>
-                                <th>DOCUMENT ABBREVIATION</th>
-                                <th>NAME TH</th>
-                                <th>NAME ENG</th>
-                                <th>SECRET LEVEL</th>
-                                <th>MANAGEMENT PERMISSIONS</th>
-                                <th>VERSION</th>
-                                <th>STATUS</th>
-                                <th>FILE</th>
+                                <th class="md-column-1">ACTION</th>
+                                <th class="md-column-2">NO.</th>
+                                <th class="md-column-3">DOCUMENT TYPE</th>
+                                <th class="md-column-4">DOCUMENT ABBREVIATION</th>
+                                <th class="md-column-5">NAME TH</th>
+                                <th class="md-column-6">NAME ENG</th>
+                                <th class="md-column-7">SECRET LEVEL</th>
+                                <th class="md-column-8">MANAGEMENT PERMISSIONS</th>
+                                <th class="md-column-9">VERSION</th>
+                                <th class="md-column-10">STATUS</th>
+                                <th class="md-column-11">FILE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +226,18 @@
     </div>
 </div>
 <!-- data -->
-
+<script>
+    $(document).ready(function() {
+        getTableData1();
+        getTableData2();
+        setTimeout(function() {
+            var table1 = $('#table-craete-update').DataTable();
+            table1.columns.adjust().draw();
+            var table2 = $('#table-management-doc').DataTable();
+            table2.columns.adjust().draw();
+        }, 2000);
+    });
+</script>
 <script>
     function CRUDDocumentCreateUpdate() {
         window.location.href = "<?= base_url('support/documentation/create/index/' . $data['id_version'] . '/' . $data['num_ver'] . '/' . $data['status']); ?>";
@@ -126,10 +251,10 @@
         window.location.href = "<?= base_url('support/documentation/management/index/view/' . $data['id_version'] . '/' . $data['num_ver'] . '/' . $data['status'] . '/'); ?>" + id_doc;
     }
 
-    $('#Create-Update-tab').on('click', function () {
+    $('#Create-Update-tab').on('click', function() {
         $('#btn-Document').show();
     });
-    $('#Management-Doc-tab').on('click', function () {
+    $('#Management-Doc-tab').on('click', function() {
         $('#btn-Document').hide();
     })
     const statusMap = {
@@ -166,21 +291,18 @@
     };
 </script>
 <script>
-    $(document).ready(function () {
-        getTableData1();
-    });
-    $(function () {
-        $('#table-craete-update').on('show.bs.dropdown', function () {
+    $(function() {
+        $('#table-craete-update').on('show.bs.dropdown', function() {
             $('.dataTables_scrollBody').addClass('dropdown-visible');
             $('#table-craete-update-wrapper').addClass('table-wrapper');
-        }).on('hide.bs.dropdown', function () {
+        }).on('hide.bs.dropdown', function() {
             $('.dataTables_scrollBody').removeClass('dropdown-visible');
             $('#table-craete-update-wrapper').removeClass('table-wrapper');
         });
-        $('#table-management-doc').on('show.bs.dropdown', function () {
+        $('#table-management-doc').on('show.bs.dropdown', function() {
             $('.dataTables_scrollBody').addClass('dropdown-visible');
             $('#table-management-doc-wrapper').addClass('table-wrapper');
-        }).on('hide.bs.dropdown', function () {
+        }).on('hide.bs.dropdown', function() {
             $('.dataTables_scrollBody').removeClass('dropdown-visible');
             $('#table-management-doc-wrapper').removeClass('table-wrapper');
         });
@@ -213,7 +335,60 @@
                 "searching": true,
                 "ordering": false,
                 "scrollX": true,
-                "drawCallback": function (settings) {
+                "columnDefs": [{
+                        "className": "cu-column-1",
+                        "targets": 0
+                    },
+                    {
+                        "className": "cu-column-2",
+                        "targets": 1
+                    },
+                    {
+                        "className": "cu-column-3",
+                        "targets": 2
+                    },
+                    {
+                        "className": "cu-column-4",
+                        "targets": 3
+                    },
+                    {
+                        "className": "cu-column-5",
+                        "targets": 4
+                    },
+                    {
+                        "className": "cu-column-6",
+                        "targets": 5
+                    },
+                    {
+                        "className": "cu-column-7",
+                        "targets": 6
+                    },
+                    {
+                        "className": "cu-column-8",
+                        "targets": 7
+                    },
+                    {
+                        "className": "cu-column-9",
+                        "targets": 8
+                    },
+                    {
+                        "className": "cu-column-10",
+                        "targets": 9
+                    },
+                    {
+                        "className": "cu-column-11",
+                        "targets": 10
+                    },
+                    {
+                        "className": "cu-column-12",
+                        "targets": 11
+                    },
+                    {
+                        "className": "cu-column-12",
+                        "targets": 12
+                    }
+                ],
+                "drawCallback": function(settings) {
                     var daData = settings.json.data;
                     if (daData.length == 0) {
 
@@ -235,166 +410,165 @@
                             </tr>`);
                     }
                 },
-                'columns': [
-                    {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        var number_index = +meta.settings.oAjaxData.start + 1;
-                        var my_fullname_user = '<?= session()->get('name') . ' ' . session()->get('lastname') ?>';
-                        var check_menu = false;
-                        var check_menu_delete = false;
+                'columns': [{
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            var number_index = +meta.settings.oAjaxData.start + 1;
+                            var my_fullname_user = '<?= session()->get('name') . ' ' . session()->get('lastname') ?>';
+                            var check_menu = false;
+                            var check_menu_delete = false;
 
-                        data.create_update_upload.forEach(element => {
-                            var full_name = element.name_user + ' ' + element.lastname_user
-                            if (my_fullname_user === full_name) {
-                                check_menu_delete = true;
-                            }
-                        });
-                        data.review.forEach(element => {
-                            var full_name = element.name_user + ' ' + element.lastname_user
-                            if (my_fullname_user === full_name) {
-                                check_menu = true;
-                            }
-                        });
-                        data.approval.forEach(element => {
-                            var full_name = element.name_user + ' ' + element.lastname_user
-                            if (my_fullname_user === full_name) {
-                                check_menu = true;
-                            }
-                        });
+                            data.create_update_upload.forEach(element => {
+                                var full_name = element.name_user + ' ' + element.lastname_user
+                                if (my_fullname_user === full_name) {
+                                    check_menu_delete = true;
+                                }
+                            });
+                            data.review.forEach(element => {
+                                var full_name = element.name_user + ' ' + element.lastname_user
+                                if (my_fullname_user === full_name) {
+                                    check_menu = true;
+                                }
+                            });
+                            data.approval.forEach(element => {
+                                var full_name = element.name_user + ' ' + element.lastname_user
+                                if (my_fullname_user === full_name) {
+                                    check_menu = true;
+                                }
+                            });
 
-                        let dropdownHtml = `
+                            let dropdownHtml = `
                                 <div class="dropdown">
                                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         ${disabledAttribute}></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
-                        if (check_menu) {
-                            dropdownHtml += `<a class="dropdown-item" onclick="CRUDDocumentManagementDocument(${data.id_document_create_update})">Edit</a>`
-                        }
-                        dropdownHtml += `<a class="dropdown-item" onclick="CRUDDocumentManagementDocumentView(${data.id_document_create_update})">View Detail</a>`
-                        if (check_menu_delete) {
-                            dropdownHtml += `<a class="dropdown-item" href="#" onclick="confirm_Alert('You want to delete data ${number_index} ?', 'support/documentation/delete/${data.id_document_create_update}/${data_version.id_version}/${data_version.status}')">Delete</a>`
-                        }
-                        dropdownHtml += `<div class="dropdown-divider"></div>
+                            if (check_menu) {
+                                dropdownHtml += `<a class="dropdown-item" onclick="CRUDDocumentManagementDocument(${data.id_document_create_update})">Edit</a>`
+                            }
+                            dropdownHtml += `<a class="dropdown-item" onclick="CRUDDocumentManagementDocumentView(${data.id_document_create_update})">View Detail</a>`
+                            if (check_menu_delete) {
+                                dropdownHtml += `<a class="dropdown-item" href="#" onclick="confirm_Alert('You want to delete data ${number_index} ?', 'support/documentation/delete/${data.id_document_create_update}/${data_version.id_version}/${data_version.status}')">Delete</a>`
+                            }
+                            dropdownHtml += `<div class="dropdown-divider"></div>
                                         <a class="dropdown-item" onclick="CRUDDocumentCreateUpdate()">Create</a>
                                         </div>
                                 </div>`;
-                        return dropdownHtml;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_type + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_abbreviation + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 150,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_th + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 150,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_eng + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.secret_level + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-left',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        var html_consequence = '';
-                        data.create_update_upload.forEach(element => {
-                            html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
-                        });
-                        return html_consequence;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-left',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        var html_consequence = '';
-                        data.review.forEach(element => {
-                            html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
-                        });
-                        return html_consequence;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-left',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        var html_consequence = '';
-                        data.approval.forEach(element => {
-                            html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
-                        });
-                        return html_consequence;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.version + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        const statusInfo = statusMap[data.status];
-                        const badgeHTML = statusInfo ? `<span class="badge rounded-pill" style="background-color: ${statusInfo.backgroundColor}; color: ${statusInfo.color};">${statusInfo.label}</span>` : '';
-                        return badgeHTML;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        if (data.id_file != null) {
-                            return `<a href="<?php echo base_url('openfile/'); ?>${data.id_file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                            return dropdownHtml;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_type + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_abbreviation + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 150,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_th + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 150,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_eng + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.secret_level + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html_consequence = '';
+                            data.create_update_upload.forEach(element => {
+                                html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
+                            });
+                            return html_consequence;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html_consequence = '';
+                            data.review.forEach(element => {
+                                html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
+                            });
+                            return html_consequence;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            var html_consequence = '';
+                            data.approval.forEach(element => {
+                                html_consequence += '<li style="color: rgba(0, 123, 255, 1);">' + element.name_user + ' ' + element.lastname_user + '</li>';
+                            });
+                            return html_consequence;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.version + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            const statusInfo = statusMap[data.status];
+                            const badgeHTML = statusInfo ? `<span class="badge rounded-pill" style="background-color: ${statusInfo.backgroundColor}; color: ${statusInfo.color};">${statusInfo.label}</span>` : '';
+                            return badgeHTML;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            if (data.id_file != null) {
+                                return `<a href="<?php echo base_url('openfile/'); ?>${data.id_file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
                                 ${data.id_file.name_file}
                                 </a>`
-                        } else {
-                            return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            } else {
+                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            }
                         }
                     }
-                }
                 ],
             });
             $('[data-toggle="tooltip"]').tooltip();
@@ -430,7 +604,52 @@
                 "searching": true,
                 "ordering": false,
                 "scrollX": true,
-                "drawCallback": function (settings) {
+                "columnDefs": [{
+                        "className": "md-column-1",
+                        "targets": 0
+                    },
+                    {
+                        "className": "md-column-2",
+                        "targets": 1
+                    },
+                    {
+                        "className": "md-column-3",
+                        "targets": 2
+                    },
+                    {
+                        "className": "md-column-4",
+                        "targets": 3
+                    },
+                    {
+                        "className": "md-column-5",
+                        "targets": 4
+                    },
+                    {
+                        "className": "md-column-6",
+                        "targets": 5
+                    },
+                    {
+                        "className": "md-column-7",
+                        "targets": 6
+                    },
+                    {
+                        "className": "md-column-8",
+                        "targets": 7
+                    },
+                    {
+                        "className": "md-column-9",
+                        "targets": 8
+                    },
+                    {
+                        "className": "md-column-10",
+                        "targets": 9
+                    },
+                    {
+                        "className": "md-column-11",
+                        "targets": 10
+                    }
+                ],
+                "drawCallback": function(settings) {
                     var daData = settings.json.data;
                     if (daData.length == 0) {
                         $('#table-management-doc tbody').html(`
@@ -452,107 +671,131 @@
                     }
                 },
                 'columns': [{
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<a href="javascript:void(0);" onclick="CRUDDocumentManagementDocument(' + data.id_document_create_update + ')"><i class="fas fa-edit pointer text-primary" aria-expanded="false"></i></a>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_type + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_abbreviation + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 150,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_th + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 150,
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_eng + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.secret_level + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-left',
-                    'render': function (data, type, row, meta) {
-                        var html_permissions = '';
-                        if (data.create_update_upload) {
-                            html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Create/Update/Upload</li>';
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<a href="javascript:void(0);" onclick="CRUDDocumentManagementDocument(' + data.id_document_create_update + ')"><i class="fas fa-edit pointer text-primary" aria-expanded="false"></i></a>';
                         }
-                        if (data.review) {
-                            html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Review</li>';
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
                         }
-                        if (data.approval) {
-                            html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Approval</li>';
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_type + '</div>';
                         }
-                        return html_permissions;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        return '<div style="color: rgba(0, 123, 255, 1);">' + data.version + '</div>';
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'render': function (data, type, row, meta) {
-                        const statusInfo = statusMap[data.status];
-                        const badgeHTML = statusInfo ? `<span class="badge rounded-pill" style="background-color: ${statusInfo.backgroundColor}; color: ${statusInfo.color};">${statusInfo.label}</span>` : '';
-                        return badgeHTML;
-                    }
-                },
-                {
-                    'data': null,
-                    'class': 'text-center',
-                    'width': 200,
-                    'render': function (data, type, row, meta) {
-                        if (data.id_file != null) {
-                            return `<a href="<?php echo base_url('openfile/'); ?>${data.id_file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.document_abbreviation + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 150,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_th + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 150,
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.name_eng + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.secret_level + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-left',
+                        'render': function(data, type, row, meta) {
+                            var html_permissions = '';
+                            if (data.create_update_upload) {
+                                html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Create/Update/Upload</li>';
+                            }
+                            if (data.review) {
+                                html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Review</li>';
+                            }
+                            if (data.approval) {
+                                html_permissions += '<li style="color: rgba(0, 123, 255, 1);">Approval</li>';
+                            }
+                            return html_permissions;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            return '<div style="color: rgba(0, 123, 255, 1);">' + data.version + '</div>';
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'render': function(data, type, row, meta) {
+                            const statusInfo = statusMap[data.status];
+                            const badgeHTML = statusInfo ? `<span class="badge rounded-pill" style="background-color: ${statusInfo.backgroundColor}; color: ${statusInfo.color};">${statusInfo.label}</span>` : '';
+                            return badgeHTML;
+                        }
+                    },
+                    {
+                        'data': null,
+                        'class': 'text-center',
+                        'width': 200,
+                        'render': function(data, type, row, meta) {
+                            if (data.id_file != null) {
+                                return `<a href="<?php echo base_url('openfile/'); ?>${data.id_file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
                             ${data.id_file.name_file}
                             </a>`
-                        } else {
-                            return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            } else {
+                                return '<div style="color: rgba(0, 123, 255, 1);">No File</div>';
+                            }
                         }
                     }
-                }
                 ],
             });
             $('[data-toggle="tooltip"]').tooltip();
         }
     }
 </script>
+<script>
+        $(document).ready(function() {
+            // เมื่อ dropdown แสดง
+            $('#table-craete-update').on('show.bs.dropdown', function(e) {
+                var $dropdown = $(e.relatedTarget).next('.dropdown-menu');
+                $('body').append($dropdown.detach());
+                var eOffset = $(e.relatedTarget).offset();
+                $dropdown.css({
+                    'display': 'block',
+                    'top': eOffset.top + $(e.relatedTarget).outerHeight(),
+                    'left': eOffset.left
+                });
+            });
+
+            // เมื่อ dropdown ซ่อน
+            $('#table-craete-update').on('hide.bs.dropdown', function(e) {
+                var $dropdown = $(e.relatedTarget).next('.dropdown-menu');
+                $(e.relatedTarget).after($dropdown.detach());
+                $dropdown.hide();
+            });
+        });
+    </script>
+    </body>
+</html>

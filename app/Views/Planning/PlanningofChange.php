@@ -109,7 +109,7 @@
                 <div class="form-group">
                   <div class="tab-content" id="tabs-tabContent">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                      <div>File</div>
+                      <div style="font-size: 18pt;">File</div>
                       <div id="btn-Objectives" name="btn-Objectives">
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-default " onclick="load_modal(2)">
                           <span class="text-nowrap"><i class="fas fa-edit" onclick="load_modal(2)"></i>Create</span>

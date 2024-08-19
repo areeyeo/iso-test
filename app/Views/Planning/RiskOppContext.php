@@ -1,6 +1,11 @@
 <title>RA & RTP Result IS</title>
 
 <style>
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
     tr:nth-child(even) {
         background-color: #F5F5F5;
     }
@@ -28,7 +33,44 @@
         padding: .375rem .75rem;
         margin-bottom: 10px;
     }
-    
+
+    .dt-column-1 {
+        width: 100px !important;
+    }
+
+    .dt-column-2 {
+        width: 50px !important;
+    }
+
+    .dt-column-3 {
+        width: 200px !important;
+    }
+
+    .dt-column-4 {
+        width: 200px !important;
+    }
+
+    .dt-column-5 {
+        width: 500px !important;
+        white-space: normal;
+    }
+
+    .dt-column-6 {
+        width: 150px !important;
+    }
+
+    .dt-column-7 {
+        width: 150px !important;
+    }
+
+    .dt-column-8 {
+        width: 150px !important;
+    }
+
+    .dt-column-9 {
+        width: 300px !important;
+        white-space: normal;
+    }
 </style>
 
 <!-- Main content -->
@@ -235,21 +277,20 @@
                 <table id="opp_context_table" class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="text-center">ACTION</th>
-                            <th>NO.</th>
-                            <th>ISSUES</th>
-                            <th>QUANTITY OF PLANNING</th>
-                            <th class="text-center">OPPORTUNITY PLANNINGS</th>
-                            <th class="text-center">RISK OWNNER</th>
-                            <th class="text-center">START DATE</th>
-                            <th class="text-center">END DATE</th>
-                            <th class="text-center">FILE</th>
+                            <th class="text-center dt-column-1">ACTION</th>
+                            <th class="dt-column-2">NO.</th>
+                            <th class="dt-column-3">ISSUES</th>
+                            <th class="dt-column-4">QUANTITY OF PLANNING</th>
+                            <th class="dt-column-5">OPPORTUNITY PLANNINGS</th>
+                            <th class="dt-column-6">RISK OWNNER</th>
+                            <th class="dt-column-7">START DATE</th>
+                            <th class="dt-column-8">END DATE</th>
+                            <th class="dt-column-9">FILE</th>
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
@@ -258,7 +299,12 @@
 <script>
     $(document).ready(function() {
         getTableData1();
-    })
+        getTableData2();
+        setTimeout(function() {
+            var table2 = $('#opp_context_table').DataTable();
+            table2.columns.adjust().draw();
+        }, 2000);
+    });
 </script>
 <script>
     var countTable1 = 0;
@@ -607,7 +653,7 @@
                                 }
                                 if (data.residual != null) {
                                     if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
-                                        $('td:eq(19)', row).css('color', element.text_color);
+                                        $('td:eq(20)', row).css('color', element.text_color);
                                     }
                                 }
                             })
@@ -622,7 +668,7 @@
                                 }
                                 if (data.residual != null) {
                                     if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
-                                        $('td:eq(9)', row).css('background-color', element.risk_color);
+                                        $('td:eq(10)', row).css('background-color', element.risk_color);
                                     }
                                 }
                             });
@@ -742,6 +788,7 @@
 </script>
 <script>
     var countTable2 = 0;
+
     function getTableData2() {
         if (countTable2 === 0) {
 
@@ -768,6 +815,43 @@
                 "searching": false,
                 "ordering": false,
                 "scrollX": true,
+                "columnDefs": [{
+                        "width": "100px",
+                        "targets": 0
+                    },
+                    {
+                        "width": "50px",
+                        "targets": 1
+                    },
+                    {
+                        "width": "200px",
+                        "targets": 2
+                    },
+                    {
+                        "width": "200px",
+                        "targets": 3
+                    },
+                    {
+                        "width": "200px",
+                        "targets": 4
+                    },
+                    {
+                        "width": "500px",
+                        "targets": 5
+                    },
+                    {
+                        "width": "150px",
+                        "targets": 6
+                    },
+                    {
+                        "width": "150px",
+                        "targets": 7
+                    },
+                    {
+                        "width": "300px",
+                        "targets": 8
+                    }
+                ],
                 "drawCallback": function(settings) {
                     var daData = settings.json.data;
                     if (daData.length == 0) {
@@ -791,38 +875,35 @@
                 },
                 'columns': [{
                         'data': null,
-                        'class': 'text-center',
+                        'class': 'text-center dt-column-1',
                         'render': function(data, type, row, meta) {
                             var number_index = +meta.settings.oAjaxData.start + 1;
                             const encodedRowData = encodeURIComponent(JSON.stringify(row));
-                            let dropdownHtml = `
-                                <div class="dropdown">
+                            let dropdownHtml =
+                                `<div class="dropdown">
                                     <button class="fas fa-ellipsis-h fa-rotate-90 button-table" style="color: #007bff" type="button"
                                         class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         ${disabledAttribute}></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="<?= base_url('planning/crud_context_risk_opp/opportunities/edit/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_opp_context}">Edit</a>    
                                         <a class="dropdown-item" href="<?= base_url('planning/crud_context_risk_opp/opportunities/view/' . $data['id_version'] . '/' . $data['num_ver']) ?>/${data.id_address_risks_opp_context}">View Detail</a>    
-                                        <a class="dropdown-item" href="#"
-                                            onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planningAddressRisksOpp/context/opportunities/delete/${data.id_address_risks_opp_context}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
+                                        <a class="dropdown-item" href="#" onclick="confirm_Alert('You want to delete data ${number_index} ?', 'planning/planningAddressRisksOpp/context/opportunities/delete/${data.id_address_risks_opp_context}/${number_index}/${data_version.id_version}/${data_version.status}')">Delete</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="<?= base_url('planning/crud_context_risk_opp/' . $data['id_version'] . '/' . $data['num_ver']) ?>">Create</a>`;
-                            dropdownHtml += `</div>
-                                </div>`;
+                            dropdownHtml += `</div></div>`;
                             return dropdownHtml;
                         }
                     },
                     {
                         'data': null,
-                        'class': 'text-center',
+                        'class': 'text-center dt-column-2',
                         'render': function(data, type, row, meta) {
                             return '<div style="color: rgba(0, 123, 255, 1);">' + (meta.settings.oAjaxData.start += 1) + '</div>';
                         }
                     },
                     {
                         'data': null,
-                        'class': 'text-center',
-                        'width': 400,
+                        'class': 'text-center dt-column-3 dt-column-wrap',
                         'render': function(data, type, row, meta) {
                             var topic = '<span style="color: rgba(0, 123, 255, 1);">' + data.issue + '</span>';
                             if (data.issue.length > 50) {
@@ -833,8 +914,7 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-center',
-                        'width': 150,
+                        'class': 'text-center dt-column-4',
                         'render': function(data, type, row, meta) {
                             var length = data.opp_data.length;
                             return '<div style="color: rgba(0, 123, 255, 1);">' + length + '</div>';
@@ -842,8 +922,7 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-left',
-                        'width': 300,
+                        'class': 'text-center dt-column-5 dt-column-wrap',
                         'render': function(data, type, row, meta) {
                             var html = '';
                             data.opp_data.forEach(element => {
@@ -858,8 +937,7 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-left',
-                        'width': 300,
+                        'class': 'text-left dt-column-6 dt-column-wrap',
                         'render': function(data, type, row, meta) {
                             var html = '';
                             data.opp_data.forEach(element => {
@@ -874,8 +952,7 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-left',
-                        'width': 200,
+                        'class': 'text-center dt-column-7',
                         'render': function(data, type, row, meta) {
                             var html = '';
                             data.opp_data.forEach(element => {
@@ -890,8 +967,8 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-left',
-                        'width': 200,
+                        'class': 'text-center dt-column-8',
+                        'width': 150,
                         'render': function(data, type, row, meta) {
                             var html = '';
                             data.opp_data.forEach(element => {
@@ -906,19 +983,15 @@
                     },
                     {
                         'data': null,
-                        'class': 'text-left',
-                        'width': 300,
+                        'class': 'text-center dt-column-9 dt-column-wrap',
                         'render': function(data, type, row, meta) {
                             var html = '';
                             data.opp_data.forEach(element => {
                                 if (element.file != null) {
-                                    html += `<li style="color: rgba(0, 123, 255, 1);"> <a href="<?php echo base_url('openfile/'); ?>${element.file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">
-                                ${element.file.name_file}
-                                </a></li> <br>`;
+                                    html += `<li style="color: rgba(0, 123, 255, 1);"> <a href="<?php echo base_url('openfile/'); ?>${element.file.id_files}" target="_blank" style="color: rgba(0, 123, 255, 1); text-decoration: underline; ">${element.file.name_file}</a></li> <br>`;
                                 } else {
                                     html += '<li style="color: rgba(0, 123, 255, 1);">No File</li>';
                                 }
-
                             });
                             return html;
                         }
@@ -928,4 +1001,24 @@
             $('[data-toggle="tooltip"]').tooltip();
         }
     }
+</script>
+<script>
+    $(document).ready(function() {
+        $('#risk-context-table-full, #opp_context_table').on('show.bs.dropdown', function(e) {
+            var $dropdown = $(e.relatedTarget).next('.dropdown-menu');
+            $('body').append($dropdown.detach());
+            var eOffset = $(e.relatedTarget).offset();
+            $dropdown.css({
+                'display': 'block',
+                'top': eOffset.top + $(e.relatedTarget).outerHeight(),
+                'left': eOffset.left
+            });
+        });
+
+        $('#risk-context-table-full, #opp_context_table').on('hide.bs.dropdown', function(e) {
+            var $dropdown = $(e.relatedTarget).next('.dropdown-menu');
+            $(e.relatedTarget).after($dropdown.detach());
+            $dropdown.hide();
+        });
+    });
 </script>

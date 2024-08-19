@@ -184,7 +184,7 @@ function getTextColor($result, $data)
         <section class="content-header">
             <div class="container-fluid">
                 <div class="">
-                    <h3>&nbsp;Risk Criteria Information Security</h3>
+                    <h3>&nbsp;Risk Criteria Information Context</h3>
                 </div>
             </div>
         </section>
@@ -212,7 +212,7 @@ function getTextColor($result, $data)
                                         <?php foreach ($Likelihood_level_context as $impact): ?>
                                             <th class="text-center " style="background-color: #E2EEFF; font-weight: 400;">
                                                 <?= $impact['likelihood_name'] ?> (
-                                                <?= $impact['likelihood_level'] ?>)
+                                                <?= $impact['likelihood_level'] ?> )
                                             </th>
                                         <?php endforeach; ?>
                                     </tr>
@@ -229,7 +229,7 @@ function getTextColor($result, $data)
                                         <tr>
                                             <th class="text-center" style="background-color: #E2EEFF; font-weight: 400;">
                                                 <?= $likelihood['likelihood_name'] ?> (
-                                                <?= $likelihood['likelihood_level'] ?>)
+                                                <?= $likelihood['likelihood_level'] ?> )
                                             </th>
                                             <?php foreach ($Likelihood_level_context as $impact): ?>
                                                 <?php $result = $impact['likelihood_level'] * $likelihood['likelihood_level'] ?>
