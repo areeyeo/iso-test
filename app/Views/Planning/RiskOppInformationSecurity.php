@@ -811,39 +811,39 @@
                         if (Risk_level_is != null) {
                             Risk_level_is.forEach(element => {
                                 if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
-                                    $('td:eq(6)', row).css('background-color', element.risk_color);
+                                    $('td:eq(10)', row).css('background-color', element.risk_color);
                                 }
                                 if (data.residual != null) {
                                     if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
-                                        $('td:eq(20)', row).css('background-color', element.risk_color);
+                                        $('td:eq(24)', row).css('background-color', element.risk_color);
                                     }
                                 }
                             });
                         } else {
                             if (parseInt(data.risk_level) <= 4) {
-                                $('td:eq(6)', row).css('background-color', '#92D050');
+                                $('td:eq(10)', row).css('background-color', '#92D050');
                             } else if (parseInt(data.risk_level) <= 9) {
-                                $('td:eq(6)', row).css('background-color', '#FFFF00');
+                                $('td:eq(10)', row).css('background-color', '#FFFF00');
                             } else if (parseInt(data.risk_level) <= 19) {
-                                $('td:eq(6)', row).css('background-color', '#FFC000');
+                                $('td:eq(10)', row).css('background-color', '#FFC000');
                             } else {
-                                $('td:eq(6)', row).css('background-color', '#FD2B2B');
+                                $('td:eq(10)', row).css('background-color', '#FD2B2B');
                             }
                         }
 
                         if (Risk_level_is != null) {
                             Risk_level_is.forEach(element => {
                                 if (parseInt(data.risk_level) >= element.minimum && parseInt(data.risk_level) <= element.maximum) {
-                                    $('td:eq(6)', row).css('color', element.text_color);
+                                    $('td:eq(10)', row).css('color', element.text_color);
                                 }
                                 if (data.residual != null) {
                                     if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
-                                        $('td:eq(20)', row).css('color', element.text_color);
+                                        $('td:eq(24)', row).css('color', element.text_color);
                                     }
                                 }
                             })
                         } else {
-                            $('td:eq(6)', row).css('color', '"#000000"');
+                            $('td:eq(10)', row).css('color', '"#000000"');
                         }
                     } else {
                         if (Risk_level_is != null) {

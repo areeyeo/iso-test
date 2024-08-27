@@ -630,7 +630,7 @@
                                 }
                                 if (data.residual != null) {
                                     if (parseInt(data.residual) >= element.minimum && parseInt(data.residual) <= element.maximum) {
-                                        $('td:eq(19)', row).css('background-color', element.risk_color);
+                                        $('td:eq(20)', row).css('background-color', element.risk_color);
                                     }
                                 }
                             });
